@@ -21,18 +21,23 @@
 				attributionControl: false, 
 				autoPan : true,
 				noWrap: true,
-				maxZoom: 4,                                                     
-				minZoom: 2                                                      
-			}).setView([-200, 100], 2);                                      
+				zoomSnap: 0.5,
+				maxZoom: 3,                                                     
+				minZoom: 1.5                                                      
+			});
+			map.setView([-100, 100], 3);                                      
 			
 			var hash = new L.Hash(map);
 			
-			var southWest = map.unproject([0, 6144], map.getMaxZoom());
-			var northEast = map.unproject([6912, 0], map.getMaxZoom());
+			//var southWest = map.unproject([0, 4096], map.getMaxZoom());
+			//var northEast = map.unproject([4608, 0], map.getMaxZoom());
+			var southWest = map.unproject([0, 4100], map.getMaxZoom());
+			var northEast = map.unproject([4800, 0], map.getMaxZoom());
 			var bounds = new L.LatLngBounds(southWest, northEast);
 			
 			var positron = L.tileLayer('./map_tiles/{z}/{y}/{x}.png', {
-				bounds: bounds
+				bounds: bounds,
+				tileSize: 100
 			}).addTo(map); 
 			
 			map.setMaxBounds(bounds);
