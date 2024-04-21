@@ -13,3 +13,7 @@ html,body {
     width: 100%;
     height: 100%;
 }
+.leaflet-marker-icon:hover {
+    transition: top 125ms;
+    top: 2px
+}

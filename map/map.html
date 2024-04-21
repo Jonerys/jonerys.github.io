@@ -15,7 +15,7 @@
 		 <script>
 			map = L.map('map', {                                                       
 				crs: L.CRS.Simple,
-				center: [2400, 2050],
+				//center: [2400, 2050],
 				zoomControl:false,
 				continuousWorld: false,
 				attributionControl: false, 
@@ -23,9 +23,9 @@
 				noWrap: true,
 				zoomSnap: 0.5,
 				maxZoom: 3,                                                     
-				minZoom: 1.5                                                      
+				minZoom: 1                                                      
 			});
-			map.setView([-205.3, 312.2], 1.5);                                      
+			map.setView([-200, 100], 2);                                      
 			
 			var hash = new L.Hash(map);
 			
@@ -47,6 +47,50 @@
 			
 			new L.control.scale({imperial: false, metric: true, position: 'bottomleft'}).addTo(map);
 			new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+			
+			function pointToLayer(feature, latlng) {
+			var newLatLng = map.unproject([latlng.lng, latlng.lat], map.getMaxZoom());
+			return new L.marker(newLatLng, {
+				icon : L.icon({
+					iconUrl: 'markers/marker_1.png',
+					iconSize: [24, 24],
+					iconAnchor: [12, 24],
+					popupAnchor: [0, -16]
+				}),
+				riseOnHover: true,
+				className: feature.properties.cat
+				});
+			};
+			
+			var countries = {
+				"type": "FeatureCollection",
+				"features": [{
+					"type": "Feature",
+					"geometry": {
+						"type": "Point",
+						"coordinates": [2286, 2370]
+					},
+					"properties": {
+						"name": "Винтерфелл",
+						"english": "Winterfell",
+						"synonym": "",
+						"cat": "castle",
+						"loyal": "Старки, Болтоны",
+						"url": "Винтерфелл",
+						"description": "Родовой замок Старков, заложен Брандоном Строителем в Век Героев. Один из старейших замков Семи королевств."
+					}
+				}]};
+			
+			var countryLayer = new L.GeoJSON(countries.features, {
+				pointToLayer: pointToLayer//,
+				//onEachFeature: onEachFeature
+				//filter: function(feature, layer) {return feature.properties.cat == "castle";}
+			});
+			
+			var geodata = L.layerGroup([
+				countryLayer
+				])
+			.addTo(map);
 			
 			//new L.control.measure({
 			//	formatDistance: function (val) {
