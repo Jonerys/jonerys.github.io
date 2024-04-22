@@ -13,31 +13,10 @@
     <body>
 		 <div id="map"></div>
 		 <script>
-			const heigth = 4096;
-			const width = 4608;
-			const tileSize = 256;
-			
-			//var factor = 1 / ((4608 / tileSize) * 1800); //!!! BEST
-			//var factor = 1 / ((4608 / tileSize) * 1800);
-			//var factor = 1 / (1 / 120 * 2.54 * 400000);
-			var factor = 1 / (4608 / tileSize) / 1750;
-			//var factory = 1 / ((4096 / tileSize));
-			//var factory = 1/(4096 / tileSize) * 2;
-			//const dpi = (tileSize / width * Math.pow(2, 3)) * density;	
-			//const factor = 1 / (1 / dpi * scaleFactor / 100);
 			
 			L.CRS.pr = L.extend({}, L.CRS.Simple, {
 			  projection: L.Projection.LonLat,
-			  transformation: new L.Transformation(factor, 0, -factor, 0),
-			  // Changing the transformation is the key part, everything else is the same.
-			  // By specifying a factor, you specify what distance in meters one pixel occupies (as it still is CRS.Simple in all other regards).
-			  // In this case, I have a tile layer with 256px pieces, so Leaflet thinks it's only 256 meters wide.
-			  // I know the map is supposed to be 2048x2048 meters, so I specify a factor of 0.125 to multiply in both directions.
-			  // In the actual project, I compute all that from the gdal2tiles tilemapresources.xml, 
-			  // which gives the necessary information about tilesizes, total bounds and units-per-pixel at different levels.
-
-
-			// Scale, zoom and distance are entirely unchanged from CRS.Simple
+			  transformation: new L.Transformation(1/1000, 0, 1/1000, 0),
 			  scale: function(zoom) {
 				return Math.pow(2, zoom);
 			  },
@@ -62,81 +41,75 @@
 				zoomControl:false,
 				continuousWorld: false,
 				attributionControl: false, 
-				autoPan : true,
+				//autoPan : true,
 				noWrap: true,
-				maxZoom: 3,                                                     
-				minZoom: 1                                                      
+				maxZoom: 10,                                                     
+				minZoom: 6                                                      
 			});                                    
 			
 			var hash = new L.Hash(map);
+
+			var yx = L.latLng
+
+			var xy = function (x, y) {
+			  if (L.Util.isArray(x)) { // When doing xy([x, y]);
+				return yx(x[1], x[0])
+			  }
+			  return yx(y, x) // When doing xy(x, y);
+			}
+			var bounds = [xy(0, 0), xy(18432, 16384)]
+			var image = L.imageOverlay('./images/3.png', bounds)
+			image.addTo(map)
+
+			// add pois
+			//var hobbiton = xy(776, 1648.88)
+			//var minasMorgul = xy(2013, 684.86)
+
+			//L.marker(hobbiton).addTo(map).bindPopup('Hobbiton')
+			//L.marker(minasMorgul).addTo(map).bindPopup('Minas Morgul')
+			// var travel = L.polyline([hobbiton, minasMorgul])
+			// travel.addTo(map)
+
+			map.fitBounds(bounds)
+
+			// calculate Euclidean distance:
+			var getDistance = function (pointA, pointB) {
+			  var xA = pointA.lng
+			  var yA = pointA.lat
+			  var xB = pointB.lng
+			  var yB = pointB.lat
+
+			  var distance = Math.sqrt(Math.pow((xB - xA), 2) + Math.pow((yB - yA), 2))
+			  return distance
+			}
+			//console.log('getDistance(hobbiton, minasMorgul): ' + getDistance(hobbiton, minasMorgul) + 'km')
 			
-			var southWest = map.unproject([0, 4096], map.getMaxZoom());
-			var northEast = map.unproject([4608, 0], map.getMaxZoom());
-			//var southWest = map.unproject([0, 4100], map.getMaxZoom());
-			//var northEast = map.unproject([4800, 0], map.getMaxZoom());
-			var bounds = new L.LatLngBounds(southWest, northEast);
 			
-			var positron = L.tileLayer('./map_tiles/{z}/{y}/{x}.png', {
-				bounds: bounds
-			}).addTo(map); 
+			L.Control.Scale.prototype._updateMetric = function (maxMeters) {
+				var meters = this._getRoundNum(maxMeters),
+					label = meters + ' km';
+					
+
+				this._updateScale(this._mScale, label, meters / maxMeters);
+			};
+			var myScaleControl = L.control.scale({imperial: false, metric: true, position: 'bottomleft'}).addTo(map);
+			
+			new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 			
 			map.setMaxBounds(bounds);
 			map.on('drag', function() {
 				map.panInsideBounds(bounds, { animate: false });
 			});
 			
-			new L.control.scale({imperial: false, metric: true, position: 'bottomleft'}).addTo(map);
-			new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 			
-			function pointToLayer(feature, latlng) {
-			var newLatLng = map.unproject([latlng.lng, latlng.lat], map.getMaxZoom());
-			return new L.marker(newLatLng, {
-				icon : L.icon({
-					iconUrl: 'markers/marker_1.png',
-					iconSize: [24, 24],
-					iconAnchor: [12, 24],
-					popupAnchor: [0, -16]
-				}),
-				riseOnHover: true,
-				className: feature.properties.cat
-				});
-			};
+
+			// map.on('contextmenu', function (event) {
+			//   console.log('Coordinates: ' + event.latlng.toString())
+			//   L.marker(event.latlng).addTo(map).bindPopup('Coordinates: ' + event.latlng.toString())
+			// })
+
+  
 			
-			var countries = {
-				"type": "FeatureCollection",
-				"features": [{
-					"type": "Feature",
-					"geometry": {
-						"type": "Point",
-						"coordinates": [2286, 2370]
-					},
-					"properties": {
-						"name": "Винтерфелл",
-						"english": "Winterfell",
-						"synonym": "",
-						"cat": "castle",
-						"loyal": "Старки, Болтоны",
-						"url": "Винтерфелл",
-						"description": "Родовой замок Старков, заложен Брандоном Строителем в Век Героев. Один из старейших замков Семи королевств."
-					}
-				}]};
-			
-			var countryLayer = new L.GeoJSON(countries.features, {
-				pointToLayer: pointToLayer//,
-				//onEachFeature: onEachFeature
-				//filter: function(feature, layer) {return feature.properties.cat == "castle";}
-			});
-			
-			var geodata = L.layerGroup([
-				countryLayer
-				])
-			.addTo(map);
-			
-			//new L.control.measure({
-			//	formatDistance: function (val) {
-			//	return Math.round(400 * val / 36);
-			//	}
-			//}).addTo(map)
 		 </script>
     </body>
 </html>
