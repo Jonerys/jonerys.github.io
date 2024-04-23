@@ -6,6 +6,7 @@
 		<title>Прототип</title>
 		<link rel="stylesheet" type="text/css" href="style/leaflet.css" />
 		<link rel="stylesheet" type="text/css" href="style/map.css" />
+		<link rel="stylesheet" type="text/css" href="style/leaflet.measure.css" />
         <script src="js/leaflet.js" type="text/javascript"></script>
 		<script src="js/leaflet-hash.js" type="text/javascript"></script>
 		<script src="js/leaflet.measure.js" type="text/javascript"></script>
@@ -13,10 +14,54 @@
     <body>
 		 <div id="map"></div>
 		 <script>
+			const width_px = 4833;
+			const height_px = 4101;
+			const km_per_px = 4;
+			const width_km = width_px * km_per_px;
+			const height_km = height_px * km_per_px;
+			const mapcenter = [width_km / 2, height_km / 2];
+			const factor = 1 / 1000;
+			
+			const image_url = './images/RoC_map_4.0.webp';
+			
+			const MapEvents = () => {
+				useMapEvents({
+				  click(e) {
+					// setState your coords here
+					// coords exist in "e.latlng.lat" and "e.latlng.lng"
+					console.log(e.latlng.lat + ' ' + e.latlng.lng);
+					//console.log(e.latlng.lng);
+				  },
+				});
+				return false;
+			}
+			
+			var yx = L.latLng;
+
+			var xy = function (x, y) {
+			  if (L.Util.isArray(x)) { // When doing xy([x, y]);
+				return yx(x[1], x[0]);
+			  }
+			  return yx(y, x); // When doing xy(x, y);
+			}
+			
+			// calculate Euclidean distance:
+			var getDistance = function (pointA, pointB) {
+			  var xA = pointA.lng
+			  var yA = pointA.lat
+			  var xB = pointB.lng
+			  var yB = pointB.lat
+
+			  var distance = Math.sqrt(Math.pow((xB - xA), 2) + Math.pow((yB - yA), 2))
+			  return distance
+			}
+			//console.log('getDistance(hobbiton, minasMorgul): ' + getDistance(hobbiton, minasMorgul) + 'km')
+
+			// переопределение
 			
 			L.CRS.pr = L.extend({}, L.CRS.Simple, {
 			  projection: L.Projection.LonLat,
-			  transformation: new L.Transformation(1/1000, 0, 1/1000, 0),
+			  transformation: new L.Transformation(factor, 0, factor, 0),
 			  scale: function(zoom) {
 				return Math.pow(2, zoom);
 			  },
@@ -33,33 +78,61 @@
 			  },
 			  infinite: true
 			});
+			
+			L.Control.Scale.prototype._updateMetric = function (maxMeters) {
+				var meters = this._getRoundNum(maxMeters)
+				mtokm = meters * 1000;
+
+				//this._updateScale(this._mScale, label, meters / maxMeters / 1000);
+				this._updateScale(this._mScale, mtokm < 1e3 ? mtokm + " m" : mtokm / 1e3 + " km", meters / maxMeters);
+			};
+			
+			L.Control.RoCScale = L.Control.Scale.extend({
+				_updateMetric: function (maxKilometers) {
+					var kilometers = this._getRoundNum(maxKilometers);
+					this._updateScale(this._mScale, kilometers + " km", kilometers / maxKilometers);
+				}
+			});
+			
+			L.Control.Measure.prototype._formatDistance = function(val) {
+				if (typeof this.options.formatDistance === 'function') {
+					return this.options.formatDistance(val);
+				}
+				return Math.round(val);
+			}
 		 
 			map = L.map('map', {                                                       
-				//crs: L.CRS.Simple,
 				crs: L.CRS.pr,
-				//center: [2400, 2050],
+				center: mapcenter,
 				zoomControl:false,
 				continuousWorld: false,
 				attributionControl: false, 
-				//autoPan : true,
+				autoPan : true,
 				noWrap: true,
 				maxZoom: 10,                                                     
-				minZoom: 6                                                      
-			});                                    
+				minZoom: 6
+			}).setView(mapcenter, 7);  
+	
+			map.getContainer().style.cursor = 'crosshair';
+			map.on('mousemove', function(e) {
+				//console.log(e.latlng.lat + ' ' + e.latlng.lng);
+			});
+			var bounds = [xy(0, 0), xy(width_km, height_km)];
+			var image = L.imageOverlay(image_url, bounds);
+			image.addTo(map);
+			map.fitBounds(bounds);
 			
 			var hash = new L.Hash(map);
-
-			var yx = L.latLng
-
-			var xy = function (x, y) {
-			  if (L.Util.isArray(x)) { // When doing xy([x, y]);
-				return yx(x[1], x[0])
-			  }
-			  return yx(y, x) // When doing xy(x, y);
-			}
-			var bounds = [xy(0, 0), xy(18432, 16384)]
-			var image = L.imageOverlay('./images/3.png', bounds)
-			image.addTo(map)
+			new L.Control.RoCScale({imperial: false, metric: true, position: 'bottomleft'}).addTo(map);
+			new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+			var measureControl = new L.Control.Measure({ position: 'topleft' }).addTo(map);
+			
+			map.setMaxBounds(bounds);
+			map.on('drag', function() {
+				map.panInsideBounds(bounds, { animate: false });
+			});
+			//var bounds = [xy(0, 0), xy(18432, 16384)]
+			
 
 			// add pois
 			//var hobbiton = xy(776, 1648.88)
@@ -69,46 +142,15 @@
 			//L.marker(minasMorgul).addTo(map).bindPopup('Minas Morgul')
 			// var travel = L.polyline([hobbiton, minasMorgul])
 			// travel.addTo(map)
-
-			map.fitBounds(bounds)
-
-			// calculate Euclidean distance:
-			var getDistance = function (pointA, pointB) {
-			  var xA = pointA.lng
-			  var yA = pointA.lat
-			  var xB = pointB.lng
-			  var yB = pointB.lat
-
-			  var distance = Math.sqrt(Math.pow((xB - xA), 2) + Math.pow((yB - yA), 2))
-			  return distance
-			}
-			//console.log('getDistance(hobbiton, minasMorgul): ' + getDistance(hobbiton, minasMorgul) + 'km')
-			
-			
-			L.Control.Scale.prototype._updateMetric = function (maxMeters) {
-				var meters = this._getRoundNum(maxMeters),
-					label = meters + ' km';
-					
-
-				this._updateScale(this._mScale, label, meters / maxMeters);
-			};
-			var myScaleControl = L.control.scale({imperial: false, metric: true, position: 'bottomleft'}).addTo(map);
-			
-			new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
-			
-			map.setMaxBounds(bounds);
-			map.on('drag', function() {
-				map.panInsideBounds(bounds, { animate: false });
-			});
 			
 			
 
-			// map.on('contextmenu', function (event) {
-			//   console.log('Coordinates: ' + event.latlng.toString())
-			//   L.marker(event.latlng).addTo(map).bindPopup('Coordinates: ' + event.latlng.toString())
-			// })
-
-  
+			//map.on('contextmenu', function (event) {
+			   //console.log('Coordinates: ' + event.latlng.toString())
+			   //L.marker(event.latlng).addTo(map).bindPopup('Coordinates: ' + event.latlng.toString())
+			//});
+			
+			//document.getElementById('map').style.cursor = 'crosshair';
 			
 		 </script>
     </body>
