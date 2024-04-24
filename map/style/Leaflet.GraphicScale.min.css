@@ -85,7 +85,7 @@
     border-width: 1px 0 1px 1px
 }
 
-.leaflet-control-graphicscale-inner .fill .fill2 {
+.leaflet-control-graphicscale-inner .fill {
     position: relative
 }
 
@@ -119,15 +119,6 @@
     bottom: 0
 }
 
-.fill2 {
-	background-color: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0
-}
-
 .leaflet-control-graphicscale-inner.filled .secondary-fill {
     background-color: #fff;
     position: absolute;
@@ -137,17 +128,17 @@
     bottom: 0
 }
 
-.leaflet-control-graphicscale-inner.filled-line .line .fill .fill2 {
+.leaflet-control-graphicscale-inner.filled-line .line .fill {
     height: 2px;
     top: 2px
 }
 
-.leaflet-control-graphicscale-inner.filled-line.double .fill .fill2 {
+.leaflet-control-graphicscale-inner.filled-line.double .fill {
     height: 2px;
     top: 2px
 }
 
-.leaflet-control-graphicscale-inner.filled-hollow .fill .fill2 {
+.leaflet-control-graphicscale-inner.filled-hollow .fill {
     position: absolute;
     top: 1px;
     left: 1px;

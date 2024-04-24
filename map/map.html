@@ -108,7 +108,7 @@
 				noWrap: true,
 				maxZoom: 0,                                                     
 				minZoom: -4
-			});  
+			}).setView(mapcenter, 0);  
 	
 			map.getContainer().style.cursor = 'crosshair';
 			map.on('mousemove', function(e) {
@@ -121,8 +121,14 @@
 			
 			var hash = new L.Hash(map);
 			
+			var scale_options = {
+				fill: 'fill',
+				kmPerPx: 4,
+				numUnits: 3,
+				scaleUnit: ' km'
+			};
 			
-			new L.Control.RoCGraphicScale({fill: 'fill', unitsPer1000px: 4, scaleUnit: ' km'}).addTo(map);
+			new L.Control.RoCGraphicScale(scale_options).addTo(map);
 			
 			//new L.Control.RoCScale({imperial: false, metric: true, position: 'bottomleft'}).addTo(map);
 			//new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);

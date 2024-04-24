@@ -1,47 +1,31 @@
 L.Control.RoCGraphicScale = L.Control.GraphicScale.extend({ 
-	options: {unitsPer1000px: 4, scaleUnit: null},
+	options: {
+		kmPerPx: 4, 
+		scaleUnit: null,
+		numUnits: 2
+	},
 	_update: function () { 
 		default_zoom = -2;
 		var mapScale = Math.pow(2, this._map.getZoom()) / Math.pow(2, default_zoom);
-		dist = this.options.unitsPer1000px / mapScale;
-		//console.log(mapScale);
-		this._updateScale(dist, this.options, mapScale);
+		dist = this.options.kmPerPx / mapScale;
+		this._updateScale(mapScale);
 	},
 	_getRoCMapScale: function(zoom) {
-		var scale;
-		var scale2;
+		var numUnits = this.options.numUnits;
+		var numSubunits = 2;
+		var unitDivision = 1;
+		var unitPx = 50;
+		var unitMeters = this.options.kmPerPx * unitPx * (1 / zoom);
+		var totalWidthPx = numUnits * unitPx;
 		
-		var numUnits;
-		var totalWidthPx;
-		var total;
-		
-		var numSubunits;
-		var subunitDivision;
-		var subunitFactor;
-		var subunitMeters;
-		var subunitPx;
-		
-		var unitDivision;
-		var unitFactor; 
-		var unitMeters;
-		var unitPx;
+		var unitFactor = 1;
+		var subunitFactor = 1;
+		var subunitDivision = 0.5;
+		var subunitPx = unitPx * subunitDivision;
+		var subunitMeters = unitMeters * subunitDivision;
+		var total = numSubunits * subunitMeters;
 
-
-		numUnits = 3;
-		numSubunits = 2;
-		unitDivision = 1;
-		unitPx = 50;
-		unitMeters = 4 * unitPx * (1 / zoom);
-		totalWidthPx = numUnits * unitPx;
-		
-		unitFactor = 1;
-		subunitFactor = 1;
-		subunitDivision = 0.5;
-		subunitPx = unitPx * subunitDivision;
-		subunitMeters = unitMeters * subunitDivision;
-		total = numSubunits * subunitMeters;
-		//console.log(unitMeters);
-		scale = {
+		var scale = {
 			numUnits: numUnits,
 			totalWidthPx: totalWidthPx,
 			score: 0,
@@ -65,8 +49,7 @@ L.Control.RoCGraphicScale = L.Control.GraphicScale.extend({
 		};
 		return scale;
 	},
-	_updateScale: function(maxMeters, options, mapScale) {
-		//var scale = this._getBestScale(maxMeters, options.minUnitWidth, options.maxUnitsWidth);
+	_updateScale: function(mapScale) {
 		this._render(this._getRoCMapScale(mapScale));
 	},
 	_getDisplayUnit: function(units) { 
@@ -128,7 +111,7 @@ L.Control.RoCGraphicScale = L.Control.GraphicScale.extend({
             if (fill)
                 l1.appendChild(L.DomUtil.create("div", "fill"));
             if (!fill)
-				l1.appendChild(L.DomUtil.create("div", "fill2"));
+				l1.appendChild(L.DomUtil.create("div", "secondary-fill"));
                 l2.appendChild(L.DomUtil.create("div", "fill"))
         }
         return item
