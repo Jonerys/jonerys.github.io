@@ -1,12 +1,3 @@
-const width_px = 4833;
-const height_px = 4101;
-const km_per_px = 4;
-const width_km = width_px * km_per_px;
-const height_km = height_px * km_per_px;
-const mapcenter = [width_px / 2, height_px / 2];
-
-const image_url = './images/RoC_map_4.0.webp';
-
 const MapEvents = () => {
 	useMapEvents({
 	  click(e) {
@@ -69,12 +60,10 @@ map.on('mousemove', function(e) {
 	//console.log(e.latlng.lat + ' ' + e.latlng.lng);
 });
 
-//var bounds = [xy(0, 0), xy(width_km, height_km)];
-var southWest = map.unproject([0, 4101], -2);
-var northEast = map.unproject([4833, 0], -2);
+var southWest = map.unproject([0, height_px], -2);
+var northEast = map.unproject([width_px, 0], -2);
 var bounds = L.latLngBounds(southWest, northEast);
-var image = L.imageOverlay(image_url, bounds);
-image.addTo(map);
+var image = L.imageOverlay(image_url, bounds).addTo(map);
 map.fitBounds(bounds);
 
 var hash = new L.Hash(map);
@@ -88,40 +77,75 @@ var scale_options = {
 
 new L.Control.RoCGraphicScale(scale_options).addTo(map);
 
-//new L.Control.RoCScale({imperial: false, metric: true, position: 'bottomleft'}).addTo(map);
 //new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+
 var measureControl = new L.Control.Measure({ position: 'topleft' }).addTo(map);
 
 map.setMaxBounds(bounds);
 map.on('drag', function() {
 	map.panInsideBounds(bounds, { animate: false });
 });
-//var bounds = [xy(0, 0), xy(18432, 16384)]
 
-
-var capIcon = L.Icon.extend({
-	options: {
-		iconUrl: 'markers/marker_capital.webp',
-		shadowUrl: '',
-		iconSize:     [20, 20],
-		iconAnchor:   [10, 20],
-		popupAnchor:  [0, -20]
-	}
+var capitalIconZ2 = new capIcon();
+var capitalIconZ1 = new capIcon({
+	iconSize:     [20 * 2, 20 * 2],
+	iconAnchor:   [10 * 2, 20 * 2]
+});
+var capitalIconZ0 = new capIcon({
+	iconSize:     [20 * 4, 20 * 4],
+	iconAnchor:   [10 * 4, 20 * 4]
 });
 
-var capitalIcon = new capIcon();
+function onEachFeature(feature, layer) {
+	var popup = L.popup({
+		offset: [-20, 0],
+		content: "<div><table><tr><td><img class=flag-popup src=" + 
+			feature.properties.flag.image + " /></td><td>" + feature.properties.name + "</td></tr></table></div>"
+	});
+	layer.bindPopup(popup);
+}
 
-var rumania = xy(2302, 2361);
-L.marker(rumania, {icon: capitalIcon}).addTo(map).bindPopup('Румания');
+var countryLayerZoom2 = L.geoJSON(map_icons.features, {
+	pointToLayer: function (feature) {
+		return L.marker(feature.geometry.coordinates, {icon: capitalIconZ2});
+    },
+	onEachFeature: onEachFeature
+});
 
-var thierdal = xy(1722, 2069);
-L.marker(thierdal, {icon: capitalIcon}).addTo(map).bindPopup('Тиердаль');
+var countryLayerZoom1 = L.geoJSON(map_icons.features, {
+	pointToLayer: function (feature) {
+		return L.marker(feature.geometry.coordinates, {icon: capitalIconZ1});
+    },
+	onEachFeature: onEachFeature
+});
 
-var modravia = xy(2138, 919);
-L.marker(modravia, {icon: capitalIcon}).addTo(map).bindPopup('Донатия');
+var countryLayerZoom0 = L.geoJSON(map_icons.features, {
+	pointToLayer: function (feature) {
+		return L.marker(feature.geometry.coordinates, {icon: capitalIconZ0});
+    },
+	onEachFeature: onEachFeature
+});
 
-var civilia = xy(2926, 2061);
-L.marker(civilia, {icon: capitalIcon}).addTo(map).bindPopup('Цивилия');
+var countries = L.layerGroup([countryLayerZoom2]).addTo(map);
 
-var kulinburg = xy(2285, 2200);
-L.marker(kulinburg, {icon: capitalIcon}).addTo(map).bindPopup('Кюлинбург');
+
+map.on('zoomend', function() {
+	/*scale = Math.pow(2, map.getZoom()) / Math.pow(2, -2);
+	switch (scale) {
+		case 2:
+			map.removeLayer(countryLayerZoom2);
+			map.removeLayer(countryLayerZoom0);
+			map.addLayer(countryLayerZoom1);
+			break;
+		case 4:
+			map.removeLayer(countryLayerZoom1);
+			map.removeLayer(countryLayerZoom2);
+			map.addLayer(countryLayerZoom0);
+			break;
+		default:
+			map.removeLayer(countryLayerZoom1);
+			map.removeLayer(countryLayerZoom0);
+			map.addLayer(countryLayerZoom2);
+			break;
+	}*/
+});

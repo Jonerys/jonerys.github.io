@@ -55,8 +55,8 @@ this._isRestarted=true},_createCircle:function(latlng){return new L.CircleMarker
 this._tooltip=L.marker(position,{icon:icon,clickable:false}).addTo(this._layerPaint)},_updateTooltipPosition:function(position){this._tooltip.setLatLng(position)},_updateTooltipDistance:function(total,difference){if(!this._tooltip._icon){return}
 var totalRound=this._formatDistance(total)
 var differenceRound=this._formatDistance(difference)
-var text='<div class="leaflet-measure-tooltip-total" style="color:'+this.options.textColor+'">'+totalRound
-if(differenceRound>0&&totalRound!==differenceRound){text+='<span class="leaflet-measure-tooltip-difference"> (+'+differenceRound + ')</span>'}
+var text='<div class="leaflet-measure-tooltip-total" style="color:'+this.options.textColor+'">'+totalRound * km_per_px
+if(differenceRound>0&&totalRound!==differenceRound){text+='<span class="leaflet-measure-tooltip-difference"> (+'+differenceRound * km_per_px + ')</span>'}
 text+=' км.</div>'
 this._tooltip._icon.innerHTML=text},_formatDistance:function(val){if(typeof this.options.formatDistance==='function'){return this.options.formatDistance(val);}
 if(val<1000){return Math.round(val)}else{return Math.round((val/1000)*100)/100}},_onKeyDown:function(e){switch(e.keyCode){case this.options.activeKeyCode:if(!this._measuring){this._toggleMeasure()}

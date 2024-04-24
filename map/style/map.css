@@ -17,3 +17,12 @@ html,body {
     transition: top 125ms;
     top: 2px
 }
+.leaflet-popup-content-wrapper {
+	/* width: 200px; */
+}
+.leaflet-popup-content-wrapper .leaflet-popup-content {
+	width: fit-content !important;
+}
+.flag-popup {
+	height: 25px;
+}
