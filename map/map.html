@@ -3,15 +3,17 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Прототип</title>
+		<title>Карта мира Возрождения Рыцарства</title>
 		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="style/leaflet.css" />
 		<link rel="stylesheet" type="text/css" href="style/map.css" />
 		<link rel="stylesheet" type="text/css" href="style/leaflet.measure.css" />
+		<link rel="stylesheet" type="text/css" href="style/Leaflet.GraphicScale.min.css" />
         <script src="js/leaflet.js" type="text/javascript"></script>
 		<script src="js/leaflet-hash.js" type="text/javascript"></script>
 		<script src="js/leaflet.measure.js" type="text/javascript"></script>
 		<script src="js/Leaflet.GraphicScale.min.js" type="text/javascript"></script>
+		<script src="js/Leaflet.GraphicScale.RoCGraphicScale.js" type="text/javascript"></script>
     </head>
     <body>
 		 <div id="map"></div>
@@ -96,16 +98,17 @@
 			}
 		 
 			map = L.map('map', {                                                       
-				crs: L.CRS.pr,
+				//crs: L.CRS.pr,
+				crs: L.CRS.Simple,
 				center: mapcenter,
 				zoomControl:false,
 				continuousWorld: false,
 				attributionControl: false, 
 				autoPan : true,
 				noWrap: true,
-				maxZoom: 10,                                                     
-				minZoom: 6
-			}).setView(mapcenter, 7);  
+				maxZoom: 0,                                                     
+				minZoom: -4
+			});  
 	
 			map.getContainer().style.cursor = 'crosshair';
 			map.on('mousemove', function(e) {
@@ -118,8 +121,11 @@
 			
 			var hash = new L.Hash(map);
 			
-			new L.Control.RoCScale({imperial: false, metric: true, position: 'bottomleft'}).addTo(map);
-			new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+			
+			new L.Control.RoCGraphicScale({fill: 'fill', unitsPer1000px: 4, scaleUnit: ' km'}).addTo(map);
+			
+			//new L.Control.RoCScale({imperial: false, metric: true, position: 'bottomleft'}).addTo(map);
+			//new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 			var measureControl = new L.Control.Measure({ position: 'topleft' }).addTo(map);
 			
 			map.setMaxBounds(bounds);
