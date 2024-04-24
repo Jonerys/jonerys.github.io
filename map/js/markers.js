@@ -2,7 +2,8 @@ var capIcon = L.Icon.extend({
 	options: {
 		iconUrl: 'markers/marker_capital.webp',
 		iconSize:     [20, 20],
-		iconAnchor:   [10, 20]
+		iconAnchor:   [10, 20],
+		popupAnchor:  [0, -11]
 	},
 	
 });
@@ -18,8 +19,7 @@ var map_icons = {
         "properties": {
             "name": "Румания",
 			"flag": {
-				"image": "images/country_flags/RSFPR_Flag.webp",
-				"iconh": 25
+				"image": "images/country_flags/RSFPR_Flag.webp"
 			}
         }
     },
@@ -32,8 +32,7 @@ var map_icons = {
         "properties": {
             "name": "Тиердаль",
 			"flag": {
-				"image": "images/country_flags/Thierdal_Flag.webp",
-				"iconh": 25
+				"image": "images/country_flags/Thierdal_Flag.webp"
 			}
         }
     },
@@ -47,7 +46,6 @@ var map_icons = {
             "name": "Модравия",
 			"flag": {
 				"image": "images/country_flags/Modravia_Flag.webp",
-				"iconh": 25
 			}
         }
     },
@@ -60,8 +58,7 @@ var map_icons = {
         "properties": {
             "name": "Цивилия",
 			"flag": {
-				"image": "images/country_flags/Civilia_Flag.webp",
-				"iconh": 25
+				"image": "images/country_flags/Civilia_Flag.webp"
 			}
         }
     },
@@ -75,7 +72,6 @@ var map_icons = {
             "name": "Кюлинбург",
 			"flag": {
 				"image": "images/country_flags/Kulinburg_Flag.webp",
-				"iconh": 25
 			}
         }
     }

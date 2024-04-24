@@ -1,3 +1,12 @@
+const width_px = 4833;
+const height_px = 4101;
+const km_per_px = 4;
+const width_km = width_px * km_per_px;
+const height_km = height_px * km_per_px;
+const mapcenter = [width_px / 2, height_px / 2];
+
+const image_url = './images/RoC_map_4.0.webp';
+
 const MapEvents = () => {
 	useMapEvents({
 	  click(e) {
@@ -30,13 +39,6 @@ var getDistance = function (pointA, pointB) {
   return distance
 }
 //console.log('getDistance(hobbiton, minasMorgul): ' + getDistance(hobbiton, minasMorgul) + 'km')
-
-L.Control.Measure.prototype._formatDistance = function(val) {
-	if (typeof this.options.formatDistance === 'function') {
-		return this.options.formatDistance(val);
-	}
-	return Math.round(val);
-}
 
 L.CRS.RoCCRS = L.extend({}, L.CRS.Simple, {
 	transformation: new L.Transformation(4, 0, 4, 0),
@@ -79,54 +81,41 @@ new L.Control.RoCGraphicScale(scale_options).addTo(map);
 
 //new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 
-var measureControl = new L.Control.Measure({ position: 'topleft' }).addTo(map);
+var measureControl = new L.Control.Measure({ 
+	position: 'topleft',
+	formatDistance: function (val) {
+      return Math.round(val * km_per_px);
+    }
+}).addTo(map);
 
 map.setMaxBounds(bounds);
 map.on('drag', function() {
 	map.panInsideBounds(bounds, { animate: false });
 });
 
-var capitalIconZ2 = new capIcon();
-var capitalIconZ1 = new capIcon({
-	iconSize:     [20 * 2, 20 * 2],
-	iconAnchor:   [10 * 2, 20 * 2]
-});
-var capitalIconZ0 = new capIcon({
-	iconSize:     [20 * 4, 20 * 4],
-	iconAnchor:   [10 * 4, 20 * 4]
-});
+var capitalIcon = new capIcon();
 
 function onEachFeature(feature, layer) {
-	var popup = L.popup({
-		offset: [-20, 0],
-		content: "<div><table><tr><td><img class=flag-popup src=" + 
-			feature.properties.flag.image + " /></td><td>" + feature.properties.name + "</td></tr></table></div>"
-	});
-	layer.bindPopup(popup);
+	var popup = "<div><table><tr><td><img class=flag-popup src=" + 
+			feature.properties.flag.image + " /></td><td><h3>" + feature.properties.name + "</h3></td></tr></table></div>";
+	var pop = L.responsivePopup({hasTip: true}).setContent(popup);
+	layer.bindPopup(pop);
 }
 
-var countryLayerZoom2 = L.geoJSON(map_icons.features, {
+var countryLayer = L.geoJSON(map_icons.features, {
 	pointToLayer: function (feature) {
-		return L.marker(feature.geometry.coordinates, {icon: capitalIconZ2});
+		return L.marker(feature.geometry.coordinates, {icon: capitalIcon});
     },
 	onEachFeature: onEachFeature
 });
 
-var countryLayerZoom1 = L.geoJSON(map_icons.features, {
-	pointToLayer: function (feature) {
-		return L.marker(feature.geometry.coordinates, {icon: capitalIconZ1});
-    },
-	onEachFeature: onEachFeature
-});
+var countries = L.layerGroup([countryLayer]).addTo(map);
 
-var countryLayerZoom0 = L.geoJSON(map_icons.features, {
-	pointToLayer: function (feature) {
-		return L.marker(feature.geometry.coordinates, {icon: capitalIconZ0});
-    },
-	onEachFeature: onEachFeature
+map.on('popupopen', (e) => {
+	var px = map.project(e.target._popup._latlng); // find the pixel location on the map where the popup anchor is
+	px.y -= e.target._popup._container.clientHeight / 2; // find the height of the popup container, divide by 2, subtract from the Y axis of marker location
+	map.panTo(map.unproject(px), { animate: true }); // pan to new center
 });
-
-var countries = L.layerGroup([countryLayerZoom2]).addTo(map);
 
 
 map.on('zoomend', function() {
