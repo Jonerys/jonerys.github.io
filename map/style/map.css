@@ -45,9 +45,6 @@ html,body {
 td h3 {
 	margin: 0px;
 }
-.flag{
-	width: fit-content;
-}
 .left-div, .right-div {
 	display: table-cell;
 	white-space: nowrap;

@@ -83,12 +83,16 @@ function onEachFeature(feature, layer) {
 		feature.properties.capital + "</div></td></tr>";
 	var head = "<tr><td><div class=left-div>Глава: </div><div class=right-div>" + 
 		feature.properties.head + "</div></td></tr>";
+	var government = "<tr><td><div class=left-div>Форма правления: </div><div class=right-div>" + 
+		feature.properties.government + "</div></td></tr>";
+	var dipstatus = "<tr><td><div class=left-div>Дип. статус: </div><div class=right-div>" + 
+		feature.properties.status + "</div></td></tr>";
+		
 	var popup = "<div class=content><table><tr><td><table><tr><td><img class=flag-popup src=images/country_flags/" + 
 			feature.properties.flag.image 
 			+ " /></td><td><div class=country-link><a href=https://doublebrick.ru/forums/viewtopic.php?t="   
 			+ feature.properties.url + "><h3>  " + feature.properties.name + "</h3></a></div></td></tr></table></td></tr>"
-	popup += capital;		
-	popup += head;
+	popup += capital + head + government + dipstatus;
 	popup += "</table></div>";
 	layer.bindPopup(popup, {
 		autoClose: false,
