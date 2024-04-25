@@ -25,13 +25,30 @@ html,body {
 .flag-popup {
 	height: 20px;
 	border: 1px solid black;
+	float:left;
 }
-.country_link a {
+.country-link a {
 	color: black;
+}
+.country-link {
+	margin-left: 3px;
+	white-space: nowrap;
 }
 .attribution-flag{
 	height: 8px;
+	width: auto;
+	margin: auto;
+}
+.popup-info{
+	white-space: nowrap;
 }
 td h3 {
 	margin: 0px;
+}
+.flag{
+	width: fit-content;
+}
+.left-div, .right-div {
+	display: table-cell;
+	white-space: nowrap;
 }

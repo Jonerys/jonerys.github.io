@@ -79,10 +79,17 @@ map.setMaxBounds(bounds);
 
 
 function onEachFeature(feature, layer) {
-	var popup = "<div class=content><table><tr><td><img class=flag-popup src=images/country_flags/" + 
+	var capital = "<tr><td><div class=left-div>Столица: </div><div class=right-div>" +
+		feature.properties.capital + "</div></td></tr>";
+	var head = "<tr><td><div class=left-div>Глава: </div><div class=right-div>" + 
+		feature.properties.head + "</div></td></tr>";
+	var popup = "<div class=content><table><tr><td><table><tr><td><img class=flag-popup src=images/country_flags/" + 
 			feature.properties.flag.image 
-			+ " /></td><td><div class=country_link><a href=https://doublebrick.ru/forums/viewtopic.php?t="   
-			+ feature.properties.url + "><h3>" + feature.properties.name + "</h3></a></div></td></tr></table></div>";
+			+ " /></td><td><div class=country-link><a href=https://doublebrick.ru/forums/viewtopic.php?t="   
+			+ feature.properties.url + "><h3>  " + feature.properties.name + "</h3></a></div></td></tr></table></td></tr>"
+	popup += capital;		
+	popup += head;
+	popup += "</table></div>";
 	layer.bindPopup(popup, {
 		autoClose: false,
 		maxWidth: "auto"
@@ -107,9 +114,9 @@ map.on("popupopen", function(e) {
 		e.popup._updateLayout();
 		e.popup._updatePosition();
 	});
-	var px = map.project(e.target._popup._latlng);
+	/*var px = map.project(e.target._popup._latlng);
 	px.y -= e.target._popup._container.clientHeight / 2;
-	map.panTo(map.unproject(px), { animate: true });
+	map.panTo(map.unproject(px), { animate: true });*/
 });
 
 map.on('drag', function() {

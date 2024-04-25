@@ -1,3 +1,20 @@
+const NO_TOPIC = '54209'; //ссылка на тему географии, если нет темы
+
+const NO_PLAYER = 'Банк ВР';
+const PLAYER_ZOG = 'Совет ВР';
+
+const GOV_ABS_MONARCHY = 'Абсолютная монархия';
+const GOV_DUAL_MONARCHY = 'Дуалистическая монархия';
+const GOV_PARL_MONARCHY = 'Парламентская монархия';
+const GOV_REPUBLIC = 'Республика';
+const GOV_SOCIALIST = 'Социалистическая республика';
+
+const STATUS_COLONY = 'Колония';
+const STATUS_PROTECTORATE = 'Протекторат';
+const STATUS_VASSAL = 'Вассал';
+const STATUS_MINOR = 'Суверенное государство';
+const STATUS_GREAT = 'Великая держава';
+
 var map_icons = {
 	'type': 'FeatureCollection',
     'features': [{
@@ -10,7 +27,11 @@ var map_icons = {
             'name': 'Румания',
 			'url': '59132',
 			'capital': 'Белушоара',
-			'capital_orig': 'Belușoara',
+			'head': 'Ангел Лучков',
+			'government': GOV_SOCIALIST,
+			'status': STATUS_MINOR,
+			'playerName': 'MAYAK57',
+			'playerUrl': '21169',
 			'flag': {
 				'image': 'Flag_of_RSFPR.webp'
 			}
@@ -26,7 +47,11 @@ var map_icons = {
             'name': 'Тиердаль',
 			'url': '19850',
 			'capital': 'Тиерданд',
-			'capital_orig': 'Thierdand',
+			'head': 'Карл I Тиерд',
+			'government': GOV_DUAL_MONARCHY,
+			'status': STATUS_GREAT,
+			'playerName': 'Имперский командор',
+			'playerUrl': '10808',
 			'flag': {
 				'image': 'Flag_of_Thierdal.webp'
 			}
@@ -42,7 +67,11 @@ var map_icons = {
             'name': 'Модравия',
 			'url': '57951',
 			'capital': 'Миломиеста',
-			'capital_orig': 'Миломиеста',
+			'head': 'Иосиф Железнов',
+			'government': GOV_SOCIALIST,
+			'status': STATUS_MINOR,
+			'playerName': 'Yugo',
+			'playerUrl': '29549',
 			'flag': {
 				'image': 'Flag_of_Modravia.webp'
 			}
@@ -57,8 +86,12 @@ var map_icons = {
         'properties': {
             'name': 'Цивилия',
 			'url': '36450',
-			'capital': '',
-			'capital_orig': '',
+			'capital': 'Цельмий',
+			'head': 'Рио ван Реццо',
+			'government': GOV_DUAL_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'Раван',
+			'playerUrl': '29549',
 			'flag': {
 				'image': 'Flag_of_Civilia.webp'
 			}
@@ -73,8 +106,12 @@ var map_icons = {
         'properties': {
             'name': 'Кюлинбург',
 			'url': '38291',
-			'capital': '',
-			'capital_orig': '',
+			'capital': 'Кюлинбург',
+			'head': 'Иоганн I ван Тейнес-Роттебург',
+			'government': GOV_REPUBLIC,
+			'status': STATUS_GREAT,
+			'playerName': 'Le capitaine Avare',
+			'playerUrl': '23533',
 			'flag': {
 				'image': 'Flag_of_Kulinburg.webp'
 			}
@@ -90,7 +127,11 @@ var map_icons = {
             'name': 'Атеншьёг',
 			'url': '61459',
 			'capital': 'Драц',
-			'capital_orig': '',
+			'head': 'Ференц VI',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'Enkeltea',
+			'playerUrl': '33778',
 			'flag': {
 				'image': 'Flag_of_Atensjoeg.webp'
 			}
@@ -106,8 +147,11 @@ var map_icons = {
             'name': 'Эстервальд',
 			'url': '58777',
 			'capital': 'Кристианборг',
-			'capital': 'Kristianborg',
-			'capital_orig': '',
+			'head': 'Моуд I Лангсваард',
+			'government': GOV_PARL_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'Ник Токарев',
+			'playerUrl': '28378',
 			'flag': {
 				'image': 'Flag_of_Esterwald.webp'
 			}
@@ -123,7 +167,11 @@ var map_icons = {
             'name': 'Круновия',
 			'url': '58777',
 			'capital': 'Червони Крунов',
-			'capital_orig': 'Ćierwony Krunow',
+			'head': 'Тадеуш Серпинский',
+			'government': GOV_SOCIALIST,
+			'status': STATUS_MINOR,
+			'playerName': 'Ник Токарев',
+			'playerUrl': '28378',
 			'flag': {
 				'image': 'Flag_of_Krunoviya.webp'
 			}
@@ -139,7 +187,11 @@ var map_icons = {
             'name': 'Вельденвальд',
 			'url': '58777',
 			'capital': 'Вальденборг',
-			'capital_orig': 'Waldenborg',
+			'head': 'Мартин-Эрик Эстен-Винтерфельд',
+			'government': GOV_REPUBLIC,
+			'status': STATUS_MINOR,
+			'playerName': 'Ник Токарев',
+			'playerUrl': '28378',
 			'flag': {
 				'image': 'Flag_of_Weldenwald.webp'
 			}
@@ -153,9 +205,13 @@ var map_icons = {
         },
         'properties': {
             'name': 'Бахчистан',
-			'url': '61459',
+			'url': '59173',
 			'capital': 'Бахчин-Абад',
-			'capital_orig': 'Baxçiynabad',
+			'head': 'Фарис Изетбег-Заде',
+			'government': 'Теократия',
+			'status': STATUS_MINOR,
+			'playerName': 'Ник Токарев',
+			'playerUrl': '28378',
 			'flag': {
 				'image': 'Flag_of_Bahchistan.webp'
 			}
@@ -169,9 +225,13 @@ var map_icons = {
         },
         'properties': {
             'name': 'Кьезанотто',
-			'url': '61459',
+			'url': NO_TOPIC,
 			'capital': 'Сторрьён',
-			'capital_orig': 'Stårrjön',
+			'head': 'Альфред Фиорелли',
+			'government': GOV_REPUBLIC,
+			'status': STATUS_MINOR,
+			'playerName': 'Ник Токарев',
+			'playerUrl': '28378',
 			'flag': {
 				'image': 'Flag_of_Chiesanotto.webp'
 			}
@@ -187,7 +247,11 @@ var map_icons = {
             'name': 'Штальфельд',
 			'url': '57698',
 			'capital': 'Заальберг',
-			'capital_orig': 'Zaalberg',
+			'head': 'Фердинанд I Эйзенбах',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'MAYAK57',
+			'playerUrl': '21169',
 			'flag': {
 				'image': 'Flag_of_Shtalfeld.webp'
 			}
@@ -201,11 +265,35 @@ var map_icons = {
         },
         'properties': {
             'name': 'Хомрул',
-			'url': '61459',
+			'url': NO_TOPIC,
 			'capital': 'Стридо-Ново',
-			'capital_orig': 'Strido-Novo',
+			'head': '???',
+			'government': GOV_REPUBLIC,
+			'status': STATUS_MINOR,
+			'playerName': 'Ник Токарев',
+			'playerUrl': '28378',
 			'flag': {
 				'image': 'Flag_of_Homrul.webp'
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2434, 2129]
+        },
+        'properties': {
+            'name': 'Газоцко-Меран',
+			'url': NO_TOPIC,
+			'capital': 'Велика Мостава',
+			'head': 'Штефан Дрекслер-Завала',
+			'government': GOV_REPUBLIC,
+			'status': STATUS_MINOR,
+			'playerName': 'Ник Токарев',
+			'playerUrl': '28378',
+			'flag': {
+				'image': 'Flag_of_Gazotsko-Meran.webp'
 			}
         }
     }

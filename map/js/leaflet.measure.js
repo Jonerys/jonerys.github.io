@@ -1,4 +1,11 @@
-L.Control.Measure=L.Control.extend({options:{position:'topleft',keyboard:true,activeKeyCode:'M'.charCodeAt(0),cancelKeyCode:27,lineColor:'red',lineWeight:2,lineDashArray:'6, 6',lineOpacity:1,formatDistance:null,textColor:'black'},initialize:function(options){L.Util.setOptions(this,options)},onAdd:function(map){var className='leaflet-control-zoom leaflet-bar leaflet-control'
+L.Control.Measure = L.Control.extend({
+	options: {
+		position:'topleft',
+		keyboard:true,
+		activeKeyCode:'M'.charCodeAt(0),
+		cancelKeyCode:27,
+		lineColor:'red',
+		lineWeight:2,lineDashArray:'6, 6',lineOpacity:1,formatDistance:null,textColor:'black'},initialize:function(options){L.Util.setOptions(this,options)},onAdd:function(map){var className='leaflet-control-zoom leaflet-bar leaflet-control'
 var container=L.DomUtil.create('div',className)
 this._createButton('&#8674;','Измерение расстояния','leaflet-control-measure leaflet-bar-part leaflet-bar-part-top-and-bottom',container,this._toggleMeasure,this)
 if(this.options.keyboard){L.DomEvent.on(document,'keydown',this._onKeyDown,this)}
@@ -7,10 +14,18 @@ link.innerHTML=html
 link.href='#'
 link.title=title
 L.DomEvent.on(link,'click',L.DomEvent.stopPropagation).on(link,'click',L.DomEvent.preventDefault).on(link,'click',fn,context).on(link,'dbclick',L.DomEvent.stopPropagation)
-return link},_toggleMeasure:function(){this._measuring=!this._measuring
-if(this._measuring){L.DomUtil.addClass(this._container,'leaflet-control-measure-on')
-this._startMeasuring()}else{L.DomUtil.removeClass(this._container,'leaflet-control-measure-on')
-this._stopMeasuring()}},_startMeasuring:function(){this._oldCursor=this._map._container.style.cursor
+return link},
+	_toggleMeasure: function(){
+		this._measuring=!this._measuring
+		if(this._measuring){
+			L.DomUtil.addClass(this._container,'leaflet-control-measure-on')
+			this._startMeasuring()
+		} else { 
+			L.DomUtil.removeClass(this._container,'leaflet-control-measure-on')
+			this._stopMeasuring()
+		}
+	},
+	_startMeasuring:function(){this._oldCursor=this._map._container.style.cursor
 this._map._container.style.cursor='crosshair'
 this._doubleClickZoom=this._map.doubleClickZoom.enabled()
 this._map.doubleClickZoom.disable()
