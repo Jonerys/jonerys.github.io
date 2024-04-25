@@ -25,7 +25,7 @@ var capitalIcon2 = new capIcon({
 	popupAnchor:[0, dPA * mX2]
 });
 
-var capitalIcon3 = new capIcon({
+var capitalIcon4 = new capIcon({
 	iconUrl: 'markers/marker_capital_80.webp',
 	iconSize:	[dISize * mX4, dISize * mX4],
 	iconAnchor:	[dISize * mX2, dISize * mX4],
@@ -42,7 +42,7 @@ function updateMarkers(e) {
 			break;
 		case 4:
 			markers.forEach(function (item) {
-				item.setIcon(capitalIcon3);
+				item.setIcon(capitalIcon4);
 			});
 			break;
 		default:
