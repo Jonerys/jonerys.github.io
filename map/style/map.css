@@ -19,11 +19,18 @@ html,body {
 }
 
 .leaflet-popup-content {
-	width: fit-content !important;
+	width: auto !important;
 	margin: 15px !important;
 }
+.content {
+	/*width: 150px;*/
+}
 .flag-popup {
-	height: 20px;
+	height: 25px;
+	/*max-width: 150px;*/
+}
+.country_link a {
+	color: black;
 }
 td h3 {
 	margin: 0px;

@@ -96,11 +96,19 @@ map.on('drag', function() {
 var capitalIcon = new capIcon();
 
 function onEachFeature(feature, layer) {
-	var popup = "<div><table><tr><td><img class=flag-popup src=" + 
-			feature.properties.flag.image + " /></td><td><h3>" + feature.properties.name + "</h3></td></tr></table></div>";
-	var pop = L.responsivePopup({hasTip: true}).setContent(popup);
-	layer.bindPopup(pop);
+	var popup = "<div class=content><table><tr><td><img class=flag-popup src=" + 
+			feature.properties.flag.image 
+			+ " /></td><td><div class=country_link><a href=https://doublebrick.ru/forums/viewtopic.php?t="   
+			+ feature.properties.url + "><h3>" + feature.properties.name + "</h3></a></div></td></tr></table></div>";
+	layer.bindPopup(popup, {maxWidth: "auto"});
 }
+
+map.on("popupopen", function(e) {
+     $(".leaflet-popup-content img:last").one("load", function() {
+		e.popup._updateLayout();
+		e.popup._updatePosition();
+	 });
+ });
 
 var countryLayer = L.geoJSON(map_icons.features, {
 	pointToLayer: function (feature) {

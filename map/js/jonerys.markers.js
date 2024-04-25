@@ -18,6 +18,7 @@ var map_icons = {
         },
         "properties": {
             "name": "Румания",
+			"url": "59132",
 			"flag": {
 				"image": "images/country_flags/RSFPR_Flag.webp"
 			}
@@ -31,6 +32,7 @@ var map_icons = {
         },
         "properties": {
             "name": "Тиердаль",
+			"url": "19850",
 			"flag": {
 				"image": "images/country_flags/Thierdal_Flag.webp"
 			}
@@ -44,6 +46,7 @@ var map_icons = {
         },
         "properties": {
             "name": "Модравия",
+			"url": "57951",
 			"flag": {
 				"image": "images/country_flags/Modravia_Flag.webp",
 			}
@@ -57,6 +60,7 @@ var map_icons = {
         },
         "properties": {
             "name": "Цивилия",
+			"url": "36450",
 			"flag": {
 				"image": "images/country_flags/Civilia_Flag.webp"
 			}
@@ -70,6 +74,7 @@ var map_icons = {
         },
         "properties": {
             "name": "Кюлинбург",
+			"url": "38291",
 			"flag": {
 				"image": "images/country_flags/Kulinburg_Flag.webp",
 			}
