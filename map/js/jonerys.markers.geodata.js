@@ -149,6 +149,36 @@ var map_icons = {
 				"image": "Flag_of_Bahchistan.webp"
 			}
         }
+    },
+	{
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [1290, 2376]
+        },
+        "properties": {
+            "name": "Кьезанотто",
+			"url": "61459",
+			"capital": 'Сторрьён',
+			"flag": {
+				"image": "Flag_of_Unknown.webp"
+			}
+        }
+    },
+	{
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [1788, 2436]
+        },
+        "properties": {
+            "name": "Штальфельд",
+			"url": "57698",
+			"capital": 'Заальберг',
+			"flag": {
+				"image": "Flag_of_Shtalfeld.webp"
+			}
+        }
     }
 	]
 };
