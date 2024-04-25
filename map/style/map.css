@@ -29,6 +29,9 @@ html,body {
 .country_link a {
 	color: black;
 }
+.attribution-flag{
+	height: 8px;
+}
 td h3 {
 	margin: 0px;
 }

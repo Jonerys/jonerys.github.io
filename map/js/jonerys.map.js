@@ -34,7 +34,7 @@ map = L.map('map', {
 	center: mapcenter,
 	zoomControl:false,
 	continuousWorld: false,
-	attributionControl: false, 
+	attributionControl: true, 
 	autoPan : true,
 	noWrap: true,
 	maxZoom: 0,                                                     
@@ -52,6 +52,8 @@ var northEast = map.unproject([widthPx, 0], -2);
 var bounds = L.latLngBounds(southWest, northEast);
 var image = L.imageOverlay(image_url, bounds).addTo(map);
 map.fitBounds(bounds);
+
+map.attributionControl.addAttribution('<img class=attribution-flag src="images/country_flags/Flag_of_Shtalfeld.webp"/> Königreich von Stahlfeld, 1903');
 
 var hash = new L.Hash(map);
 
