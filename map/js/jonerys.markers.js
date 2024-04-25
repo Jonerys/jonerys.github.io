@@ -19,12 +19,14 @@ var capIcon = L.Icon.extend({
 var capitalIcon = new capIcon();
 
 var capitalIcon2 = new capIcon({
+	iconUrl: 'markers/marker_capital_40.webp',
 	iconSize:	[dISize * mX2, dISize * mX2],
 	iconAnchor:	[dISize, dISize * mX2],
 	popupAnchor:[0, dPA * mX2]
 });
 
 var capitalIcon3 = new capIcon({
+	iconUrl: 'markers/marker_capital_80.webp',
 	iconSize:	[dISize * mX4, dISize * mX4],
 	iconAnchor:	[dISize * mX2, dISize * mX4],
 	popupAnchor:[0, dPA * mX4]

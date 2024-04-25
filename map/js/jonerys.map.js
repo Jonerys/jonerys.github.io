@@ -77,7 +77,7 @@ map.setMaxBounds(bounds);
 
 
 function onEachFeature(feature, layer) {
-	var popup = "<div class=content><table><tr><td><img class=flag-popup src=" + 
+	var popup = "<div class=content><table><tr><td><img class=flag-popup src=images/country_flags/" + 
 			feature.properties.flag.image 
 			+ " /></td><td><div class=country_link><a href=https://doublebrick.ru/forums/viewtopic.php?t="   
 			+ feature.properties.url + "><h3>" + feature.properties.name + "</h3></a></div></td></tr></table></div>";

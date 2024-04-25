@@ -4,13 +4,13 @@ var map_icons = {
         "type": "Feature",
         "geometry": {
             "type": "Point",
-            "coordinates": [2361, 2302]
+            "coordinates": [2362, 2303]
         },
         "properties": {
             "name": "Румания",
 			"url": "59132",
 			"flag": {
-				"image": "images/country_flags/RSFPR_Flag.webp"
+				"image": "RSFPR_Flag.webp"
 			}
         }
     },
@@ -18,13 +18,13 @@ var map_icons = {
         "type": "Feature",
         "geometry": {
             "type": "Point",
-            "coordinates": [2069, 1722]
+            "coordinates": [2070, 1723]
         },
         "properties": {
             "name": "Тиердаль",
 			"url": "19850",
 			"flag": {
-				"image": "images/country_flags/Thierdal_Flag.webp"
+				"image": "Thierdal_Flag.webp"
 			}
         }
     },
@@ -32,13 +32,13 @@ var map_icons = {
         "type": "Feature",
         "geometry": {
             "type": "Point",
-            "coordinates": [919, 2138]
+            "coordinates": [920, 2139]
         },
         "properties": {
             "name": "Модравия",
 			"url": "57951",
 			"flag": {
-				"image": "images/country_flags/Modravia_Flag.webp",
+				"image": "Modravia_Flag.webp",
 			}
         }
     },
@@ -46,13 +46,13 @@ var map_icons = {
         "type": "Feature",
         "geometry": {
             "type": "Point",
-            "coordinates": [2061, 2926]
+            "coordinates": [2062, 2927]
         },
         "properties": {
             "name": "Цивилия",
 			"url": "36450",
 			"flag": {
-				"image": "images/country_flags/Civilia_Flag.webp"
+				"image": "Civilia_Flag.webp"
 			}
         }
     },
@@ -60,13 +60,13 @@ var map_icons = {
         "type": "Feature",
         "geometry": {
             "type": "Point",
-            "coordinates": [2200, 2285]
+            "coordinates": [2201, 2286]
         },
         "properties": {
             "name": "Кюлинбург",
 			"url": "38291",
 			"flag": {
-				"image": "images/country_flags/Kulinburg_Flag.webp",
+				"image": "Kulinburg_Flag.webp",
 			}
         }
     }
