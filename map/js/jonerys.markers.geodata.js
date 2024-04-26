@@ -17,14 +17,16 @@ const STATUS_GREAT = 'Великая держава';
 
 var map_icons = {
 	'type': 'FeatureCollection',
-    'features': [{
+    'features': [
+	// MAYAK57
+	{
         'type': 'Feature',
         'geometry': {
             'type': 'Point',
             'coordinates': [2362, 2303]
         },
         'properties': {
-            'name': 'Румания',
+            'name': 'Руманская Советская Федеративная Народная Республика',
 			'url': '59132',
 			'capital': 'Белушоара',
 			'head': 'Ангел Лучков',
@@ -41,10 +43,31 @@ var map_icons = {
         'type': 'Feature',
         'geometry': {
             'type': 'Point',
+            'coordinates': [1788, 2436]
+        },
+        'properties': {
+            'name': 'Королевство Штальфельд',
+			'url': '57698',
+			'capital': 'Заальберг',
+			'head': 'Фердинанд I Эйзенбах',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'MAYAK57',
+			'playerUrl': '21169',
+			'flag': {
+				'image': 'Flag_of_Shtalfeld.webp'
+			}
+        }
+    },
+	// Имперский командор
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
             'coordinates': [2070, 1723]
         },
         'properties': {
-            'name': 'Тиердаль',
+            'name': 'Тиердальская империя',
 			'url': '19850',
 			'capital': 'Тиерданд',
 			'head': 'Карл I Тиерд',
@@ -57,6 +80,7 @@ var map_icons = {
 			}
         }
     },
+	// Yugo
 	{
         'type': 'Feature',
         'geometry': {
@@ -64,7 +88,7 @@ var map_icons = {
             'coordinates': [920, 2139]
         },
         'properties': {
-            'name': 'Модравия',
+            'name': 'Социалистическая Республика Модравия',
 			'url': '57951',
 			'capital': 'Миломиеста',
 			'head': 'Йозеф Железнов',
@@ -77,6 +101,7 @@ var map_icons = {
 			}
         }
     },
+	// Раван
 	{
         'type': 'Feature',
         'geometry': {
@@ -84,7 +109,7 @@ var map_icons = {
             'coordinates': [2062, 2927]
         },
         'properties': {
-            'name': 'Цивилия',
+            'name': 'Цивилийская империя',
 			'url': '36450',
 			'capital': 'Цельмий',
 			'head': 'Рио ван Реццо',
@@ -101,15 +126,36 @@ var map_icons = {
         'type': 'Feature',
         'geometry': {
             'type': 'Point',
+            'coordinates': [1929, 1911]
+        },
+        'properties': {
+            'name': 'Деселийское королевство',
+			'url': '59009',
+			'capital': 'Сан-Гелиано',
+			'head': 'Хосе VI де Нарриа',
+			'government': GOV_DUAL_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'Раван',
+			'playerUrl': '9999',
+			'flag': {
+				'image': 'Flag_of_Deselia.webp'
+			}
+        }
+    },
+	// Le capitaine Avare
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
             'coordinates': [2201, 2286]
         },
         'properties': {
-            'name': 'Кюлинбург',
+            'name': 'Кюлинбургская конфедерация',
 			'url': '38291',
 			'capital': 'Кюлинбург',
 			'head': 'Иоганн I ван Тейнес-Роттебург',
 			'government': GOV_REPUBLIC,
-			'status': STATUS_GREAT,
+			'status': STATUS_MINOR,
 			'playerName': 'Le capitaine Avare',
 			'playerUrl': '23533',
 			'flag': {
@@ -121,13 +167,34 @@ var map_icons = {
         'type': 'Feature',
         'geometry': {
             'type': 'Point',
+            'coordinates': [2142, 2334]
+        },
+        'properties': {
+            'name': 'Латонский Союз',
+			'url': '61236',
+			'capital': 'Терт',
+			'head': 'Андрус Веберс',
+			'government': 'Олигархия',
+			'status': STATUS_MINOR,
+			'playerName': 'Le capitaine Avare',
+			'playerUrl': '23533',
+			'flag': {
+				'image': 'Flag_of_Laton_Union.webp'
+			}
+        }
+    },
+	// Enkeltea
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
             'coordinates': [2202, 2405]
         },
         'properties': {
-            'name': 'Атеншьёг',
+            'name': 'Королевство Атеншьёг',
 			'url': '61459',
 			'capital': 'Драц',
-			'head': 'Ференц VI',
+			'head': 'Ференц VI Итертин',
 			'government': GOV_ABS_MONARCHY,
 			'status': STATUS_MINOR,
 			'playerName': 'Enkeltea',
@@ -137,6 +204,7 @@ var map_icons = {
 			}
         }
     },
+	// Ник Токарев
 	{
         'type': 'Feature',
         'geometry': {
@@ -144,7 +212,7 @@ var map_icons = {
             'coordinates': [1187, 2258]
         },
         'properties': {
-            'name': 'Эстервальд',
+            'name': 'Королевство Эстервальд',
 			'url': '58777',
 			'capital': 'Кристианборг',
 			'head': 'Моуд I Лангсваард',
@@ -164,7 +232,7 @@ var map_icons = {
             'coordinates': [1203, 2206]
         },
         'properties': {
-            'name': 'Круновия',
+            'name': 'Революционная Республика Круновия',
 			'url': '58777',
 			'capital': 'Червони Крунов',
 			'head': 'Тадеуш Серпинский',
@@ -186,7 +254,7 @@ var map_icons = {
             'coordinates': [1262, 2420]
         },
         'properties': {
-            'name': 'Вельденвальд',
+            'name': 'Республика Вельденвальд',
 			'url': '58777',
 			'capital': 'Вальденборг',
 			'head': 'Мартин-Эрик Эстен-Винтерфельд',
@@ -206,7 +274,7 @@ var map_icons = {
             'coordinates': [1288, 2469]
         },
         'properties': {
-            'name': 'Бахчистан',
+            'name': 'Имамат Бахчистан',
 			'url': '59173',
 			'capital': 'Бахчин-Абад',
 			'head': 'Фарис Изетбег-Заде',
@@ -226,7 +294,7 @@ var map_icons = {
             'coordinates': [1290, 2376]
         },
         'properties': {
-            'name': 'Кьезанотто',
+            'name': 'Республика Кьезанотто',
 			'url': NO_TOPIC,
 			'capital': 'Сторрьён',
 			'head': 'Альфред Фиорелли',
@@ -243,30 +311,10 @@ var map_icons = {
         'type': 'Feature',
         'geometry': {
             'type': 'Point',
-            'coordinates': [1788, 2436]
-        },
-        'properties': {
-            'name': 'Штальфельд',
-			'url': '57698',
-			'capital': 'Заальберг',
-			'head': 'Фердинанд I Эйзенбах',
-			'government': GOV_ABS_MONARCHY,
-			'status': STATUS_MINOR,
-			'playerName': 'MAYAK57',
-			'playerUrl': '21169',
-			'flag': {
-				'image': 'Flag_of_Shtalfeld.webp'
-			}
-        }
-    },
-	{
-        'type': 'Feature',
-        'geometry': {
-            'type': 'Point',
             'coordinates': [1126, 2112]
         },
         'properties': {
-            'name': 'Хомрул',
+            'name': 'Королевство Хомрул',
 			'url': NO_TOPIC,
 			'capital': 'Стридо-Ново',
 			'head': '???',
@@ -296,6 +344,87 @@ var map_icons = {
 			'playerUrl': '28378',
 			'flag': {
 				'image': 'Flag_of_Gazotsko-Meran.webp'
+			}
+        }
+    },
+	// KaiseR
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1388, 1676]
+        },
+        'properties': {
+            'name': 'Аспийская империя',
+			'url': '17818',
+			'capital': 'Кёнигштадт',
+			'head': 'Фридрих Вильгельм I Адлербург',
+			'government': GOV_DUAL_MONARCHY,
+			'status': STATUS_GREAT,
+			'playerName': 'KaiseR',
+			'playerUrl': '4131',
+			'flag': {
+				'image': 'Flag_of_Aspia.webp'
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1117, 1795]
+        },
+        'properties': {
+            'name': 'Кофердская империя',
+			'url': '61226',
+			'capital': 'Лангерра',
+			'head': 'Карл I Авершер-Адлербург',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_GREAT,
+			'playerName': 'KaiseR',
+			'playerUrl': '4131',
+			'flag': {
+				'image': 'Flag_of_Koferd.webp'
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1268, 1921]
+        },
+        'properties': {
+            'name': 'Королевство Монтания',
+			'url': '57958',
+			'capital': 'Краффштуфф',
+			'head': 'Алоиз II Губертонет',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'KaiseR',
+			'playerUrl': '4131',
+			'flag': {
+				'image': 'Flag_of_Unknown.webp'
+			}
+        }
+    },
+    {
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1268, 1921]
+        },
+        'properties': {
+            'name': 'Королевство Монтания',
+			'url': '57958',
+			'capital': 'Краффштуфф',
+			'head': 'Алоиз II Губертонет',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'KaiseR',
+			'playerUrl': '4131',
+			'flag': {
+				'image': 'Flag_of_Unknown.webp'
 			}
         }
     }

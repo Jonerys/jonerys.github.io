@@ -78,7 +78,7 @@ var measureControl = new L.Control.Measure({
 map.setMaxBounds(bounds);
 
 
-function onEachFeature(feature, layer) {
+function onEachFeature2(feature, layer) {
 	var capital = "<tr><td><div class=popup-label>"
 			+ "Столица:</div><div class=popup-data>" 
 			+ feature.properties.capital + "</div></td></tr>";
@@ -112,6 +112,47 @@ function onEachFeature(feature, layer) {
 			+ " /></td><td><div class=\"black-link country-name\">" + countryName + "</div></td></tr></table></td></tr>";
 			
 	popup += capital + head + government + dipStatus + player;
+	popup += "</table></div>";
+	layer.bindPopup(popup, {
+		autoClose: false,
+		maxWidth: "auto"
+	});
+}
+
+function onEachFeature(feature, layer) {
+	var capital = "<tr><td><div class=popup-label>"
+			+ "Столица:</div><div class=popup-data>" 
+			+ feature.properties.capital + "</div></td></tr>";
+	var head = "<tr><td><div class=popup-label>"
+			+ "Глава:</div><div class=popup-data>" 
+			+ feature.properties.head + "</div></td></tr>";
+	var government = "<tr><td><div class=popup-label>Форма правления:   </div><div class=popup-data>" + 
+		feature.properties.government + "</div></td></tr>";
+	var dipStatus = "<tr><td><div class=popup-label>"
+			+"Дип. статус:</div><div class=popup-data>" 
+			+ feature.properties.status + "</div></td></tr>";
+	if ((feature.properties.playerName != NO_PLAYER) && (feature.properties.playerName != PLAYER_ZOG)) {
+		var player = "<tr><td><div class=popup-label>" 
+				+ "Игрок:</div><div class=popup-data><div class=\"black-link player\">"
+				+ "<a href=https://doublebrick.ru/forums/memberlist.php?mode=viewprofile&u=" 
+				+ feature.properties.playerUrl + ">  " 
+				+ feature.properties.playerName + "</a></div></div></td></tr>";
+	} else {
+		var player = "<tr><td><div class=popup-label>"
+				+ "Игрок:</div><div class=\"popup-data player npc-player\">" 
+				+ feature.properties.playerName + "</div></td></tr>";
+	}
+	if (feature.properties.url != NO_TOPIC) {
+		var countryName = "<a href=https://doublebrick.ru/forums/viewtopic.php?t="   
+			+ feature.properties.url + "><h3>  " + feature.properties.name + "</h3></a>";
+	} else {
+		var countryName = "<h3>  " + feature.properties.name + "</h3>";
+	}
+	var popup = "<div class=content><table><tr><td><img class=flag-popup src=images/country_flags/" 
+			+ feature.properties.flag.image 
+			+ " /></td><td><div class=\"black-link country-name\">" + countryName + "</div></td></tr></table>";
+			
+	popup += "<table>" + capital + head + government + dipStatus + player;
 	popup += "</table></div>";
 	layer.bindPopup(popup, {
 		autoClose: false,

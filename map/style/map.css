@@ -19,7 +19,7 @@ html,body {
 }
 .leaflet-popup-content {
 	width: auto;
-	margin: 5px !important;
+	margin: 0px !important;
 }
 .leaflet-control-measure {
     background-position: 50%!important;
