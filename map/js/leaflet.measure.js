@@ -5,19 +5,43 @@ L.Control.Measure = L.Control.extend({
 		activeKeyCode:'M'.charCodeAt(0),
 		cancelKeyCode:27,
 		lineColor:'red',
-		lineWeight:2,lineDashArray:'6, 6',lineOpacity:1,formatDistance:null,textColor:'black'},initialize:function(options){L.Util.setOptions(this,options)},onAdd:function(map){var className='leaflet-control-zoom leaflet-bar leaflet-control'
-var container=L.DomUtil.create('div',className)
-this._createButton('&#8674;','Измерение расстояния','leaflet-control-measure leaflet-bar-part leaflet-bar-part-top-and-bottom',container,this._toggleMeasure,this)
-if(this.options.keyboard){L.DomEvent.on(document,'keydown',this._onKeyDown,this)}
-return container},onRemove:function(map){if(this.options.keyboard){L.DomEvent.off(document,'keydown',this._onKeyDown,this)}},_createButton:function(html,title,className,container,fn,context){var link=L.DomUtil.create('a',className,container)
-link.innerHTML=html
-link.href='#'
-link.title=title
-L.DomEvent.on(link,'click',L.DomEvent.stopPropagation).on(link,'click',L.DomEvent.preventDefault).on(link,'click',fn,context).on(link,'dbclick',L.DomEvent.stopPropagation)
-return link},
+		lineWeight:2,
+		lineDashArray:'6, 6',
+		lineOpacity:1,
+		formatDistance:null,
+		textColor:'black'
+	},
+	initialize: function(options) {
+		L.Util.setOptions(this,options)
+	},
+	onAdd: function(map) {
+		var className = 'leaflet-control-zoom leaflet-bar leaflet-control'
+		var container = L.DomUtil.create('div',className)
+		this._createButton('&#8674;','Измерение расстояния','leaflet-control-measure leaflet-bar-part leaflet-bar-part-top-and-bottom',container,this._toggleMeasure,this)
+		if (this.options.keyboard) {
+			L.DomEvent.on(document,'keydown',this._onKeyDown,this)
+		}
+		return container
+	},
+	onRemove: function(map) {
+		if(this.options.keyboard) {
+			L.DomEvent.off(document,'keydown',this._onKeyDown,this)
+		}
+	},
+	_createButton: function(html,title,className,container,fn,context) {
+		var link = L.DomUtil.create('a',className,container)
+		//link.innerHTML=html
+		link.href = '#'
+		link.title = title
+		L.DomEvent.on(link,'click',L.DomEvent.stopPropagation)
+			.on(link,'click',L.DomEvent.preventDefault)
+			.on(link,'click',fn,context)
+			.on(link,'dbclick',L.DomEvent.stopPropagation)
+		return link
+	},
 	_toggleMeasure: function(){
-		this._measuring=!this._measuring
-		if(this._measuring){
+		this._measuring = !this._measuring
+		if (this._measuring) {
 			L.DomUtil.addClass(this._container,'leaflet-control-measure-on')
 			this._startMeasuring()
 		} else { 
@@ -25,24 +49,46 @@ return link},
 			this._stopMeasuring()
 		}
 	},
-	_startMeasuring:function(){this._oldCursor=this._map._container.style.cursor
-this._map._container.style.cursor='crosshair'
-this._doubleClickZoom=this._map.doubleClickZoom.enabled()
-this._map.doubleClickZoom.disable()
-this._isRestarted=false
-L.DomEvent.on(this._map,'mousemove',this._mouseMove,this).on(this._map,'click',this._mouseClick,this).on(this._map,'dbclick',this._finishPath,this)
-if(!this._layerPaint){this._layerPaint=L.layerGroup().addTo(this._map)}
-if(!this._points){this._points=[]}},_stopMeasuring:function(){this._map._container.style.cursor=this._oldCursor
-L.DomEvent.off(this._map,'mousemove',this._mouseMove,this).off(this._map,'click',this._mouseClick,this).off(this._map,'dbclick',this._finishPath,this)
-if(this._doubleClickZoom){this._map.doubleClickZoom.enabled()}
-if(this._layerPaint){this._layerPaint.clearLayers()}
-this._restartPath()},_mouseMove:function(e){if(!e.latlng||!this._lastPoint){return}
+	_startMeasuring:function() {
+		this._oldCursor = this._map._container.style.cursor
+		this._map._container.style.cursor = 'crosshair'
+		this._doubleClickZoom = this._map.doubleClickZoom.enabled()
+		this._map.doubleClickZoom.disable()
+		this._isRestarted = false
+		L.DomEvent.on(this._map,'mousemove',this._mouseMove,this)
+			.on(this._map,'click',this._mouseClick,this)
+			.on(this._map,'dbclick',this._finishPath,this)
+		if (!this._layerPaint) {
+			this._layerPaint = L.layerGroup().addTo(this._map)
+		}
+		if (!this._points) {
+			this._points=[]
+		}
+	},
+	_stopMeasuring: function() {
+		this._map._container.style.cursor = this._oldCursor
+		L.DomEvent.off(this._map,'mousemove',this._mouseMove,this)
+			.off(this._map,'click',this._mouseClick,this)
+			.off(this._map,'dbclick',this._finishPath,this)
+		if (this._doubleClickZoom) {
+			this._map.doubleClickZoom.enabled()
+		}
+		if (this._layerPaint) {
+			this._layerPaint.clearLayers()
+		}
+		this._restartPath()
+	},
+	_mouseMove: function(e) {
+		if(!e.latlng||!this._lastPoint) {
+			return
+		}
 if(!this._layerPaintPathTemp){this._layerPaintPathTemp=L.polyline([this._lastPoint,e.latlng],{color:this.options.lineColor,weight:this.options.lineWeight,opacity:this.options.lineOpacity,clickable:false,dashArray:this.options.lineDashArray,interactive:false}).addTo(this._layerPaint)}else{this._layerPaintPathTemp.getLatLngs().splice(0,2,this._lastPoint,e.latlng)
 this._layerPaintPathTemp.redraw()}
 if(this._tooltip){if(!this._distance){this._distance=0}
 this._updateTooltipPosition(e.latlng)
 var distance=this._map.distance(e.latlng,this._lastPoint)
-this._updateTooltipDistance(this._distance+distance,distance)}},_mouseClick:function(e){if(!e.latlng){return}
+this._updateTooltipDistance(this._distance+distance,distance)}
+	},_mouseClick:function(e){if(!e.latlng){return}
 if(this._isRestarted){this._isRestarted=false
 return}
 if(this._lastPoint&&this._tooltip){if(!this._distance){this._distance=0}

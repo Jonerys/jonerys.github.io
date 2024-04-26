@@ -17,17 +17,31 @@ html,body {
     transition: top 125ms;
     top: 2px
 }
-
 .leaflet-popup-content {
 	width: auto;
-	margin: 15px !important;
+	margin: 5px !important;
+}
+.leaflet-control-measure {
+    background-position: 50%!important;
+    background-repeat: no-repeat;
+	background-image: url(svg/measure.svg) !important;
+	overflow: hidden;
+    background-size: 80%;
+}
+.leaflet-bar a, .leaflet-bar a:hover, .leaflet-touch .leaflet-bar a {
+	width: 35px;
+	height: 35px;
+}
+.leaflet-bar a:hover {
+    background-color: #f5c97b;
+    color: #000
 }
 .flag-popup {
 	height: 20px;
 	border: 1px solid black;
 	float:left;
 }
-.country-link a {
+.black-link a {
 	color: black;
 }
 .country-link {
@@ -39,13 +53,34 @@ html,body {
 	width: auto;
 	margin: auto;
 }
-.popup-info{
-	white-space: nowrap;
-}
-td h3 {
+h3, h4 {
 	margin: 0px;
 }
-.left-div, .right-div {
+.popup-label, .popup-data {
 	display: table-cell;
 	white-space: nowrap;
+}
+.popup-label {
+	font-size: 14px;
+	font-weight: bold;
+}
+.popup-data	{
+	font-size: 14px;
+}
+.popup-data, .country-name {
+	padding-left: 2px;
+}
+.npc-player {
+	color: #959595;
+}
+.player {
+	font-weight: bold;
+}
+.divisionLabel, .zeroLabel {
+	color: white;
+	font-weight: bold;
+	text-shadow: 1px 0 1px #000, 
+				0 1px 1px #000, 
+				-1px 0 1px #000, 
+				0 -1px 1px #000;
 }

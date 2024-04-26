@@ -91,7 +91,7 @@ var map_icons = {
 			'government': GOV_DUAL_MONARCHY,
 			'status': STATUS_MINOR,
 			'playerName': 'Раван',
-			'playerUrl': '29549',
+			'playerUrl': '9999',
 			'flag': {
 				'image': 'Flag_of_Civilia.webp'
 			}
@@ -170,8 +170,10 @@ var map_icons = {
 			'head': 'Тадеуш Серпинский',
 			'government': GOV_SOCIALIST,
 			'status': STATUS_MINOR,
-			'playerName': 'Ник Токарев',
+			'playerName': NO_PLAYER,
 			'playerUrl': '28378',
+			/*'playerName': 'Ник Токарев',
+			'playerUrl': '28378',*/
 			'flag': {
 				'image': 'Flag_of_Krunoviya.webp'
 			}
