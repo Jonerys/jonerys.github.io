@@ -12,7 +12,7 @@ const GOV_SOCIALIST = 'Соц. республика';
 const STATUS_COLONY = 'Колония';
 const STATUS_PROTECTORATE = 'Протекторат';
 const STATUS_VASSAL = 'Вассал';
-const STATUS_MINOR = 'Суверенное государство';
+const STATUS_MINOR = 'Независимое государство';
 const STATUS_GREAT = 'Великая держава';
 
 var map_icons = {
@@ -67,7 +67,7 @@ var map_icons = {
             'name': 'Модравия',
 			'url': '57951',
 			'capital': 'Миломиеста',
-			'head': 'Иосиф Железнов',
+			'head': 'Йозеф Железнов',
 			'government': GOV_SOCIALIST,
 			'status': STATUS_MINOR,
 			'playerName': 'Yugo',
