@@ -1,5 +1,6 @@
 const NO_TOPIC = '54209'; //ссылка на тему географии, если нет темы
-
+const NO_FLAG = 'Flag_of_Unknown.webp';
+const UNKNOWN = 'Неизвестно';
 const NO_PLAYER = 'Банк ВР';
 const PLAYER_ZOG = 'Совет ВР';
 
@@ -27,9 +28,10 @@ var map_icons = {
         },
         'properties': {
             'name': 'Руманская Советская Федеративная Народная Республика',
+			'tag': 'Rm',
 			'url': '59132',
 			'capital': 'Белушоара',
-			'head': 'Ангел Лучков',
+			'leader': 'Ангел Лучков',
 			'government': GOV_SOCIALIST,
 			'status': STATUS_MINOR,
 			'playerName': 'MAYAK57',
@@ -47,9 +49,10 @@ var map_icons = {
         },
         'properties': {
             'name': 'Королевство Штальфельд',
+			'tag': 'Sf',
 			'url': '57698',
 			'capital': 'Заальберг',
-			'head': 'Фердинанд I Эйзенбах',
+			'leader': 'Фердинанд I Эйзенбах',
 			'government': GOV_ABS_MONARCHY,
 			'status': STATUS_MINOR,
 			'playerName': 'MAYAK57',
@@ -68,15 +71,58 @@ var map_icons = {
         },
         'properties': {
             'name': 'Тиердальская империя',
+			'tag': 'Tr',
 			'url': '19850',
 			'capital': 'Тиерданд',
-			'head': 'Карл I Тиерд',
+			'leader': 'Карл I Тиерд',
 			'government': GOV_DUAL_MONARCHY,
 			'status': STATUS_GREAT,
 			'playerName': 'Имперский командор',
 			'playerUrl': '10808',
 			'flag': {
 				'image': 'Flag_of_Thierdal.webp'
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1221, 3308]
+        },
+        'properties': {
+            'name': 'Литавия',
+			'tag': 'Li',
+			'url': NO_TOPIC,
+			'capital': 'Старобряжен',
+			'leader': 'Витовт I Барда',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'Имперский командор',
+			'playerUrl': '10808',
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2094, 1518]
+        },
+        'properties': {
+            'name': 'Нигольфайд',
+			'tag': 'Nf',
+			'url': NO_TOPIC,
+			'capital': 'Терра',
+			'leader': 'Фанкториас III Дрененмак',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'Имперский командор',
+			'playerUrl': '10808',
+			'flag': {
+				'image': 'Flag_of_Nigolfajd.webp'
 			}
         }
     },
@@ -88,10 +134,11 @@ var map_icons = {
             'coordinates': [920, 2139]
         },
         'properties': {
-            'name': 'Социалистическая Республика Модравия',
+            'name': 'Республика Модравия',
+			'tag': 'Md',
 			'url': '57951',
 			'capital': 'Миломиеста',
-			'head': 'Йозеф Железнов',
+			'leader': 'Йозеф Железнов',
 			'government': GOV_SOCIALIST,
 			'status': STATUS_MINOR,
 			'playerName': 'Yugo',
@@ -110,9 +157,10 @@ var map_icons = {
         },
         'properties': {
             'name': 'Цивилийская империя',
+			'tag': 'Cv',
 			'url': '36450',
 			'capital': 'Цельмий',
-			'head': 'Рио ван Реццо',
+			'leader': 'Рио ван Реццо, Странник XIII',
 			'government': GOV_DUAL_MONARCHY,
 			'status': STATUS_MINOR,
 			'playerName': 'Раван',
@@ -130,9 +178,10 @@ var map_icons = {
         },
         'properties': {
             'name': 'Деселийское королевство',
+			'tag': 'Ds',
 			'url': '59009',
 			'capital': 'Сан-Гелиано',
-			'head': 'Хосе VI де Нарриа',
+			'leader': 'Хосе VI де Нарриа',
 			'government': GOV_DUAL_MONARCHY,
 			'status': STATUS_MINOR,
 			'playerName': 'Раван',
@@ -151,9 +200,10 @@ var map_icons = {
         },
         'properties': {
             'name': 'Кюлинбургская конфедерация',
+			'tag': 'Ku',
 			'url': '38291',
 			'capital': 'Кюлинбург',
-			'head': 'Иоганн I ван Тейнес-Роттебург',
+			'leader': 'Иоганн I ван Тейнес-Роттебург',
 			'government': GOV_REPUBLIC,
 			'status': STATUS_MINOR,
 			'playerName': 'Le capitaine Avare',
@@ -171,9 +221,10 @@ var map_icons = {
         },
         'properties': {
             'name': 'Латонский Союз',
+			'tag': 'La',
 			'url': '61236',
 			'capital': 'Терт',
-			'head': 'Андрус Веберс',
+			'leader': 'Андрус Веберс',
 			'government': 'Олигархия',
 			'status': STATUS_MINOR,
 			'playerName': 'Le capitaine Avare',
@@ -192,9 +243,10 @@ var map_icons = {
         },
         'properties': {
             'name': 'Королевство Атеншьёг',
+			'tag': 'At',
 			'url': '61459',
 			'capital': 'Драц',
-			'head': 'Ференц VI Итертин',
+			'leader': 'Ференц VI Итертин',
 			'government': GOV_ABS_MONARCHY,
 			'status': STATUS_MINOR,
 			'playerName': 'Enkeltea',
@@ -213,9 +265,10 @@ var map_icons = {
         },
         'properties': {
             'name': 'Королевство Эстервальд',
+			'tag': 'Es',
 			'url': '58777',
 			'capital': 'Кристианборг',
-			'head': 'Моуд I Лангсваард',
+			'leader': 'Моуд I Лангсваард',
 			'government': GOV_PARL_MONARCHY,
 			'status': STATUS_MINOR,
 			'playerName': 'Ник Токарев',
@@ -233,9 +286,10 @@ var map_icons = {
         },
         'properties': {
             'name': 'Революционная Республика Круновия',
+			'tag': 'Ku',
 			'url': '58777',
 			'capital': 'Червони Крунов',
-			'head': 'Тадеуш Серпинский',
+			'leader': 'Тадеуш Серпинский',
 			'government': GOV_SOCIALIST,
 			'status': STATUS_MINOR,
 			'playerName': NO_PLAYER,
@@ -255,9 +309,10 @@ var map_icons = {
         },
         'properties': {
             'name': 'Республика Вельденвальд',
+			'tag': 'We',
 			'url': '58777',
 			'capital': 'Вальденборг',
-			'head': 'Мартин-Эрик Эстен-Винтерфельд',
+			'leader': 'Мартин-Эрик Эстен-Винтерфельд',
 			'government': GOV_REPUBLIC,
 			'status': STATUS_MINOR,
 			'playerName': 'Ник Токарев',
@@ -275,9 +330,10 @@ var map_icons = {
         },
         'properties': {
             'name': 'Имамат Бахчистан',
+			'tag': 'Bx',
 			'url': '59173',
 			'capital': 'Бахчин-Абад',
-			'head': 'Фарис Изетбег-Заде',
+			'leader': 'Фарис Изетбег-Заде',
 			'government': 'Теократия',
 			'status': STATUS_MINOR,
 			'playerName': 'Ник Токарев',
@@ -295,9 +351,10 @@ var map_icons = {
         },
         'properties': {
             'name': 'Республика Кьезанотто',
+			'tag': 'Cs',
 			'url': NO_TOPIC,
 			'capital': 'Сторрьён',
-			'head': 'Альфред Фиорелли',
+			'leader': 'Альфред Фиорелли',
 			'government': GOV_REPUBLIC,
 			'status': STATUS_MINOR,
 			'playerName': 'Ник Токарев',
@@ -315,9 +372,10 @@ var map_icons = {
         },
         'properties': {
             'name': 'Королевство Хомрул',
+			'tag': 'Hm',
 			'url': NO_TOPIC,
 			'capital': 'Стридо-Ново',
-			'head': '???',
+			'leader': UNKNOWN,
 			'government': GOV_REPUBLIC,
 			'status': STATUS_MINOR,
 			'playerName': 'Ник Токарев',
@@ -335,9 +393,10 @@ var map_icons = {
         },
         'properties': {
             'name': 'Газоцко-Меран',
+			'tag': 'Gz',
 			'url': NO_TOPIC,
 			'capital': 'Велика Мостава',
-			'head': 'Штефан Дрекслер-Завала',
+			'leader': 'Штефан Дрекслер-Завала',
 			'government': GOV_REPUBLIC,
 			'status': STATUS_MINOR,
 			'playerName': 'Ник Токарев',
@@ -356,9 +415,10 @@ var map_icons = {
         },
         'properties': {
             'name': 'Аспийская империя',
+			'tag': 'As',
 			'url': '17818',
 			'capital': 'Кёнигштадт',
-			'head': 'Фридрих Вильгельм I Адлербург',
+			'leader': 'Фридрих Вильгельм I Адлербург',
 			'government': GOV_DUAL_MONARCHY,
 			'status': STATUS_GREAT,
 			'playerName': 'KaiseR',
@@ -378,7 +438,7 @@ var map_icons = {
             'name': 'Кофердская империя',
 			'url': '61226',
 			'capital': 'Лангерра',
-			'head': 'Карл I Авершер-Адлербург',
+			'leader': 'Карл I Авершер-Адлербург',
 			'government': GOV_ABS_MONARCHY,
 			'status': STATUS_GREAT,
 			'playerName': 'KaiseR',
@@ -398,7 +458,7 @@ var map_icons = {
             'name': 'Королевство Монтания',
 			'url': '57958',
 			'capital': 'Краффштуфф',
-			'head': 'Алоиз II Губертонет',
+			'leader': 'Алоиз II Губертонет',
 			'government': GOV_ABS_MONARCHY,
 			'status': STATUS_MINOR,
 			'playerName': 'KaiseR',
@@ -418,13 +478,33 @@ var map_icons = {
             'name': 'Королевство Моэния',
 			'url': '61287',
 			'capital': 'Кёнигсбург',
-			'head': 'Вильгельм I Адлербург-Нойердорф',
+			'leader': 'Вильгельм I Адлербург-Нойердорф',
 			'government': GOV_DUAL_MONARCHY,
 			'status': STATUS_MINOR,
 			'playerName': 'KaiseR',
 			'playerUrl': '4131',
 			'flag': {
 				'image': 'Flag_of_Moenia.webp'
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1495, 1832]
+        },
+        'properties': {
+            'name': 'Королевство Вестландия',
+			'url': '23904',
+			'capital': 'Концгельм',
+			'leader': 'Вильгельм I Диссель-Контабергин',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'KaiseR',
+			'playerUrl': '4131',
+			'flag': {
+				'image': 'Flag_of_Westland.webp'
 			}
         }
     },
@@ -438,7 +518,7 @@ var map_icons = {
             'name': 'Королевство Шварцланд',
 			'url': '24710',
 			'capital': 'Фридгард',
-			'head': 'Христофор I Лихтенцоллерн',
+			'leader': 'Христофор I Лихтенцоллерн',
 			'government': GOV_DUAL_MONARCHY,
 			'status': STATUS_MINOR,
 			'playerName': 'KaiseR',
@@ -455,16 +535,160 @@ var map_icons = {
             'coordinates': [1346, 1880]
         },
         'properties': {
-            'name': 'Великое княжество Эркелия (Эрекос)',
+            'name': 'Великое княжество Эркелия',
 			'url': '31108',
 			'capital': 'Шванбург',
-			'head': 'Георг I Лан',
+			'leader': 'Георг I Лан',
 			'government': GOV_ABS_MONARCHY,
 			'status': STATUS_MINOR,
 			'playerName': 'KaiseR',
 			'playerUrl': '4131',
 			'flag': {
 				'image': 'Flag_of_Erkelia.webp'
+			}
+        }
+    },
+	// Armageddon Of Rome
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1312, 1485]
+        },
+        'properties': {
+            'name': 'Королевство Мализон',
+			'url': '61291',
+			'capital': 'Мальзтирр',
+			'leader': 'Эжен Д\'Арно',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'Armageddon Of Rome',
+			'playerUrl': '33636',
+			'flag': {
+				'image': 'Flag_of_Malizon.webp'
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1620, 3754]
+        },
+        'properties': {
+            'name': 'Ромейская Империя',
+			'url': '61213',
+			'capital': 'Ромей',
+			'leader': 'Квинт Юлий Август',
+			'government': 'Конституционная монархия',
+			'status': 'Самый мощный империя',
+			'playerName': 'Armageddon Of Rome',
+			'playerUrl': '33636',
+			'flag': {
+				'image': 'Flag_of_Rome.webp'
+			}
+        }
+    },
+	// Грешник
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [559, 2774]
+        },
+        'properties': {
+            'name': 'Фермунг',
+			'url': '46883',
+			'capital': 'Фермунгард',
+			'leader': 'Марк Северий',
+			'government': GOV_REPUBLIC,
+			'status': STATUS_MINOR,
+			'playerName': 'Грешник',
+			'playerUrl': '22262',
+			'flag': {
+				'image': 'Flag_of_Fermung.webp'
+			}
+        }
+    },
+	// Black King
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1682, 1453]
+        },
+        'properties': {
+            'name': 'Локтарская Империя',
+			'url': '23879',
+			'capital': 'Вельдерон',
+			'leader': 'Рауль IV Дюбуа',
+			'government': GOV_DUAL_MONARCHY,
+			'status': STATUS_GREAT,
+			'playerName': 'Black King',
+			'playerUrl': '11231',
+			'flag': {
+				'image': 'Flag_of_Loktaria.webp'
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [492, 1539]
+        },
+        'properties': {
+            'name': 'Королевство Т\'харра',
+			'url': '39011',
+			'capital': 'Солдвейн',
+			'leader': 'Ричард I Браун',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_GREAT,
+			'playerName': 'Black King',
+			'playerUrl': '11231',
+			'flag': {
+				'image': 'Flag_of_Tharra.webp'
+			}
+        }
+    },
+	// Банк ВР
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1354, 1545]
+        },
+        'properties': {
+            'name': 'Королевство Каэрн',
+			'url': '16181',
+			'capital': 'Кан',
+			'leader': UNKNOWN,
+			'government': GOV_DUAL_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [539, 997]
+        },
+        'properties': {
+            'name': 'Королевство Драгон Айленд',
+			'url': '18993',
+			'capital': 'Линдисфарн',
+			'leader': 'Скагеррак',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
 			}
         }
     }

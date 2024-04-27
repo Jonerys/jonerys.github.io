@@ -123,9 +123,9 @@ function onEachFeature(feature, layer) {
 	var capital = "<tr><td><div class=popup-label>"
 			+ "Столица:</div><div class=popup-data>" 
 			+ feature.properties.capital + "</div></td></tr>";
-	var head = "<tr><td><div class=popup-label>"
+	var leader = "<tr><td><div class=popup-label>"
 			+ "Глава:</div><div class=popup-data>" 
-			+ feature.properties.head + "</div></td></tr>";
+			+ feature.properties.leader + "</div></td></tr>";
 	var government = "<tr><td><div class=popup-label>Форма правления:   </div><div class=popup-data>" + 
 		feature.properties.government + "</div></td></tr>";
 	var dipStatus = "<tr><td><div class=popup-label>"
@@ -152,7 +152,7 @@ function onEachFeature(feature, layer) {
 			+ feature.properties.flag.image 
 			+ " /></td><td class=country-name-td><div class=\"black-link country-name\">" + countryName + "</div></td></tr></table></div>";
 			
-	popup += "<div class=content-body><table>" + capital + head + government + dipStatus + player;
+	popup += "<div class=content-body><table>" + capital + leader + government + dipStatus + player;
 	popup += "</table></div>";
 	layer.bindPopup(popup, {
 		autoClose: false

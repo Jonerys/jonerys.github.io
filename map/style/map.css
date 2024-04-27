@@ -1,3 +1,4 @@
+/* Константы */
 :root {
   --popup-bg-color: #E8E8E8;
   --measure-difference-color: #C0C0C0; 
@@ -69,6 +70,7 @@ a.leaflet-popup-close-button {
 .leaflet-measure-tooltip-difference {
 	color: var(--measure-difference-color) !important;
 }
+
 /* Оригинальные стили */
 .flag-popup {
 	height: 20px;
