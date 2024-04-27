@@ -191,6 +191,48 @@ var map_icons = {
 			}
         }
     },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2037, 2698]
+        },
+        'properties': {
+            'name': 'Конгорская империя',
+			'tag': 'Kg',
+			'url': '58680',
+			'capital': 'Катралия',
+			'leader': 'Оливер I Аслетим',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'Раван',
+			'playerUrl': '9999',
+			'flag': {
+				'image': 'Flag_of_Kongor.webp'
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2271, 2609]
+        },
+        'properties': {
+            'name': 'Нирийское королевство',
+			'tag': 'Nr',
+			'url': '40975',
+			'capital': 'Ронас',
+			'leader': 'Эллем I Ньоринтелл',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_PROTECTORATE + ' (Цивилия)',
+			'playerName': 'Раван',
+			'playerUrl': '9999',
+			'flag': {
+				'image': 'Flag_of_Niria.webp'
+			}
+        }
+    },
 	// Le capitaine Avare
 	{
         'type': 'Feature',
@@ -225,7 +267,7 @@ var map_icons = {
 			'url': '61236',
 			'capital': 'Терт',
 			'leader': 'Андрус Веберс',
-			'government': 'Олигархия',
+			'government': GOV_REPUBLIC,
 			'status': STATUS_MINOR,
 			'playerName': 'Le capitaine Avare',
 			'playerUrl': '23533',
@@ -292,10 +334,8 @@ var map_icons = {
 			'leader': 'Тадеуш Серпинский',
 			'government': GOV_SOCIALIST,
 			'status': STATUS_MINOR,
-			'playerName': NO_PLAYER,
+			'playerName': 'Ник Токарев',
 			'playerUrl': '28378',
-			/*'playerName': 'Ник Токарев',
-			'playerUrl': '28378',*/
 			'flag': {
 				'image': 'Flag_of_Krunoviya.webp'
 			}
@@ -588,7 +628,7 @@ var map_icons = {
 			'url': '61213',
 			'capital': 'Ромей',
 			'leader': 'Квинт Юлий Август',
-			'government': 'Конституционная монархия',
+			'government': GOV_DUAL_MONARCHY,
 			'status': 'Самый мощный империя',
 			'playerName': 'Armageddon Of Rome',
 			'playerUrl': '33636',
@@ -654,7 +694,7 @@ var map_icons = {
 			'capital': 'Солдвейн',
 			'leader': 'Ричард I Браун',
 			'government': GOV_ABS_MONARCHY,
-			'status': STATUS_GREAT,
+			'status': STATUS_MINOR,
 			'playerName': 'Black King',
 			'playerUrl': '11231',
 			'flag': {
@@ -693,8 +733,8 @@ var map_icons = {
         'properties': {
             'name': 'Королевство Драгон Айленд',
 			'tag': 'Di',
-			'url': '18993',
-			'capital': 'Линдисфарн',
+			'url': NO_TOPIC,
+			'capital': 'Гримнир',
 			'leader': 'Скагеррак',
 			'government': GOV_ABS_MONARCHY,
 			'status': STATUS_MINOR,

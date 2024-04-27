@@ -26,11 +26,11 @@ html,body {
     top: 2px
 }
 .leaflet-popup-content {
-	width: auto;
+	width: fit-content !important;
 	margin: 0px !important;
 }
 .leaflet-control-measure {
-    background-position: 50%!important;
+    background-position: 50% !important;
     background-repeat: no-repeat;
 	background-image: url(svg/measure.svg) !important;
 	overflow: hidden;
@@ -49,12 +49,16 @@ html,body {
 	padding: 0px;
 	border-radius: 6px;
 }
-a.leaflet-popup-close-button {
+.leaflet-popup-close-button {
 	color: black !important;
 	font-weight: bold !important;
 	font-size: 18px !important;
 	background-color: white !important;
 	border-radius: 0 6px 0 6px !important;
+}
+.leaflet-popup-close-button span {
+	display: flex;
+	justify-content: center;
 }
 .leaflet-measure-tooltip-total {
 	color: white !important;
@@ -70,7 +74,6 @@ a.leaflet-popup-close-button {
 .leaflet-measure-tooltip-difference {
 	color: var(--measure-difference-color) !important;
 }
-
 /* Оригинальные стили */
 .flag-popup {
 	height: 20px;
@@ -120,6 +123,9 @@ a.leaflet-popup-close-button {
 				0 1px 1px #000, 
 				-1px 0 1px #000, 
 				0 -1px 1px #000;
+}
+.content {
+	width: fit-content;
 }
 .content-head {
 	width: 100vw;
