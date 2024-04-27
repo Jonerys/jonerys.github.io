@@ -1,3 +1,8 @@
+:root {
+  --popup-bg-color: #E8E8E8;
+  --measure-difference-color: #C0C0C0; 
+}
+
 html,body {
     margin: 0;
     padding: 0;
@@ -49,6 +54,20 @@ a.leaflet-popup-close-button {
 	font-size: 18px !important;
 	background-color: white !important;
 	border-radius: 0 6px 0 6px !important;
+}
+.leaflet-measure-tooltip-total {
+	color: white !important;
+	text-shadow: 2px 0 0 #000,
+				-2px 0 0 #000,
+				0 2px 0 #000,
+				0 -2px 0 #000,
+				1px 1px #000,
+				-1px -1px 0 #000,
+				1px -1px 0 #000,
+				-1px 1px 0 #000 !important;
+}
+.leaflet-measure-tooltip-difference {
+	color: var(--measure-difference-color) !important;
 }
 /* Оригинальные стили */
 .flag-popup {
@@ -102,7 +121,7 @@ a.leaflet-popup-close-button {
 }
 .content-head {
 	width: 100vw;
-	background-color: #F0F0F0;
+	background-color: var(--popup-bg-color);
 	display: table-cell;
 	vertical-align: middle;
 	min-height: 30px;
