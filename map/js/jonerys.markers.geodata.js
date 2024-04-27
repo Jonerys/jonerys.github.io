@@ -447,6 +447,26 @@ var map_icons = {
 				'image': 'Flag_of_Schwarzland.webp'
 			}
         }
+    },
+    {
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1346, 1880]
+        },
+        'properties': {
+            'name': 'Великое княжество Эркелия (Эрекос)',
+			'url': '31108',
+			'capital': 'Шванбург',
+			'head': 'Георг I Лан',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'KaiseR',
+			'playerUrl': '4131',
+			'flag': {
+				'image': 'Flag_of_Erkelia.webp'
+			}
+        }
     }
 	]
 };
