@@ -879,7 +879,7 @@ var map_icons = {
         },
         'properties': {
             'name': 'Королевство Болнисия',
-			'tag': 'Aa',
+			'tag': 'Bn',
 			'url': '19266',
 			'capital': 'Руджелл',
 			'leader': 'Валерий Максимин',
