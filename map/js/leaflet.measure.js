@@ -79,30 +79,56 @@ L.Control.Measure = L.Control.extend({
 		this._restartPath()
 	},
 	_mouseMove: function(e) {
-		if(!e.latlng||!this._lastPoint) {
+		if (!e.latlng||!this._lastPoint) {
 			return
 		}
-if(!this._layerPaintPathTemp){this._layerPaintPathTemp=L.polyline([this._lastPoint,e.latlng],{color:this.options.lineColor,weight:this.options.lineWeight,opacity:this.options.lineOpacity,clickable:false,dashArray:this.options.lineDashArray,interactive:false}).addTo(this._layerPaint)}else{this._layerPaintPathTemp.getLatLngs().splice(0,2,this._lastPoint,e.latlng)
-this._layerPaintPathTemp.redraw()}
-if(this._tooltip){if(!this._distance){this._distance=0}
-this._updateTooltipPosition(e.latlng)
-var distance=this._map.distance(e.latlng,this._lastPoint)
-this._updateTooltipDistance(this._distance+distance,distance)}
-	},_mouseClick:function(e){if(!e.latlng){return}
-if(this._isRestarted){this._isRestarted=false
-return}
-if(this._lastPoint&&this._tooltip){if(!this._distance){this._distance=0}
-this._updateTooltipPosition(e.latlng)
-var distance=this._map.distance(e.latlng,this._lastPoint)
-this._updateTooltipDistance(this._distance+distance,distance)
-this._distance+=distance}
-this._createTooltip(e.latlng)
-if(this._lastPoint&&!this._layerPaintPath){this._layerPaintPath=L.polyline([this._lastPoint],{color:this.options.lineColor,weight:this.options.lineWeight,opacity:this.options.lineOpacity,clickable:false,interactive:false}).addTo(this._layerPaint)}
-if(this._layerPaintPath){this._layerPaintPath.addLatLng(e.latlng)}
-if(this._lastPoint){if(this._lastCircle){this._lastCircle.off('click',this._finishPath,this)}
-this._lastCircle=this._createCircle(e.latlng).addTo(this._layerPaint)
-this._lastCircle.on('click',this._finishPath,this)}
-this._lastPoint=e.latlng},_finishPath:function(e){if(e){L.DomEvent.preventDefault(e)}
+		if (!this._layerPaintPathTemp) {
+			this._layerPaintPathTemp = L.polyline([this._lastPoint,e.latlng],{
+				color: this.options.lineColor, 
+				weight: this.options.lineWeight,
+				opacity:this.options.lineOpacity,
+				clickable:false,
+				dashArray:this.options.lineDashArray,
+				interactive:false
+			}).addTo(this._layerPaint)
+		} else {
+			this._layerPaintPathTemp.getLatLngs().splice(0,2,this._lastPoint, e.latlng)
+			this._layerPaintPathTemp.redraw()
+		}
+		if (this._tooltip) {
+			if(!this._distance) {
+				this._distance=0
+			}
+			this._updateTooltipPosition(e.latlng)
+			var distance=this._map.distance(e.latlng, this._lastPoint)
+			this._updateTooltipDistance(this._distance + distance, distance)
+		}
+	},
+	_mouseClick: function(e) {
+		if(!e.latlng)
+		{
+			return
+		}
+		if (this._isRestarted) {
+			this._isRestarted=false
+			return
+		}
+		if (this._lastPoint&&this._tooltip) {
+			if (!this._distance) {
+				this._distance=0
+			}
+			this._updateTooltipPosition(e.latlng)
+			var distance = this._map.distance(e.latlng, this._lastPoint)
+		this._updateTooltipDistance(this._distance+distance,distance)
+		this._distance+=distance}
+		this._createTooltip(e.latlng)
+		if (this._lastPoint&&!this._layerPaintPath){this._layerPaintPath=L.polyline([this._lastPoint],{color:this.options.lineColor,weight:this.options.lineWeight,opacity:this.options.lineOpacity,clickable:false,interactive:false}).addTo(this._layerPaint)}
+		if (this._layerPaintPath){this._layerPaintPath.addLatLng(e.latlng)}
+		if (this._lastPoint){if(this._lastCircle){this._lastCircle.off('click',this._finishPath,this)}
+		this._lastCircle=this._createCircle(e.latlng).addTo(this._layerPaint)
+		this._lastCircle.on('click',this._finishPath,this)}
+		this._lastPoint=e.latlng}
+	,_finishPath:function(e){if(e){L.DomEvent.preventDefault(e)}
 if(this._lastCircle){this._lastCircle.off('click',this._finishPath,this)}
 if(this._tooltip){this._layerPaint.removeLayer(this._tooltip)}
 if(this._layerPaint&&this._layerPaintPathTemp){this._layerPaint.removeLayer(this._layerPaintPathTemp)}

@@ -144,19 +144,18 @@ function onEachFeature(feature, layer) {
 	}
 	if (feature.properties.url != NO_TOPIC) {
 		var countryName = "<a href=https://doublebrick.ru/forums/viewtopic.php?t="   
-			+ feature.properties.url + "><h3>  " + feature.properties.name + "</h3></a>";
+			+ feature.properties.url + ">" + feature.properties.name + "</a>";
 	} else {
-		var countryName = "<h3>  " + feature.properties.name + "</h3>";
+		var countryName = feature.properties.name;
 	}
-	var popup = "<div class=content><table><tr><td><img class=flag-popup src=images/country_flags/" 
+	var popup = "<div class=content-head><table><tr><td class=flag-td><img class=flag-popup src=images/country_flags/" 
 			+ feature.properties.flag.image 
-			+ " /></td><td><div class=\"black-link country-name\">" + countryName + "</div></td></tr></table>";
+			+ " /></td><td class=country-name-td><div class=\"black-link country-name\">" + countryName + "</div></td></tr></table></div>";
 			
-	popup += "<table>" + capital + head + government + dipStatus + player;
+	popup += "<div class=content-body><table>" + capital + head + government + dipStatus + player;
 	popup += "</table></div>";
 	layer.bindPopup(popup, {
-		autoClose: false,
-		maxWidth: "auto"
+		autoClose: false
 	});
 }
 

@@ -404,7 +404,7 @@ var map_icons = {
 			'playerName': 'KaiseR',
 			'playerUrl': '4131',
 			'flag': {
-				'image': 'Flag_of_Unknown.webp'
+				'image': 'Flag_of_Montania.webp'
 			}
         }
     },
@@ -412,19 +412,39 @@ var map_icons = {
     	'type': 'Feature',
         'geometry': {
             'type': 'Point',
-            'coordinates': [1268, 1921]
+            'coordinates': [1259, 1644]
         },
         'properties': {
-            'name': 'Королевство Монтания',
-			'url': '57958',
-			'capital': 'Краффштуфф',
-			'head': 'Алоиз II Губертонет',
-			'government': GOV_ABS_MONARCHY,
+            'name': 'Королевство Моэния',
+			'url': '61287',
+			'capital': 'Кёнигсбург',
+			'head': 'Вильгельм I Адлербург-Нойердорф',
+			'government': GOV_DUAL_MONARCHY,
 			'status': STATUS_MINOR,
 			'playerName': 'KaiseR',
 			'playerUrl': '4131',
 			'flag': {
-				'image': 'Flag_of_Unknown.webp'
+				'image': 'Flag_of_Moenia.webp'
+			}
+        }
+    },
+    {
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1375, 1791]
+        },
+        'properties': {
+            'name': 'Королевство Шварцланд',
+			'url': '24710',
+			'capital': 'Фридгард',
+			'head': 'Христофор I Лихтенцоллерн',
+			'government': GOV_DUAL_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'KaiseR',
+			'playerUrl': '4131',
+			'flag': {
+				'image': 'Flag_of_Schwarzland.webp'
 			}
         }
     }
