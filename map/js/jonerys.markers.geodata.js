@@ -436,9 +436,10 @@ var map_icons = {
         },
         'properties': {
             'name': 'Кофердская империя',
+			'tag': 'Kf',
 			'url': '61226',
 			'capital': 'Лангерра',
-			'leader': 'Карл I Авершер-Адлербург',
+			'leader': 'Карл I и Мария I Авершер-Адлербург',
 			'government': GOV_ABS_MONARCHY,
 			'status': STATUS_GREAT,
 			'playerName': 'KaiseR',
@@ -456,6 +457,7 @@ var map_icons = {
         },
         'properties': {
             'name': 'Королевство Монтания',
+			'tag': 'Kt',
 			'url': '57958',
 			'capital': 'Краффштуфф',
 			'leader': 'Алоиз II Губертонет',
@@ -476,6 +478,7 @@ var map_icons = {
         },
         'properties': {
             'name': 'Королевство Моэния',
+			'tag': 'Mn',
 			'url': '61287',
 			'capital': 'Кёнигсбург',
 			'leader': 'Вильгельм I Адлербург-Нойердорф',
@@ -496,6 +499,7 @@ var map_icons = {
         },
         'properties': {
             'name': 'Королевство Вестландия',
+			'tag': 'Ws',
 			'url': '23904',
 			'capital': 'Концгельм',
 			'leader': 'Вильгельм I Диссель-Контабергин',
@@ -516,6 +520,7 @@ var map_icons = {
         },
         'properties': {
             'name': 'Королевство Шварцланд',
+			'tag': 'Sw',
 			'url': '24710',
 			'capital': 'Фридгард',
 			'leader': 'Христофор I Лихтенцоллерн',
@@ -536,6 +541,7 @@ var map_icons = {
         },
         'properties': {
             'name': 'Великое княжество Эркелия',
+			'tag': 'Ar',
 			'url': '31108',
 			'capital': 'Шванбург',
 			'leader': 'Георг I Лан',
@@ -557,6 +563,7 @@ var map_icons = {
         },
         'properties': {
             'name': 'Королевство Мализон',
+			'tag': 'Mz',
 			'url': '61291',
 			'capital': 'Мальзтирр',
 			'leader': 'Эжен Д\'Арно',
@@ -577,6 +584,7 @@ var map_icons = {
         },
         'properties': {
             'name': 'Ромейская Империя',
+			'tag': 'Ro',
 			'url': '61213',
 			'capital': 'Ромей',
 			'leader': 'Квинт Юлий Август',
@@ -598,6 +606,7 @@ var map_icons = {
         },
         'properties': {
             'name': 'Фермунг',
+			'tag': 'Fm',
 			'url': '46883',
 			'capital': 'Фермунгард',
 			'leader': 'Марк Северий',
@@ -619,6 +628,7 @@ var map_icons = {
         },
         'properties': {
             'name': 'Локтарская Империя',
+			'tag': 'Lk',
 			'url': '23879',
 			'capital': 'Вельдерон',
 			'leader': 'Рауль IV Дюбуа',
@@ -639,6 +649,7 @@ var map_icons = {
         },
         'properties': {
             'name': 'Королевство Т\'харра',
+			'tag': 'Th',
 			'url': '39011',
 			'capital': 'Солдвейн',
 			'leader': 'Ричард I Браун',
@@ -660,6 +671,7 @@ var map_icons = {
         },
         'properties': {
             'name': 'Королевство Каэрн',
+			'tag': 'Ka',
 			'url': '16181',
 			'capital': 'Кан',
 			'leader': UNKNOWN,
@@ -680,6 +692,7 @@ var map_icons = {
         },
         'properties': {
             'name': 'Королевство Драгон Айленд',
+			'tag': 'Di',
 			'url': '18993',
 			'capital': 'Линдисфарн',
 			'leader': 'Скагеррак',
