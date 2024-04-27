@@ -735,11 +735,158 @@ var map_icons = {
 			'tag': 'Di',
 			'url': NO_TOPIC,
 			'capital': 'Гримнир',
-			'leader': 'Скагеррак',
+			'leader': UNKNOWN,
 			'government': GOV_ABS_MONARCHY,
 			'status': STATUS_MINOR,
 			'playerName': NO_PLAYER,
 			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1149, 564]
+        },
+        'properties': {
+            'name': 'Королевство Аракад',
+			'tag': 'Aa',
+			'url': '21175',
+			'capital': 'Фариа',
+			'leader': 'Робар I',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1193, 959]
+        },
+        'properties': {
+            'name': 'Великое Эшенвальское Герцогство',
+			'tag': 'Ev',
+			'url': '35406',
+			'capital': 'Штайнбург',
+			'leader': 'Арагон IX Завоеватель',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1594, 1165]
+        },
+        'properties': {
+            'name': 'Королевство Вегирс',
+			'tag': 'Vg',
+			'url': '23836',
+			'capital': 'Правен',
+			'leader': 'Фридрих I',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [954, 2373]
+        },
+        'properties': {
+            'name': 'Великое Мариенское Королевство',
+			'tag': 'Mr',
+			'url': '57210',
+			'capital': 'Мариенбург',
+			'leader': 'Вебранд II',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'КрасныЙ Командир',
+			'playerUrl': '27571',
+			'flag': {
+				'image': 'Flag_of_Marien.webp'
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1448, 2373]
+        },
+        'properties': {
+            'name': 'Султанат Мамлакат',
+			'tag': 'Mm',
+			'url': '19649',
+			'capital': 'Акбар',
+			'leader': 'Азамат Асад',
+			'government': 'Султанат',
+			'status': STATUS_MINOR,
+			'playerName': 'Третий Закат',
+			'playerUrl': '10638',
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1310, 2674]
+        },
+        'properties': {
+            'name': 'Султанат Мариам',
+			'tag': 'Ma',
+			'url': '26949',
+			'capital': 'Бадрийя',
+			'leader': 'Асир Барира I',
+			'government': 'Султанат',
+			'status': STATUS_MINOR,
+			'playerName': 'Третий Закат',
+			'playerUrl': '10638',
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1173, 2631]
+        },
+        'properties': {
+            'name': 'Королевство Болнисия',
+			'tag': 'Aa',
+			'url': '19266',
+			'capital': 'Руджелл',
+			'leader': 'Валерий Максимин',
+			'government': GOV_DUAL_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'непризнанный...',
+			'playerUrl': '8897',
 			'flag': {
 				'image': NO_FLAG
 			}

@@ -53,7 +53,8 @@ var bounds = L.latLngBounds(southWest, northEast);
 var image = L.imageOverlay(image_url, bounds).addTo(map);
 map.fitBounds(bounds);
 
-map.attributionControl.addAttribution('<img class=attribution-flag src="images/country_flags/Flag_of_Shtalfeld.webp"/> Königreich von Stahlfeld, 1903');
+map.attributionControl.addAttribution(
+	'<img class=attribution-flag src="images/country_flags/Flag_of_Shtalfeld.webp"/> Königreich von Stahlfeld, 1903');
 
 var hash = new L.Hash(map);
 
@@ -77,6 +78,24 @@ var measureControl = new L.Control.Measure({
 
 map.setMaxBounds(bounds);
 
+map.on("popupopen", function(e) {
+	$(".leaflet-popup-content img:last").one("load", function() {
+		e.popup._updateLayout();
+		e.popup._updatePosition();
+	});
+	/*var px = map.project(e.target._popup._latlng);
+	px.y -= e.target._popup._container.clientHeight / 2;
+	map.panTo(map.unproject(px), { animate: true });*/
+});
+
+map.on('drag', function() {
+	map.panInsideBounds(bounds, { animate: false });
+});
+
+map.on('zoomend', function(e){
+	updateMarkers(e);
+});
+
 function onEachFeature(feature, layer) {
 	var capital = "<tr><td><div class=popup-label>"
 			+ "Столица:</div><div class=popup-data>" 
@@ -91,13 +110,13 @@ function onEachFeature(feature, layer) {
 			+ feature.properties.status + "</div></td></tr>";
 	if ((feature.properties.playerName != NO_PLAYER) && (feature.properties.playerName != PLAYER_ZOG)) {
 		var player = "<tr><td><div class=popup-label>" 
-				+ "Игрок:</div><div class=popup-data><div class=\"black-link player\">"
+				+ "Владелец:</div><div class=popup-data><div class=\"black-link player\">"
 				+ "<a href=https://doublebrick.ru/forums/memberlist.php?mode=viewprofile&u=" 
 				+ feature.properties.playerUrl + ">  " 
 				+ feature.properties.playerName + "</a></div></div></td></tr>";
 	} else {
 		var player = "<tr><td><div class=popup-label>"
-				+ "Игрок:</div><div class=\"popup-data player npc-player\">" 
+				+ "Владелец:</div><div class=\"popup-data player npc-player\">" 
 				+ feature.properties.playerName + "</div></td></tr>";
 	}
 	if (feature.properties.url != NO_TOPIC) {
@@ -130,21 +149,3 @@ var countryLayer = L.geoJSON(map_icons.features, {
 var layers = L.layerGroup([
 	countryLayer
 ]).addTo(map);
-
-map.on("popupopen", function(e) {
-	$(".leaflet-popup-content img:last").one("load", function() {
-		e.popup._updateLayout();
-		e.popup._updatePosition();
-	});
-	/*var px = map.project(e.target._popup._latlng);
-	px.y -= e.target._popup._container.clientHeight / 2;
-	map.panTo(map.unproject(px), { animate: true });*/
-});
-
-map.on('drag', function() {
-	map.panInsideBounds(bounds, { animate: false });
-});
-
-map.on('zoomend', function(e){
-	updateMarkers(e);
-});
