@@ -97,17 +97,27 @@ map.on('zoomend', function(e){
 });
 
 function onEachFeature(feature, layer) {
+	var leaderLabel = "Глава";
+	
 	var capital = "<tr><td><div class=popup-label>"
 			+ "Столица:</div><div class=popup-data>" 
 			+ feature.properties.capital + "</div></td></tr>";
+	
+	if (feature.properties.status.includes(STATUS_COLONY)) {
+		leaderLabel = "Губернатор";
+	}
+	
 	var leader = "<tr><td><div class=popup-label>"
-			+ "Глава:</div><div class=popup-data>" 
+			+ leaderLabel + ":</div><div class=popup-data>" 
 			+ feature.properties.leader + "</div></td></tr>";
+	
 	var government = "<tr><td><div class=popup-label>Форма правления:   </div><div class=popup-data>" + 
 		feature.properties.government + "</div></td></tr>";
+	
 	var dipStatus = "<tr><td><div class=popup-label>"
 			+"Дип. статус:</div><div class=popup-data>" 
 			+ feature.properties.status + "</div></td></tr>";
+			
 	if ((feature.properties.playerName != NO_PLAYER) && (feature.properties.playerName != PLAYER_ZOG)) {
 		var player = "<tr><td><div class=popup-label>" 
 				+ "Владелец:</div><div class=popup-data><div class=\"black-link player\">"
@@ -119,19 +129,27 @@ function onEachFeature(feature, layer) {
 				+ "Владелец:</div><div class=\"popup-data player npc-player\">" 
 				+ feature.properties.playerName + "</div></td></tr>";
 	}
+	
 	if (feature.properties.url != NO_TOPIC) {
 		var countryName = "<a href=https://doublebrick.ru/forums/viewtopic.php?t="   
 			+ feature.properties.url + ">" + feature.properties.name + "</a>";
 	} else {
 		var countryName = feature.properties.name;
 	}
+	
 	var popup = "<div class=content><div class=content-head><table><tr><td class=flag-td><img class=flag-popup alt=\"" 
 			+ feature.properties.tag + "\"  src=images/country_flags/" 
 			+ feature.properties.flag.image 
 			+ " /></td><td class=country-name-td><div class=\"black-link country-name\">" + countryName + "</div></td></tr></table></div>";
 			
-	popup += "<div class=content-body><table>" + capital + leader + government + dipStatus + player;
-	popup += "</table></div></div>";
+	popup += "<div class=content-body><table>" + capital + leader;
+	
+	if (!feature.properties.status.includes(STATUS_COLONY)) {
+		popup += government;
+	}
+	
+	popup += dipStatus + player + "</table></div></div>";
+	
 	layer.bindPopup(popup, {
 		autoClose: false
 	});

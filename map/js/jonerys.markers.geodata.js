@@ -62,6 +62,26 @@ var map_icons = {
 			}
         }
     },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1900, 4254]
+        },
+        'properties': {
+            'name': 'Гачиванг',
+			'tag': 'Hv',
+			'url': NO_TOPIC,
+			'capital': 'Гачиванг',
+			'leader': 'Уильям Керрингтон',
+			'status': STATUS_COLONY + ' (Тиердаль)',
+			'playerName': 'MAYAK57',
+			'playerUrl': '21169',
+			'flag': {
+				'image': 'Flag_of_Hachivang.webp'
+			}
+        }
+    },
 	// Имперский командор
 	{
         'type': 'Feature',
@@ -134,7 +154,7 @@ var map_icons = {
             'coordinates': [920, 2139]
         },
         'properties': {
-            'name': 'Республика Модравия',
+            'name': 'Модравcкая Республика',
 			'tag': 'Md',
 			'url': '57951',
 			'capital': 'Миломиеста',
@@ -794,7 +814,7 @@ var map_icons = {
             'coordinates': [1594, 1165]
         },
         'properties': {
-            'name': 'Королевство Вегирс',
+            'name': 'Королевство Верисс',
 			'tag': 'Vg',
 			'url': '23836',
 			'capital': 'Правен',
@@ -822,8 +842,8 @@ var map_icons = {
 			'leader': 'Вебранд II',
 			'government': GOV_ABS_MONARCHY,
 			'status': STATUS_MINOR,
-			'playerName': 'КрасныЙ Командир',
-			'playerUrl': '27571',
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
 			'flag': {
 				'image': 'Flag_of_Marien.webp'
 			}
@@ -843,8 +863,8 @@ var map_icons = {
 			'leader': 'Азамат Асад',
 			'government': 'Султанат',
 			'status': STATUS_MINOR,
-			'playerName': 'Третий Закат',
-			'playerUrl': '10638',
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
 			'flag': {
 				'image': NO_FLAG
 			}
@@ -864,8 +884,8 @@ var map_icons = {
 			'leader': 'Асир Барира I',
 			'government': 'Султанат',
 			'status': STATUS_MINOR,
-			'playerName': 'Третий Закат',
-			'playerUrl': '10638',
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
 			'flag': {
 				'image': NO_FLAG
 			}
@@ -885,8 +905,239 @@ var map_icons = {
 			'leader': 'Валерий Максимин',
 			'government': GOV_DUAL_MONARCHY,
 			'status': STATUS_MINOR,
-			'playerName': 'непризнанный...',
-			'playerUrl': '8897',
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1039, 3085]
+        },
+        'properties': {
+            'name': 'Тандрийская империя',
+			'tag': 'Td',
+			'url': '30688',
+			'capital': 'Контр-штадт',
+			'leader': 'Эцио I',
+			'government': GOV_DUAL_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [906, 3165]
+        },
+        'properties': {
+            'name': 'Королевство Гросское',
+			'tag': 'Gs',
+			'url': '32894',
+			'capital': 'Гросстаун',
+			'leader': 'Родриго IV Дейл «Разрушитель»',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [866, 3316]
+        },
+        'properties': {
+            'name': 'Вивольдовское королевство',
+			'tag': 'Vv',
+			'url': '57199',
+			'capital': 'Генхцберг',
+			'leader': 'Вивольд I',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': 'Flag_of_Vivold.webp'
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [935, 3393]
+        },
+        'properties': {
+            'name': 'Хортенское королевство',
+			'tag': 'Ht',
+			'url': '57201',
+			'capital': 'Виндшторм',
+			'leader': 'Хортен I',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [817, 3468]
+        },
+        'properties': {
+            'name': 'Штреймарское королевство',
+			'tag': 'Sm',
+			'url': '56958',
+			'capital': 'Лиденбург',
+			'leader': 'Фридрих II фон Виттельсбург',
+			'government': 'Феодальная монархия',
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1160, 3531]
+        },
+        'properties': {
+            'name': 'Герцогство Акрония',
+			'tag': 'Ak',
+			'url': '49527',
+			'capital': 'Лиденбург',
+			'leader': 'Фредерик Акронский (Хогландский)',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [556, 3826]
+        },
+        'properties': {
+            'name': 'Кратер',
+			'tag': 'Cr',
+			'url': '55983',
+			'capital': 'Отсутствует',
+			'leader': UNKNOWN,
+			'government': UNKNOWN,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1160, 3531]
+        },
+        'properties': {
+            'name': 'Герцогство Акрония',
+			'tag': 'Ak',
+			'url': '49527',
+			'capital': 'Лиденбург',
+			'leader': 'Фредерик Акронский (Хогландский)',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1170, 3673]
+        },
+        'properties': {
+            'name': 'Графство Хаугланд',
+			'tag': 'Ho',
+			'url': '40494',
+			'capital': 'Мукачеф',
+			'leader': 'Вольтмар фон Раук цу Хаугланд',
+			'government': GOV_DUAL_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1286, 3834]
+        },
+        'properties': {
+            'name': 'Всевеликое Царствие Вятическое',
+			'tag': 'Vt',
+			'url': '53229',
+			'capital': 'Которин',
+			'leader': 'Ярополк Кроншков',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1368, 3865]
+        },
+        'properties': {
+            'name': 'Племенной союз Мрацкгора',
+			'tag': 'Mg',
+			'url': '56108',
+			'capital': 'Нет',
+			'leader': UNKNOWN,
+			'government': 'Геронто-демархия',
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
 			'flag': {
 				'image': NO_FLAG
 			}
