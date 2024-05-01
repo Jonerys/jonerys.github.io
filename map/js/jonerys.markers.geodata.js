@@ -1142,6 +1142,27 @@ var map_icons = {
 				'image': NO_FLAG
 			}
         }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [573, 3267]
+        },
+        'properties': {
+            'name': 'Королевство Лайтхайзен',
+			'tag': 'Lz',
+			'url': '56409',
+			'capital': 'Тиалдари-дур',
+			'leader': 'Траллоск I',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
     }
 	]
 };
