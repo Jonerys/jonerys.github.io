@@ -88,6 +88,7 @@ L.Control.Measure = L.Control.extend({
 				color: this.options.lineColor, 
 				weight: this.options.lineWeight,
 				opacity:this.options.lineOpacity,
+				className: 'measure-line',
 				clickable:false,
 				dashArray:this.options.lineDashArray,
 				interactive:false
@@ -124,10 +125,11 @@ L.Control.Measure = L.Control.extend({
 			this._distance += distance
 		}
 		this._createTooltip(e.latlng)
-		if (this._lastPoint && !this._layerPaintPath) {
+		if (this._lastPoint && !this._layerPaintPath) {		
 			this._layerPaintPath = L.polyline([this._lastPoint],{
 												color: this.options.lineColor,
 												weight: this.options.lineWeight,
+												className: 'measure-line',
 												opacity: this.options.lineOpacity,
 												clickable: false,
 												interactive: false}

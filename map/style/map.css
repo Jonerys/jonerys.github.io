@@ -150,3 +150,10 @@ html,body {
 .country-name-td {
 	padding-right: 20px;
 }
+.measure-line {
+	filter: 
+		drop-shadow(-1px -1px 0px rgba(0,0,0,0.4)) 
+		drop-shadow(1px -1px 0px rgba(0,0,0,0.4)) 
+		drop-shadow(1px 1px 0px rgba(0,0,0,0.4))
+		drop-shadow(-1px 1px 0px rgba(0,0,0,0.4))
+}
