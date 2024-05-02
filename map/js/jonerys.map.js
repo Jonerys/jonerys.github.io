@@ -83,6 +83,17 @@ var measureControl = new L.Control.Measure({
     }
 }).addTo(map);
 
+
+var control = new L.Control.Button({
+	position: 'topleft',
+	className: 'leaflet-control-menu',
+	buttonFunction: function() {
+		$("#mapmenu").toggle("'slide', {direction: 'left' }, 1000");
+	},
+	title: 'Меню'
+})
+control.addTo(map);
+
 map.on("popupopen", function(e) {
 	$(".leaflet-popup-content img:last").one("load", function() {
 		e.popup._updateLayout();
@@ -171,4 +182,4 @@ var countryLayer = L.geoJSON(map_icons.features, {
 
 var layers = L.layerGroup([
 	countryLayer
-]).addTo(map);
+]).addTo(map, true);

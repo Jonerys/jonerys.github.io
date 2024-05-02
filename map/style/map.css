@@ -1,7 +1,8 @@
 /* Константы */
 :root {
   --popup-bg-color: #E8E8E8;
-  --measure-difference-color: #C0C0C0; 
+  /*--measure-difference-color: #C0C0C0;*/ 
+  --measure-difference-color: yellow;
 }
 
 html,body {
@@ -13,13 +14,16 @@ html,body {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    background-color: #f2f2f2
+    background-color: #f2f2f2;
 }
 #map {
     width: 100%;
     height: 100%;
+	background-color: white !important;
+	/*background-image: url(clouds.webp);
+	background-size: 100px;
+	background-repeat: repeat;*/
 }
-
 /* Кастомизация лифлетовских стилей */
 .leaflet-marker-icon:hover {
     transition: top 125ms;
@@ -29,12 +33,18 @@ html,body {
 	width: fit-content !important;
 	margin: 0px !important;
 }
-.leaflet-control-measure {
+.leaflet-control-measure, .leaflet-control-menu {
     background-position: 50% !important;
     background-repeat: no-repeat;
-	background-image: url(svg/measure.svg) !important;
 	overflow: hidden;
-    background-size: 80%;
+}
+.leaflet-control-measure {
+	background-size: 80%;
+	background-image: url(svg/measure.svg) !important;
+}
+.leaflet-control-menu {
+	background-size: 70%;
+	background-image: url(svg/menu.svg) !important;
 }
 .leaflet-bar a, .leaflet-bar a:hover, .leaflet-touch .leaflet-bar a {
 	width: 35px;
@@ -156,4 +166,21 @@ html,body {
 		drop-shadow(1px -1px 0px rgba(0,0,0,0.4)) 
 		drop-shadow(1px 1px 0px rgba(0,0,0,0.4))
 		drop-shadow(-1px 1px 0px rgba(0,0,0,0.4))
+}
+#mapmenu {
+	width: 300px;
+	background-color: white;
+	height: 100%;
+	z-index: 401;
+	position: fixed;
+	display: none;
+}
+.mapmenu-head{
+	width: 100%;
+	height: 70px;
+}
+.mapmenu-body {
+	width: 100%;
+	overflow: scroll;
+	height: 570px;
 }

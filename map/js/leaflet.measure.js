@@ -3,7 +3,7 @@ L.Control.Measure = L.Control.extend({
 		position:'topleft',
 		keyboard:true,
 		activeKeyCode:'M'.charCodeAt(0),
-		cancelKeyCode:27,
+		cancelKeyCode: 27,
 		lineColor:'red',
 		lineWeight:2,
 		lineDashArray:'6, 6',
@@ -195,7 +195,7 @@ L.Control.Measure = L.Control.extend({
 	},
 	_createTooltip:function(position){
 		var icon=L.divIcon({className:'leaflet-measure-tooltip',iconAnchor:[-5,-5]})
-		this._tooltip=L.marker(position,{icon:icon,clickable:false}).addTo(this._layerPaint)
+		this._tooltip=L.marker(position,{icon:icon,clickable:false,interactive:false}).addTo(this._layerPaint)
 	},
 	_updateTooltipPosition:function(position){this._tooltip.setLatLng(position)
 	},
@@ -205,7 +205,7 @@ L.Control.Measure = L.Control.extend({
 		var differenceRound=this._formatDistance(difference)
 		var text='<div class="leaflet-measure-tooltip-total" style="color:'+this.options.textColor+'">'+totalRound
 		if(differenceRound>0&&totalRound!==differenceRound){text+='<span class="leaflet-measure-tooltip-difference"> (+'+differenceRound + ')</span>'}
-		text+=' км.</div>'
+		text+=' км</div>'
 		this._tooltip._icon.innerHTML=text
 	},
 	_formatDistance: function(val) {
