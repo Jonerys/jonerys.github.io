@@ -16,6 +16,18 @@ var capIcon = L.Icon.extend({
 	
 });
 
+var startPathIcon = new L.Icon({
+	iconUrl: 'markers/marker_start.webp',
+	iconSize: [20,20],
+	iconAnchor: [0,20]
+});
+
+var finishPathIcon = new L.Icon({
+	iconUrl: 'markers/marker_finish.webp',
+	iconSize: [20,20],
+	iconAnchor: [0,20]
+});
+
 var capitalIcon = new capIcon();
 
 var capitalIcon2 = new capIcon({

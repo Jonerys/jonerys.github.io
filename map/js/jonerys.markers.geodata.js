@@ -9,6 +9,7 @@ const GOV_DUAL_MONARCHY = 'Дуал. монархия';
 const GOV_PARL_MONARCHY = 'Парл. монархия';
 const GOV_REPUBLIC = 'Республика';
 const GOV_SOCIALIST = 'Соц. республика';
+const GOV_THEOCRACY = 'Теократия';
 
 const STATUS_COLONY = 'Колония';
 const STATUS_PROTECTORATE = 'Протекторат';
@@ -318,6 +319,26 @@ var map_icons = {
 			}
         }
     },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2429, 1952]
+        },
+        'properties': {
+            'name': 'Геленийская конфедерация',
+			'tag': 'Ge',
+			'url': '61499',
+			'capital': 'Дилдойл',
+			'leader': 'Джеймс Ливингем',
+			'status': STATUS_COLONY + ' (Тиердаль)',
+			'playerName': 'Enkeltea',
+			'playerUrl': '33778',
+			'flag': {
+				'image': 'Flag_of_Gelenia.webp'
+			}
+        }
+    },
 	// Ник Токарев
 	{
         'type': 'Feature',
@@ -394,7 +415,7 @@ var map_icons = {
 			'url': '59173',
 			'capital': 'Бахчин-Абад',
 			'leader': 'Фарис Изетбег-Заде',
-			'government': 'Теократия',
+			'government': GOV_THEOCRACY,
 			'status': STATUS_MINOR,
 			'playerName': 'Ник Токарев',
 			'playerUrl': '28378',
@@ -719,6 +740,28 @@ var map_icons = {
 			'playerUrl': '11231',
 			'flag': {
 				'image': 'Flag_of_Tharra.webp'
+			}
+        }
+    },
+	// Тинувель Секунда
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [3069, 1355]
+        },
+        'properties': {
+            'name': 'Орден Слепой Секиры',
+			'tag': 'So',
+			'url': '60354',
+			'capital': 'Гексакрон',
+			'leader': 'Ксенобира Кобольдская',
+			'government': GOV_THEOCRACY,
+			'status': STATUS_MINOR,
+			'playerName': 'Тинувель Секунда',
+			'playerUrl': '30987',
+			'flag': {
+				'image': 'Flag_of_Sekira.webp'
 			}
         }
     },
@@ -1163,6 +1206,48 @@ var map_icons = {
 				'image': NO_FLAG
 			}
         }
-    }
+    },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [3044, 1149]
+        },
+        'properties': {
+            'name': 'Троллгар',
+			'tag': 'Tg',
+			'url': '61208',
+			'capital': 'Гул-Гар',
+			'leader': 'Рагалак',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': 'Flag_of_Trollgar.webp'
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2493, 617]
+        },
+        'properties': {
+            'name': 'Племенной союз Поухатан',
+			'tag': 'Po',
+			'url': '50728',
+			'capital': 'Тлачемилько',
+			'leader': 'Ашайякатль',
+			'government': GOV_THEOCRACY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
 	]
 };

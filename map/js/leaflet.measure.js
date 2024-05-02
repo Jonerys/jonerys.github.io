@@ -64,6 +64,7 @@ L.Control.Measure = L.Control.extend({
 		if (!this._points) {
 			this._points=[]
 		}
+		this._markers = []
 	},
 	_stopMeasuring: function() {
 		this._map._container.style.cursor = this._oldCursor
@@ -113,44 +114,118 @@ L.Control.Measure = L.Control.extend({
 			this._isRestarted=false
 			return
 		}
-		if (this._lastPoint&&this._tooltip) {
+		if (this._lastPoint && this._tooltip) {
 			if (!this._distance) {
 				this._distance=0
 			}
 			this._updateTooltipPosition(e.latlng)
 			var distance = this._map.distance(e.latlng, this._lastPoint)
-		this._updateTooltipDistance(this._distance+distance,distance)
-		this._distance+=distance}
+			this._updateTooltipDistance(this._distance+distance,distance)
+			this._distance += distance
+		}
 		this._createTooltip(e.latlng)
-		if (this._lastPoint&&!this._layerPaintPath){this._layerPaintPath=L.polyline([this._lastPoint],{color:this.options.lineColor,weight:this.options.lineWeight,opacity:this.options.lineOpacity,clickable:false,interactive:false}).addTo(this._layerPaint)}
-		if (this._layerPaintPath){this._layerPaintPath.addLatLng(e.latlng)}
-		if (this._lastPoint){if(this._lastCircle){this._lastCircle.off('click',this._finishPath,this)}
-		this._lastCircle=this._createCircle(e.latlng).addTo(this._layerPaint)
-		this._lastCircle.on('click',this._finishPath,this)}
-		this._lastPoint=e.latlng}
-	,_finishPath:function(e){if(e){L.DomEvent.preventDefault(e)}
-if(this._lastCircle){this._lastCircle.off('click',this._finishPath,this)}
-if(this._tooltip){this._layerPaint.removeLayer(this._tooltip)}
-if(this._layerPaint&&this._layerPaintPathTemp){this._layerPaint.removeLayer(this._layerPaintPathTemp)}
-this._restartPath()},_restartPath:function(){this._distance=0
-this._lastCircle=undefined
-this._lastPoint=undefined
-this._tooltip=undefined
-this._layerPaintPath=undefined
-this._layerPaintPathTemp=undefined
-this._isRestarted=true},_createCircle:function(latlng){return new L.CircleMarker(latlng,{color:'black',opacity:1,weight:1,fillColor:'white',fill:true,fillOpacity:1,radius:4,clickable:Boolean(this._lastCircle)})},_createTooltip:function(position){var icon=L.divIcon({className:'leaflet-measure-tooltip',iconAnchor:[-5,-5]})
-this._tooltip=L.marker(position,{icon:icon,clickable:false}).addTo(this._layerPaint)},_updateTooltipPosition:function(position){this._tooltip.setLatLng(position)},_updateTooltipDistance:function(total,difference){if(!this._tooltip._icon){return}
-var totalRound=this._formatDistance(total)
-var differenceRound=this._formatDistance(difference)
-var text='<div class="leaflet-measure-tooltip-total" style="color:'+this.options.textColor+'">'+totalRound
-if(differenceRound>0&&totalRound!==differenceRound){text+='<span class="leaflet-measure-tooltip-difference"> (+'+differenceRound + ')</span>'}
-text+=' км.</div>'
-this._tooltip._icon.innerHTML=text},_formatDistance:function(val){if(typeof this.options.formatDistance==='function'){return this.options.formatDistance(val);}
-if(val<1000){return Math.round(val)}else{return Math.round((val/1000)*100)/100}},_onKeyDown:function(e){switch(e.keyCode){case this.options.activeKeyCode:if(!this._measuring){this._toggleMeasure()}
-break
-case this.options.cancelKeyCode:if(this._measuring){if(!this._lastPoint){this._toggleMeasure()}else{this._finishPath()
-this._isRestarted=false}}
-break}}})
+		if (this._lastPoint && !this._layerPaintPath) {
+			this._layerPaintPath = L.polyline([this._lastPoint],{
+												color: this.options.lineColor,
+												weight: this.options.lineWeight,
+												opacity: this.options.lineOpacity,
+												clickable: false,
+												interactive: false}
+												).addTo(this._layerPaint)}
+		if (this._layerPaintPath){
+			this._layerPaintPath.addLatLng(e.latlng)
+		}
+		if (this._lastPoint) {
+			if (this._lastMarker) {
+				this._lastMarker.off('click',this._finishPath,this)
+			}
+			this._lastMarker = this._createCircle(e.latlng, 'white').addTo(this._layerPaint)
+		} else {
+			this._lastMarker = L.marker(e.latlng, {
+				icon: startPathIcon,
+				clickable:Boolean(this._lastMarker)
+				}).addTo(this._layerPaint)
+		}
+		this._lastMarker.on('click',this._finishPath,this)
+		this._lastPoint=e.latlng
+		this._markers.push(this._lastMarker)
+	},
+	_finishPath: function(e) {
+		if(e){
+			L.DomEvent.preventDefault(e)
+		}
+		if (this._lastMarker){
+			this._lastMarker.off('click',this._finishPath,this)
+		}
+		if (this._tooltip){ 
+			this._layerPaint.removeLayer(this._tooltip)
+		}
+		if (this._layerPaint&&this._layerPaintPathTemp){
+			this._layerPaint.removeLayer(this._layerPaintPathTemp)
+		}
+		this._layerPaint.removeLayer(this._lastMarker);
+		if (this._markers.length > 1) {
+			L.marker(this._lastPoint, {
+				icon: finishPathIcon,
+				clickable:false,
+				interactive:false
+				}).addTo(this._layerPaint)
+		}
+		this._restartPath()
+	},
+	_restartPath: function() {
+		this._distance=0
+		this._lastMarker=undefined
+		this._lastPoint=undefined
+		this._tooltip=undefined
+		this._layerPaintPath=undefined
+		this._layerPaintPathTemp=undefined
+		this._isRestarted=true
+		this._markers = []
+	},
+	_createCircle:function(latlng, clr){
+		return new L.CircleMarker(latlng,{color:'black',opacity:1,weight:1,fillColor:clr,fill:true,fillOpacity:1,radius:4,clickable:Boolean(this._lastMarker)})
+	},
+	_createTooltip:function(position){
+		var icon=L.divIcon({className:'leaflet-measure-tooltip',iconAnchor:[-5,-5]})
+		this._tooltip=L.marker(position,{icon:icon,clickable:false}).addTo(this._layerPaint)
+	},
+	_updateTooltipPosition:function(position){this._tooltip.setLatLng(position)
+	},
+	_updateTooltipDistance:function(total,difference){
+		if(!this._tooltip._icon){return}
+		var totalRound=this._formatDistance(total)
+		var differenceRound=this._formatDistance(difference)
+		var text='<div class="leaflet-measure-tooltip-total" style="color:'+this.options.textColor+'">'+totalRound
+		if(differenceRound>0&&totalRound!==differenceRound){text+='<span class="leaflet-measure-tooltip-difference"> (+'+differenceRound + ')</span>'}
+		text+=' км.</div>'
+		this._tooltip._icon.innerHTML=text
+	},
+	_formatDistance: function(val) {
+		if(typeof this.options.formatDistance==='function'){return this.options.formatDistance(val);}
+		if(val<1000){return Math.round(val)}else{return Math.round((val/1000)*100)/100}
+	},
+	_onKeyDown:function(e){
+		switch(e.keyCode){
+			case this.options.activeKeyCode: 
+				if(!this._measuring) {
+					this._toggleMeasure()
+				}
+				break
+			case this.options.cancelKeyCode: 
+				if (this._measuring) {
+					if(!this._lastPoint) {
+						this._toggleMeasure()
+					}
+					else {
+						this._finishPath()
+						this._isRestarted=false
+					}
+				}
+				break
+		}
+	}
+})
 L.control.measure=function(options){return new L.Control.Measure(options)}
 L.Map.mergeOptions({measureControl:false})
 L.Map.addInitHook(function(){if(this.options.measureControl){this.measureControl=new L.Control.Measure()

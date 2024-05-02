@@ -70,7 +70,7 @@ new L.Control.RoCGraphicScale(scale_options).addTo(map);
 //new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 
 var measureControl = new L.Control.Measure({ 
-	position: 'topleft',
+	position: 'bottomright',
 	formatDistance: function (val) {
       return Math.round(val * kmPerPx);
     }
