@@ -40,6 +40,7 @@ html,body {
 }
 .leaflet-control-measure {
 	background-size: 80%;
+	transform: rotate(90deg);
 	background-image: url(svg/measure.svg) !important;
 }
 .leaflet-control-menu {

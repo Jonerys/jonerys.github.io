@@ -119,8 +119,8 @@ function onEachFeature(feature, layer) {
 			+ "Столица:</div><div class=popup-data>" 
 			+ feature.properties.capital + "</div></td></tr>";
 	
-	if (feature.properties.status.includes(STATUS_COLONY)) {
-		leaderLabel = "Губернатор";
+	if (feature.properties.leaderLabel != undefined) {
+		leaderLabel = feature.properties.leaderLabel;
 	}
 	
 	var leader = "<tr><td><div class=popup-label>"
@@ -160,7 +160,7 @@ function onEachFeature(feature, layer) {
 			
 	popup += "<div class=content-body><table>" + capital + leader;
 	
-	if (!feature.properties.status.includes(STATUS_COLONY)) {
+	if (feature.properties.government != undefined) {
 		popup += government;
 	}
 	
