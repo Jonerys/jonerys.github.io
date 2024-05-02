@@ -139,9 +139,12 @@ L.Control.Measure = L.Control.extend({
 			if (this._lastMarker) {
 				this._lastMarker.off('click',this._finishPath,this)
 			}
-			this._lastMarker = this._createCircle(e.latlng, 'white').addTo(this._layerPaint)
+			this._lastMarker = this._createCircle(e.latlng).addTo(this._layerPaint)
+			this._layerPaint.removeLayer(this._markers[0])
+			this._markers[0].addTo(this._layerPaint)
 		} else {
-			this._lastMarker = L.marker(e.latlng, {
+			this._lastMarker = this._createCircle(e.latlng).addTo(this._layerPaint)
+			this._startMarker = L.marker(e.latlng, {
 				icon: startPathIcon,
 				clickable:Boolean(this._lastMarker)
 				}).addTo(this._layerPaint)
@@ -163,19 +166,21 @@ L.Control.Measure = L.Control.extend({
 		if (this._layerPaint&&this._layerPaintPathTemp){
 			this._layerPaint.removeLayer(this._layerPaintPathTemp)
 		}
-		this._layerPaint.removeLayer(this._lastMarker);
 		if (this._markers.length > 1) {
-			L.marker(this._lastPoint, {
+			this._finishMarker = L.marker(this._lastPoint, {
 				icon: finishPathIcon,
 				clickable:false,
 				interactive:false
 				}).addTo(this._layerPaint)
+		} else {
+			this._layerPaint.removeLayer(this._lastMarker);
+			this._layerPaint.removeLayer(this._startMarker);
 		}
 		this._restartPath()
 	},
 	_restartPath: function() {
 		this._distance=0
-		this._lastMarker=undefined
+		this._lastMarker = undefined
 		this._lastPoint=undefined
 		this._tooltip=undefined
 		this._layerPaintPath=undefined
@@ -183,8 +188,8 @@ L.Control.Measure = L.Control.extend({
 		this._isRestarted=true
 		this._markers = []
 	},
-	_createCircle:function(latlng, clr){
-		return new L.CircleMarker(latlng,{color:'black',opacity:1,weight:1,fillColor:clr,fill:true,fillOpacity:1,radius:4,clickable:Boolean(this._lastMarker)})
+	_createCircle:function(latlng){
+		return new L.CircleMarker(latlng,{color:'black',opacity:1,weight:1,fillColor:'white',fill:true,fillOpacity:1,radius:4,clickable:Boolean(this._lastMarker)})
 	},
 	_createTooltip:function(position){
 		var icon=L.divIcon({className:'leaflet-measure-tooltip',iconAnchor:[-5,-5]})
