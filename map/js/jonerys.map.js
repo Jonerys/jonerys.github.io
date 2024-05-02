@@ -155,8 +155,6 @@ function onEachFeature(feature, layer) {
 	
 	popup += dipStatus + player + "</table></div></div>";
 	
-	var respopup = L.responsivePopup({ hasTip: true }).setContent(popup);
-	
 	layer.bindPopup(popup, {
 		autoClose: false
 	});
