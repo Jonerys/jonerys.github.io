@@ -1,8 +1,8 @@
-const mD = 1; 		// default mult
-const mX2 = 2;		// mult when zoom x2
-const mX4 = 4;		// mult when zoom x4
-const dISize = 20;	// default icon size
-const dPA = -11;	// default popup anchor
+const mD = 1; 		// множитель по умолчанию
+const mX2 = 2;		// множитель на зуме x2
+const mX4 = 4;		// множитель на зуме x4
+const dISize = 20;	// размер иконки по умолчанию
+const dPA = -11;	// координата якоря подсказки по умолчанию
 
 var markers = [];
 

@@ -39,7 +39,7 @@ map = L.map('map', {
 	noWrap: true,
 	maxZoom: 0,                                                     
 	minZoom: -4
-}).setView(mapcenter, -2);  
+}).setView(mapcenter, -2);
 
 //map.getContainer().style.cursor = 'crosshair';
 
@@ -52,6 +52,13 @@ var northEast = map.unproject([widthPx, 0], -2);
 var bounds = L.latLngBounds(southWest, northEast);
 var image = L.imageOverlay(image_url, bounds).addTo(map);
 map.fitBounds(bounds);
+
+// для расширения видимого пространства
+southWest = map.unproject([-500, heightPx + 500], -2);
+northEast = map.unproject([widthPx + 500, -500], -2);
+bounds = L.latLngBounds(southWest, northEast);
+
+map.setMaxBounds(bounds);
 
 map.attributionControl.addAttribution(
 	'<img class=attribution-flag src="images/country_flags/Flag_of_Shtalfeld.webp"/> Königreich von Stahlfeld, 1903');
@@ -75,8 +82,6 @@ var measureControl = new L.Control.Measure({
       return Math.round(val * kmPerPx);
     }
 }).addTo(map);
-
-map.setMaxBounds(bounds);
 
 map.on("popupopen", function(e) {
 	$(".leaflet-popup-content img:last").one("load", function() {
@@ -149,6 +154,8 @@ function onEachFeature(feature, layer) {
 	}
 	
 	popup += dipStatus + player + "</table></div></div>";
+	
+	var respopup = L.responsivePopup({ hasTip: true }).setContent(popup);
 	
 	layer.bindPopup(popup, {
 		autoClose: false
