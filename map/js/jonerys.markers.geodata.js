@@ -1,6 +1,7 @@
 const NO_TOPIC = '54209'; //ссылка на тему географии, если нет темы
 const NO_FLAG = 'Flag_of_Unknown.webp';
 const UNKNOWN = 'Неизвестно';
+const NONE = 'Отсутствует';
 const NO_PLAYER = 'Банк ВР';
 const PLAYER_ZOG = 'Совет ВР';
 
@@ -148,6 +149,27 @@ var map_icons = {
 			}
         }
     },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2016, 1299]
+        },
+        'properties': {
+            'name': 'Каганат Ай-Суру',
+			'tag': 'Sr',
+			'url': '37224',
+			'capital': 'Айтернак',
+			'leader': 'Оспаривается',
+			'government': 'Каганат',
+			'status': STATUS_MINOR,
+			'playerName': 'Имперский командор',
+			'playerUrl': '10808',
+			'flag': {
+				'image': 'Flag_of_AiSuru.webp'
+			}
+        }
+    },
 	// Yugo
 	{
         'type': 'Feature',
@@ -252,6 +274,90 @@ var map_icons = {
 			'playerUrl': '9999',
 			'flag': {
 				'image': 'Flag_of_Niria.webp'
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2276, 2752]
+        },
+        'properties': {
+            'name': 'Вольный город Хаарватерн',
+			'tag': 'Ha',
+			'url': '50317',
+			'capital': 'Хаарватерн',
+			'leader': UNKNOWN,
+			'government': UNKNOWN,
+			'status': STATUS_MINOR,
+			'playerName': 'Раван',
+			'playerUrl': '9999',
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2195, 2688]
+        },
+        'properties': {
+            'name': 'Племенной город',
+			'tag': 'Tc',
+			'url': '50317',
+			'capital': 'Племенной город',
+			'leader': UNKNOWN,
+			'government': UNKNOWN,
+			'status': STATUS_MINOR,
+			'playerName': 'Раван',
+			'playerUrl': '9999',
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2225, 2564]
+        },
+        'properties': {
+            'name': 'Вольный город Мершент',
+			'tag': 'Me',
+			'url': '50317',
+			'capital': 'Мершент',
+			'leader': UNKNOWN,
+			'government': UNKNOWN,
+			'status': STATUS_MINOR,
+			'playerName': 'Раван',
+			'playerUrl': '9999',
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2513, 2552]
+        },
+        'properties': {
+            'name': 'Гатулат Унур',
+			'tag': 'Un',
+			'url': '50317',
+			'capital': UNKNOWN,
+			'leader': UNKNOWN,
+			'government': UNKNOWN,
+			'status': STATUS_MINOR,
+			'playerName': 'Раван',
+			'playerUrl': '9999',
+			'flag': {
+				'image': NO_FLAG
 			}
         }
     },
@@ -768,6 +874,49 @@ var map_icons = {
 			}
         }
     },
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2239, 1646]
+        },
+        'properties': {
+            'name': 'Герцогство Аэт\'Дайне',
+			'tag': 'An',
+			'url': '61137',
+			'capital': 'Аэталь',
+			'leader': 'Джейко IV Тера-Палед',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'Тинувель Секунда',
+			'playerUrl': '30987',
+			'flag': {
+				'image': 'Flag_of_AetDayne.webp'
+			}
+        }
+    },
+	// Corporal
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2028, 2413]
+        },
+        'properties': {
+            'name': 'Великое Герцогство Аугебург-Хоэнхоф',
+			'tag': 'Au',
+			'url': '58430',
+			'capital': 'Альтштедт',
+			'leader': 'Карл III Маттиас Лейденфельдт-Хоэнхоф',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'Corporal',
+			'playerUrl': '29631',
+			'flag': {
+				'image': 'Flag_of_Augeburg.webp'
+			}
+        }
+    },
 	// Банк ВР
 	{
     	'type': 'Feature',
@@ -1094,7 +1243,7 @@ var map_icons = {
             'name': 'Кратер',
 			'tag': 'Cr',
 			'url': '55983',
-			'capital': 'Отсутствует',
+			'capital': NONE,
 			'leader': UNKNOWN,
 			'government': UNKNOWN,
 			'status': STATUS_MINOR,
@@ -1252,5 +1401,257 @@ var map_icons = {
 			}
         }
     },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2711, 2963]
+        },
+        'properties': {
+            'name': 'Атлантия',
+			'tag': 'Ca',
+			'url': '50728',
+			'capital': 'Атлантия',
+			'leader': 'Окторус I Великий',
+			'government': 'Представительская монархия',
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2622, 3040]
+        },
+        'properties': {
+            'name': 'Королевство Драмор',
+			'tag': 'Dm',
+			'url': '40564',
+			'capital': 'Тайтонус',
+			'leader': 'Дамнар Безликий',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2597, 2873]
+        },
+        'properties': {
+            'name': 'Сагрития',
+			'tag': 'Sg',
+			'url': '40350',
+			'capital': 'Авер',
+			'leader': 'Маргион Великий и Великолепный',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2317, 2480]
+        },
+        'properties': {
+            'name': 'Королевство Фаминория',
+			'tag': 'Fn',
+			'url': '38952',
+			'capital': UNKNOWN,
+			'leader': 'Фридрих Полководец',
+			'government': 'Феодальная монархия',
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2384, 2483]
+        },
+        'properties': {
+            'name': 'Племенной союз орков Тирольф',
+			'tag': 'Tf',
+			'url': '40350',
+			'capital': NONE,
+			'leader': 'Кэир, вождь Черных; Дэир, вождь Фиолетовых',
+			'government': 'Племенной союз',
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2421, 2541]
+        },
+        'properties': {
+            'name': 'Кэтроэлн',
+			'tag': 'Ke',
+			'url': '58781',
+			'capital': 'Кэтнон',
+			'leader': 'Гарольд I',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': 'Flag_of_Ketroeln.webp'
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2503, 2398]
+        },
+        'properties': {
+            'name': 'Королевство Пилиталь',
+			'tag': 'Pt',
+			'url': '25730',
+			'capital': 'Соннек',
+			'leader': 'Ричард II',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2613, 2366]
+        },
+        'properties': {
+            'name': 'Королевство Михельт',
+			'tag': 'Mh',
+			'url': '22886',
+			'capital': 'Рэйхальд',
+			'leader': 'Ричард I',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2582, 2270]
+        },
+        'properties': {
+            'name': 'Графство Даркния',
+			'tag': 'Dk',
+			'url': '49330',
+			'capital': 'Штэрнхолм',
+			'leader': 'Сандро Ассилум',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2475, 2259]
+        },
+        'properties': {
+            'name': 'Графство Гринвуд',
+			'tag': 'Gw',
+			'url': '31440',
+			'capital': 'Гринвэй',
+			'leader': 'Рональд I',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2068, 2386]
+        },
+        'properties': {
+            'name': 'Графство Деслания',
+			'tag': 'Dl',
+			'url': '24154',
+			'capital': UNKNOWN,
+			'leader': 'Генрих IV Блэкоурен',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2047, 2355]
+        },
+        'properties': {
+            'name': 'Королевство Айзэн',
+			'tag': 'Az',
+			'url': '31402',
+			'capital': 'Хельтис',
+			'leader': 'де В\'альтер Мудрый Кёнинг I',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    }
 	]
 };
