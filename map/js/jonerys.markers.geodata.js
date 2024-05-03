@@ -333,7 +333,7 @@ var map_icons = {
 			'capital': 'Дилдойл',
 			'leaderLabel': 'Губернатор',
 			'leader': 'Джеймс Ливингем',
-			//'government': GOV_DUAL_MONARCHY,
+			'government': GOV_DUAL_MONARCHY,
 			'status': STATUS_PROTECTORATE + ' (Тиердаль)',
 			'playerName': 'Enkeltea',
 			'playerUrl': '33778',

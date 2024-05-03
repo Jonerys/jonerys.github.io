@@ -89,6 +89,7 @@ var control = new L.Control.Button({
 	className: 'leaflet-control-menu',
 	buttonFunction: function() {
 		$("#mapmenu").toggle("'slide', {direction: 'left' }, 1000");
+		$(".leaflet-bottom.leaflet-left").toggle();
 	},
 	title: 'Меню'
 })
@@ -113,13 +114,14 @@ map.on('zoomend', function(e){
 });
 
 function onEachFeature(feature, layer) {
-	var leaderLabel = "Глава";
 	
 	var capital = "<tr><td><div class=popup-label>"
 			+ "Столица:</div><div class=popup-data>" 
 			+ feature.properties.capital + "</div></td></tr>";
 	
-	if (feature.properties.leaderLabel != undefined) {
+	var leaderLabel = "Глава";
+	
+	if (feature.properties.leaderLabel) {
 		leaderLabel = feature.properties.leaderLabel;
 	}
 	
@@ -158,13 +160,17 @@ function onEachFeature(feature, layer) {
 			+ feature.properties.flag.image 
 			+ " /></td><td class=country-name-td><div class=\"black-link country-name\">" + countryName + "</div></td></tr></table></div>";
 			
-	popup += "<div class=content-body><table>" + capital + leader;
+	popup += "<div class=content-body><table>";
 	
-	if (feature.properties.government != undefined) {
-		popup += government;
-	}
 	
-	popup += dipStatus + player + "</table></div></div>";
+	if (feature.properties.capital) popup += capital;
+	if (feature.properties.leader) popup += leader;
+	if (feature.properties.government) popup += government;
+	if (feature.properties.status) popup += dipStatus;
+	if (feature.properties.playerName) popup += player;
+	
+	
+	popup += "</table></div></div>";
 	
 	layer.bindPopup(popup, {
 		autoClose: false
