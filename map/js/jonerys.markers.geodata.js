@@ -744,6 +744,27 @@ var map_icons = {
 			}
         }
     },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1895, 2434]
+        },
+        'properties': {
+            'name': 'Варгренское Королевство',
+			'tag': 'Wr',
+			'url': '49371',
+			'capital': 'Кернсгольм',
+			'leader': 'Фредерик I Дюбуа-Кремвельский',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'KaiseR',
+			'playerUrl': '4131',
+			'flag': {
+				'image': 'Flag_of_Wargren.webp'
+			}
+        }
+    },
 	// Armageddon Of Rome
 	{
     	'type': 'Feature',
@@ -852,6 +873,27 @@ var map_icons = {
 			}
         }
     },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1662, 1598]
+        },
+        'properties': {
+            'name': 'Королевство Монсеран',
+			'tag': 'Ms',
+			'url': '38784',
+			'capital': 'Телль',
+			'leader': 'Доминик I Лефевр',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': 'Flag_of_Monseran.webp'
+			}
+        }
+    },
 	// Тинувель Секунда
 	{
     	'type': 'Feature',
@@ -914,6 +956,28 @@ var map_icons = {
 			'playerUrl': '29631',
 			'flag': {
 				'image': 'Flag_of_Augeburg.webp'
+			}
+        }
+    },
+	// Ork
+	{
+    	'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2025, 1873]
+        },
+        'properties': {
+            'name': 'Эльфийское королество Атель Лорен',
+			'tag': 'Ao',
+			'url': '58430',
+			'capital': 'Альтштедт',
+			'leader': 'Аэнарион',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': 'Ork',
+			'playerUrl': '11517',
+			'flag': {
+				'image': NO_FLAG
 			}
         }
     },
@@ -1645,6 +1709,425 @@ var map_icons = {
 			'capital': 'Хельтис',
 			'leader': 'де В\'альтер Мудрый Кёнинг I',
 			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2148, 1928]
+        },
+        'properties': {
+            'name': 'Королевство Фиёрра',
+			'tag': 'Fi',
+			'url': '26779',
+			'capital': 'Митра',
+			'leader': 'Круэл Вальмонт',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [2148, 1928]
+        },
+        'properties': {
+            'name': 'Королевство Фиёрра',
+			'tag': 'Fi',
+			'url': '26779',
+			'capital': 'Митра',
+			'leader': 'Круэл Вальмонт',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1894, 2096]
+        },
+        'properties': {
+            'name': 'Дария',
+			'tag': 'Da',
+			'url': '37908',
+			'capital': UNKNOWN,
+			'leader': UNKNOWN,
+			'government': UNKNOWN,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1930, 2197]
+        },
+        'properties': {
+            'name': 'Дария',
+			'tag': 'Da',
+			'url': '37908',
+			'capital': UNKNOWN,
+			'leader': UNKNOWN,
+			'government': UNKNOWN,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1913, 1990]
+        },
+        'properties': {
+            'name': 'Халифат Ай\'Шераф',
+			'tag': 'Is',
+			'url': '47282',
+			'capital': 'Кердишахаль',
+			'leader': 'Абдула-аль-Алмас',
+			'government': 'Халифат',
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1987, 1805]
+        },
+        'properties': {
+            'name': 'Королевство Берглэнд',
+			'tag': 'Bg',
+			'url': '39754',
+			'capital': 'Беринбург',
+			'leader': 'Малькольм I',
+			'government': GOV_DUAL_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1940, 1714]
+        },
+        'properties': {
+            'name': 'Королевство Лытань',
+			'tag': 'Lh',
+			'url': '34163',
+			'capital': 'Ньюбург',
+			'leader': 'Джерольд III',
+			'government': GOV_DUAL_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': 'Flag_of_Lytan.webp'
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1850, 1691]
+        },
+        'properties': {
+            'name': 'Дрэгленд',
+			'tag': 'Dr',
+			'url': '22289',
+			'capital': UNKNOWN,
+			'leader': UNKNOWN,
+			'government': UNKNOWN,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1853, 1524]
+        },
+        'properties': {
+            'name': 'Королевство Фрониард',
+			'tag': 'Fr',
+			'url': '40190',
+			'capital': 'Нервингтон',
+			'leader': 'Коул Ливингстон',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': 'Flag_of_Froniard.webp'
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1754, 1904]
+        },
+        'properties': {
+            'name': 'Великое Герцогство Миленское',
+			'tag': 'Ml',
+			'url': '38880',
+			'capital': 'Милен',
+			'leader': 'Григорий Пришковский-Элебленский',
+			'status': STATUS_PROTECTORATE + ' (Кордения)',
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1730, 1608]
+        },
+        'properties': {
+            'name': 'Бриар',
+			'tag': 'Br',
+			'url': '41142',
+			'capital': 'Бриар',
+			'leader': 'Макабр дё Бриар',
+			'government': GOV_DUAL_MONARCHY,
+			'status': STATUS_PROTECTORATE + ' (Кордения)',
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1673, 1692]
+        },
+        'properties': {
+            'name': 'Корденийская Империя',
+			'tag': 'Kr',
+			'url': '37235',
+			'capital': 'Марос',
+			'leader': 'Александра Боне',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_GREAT,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1620, 1969]
+        },
+        'properties': {
+            'name': 'Княжеский союз Морния',
+			'tag': 'Mo',
+			'url': NO_TOPIC,
+			'capital': UNKNOWN,
+			'leader': UNKNOWN,
+			'government': UNKNOWN,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1703, 2114]
+        },
+        'properties': {
+            'name': 'Литланд',
+			'tag': 'Lt',
+			'url': '21275',
+			'capital': 'Азар',
+			'leader': 'Ода Тори',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1695, 2420]
+        },
+        'properties': {
+            'name': 'Королевство Аглардор',
+			'tag': 'Ag',
+			'url': '27385',
+			'capital': 'Аглар',
+			'leader': 'Маргол',
+			'government': GOV_DUAL_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': 'Flag_of_Aglardor.webp'
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1569, 2439]
+        },
+        'properties': {
+            'name': 'Халифат Алеман',
+			'tag': 'Al',
+			'url': '30263',
+			'capital': 'Аррани',
+			'leader': 'Абдулла ибн Рашит',
+			'government': 'Халифат',
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': 'Flag_of_Aleman.webp'
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1568, 1727]
+        },
+        'properties': {
+            'name': 'Королевство Авемор',
+			'tag': 'Av',
+			'url': '21530',
+			'capital': UNKNOWN,
+			'leader': UNKNOWN,
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1513, 1957]
+        },
+        'properties': {
+            'name': 'Ультаренский Орден',
+			'tag': 'Ae',
+			'url': '14767',
+			'capital': 'Ришаль',
+			'leader': 'Гаррус фон Ришельдер',
+			'government': 'Капитул',
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1497, 2069]
+        },
+        'properties': {
+            'name': 'Орден святых паладинов',
+			'tag': 'Po',
+			'url': '18281',
+			'capital': 'Грифонхил',
+			'leader': 'Артес',
+			'government': GOV_ABS_MONARCHY,
+			'status': STATUS_MINOR,
+			'playerName': NO_PLAYER,
+			'playerUrl': NO_PLAYER,
+			'flag': {
+				'image': NO_FLAG
+			}
+        }
+    },
+	{
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [1568, 2054]
+        },
+        'properties': {
+            'name': 'Фламасский орден',
+			'tag': 'Fo',
+			'url': '16883',
+			'capital': 'Мальборк',
+			'leader': 'Конрад фон Визенранд',
+			'government': GOV_DUAL_MONARCHY,
 			'status': STATUS_MINOR,
 			'playerName': NO_PLAYER,
 			'playerUrl': NO_PLAYER,
