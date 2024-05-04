@@ -1125,7 +1125,7 @@ var map_icons = {
 			'playerName': NO_PLAYER,
 			'playerUrl': NO_PLAYER,
 			'flag': {
-				'image': NO_FLAG
+				'image': 'Flag_of_Mamlakat.webp'
 			}
         }
     },
@@ -1167,7 +1167,7 @@ var map_icons = {
 			'playerName': NO_PLAYER,
 			'playerUrl': NO_PLAYER,
 			'flag': {
-				'image': NO_FLAG
+				'image': 'Flag_of_Bolnisia.webp'
 			}
         }
     },
@@ -1713,7 +1713,7 @@ var map_icons = {
 			'playerName': NO_PLAYER,
 			'playerUrl': NO_PLAYER,
 			'flag': {
-				'image': NO_FLAG
+				'image': 'Flag_of_Eisen.webp'
 			}
         }
     },
@@ -1734,28 +1734,7 @@ var map_icons = {
 			'playerName': NO_PLAYER,
 			'playerUrl': NO_PLAYER,
 			'flag': {
-				'image': NO_FLAG
-			}
-        }
-    },
-	{
-        'type': 'Feature',
-        'geometry': {
-            'type': 'Point',
-            'coordinates': [2148, 1928]
-        },
-        'properties': {
-            'name': 'Королевство Фиёрра',
-			'tag': 'Fi',
-			'url': '26779',
-			'capital': 'Митра',
-			'leader': 'Круэл Вальмонт',
-			'government': GOV_ABS_MONARCHY,
-			'status': STATUS_MINOR,
-			'playerName': NO_PLAYER,
-			'playerUrl': NO_PLAYER,
-			'flag': {
-				'image': NO_FLAG
+				'image': 'Flag_of_Fiorra.webp'
 			}
         }
     },
@@ -1939,7 +1918,7 @@ var map_icons = {
 			'capital': 'Бриар',
 			'leader': 'Макабр дё Бриар',
 			'government': GOV_DUAL_MONARCHY,
-			'status': STATUS_PROTECTORATE + ' (Кордения)',
+			'status': STATUS_MINOR,
 			'playerName': NO_PLAYER,
 			'playerUrl': NO_PLAYER,
 			'flag': {
@@ -1964,7 +1943,7 @@ var map_icons = {
 			'playerName': NO_PLAYER,
 			'playerUrl': NO_PLAYER,
 			'flag': {
-				'image': NO_FLAG
+				'image': 'Flag_of_Kordenia.webp'
 			}
         }
     },
@@ -2002,7 +1981,7 @@ var map_icons = {
 			'capital': 'Азар',
 			'leader': 'Ода Тори',
 			'government': GOV_ABS_MONARCHY,
-			'status': STATUS_MINOR,
+			'status': STATUS_PROTECTORATE + ' (Аспия)',
 			'playerName': NO_PLAYER,
 			'playerUrl': NO_PLAYER,
 			'flag': {
