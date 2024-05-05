@@ -1818,7 +1818,7 @@ var map_icons = {
 			'playerName': NO_PLAYER,
 			'playerUrl': NO_PLAYER,
 			'flag': {
-				'image': NO_FLAG
+				'image': 'Flag_of_Bergland.webp'
 			}
         }
     },
@@ -1901,7 +1901,7 @@ var map_icons = {
 			'playerName': NO_PLAYER,
 			'playerUrl': NO_PLAYER,
 			'flag': {
-				'image': NO_FLAG
+				'image': 'Flag_of_Milen.webp'
 			}
         }
     },
