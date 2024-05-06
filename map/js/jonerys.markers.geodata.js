@@ -800,7 +800,7 @@ var map_icons = {
 			'capital': 'Ромей',
 			'leader': 'Квинт Юлий Август',
 			'government': GOV_DUAL_MONARCHY,
-			'status': 'Самый мощный империя',
+			'status': STATUS_MINOR,
 			'playerName': 'Armageddon Of Rome',
 			'playerUrl': '33636',
 			'flag': {
