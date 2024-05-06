@@ -563,7 +563,7 @@ var map_icons = {
         'properties': {
             'name': 'Королевство Хомрул',
 			'tag': 'Hm',
-			'url': NO_TOPIC,
+			'url': '61535',
 			'capital': 'Стридо-Ново',
 			'leader': UNKNOWN,
 			'government': GOV_REPUBLIC,
