@@ -88,7 +88,8 @@ var control = new L.Control.Button({
 	position: 'topleft',
 	className: 'leaflet-control-menu',
 	buttonFunction: function() {
-		$("#mapmenu").toggle("'slide', {direction: 'left' }, 1000");
+		//$("#mapmenu").toggle("'slide', {direction: 'down' }, 1000");
+		$("#mapmenu").slideToggle();
 		$(".leaflet-bottom.leaflet-left").toggle();
 	},
 	title: 'Меню'
@@ -189,3 +190,17 @@ var countryLayer = L.geoJSON(map_icons.features, {
 var layers = L.layerGroup([
 	countryLayer
 ]).addTo(map, true);
+
+$(".mapmenu-layers input").click(function( event ) {
+	let layerCb = window[event.target.value];
+	try {
+		if (map.hasLayer(layerCb)) {
+			map.removeLayer(layerCb);
+		}
+		else{
+			map.addLayer(layerCb);
+		}
+	} catch(e) {
+		
+	}
+});
