@@ -43,8 +43,8 @@ map = L.map('map', {
 
 //map.getContainer().style.cursor = 'crosshair';
 
-map.on('mousemove', function(e) {
-	//console.log(e.latlng.lat + ' ' + e.latlng.lng);
+map.on('click', function(e) {
+	console.log('[' + Math.round(e.latlng.lat) + ', ' + Math.round(e.latlng.lng) + '],');
 });
 
 var southWest = map.unproject([0, heightPx], -2);
