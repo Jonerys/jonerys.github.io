@@ -83,6 +83,7 @@ var measureControl = new L.Control.Measure({
     }
 }).addTo(map);
 
+new L.Control.Fullscreen({ position: 'topleft' }).addTo(map);
 
 var control = new L.Control.Button({
 	position: 'topleft',
@@ -94,46 +95,6 @@ var control = new L.Control.Button({
 	},
 	title: 'Меню'
 }).addTo(map);
-
-var fullscreencontrol = new L.Control.Button({
-	position: 'topleft',
-	className: 'leaflet-fullscreen fullscreen-icon',
-	buttonFunction: function() {
-		let fullscreenStatus = !(document.fullscreenElement != null);
-		if (fullscreenStatus) {
-			L.DomUtil.addClass(this, 'leaflet-fullscreen-on');
-			this.title = 'Выход из полноэкранного режима';
-		} else {
-			L.DomUtil.removeClass(this, 'leaflet-fullscreen-on');
-			this.title = 'Полноэкранный режим';
-		}
-		elem = document.documentElement;
-		if (!document.fullscreenElement && !document.mozFullScreenElement &&
-			!document.webkitFullscreenElement && !document.msFullscreenElement) {
-			if (elem.requestFullscreen) {
-			elem.requestFullscreen();
-			} else if (elem.msRequestFullscreen) {
-			elem.msRequestFullscreen();
-			} else if (elem.mozRequestFullScreen) {
-			elem.mozRequestFullScreen();
-			} else if (elem.webkitRequestFullscreen) {
-			elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-			}
-		} else {
-			if (document.exitFullscreen) {
-			document.exitFullscreen();
-			} else if (document.msExitFullscreen) {
-			document.msExitFullscreen();
-			} else if (document.mozCancelFullScreen) {
-			document.mozCancelFullScreen();
-			} else if (document.webkitExitFullscreen) {
-			document.webkitExitFullscreen();
-			}
-		}
-	},
-	title: 'Полноэкранный режим'
-}).addTo(map);
-
 
 map.on("popupopen", function(e) {
 	$(".leaflet-popup-content img:last").one("load", function() {
