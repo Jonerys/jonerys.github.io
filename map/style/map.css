@@ -182,7 +182,7 @@ html,body {
 	width: fit-content;
 	background-color: white;
 	height: 100%;
-	z-index: 401;
+	z-index: 501;
 	position: fixed;
 	display: none;
 }
@@ -276,4 +276,20 @@ html,body {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+.fullscreen-icon {
+	background-image: url('svg/icon-fullscreen.svg');
+	background-size: 26px 52px;
+}
+
+.fullscreen-icon.leaflet-fullscreen-on {
+	background-position-y: -22px;
+}
+
+.leaflet-touch .fullscreen-icon {
+	background-position-y: 4px;
+}
+
+.leaflet-touch .fullscreen-icon.leaflet-fullscreen-on {
+	background-position-y: -22px;
 }

@@ -31,11 +31,6 @@ L.CRS.RoCCRS = L.extend({}, L.CRS.Simple, {
 
 map = L.map('map', {                                                       
 	crs: L.CRS.RoCCRS,
-	fullscreenControl: true,
-	fullscreenControlOptions: {
-		title: 'Полноэкранный режим',
-		titleCancel: 'Выход из полноэкранного режима',
-	},
 	center: mapcenter,
 	zoomControl:false,
 	continuousWorld: false,
@@ -98,10 +93,47 @@ var control = new L.Control.Button({
 		$(".leaflet-bottom.leaflet-left").toggle();
 	},
 	title: 'Меню'
-})
-control.addTo(map);
+}).addTo(map);
 
-//new L.Control.Fullscreen({ position: 'bottomright' }).addTo(map);
+var fullscreencontrol = new L.Control.Button({
+	position: 'topleft',
+	className: 'leaflet-fullscreen fullscreen-icon',
+	buttonFunction: function() {
+		let fullscreenStatus = !(document.fullscreenElement != null);
+		if (fullscreenStatus) {
+			L.DomUtil.addClass(this, 'leaflet-fullscreen-on');
+			this.title = 'Выход из полноэкранного режима';
+		} else {
+			L.DomUtil.removeClass(this, 'leaflet-fullscreen-on');
+			this.title = 'Полноэкранный режим';
+		}
+		elem = document.documentElement;
+		if (!document.fullscreenElement && !document.mozFullScreenElement &&
+			!document.webkitFullscreenElement && !document.msFullscreenElement) {
+			if (elem.requestFullscreen) {
+			elem.requestFullscreen();
+			} else if (elem.msRequestFullscreen) {
+			elem.msRequestFullscreen();
+			} else if (elem.mozRequestFullScreen) {
+			elem.mozRequestFullScreen();
+			} else if (elem.webkitRequestFullscreen) {
+			elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+			}
+		} else {
+			if (document.exitFullscreen) {
+			document.exitFullscreen();
+			} else if (document.msExitFullscreen) {
+			document.msExitFullscreen();
+			} else if (document.mozCancelFullScreen) {
+			document.mozCancelFullScreen();
+			} else if (document.webkitExitFullscreen) {
+			document.webkitExitFullscreen();
+			}
+		}
+	},
+	title: 'Полноэкранный режим'
+}).addTo(map);
+
 
 map.on("popupopen", function(e) {
 	$(".leaflet-popup-content img:last").one("load", function() {
