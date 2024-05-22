@@ -218,6 +218,15 @@ L.Control.Measure = L.Control.extend({
 				if(!this._measuring) {
 					this._toggleMeasure()
 				}
+				else {
+					if(!this._lastPoint) {
+						this._toggleMeasure()
+					}
+					else {
+						this._finishPath()
+						this._isRestarted=false
+					}
+				}
 				break
 			case this.options.cancelKeyCode: 
 				if (this._measuring) {

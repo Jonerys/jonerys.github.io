@@ -4,7 +4,8 @@ L.Control.Fullscreen = L.Control.extend({
         title: {
             'false': 'Полноэкранный режим',
             'true': 'Выйти из полноэкранного режима'
-        }
+        },
+        activeKeyCode: 'F'.charCodeAt(0) 
     },
     onAdd: function(map) {
         var container = L.DomUtil.create('div', 'leaflet-control-fullscreen leaflet-bar leaflet-control');
@@ -14,6 +15,7 @@ L.Control.Fullscreen = L.Control.extend({
         this._map.on('fullscreenchange', this._toggleTitle, this);
         this._toggleTitle();
         L.DomEvent.on(this.link, 'click', this._click, this);
+        L.DomEvent.on(document,'keydown',this._onKeyDown,this)
         return container;
     },
     _click: function(e) {
@@ -23,6 +25,15 @@ L.Control.Fullscreen = L.Control.extend({
     },
     _toggleTitle: function() {
         this.link.title = this.options.title[this._map.isFullscreen()];
+    },
+    _onKeyDown: function(e) {
+        switch(e.keyCode){
+            case this.options.activeKeyCode:
+                this._click(this)
+                //this._map.toggleFullscreen(this.options);
+                break
+        }
+        
     }
 });
 L.Map.include({
