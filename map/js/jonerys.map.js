@@ -31,6 +31,7 @@ L.CRS.RoCCRS = L.extend({}, L.CRS.Simple, {
 
 map = L.map('map', {                                                       
 	crs: L.CRS.RoCCRS,
+	fullscreenControl: true,
 	center: mapcenter,
 	zoomControl:false,
 	continuousWorld: false,
@@ -95,6 +96,8 @@ var control = new L.Control.Button({
 	title: 'Меню'
 })
 control.addTo(map);
+
+//new L.Control.Fullscreen({ position: 'bottomright' }).addTo(map);
 
 map.on("popupopen", function(e) {
 	$(".leaflet-popup-content img:last").one("load", function() {
