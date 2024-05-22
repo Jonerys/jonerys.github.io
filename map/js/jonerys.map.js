@@ -32,6 +32,10 @@ L.CRS.RoCCRS = L.extend({}, L.CRS.Simple, {
 map = L.map('map', {                                                       
 	crs: L.CRS.RoCCRS,
 	fullscreenControl: true,
+	fullscreenControlOptions: {
+		title: 'Полноэкранный режим',
+		titleCancel: 'Выход из полноэкранного режима',
+	},
 	center: mapcenter,
 	zoomControl:false,
 	continuousWorld: false,
