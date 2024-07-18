@@ -1,4 +1,4 @@
-const DEVELOPER_MODE = false;
+const DEVELOPER_MODE = true;
 const HISTORY_ACT_DELETE = 'delete';
 const HISTORY_ACT_CREATE = 'create';
 const buttonRemove = "<button class='remove'>del</button>";
@@ -246,6 +246,10 @@ function addMarker(e) {
         let coords = [e.latlng.lat, e.latlng.lng];
         let temp = createMarker(coords, true, true);
         temp.addTo(activeLayer);
+        remHistory.push({
+            type: HISTORY_ACT_DELETE,
+            object: temp
+        });
 	}
 }
 

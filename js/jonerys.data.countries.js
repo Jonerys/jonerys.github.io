@@ -1265,7 +1265,7 @@ var data = {
         properties: {
 			id: 50,
             name: 'Литланд',
-            shortname: 'Лита',
+            shortname: 'Литланд',
 			tag: 'Lt',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '21275',
