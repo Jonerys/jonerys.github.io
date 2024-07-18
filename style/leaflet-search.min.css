@@ -1,0 +1,192 @@
+/* 
+ * Leaflet Control Search v3.0.0 - 2021-08-18 
+ * 
+ * Copyright 2021 Stefano Cudini 
+ * stefano.cudini@gmail.com 
+ * https://opengeo.tech/ 
+ * 
+ * Licensed under the MIT license. 
+ * 
+ * Demo: 
+ * https://opengeo.tech/maps/leaflet-search/ 
+ * 
+ * Source: 
+ * git@github.com:stefanocudini/leaflet-search.git 
+ * 
+ */
+ .leaflet-container .leaflet-control-search {
+    position: relative;
+    float: left;
+    background: #fff;
+    color: #1978cf;
+    border: 2px solid rgba(0,0,0,.2);
+    background-clip: padding-box;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: rgba(255,255,255,.8);
+    z-index: 1000;
+    margin-left: 10px;
+    margin-top: 10px
+}
+
+.leaflet-control-search.search-exp {
+    background: #fff;
+    border: 2px solid rgba(0,0,0,.2);
+    background-clip: padding-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*width: 292.8px;*/
+    width: fit-content;
+    padding-left: 4px;
+}
+
+.leaflet-control-search .search-input {
+    display: block;
+    float: left;
+    background: #fff;
+    /*border: 1px solid #666;
+    border-radius: 2px;*/
+    font-size: 12pt;
+    width: 100%;
+    border: 0px;
+    height: 22px;
+    text-overflow: ellipsis;
+    /*padding: 0 20px 0 2px;
+    margin: 4px 0 4px 4px*/
+    padding: 2px;
+    transition: width 400ms;
+}
+.search-input:focus {
+    outline: none;
+}
+.leaflet-control-search.search-load .search-input {
+    background: url(../images/loader.gif) no-repeat center right #fff
+}
+
+.leaflet-control-search.search-load .search-cancel {
+    visibility: hidden
+}
+
+.leaflet-control-search .search-cancel {
+    display: block;
+    width: 18px;
+    height: 22px;
+    /* width: 22px;
+    position: absolute; 
+    right: 28px; 
+    margin: 6px 0;*/
+    background: url(../images/search-icon.png) no-repeat 0 -46px;
+    text-decoration: none;
+    filter: alpha(opacity=80);
+    opacity: .8;
+}
+
+.leaflet-control-search .search-cancel:hover {
+    filter: alpha(opacity=100);
+    opacity: 1
+}
+
+.leaflet-control-search .search-cancel span {
+    display: none;
+    font-size: 18px;
+    line-height: 20px;
+    color: #ccc;
+    font-weight: 700
+}
+
+.leaflet-control-search .search-cancel:hover span {
+    color: #aaa
+}
+
+.leaflet-control-search .search-button {
+    display: block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    background: url(../images/search-icon.png) no-repeat 2px 4px #fff;
+    border-radius: 4px
+}
+
+.leaflet-control-search .search-button:hover {
+    background: url(../images/search-icon.png) no-repeat 4px -20px #fafafa
+}
+
+.leaflet-control-search .search-tooltip {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    float: left;
+    list-style: none;
+    padding-left: 0;
+    max-height: 122px;
+    background-color: white;
+    border: 2px solid rgba(0, 0, 0, .2);
+    background-clip: padding-box;
+    border-radius: 4px;
+    z-index: 1010;
+    overflow-y: auto;
+    overflow-x: hidden;
+    cursor: pointer;
+    margin: 0px;
+}
+.search-tooltip {
+    width: 100%;
+}
+
+.leaflet-control-search .search-tip {
+    margin: 2px;
+    padding: 2px 4px;
+    color: #000;
+    background: #fff;
+    border-radius: .25em;
+    text-decoration: none;
+    font-size: 12pt;
+}
+
+.leaflet-control-search .search-button:hover {
+    background-color: #f4f4f4
+}
+
+.leaflet-control-search .search-tip-select,.leaflet-control-search .search-tip:hover {
+    background-color: #eee;
+}
+
+.leaflet-control-search .search-alert {
+    cursor: pointer;
+    clear: both;
+    font-size: .75em;
+    margin-bottom: 5px;
+    padding: 0 .25em;
+    color: #e00;
+    font-weight: 700;
+    border-radius: .25em
+}
+
+.search-button-group {
+    display: flex;
+    align-items: center;
+}
+.search-tooltip::-webkit-scrollbar, .diplomacy-record-list::-webkit-scrollbar {
+	width: 4px;
+}
+.search-tooltip::-webkit-scrollbar-track, .diplomacy-record-list::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 25px;
+}
+
+.search-tooltip::-webkit-scrollbar-thumb, .diplomacy-record-list::-webkit-scrollbar-thumb {
+	background: #ccc;
+	border-radius: 25px;
+}
+.search-tip-icon {
+    float: left;
+    height: fit-content;
+    width: fit-content;
+    margin-right: 5px;
+}
+.widened {
+    width: 350px !important;
+    transition: width 400ms !important;
+}

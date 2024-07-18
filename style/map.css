@@ -1,0 +1,559 @@
+/* Константы */
+:root {
+  --popup-bg-color: #E8E8E8;
+  /*--measure-difference-color: #C0C0C0;*/ 
+  --measure-difference-color: yellow;
+  --db-red-color: #d43626;
+}
+
+@font-face {
+    font-family: PlayfairDisplaySC-Regular;
+    src: url(fonts/PlayfairDisplaySC-Regular.ttf);
+}
+@font-face {
+    font-family: PlayfairDisplaySC-Bold;
+    src: url(fonts/PlayfairDisplaySC-Bold.ttf);
+}
+
+html,body {
+    margin: 0;
+    padding: 0;
+    font-family: ptserifweb,Georgia,serif;
+    font-size: 16px;
+    line-height: 1.4;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+	background-color: white !important;
+	user-select: none;
+	/*background-image: url(../images/green-table2.webp);
+	background-size: 80%;
+	background-repeat: repeat;*/
+}
+/* Кастомизация лифлетовских стилей */
+.leaflet-interactive {
+	outline: none;
+}
+.leaflet-marker-icon:hover {
+    transition: top 125ms;
+    top: 2px
+}
+.leaflet-popup-content {
+	width: fit-content;
+	margin: 0px;
+}
+.leaflet-control-measure, .leaflet-control-menu {
+    background-position: 50% !important;
+    background-repeat: no-repeat;
+	overflow: hidden;
+}
+.leaflet-control-measure {
+	background-size: 80%;
+	transform: rotate(90deg);
+	background-image: url(svg/measure.svg) !important;
+}
+.leaflet-control-menu {
+	background-size: 70%;
+	background-image: url(svg/menu.svg) !important;
+}
+.leaflet-control-diplomacy {
+	background-size: 80%;
+	background-image: url(svg/diplomacy.svg) !important;
+}
+.leaflet-bar a, .leaflet-bar a:hover, .leaflet-touch .leaflet-bar a {
+	width: 35px;
+	height: 35px;
+}
+.leaflet-bar a:hover {
+    background-color: #f5c97b;
+    color: #000
+}
+.leaflet-popup-content-wrapper {
+	overflow: hidden;
+	padding: 0px;
+	border-radius: 6px;
+}
+.leaflet-popup-close-button {
+	color: black !important;
+	font-weight: bold !important;
+	font-size: 18px !important;
+	background-color: white !important;
+	border-radius: 0 6px 0 6px !important;
+}
+.leaflet-popup-close-button span {
+	display: flex;
+	justify-content: center;
+}
+.leaflet-measure-tooltip-total {
+	color: white !important;
+	text-shadow: 2px 0 0 #000,
+				-2px 0 0 #000,
+				0 2px 0 #000,
+				0 -2px 0 #000,
+				1px 1px #000,
+				-1px -1px 0 #000,
+				1px -1px 0 #000,
+				-1px 1px 0 #000 !important;
+}
+.leaflet-measure-tooltip-difference {
+	color: var(--measure-difference-color) !important;
+}
+
+/* Оригинальные стили */
+.flag-popup {
+	/* height: 20px; */
+	width: 35px;
+	border: 1px solid black;
+	float: left;
+}
+
+.black-link a {
+	color: black;
+}
+
+.country-link {
+	margin-left: 3px;
+	white-space: nowrap;
+}
+
+.attribution-flag{
+	height: 8px;
+	width: auto;
+	margin: auto;
+}
+
+.popup-label, .popup-data {
+	display: table-cell;
+	white-space: nowrap;
+}
+
+.popup-label {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.popup-data	{
+	font-size: 14px;
+}
+
+.country-name {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.npc-player {
+	color: #959595;
+}
+
+.player {
+	font-weight: bold;
+}
+
+.divisionLabel, .zeroLabel {
+	color: white;
+	font-weight: bold;
+	text-shadow: 1px 0 1px #000, 
+				0 1px 1px #000, 
+				-1px 0 1px #000, 
+				0 -1px 1px #000;
+}
+
+.content {
+	width: fit-content;
+}
+
+.content-head, .content-body {
+	padding: 7px;
+}
+
+.content-body {
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+}
+
+.content-body div {
+	display: flex;
+	gap: 4px;
+}
+
+.content-body div p {
+	margin: 0px;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: underline;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.content-head {
+	gap: 5px;
+	background-color: var(--popup-bg-color);
+	display: flex;
+	align-items: center;
+	min-height: 30px;
+	padding-right: 30px;
+}
+
+.measure-line {
+	filter: 
+		drop-shadow(-1px -1px 0px rgba(0,0,0,0.4)) 
+		drop-shadow(1px -1px 0px rgba(0,0,0,0.4)) 
+		drop-shadow(1px 1px 0px rgba(0,0,0,0.4))
+		drop-shadow(-1px 1px 0px rgba(0,0,0,0.4))
+}
+
+#menu {
+	width: fit-content;
+	background-color: white;
+	height: 100vh;
+	z-index: 501;
+	position: fixed;
+	display: none;
+	border-right: 1px solid black;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#diplomacy {
+	width: 435px;
+	max-width: 700px;
+	background-color: white;
+	height: 100%;
+	z-index: 502;
+	position: absolute;
+	display: none;
+	right: 0;
+	border-left: 1px solid black;
+	box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.menu-head{
+	padding: 15px 60px;
+	min-width: fit-content;
+	height: fit-content;
+	background-color: var(--db-red-color);
+	border-bottom: 1px solid black;
+}
+
+.roc-head-link, .roc-head-diplomacy {
+	color: white;
+	font-family: PlayfairDisplaySC-Bold;
+	display: inline;
+	font-size: 22pt;
+	line-height: 1.1;
+}
+
+.roc-head-diplomacy {
+	text-align: center;
+	margin: 0px;
+}
+
+.roc-head-info {
+	margin-top: 5px;
+	margin-bottom: 0px;
+	color: white;
+	font-family: PlayfairDisplaySC-Regular;
+	font-size: 12pt;
+}
+
+.menu-body {
+	min-width: fit-content;
+	padding: 15px;
+}
+
+.menu-body-layers {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.menu-layers {
+	display: flex;
+    align-items: center;
+	position: relative;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-family: PlayfairDisplaySC-Bold;
+}
+
+.menu-layers input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.menu-layers-indicator {
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	border: 2px solid var(--db-red-color);
+	background-color: white;
+	margin-right: 10px;
+}
+
+.layers-marker {
+	margin-left: auto;
+	padding-left: 15px;
+}
+
+.menu-layers:hover input ~ .menu-layers-indicator {
+  background-color: #eaeaea;
+}
+
+.menu-layers input:checked ~ .menu-layers-indicator {
+  background-color: white;
+}
+
+.menu-layers-indicator:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.menu-layers input:checked ~ .menu-layers-indicator:after {
+  display: block;
+}
+
+.menu-layers .menu-layers-indicator:after {
+	left: 8px;
+	top: 4px;
+	width: 5px;
+	height: 10px;
+	border: solid var(--db-red-color);
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.menu-diplomacy-body {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.menu-diplomacy-head{
+	width: fit-content;
+	min-width: 315px;
+}
+
+.menu-body-row {
+	height: fit-content;
+	align-items: stretch;
+	display: flex;
+	gap: 5px;
+	width: 100%;
+}
+
+.menu-head {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.menu-head div {
+	text-align: center;
+}
+
+.dropdown-custom {
+	position: relative;
+	/*width: fit-content;
+	max-width: 100%;*/
+	width: 100%;
+	height: fit-content;
+	font-size: 1.15rem;
+	color: #000;
+	margin-top: 0;
+}
+.dropdown-button {
+	/* width: 405px; */
+	width: 100%;
+	height: 50px;
+	font-size: 1.15rem;
+	font-family: ptserifweb, Georgia, serif;
+	background-color: #fff;
+	padding: 10px;
+	border: 1px solid #caced1;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.dropdown-current-value {
+	text-align: left;
+	display:flex;
+	align-items: center;
+	text-overflow: ellipsis;
+	gap: 5px;
+	max-width: 300px;
+}
+.dropdown-arrow {
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 6px solid #000;
+	transition: transform ease-in-out 0.3s;
+}
+.dropdown-option-list {
+	position: absolute;
+	list-style: none;
+	width: 393.4px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+	background-color: #fff;
+	border: 1px solid #caced1;
+	border-radius: 4px;
+	padding: 5px;
+	margin: 0px;
+	max-height: 400px;
+	overflow-y: auto;
+	display: none;
+	z-index: 1;
+}
+.dropdown-option-list li {
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+.gap {
+	gap: 5px;
+}
+.dropdown-option-list li label {
+	width: 100%;
+	padding: 8px 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+.dropdown-option-list::-webkit-scrollbar, .diplomacy-record-list::-webkit-scrollbar {
+	width: 7px;
+}
+.dropdown-option-list::-webkit-scrollbar-track, .diplomacy-record-list::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 25px;
+}
+
+.dropdown-option-list::-webkit-scrollbar-thumb, .diplomacy-record-list::-webkit-scrollbar-thumb {
+	background: #ccc;
+	border-radius: 25px;
+}
+
+.dropdown-option-list li:hover, .dropdown-selected {
+	background-color: #f2f2f2;
+}
+
+.dropdown-option-list input:focus ~ label {
+	background-color: #dfdfdf;
+}
+
+.dropdown-option-list input[type="radio"] {
+	position: absolute;
+	left: 0;
+	opacity: 0;
+}
+.dropdown-custom.active .dropdown-arrow, .diplomacy-record.active .dropdown-arrow {
+	transform: rotate(180deg);
+}
+.dropdown-custom.active .dropdown-option-list {
+	display: block;
+}
+.diplomacy-record {
+	display: flex;
+	font-size: 1.15rem;
+	flex-direction: column;
+}
+.diplomacy-record-list {
+	display: flex;
+	flex-direction: column;
+	/* width: 383.4px; */
+	width: 100%;
+	border: 1px solid #caced1;
+	border-radius: 4px;
+	padding: 10px;
+	margin: 0px;
+	min-height: 200px;
+	max-height: 400px;
+	overflow-y: auto;
+	gap: 5px;
+}
+.diplomacy-record, .diplomacy-record-left, .diplomacy-record-right, .diplomacy-record-head {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	justify-content: space-between;
+}
+.diplomacy-record-head{
+	width: 100%;
+}
+.diplomacy-record-body {
+	width: 100%;
+	min-height: 50px;
+	display: none;
+	flex-direction: column;
+	gap: 5px;
+}
+.diplomacy-record.active .diplomacy-record-body {
+	display: flex;
+}
+.diplomacy-record-body div {
+	font-size: 12pt;
+}
+.diplomacy-record-status {
+	display: flex;
+	gap: 5px;
+}
+.diplomacy-record-notes-head, .diplomacy-record-status-caption {
+	font-weight: bold;
+}
+.diplomacy-record-status-caption, .diplomacy-record-status-info {
+	width: fit-content;
+}
+.diplomacy-record-notes{
+	border: 1px solid #caced1;
+    border-radius: 4px;
+	padding: 4px;
+	overflow-y: auto;
+	max-height: 40px;
+}
+.diplomacy-record-notes::-webkit-scrollbar, .diplomacy-record-list::-webkit-scrollbar {
+	width: 4px;
+}
+.diplomacy-record-notes::-webkit-scrollbar-track, .diplomacy-record-list::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 25px;
+}
+
+.diplomacy-record-notes::-webkit-scrollbar-thumb, .diplomacy-record-list::-webkit-scrollbar-thumb {
+	background: #ccc;
+	border-radius: 25px;
+}
+.emoji {
+	font-size: 1.4rem;
+}
+.leaflet-top.leaflet-right {
+    display: flex;
+}
+.bounds {
+	mix-blend-mode: multiply;
+    filter: blur(4px);
+}
+.activebutton {
+	background-color: yellow !important;
+}
+.leaflet-toolbar-icon:hover  {
+	background-color: #f5c97b !important;
+}

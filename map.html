@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Карта мира Возрождения Рыцарства</title>
+		<link rel="shortcut icon" type="image/x-icon" href="style/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="style/leaflet.css" />
+		<link rel="stylesheet" type="text/css" href="style/leaflet.measure.css" />
+		<link rel="stylesheet" type="text/css" href="style/Leaflet.GraphicScale.min.css" />
+		<link rel="stylesheet" type="text/css" href="style/leaflet.responsive.popup.css" />
+		<link rel="stylesheet" type="text/css" href="style/leaflet-search.min.css" />
+		<link rel="stylesheet" type="text/css" href="style/leaflet.fullscreen.css" />
+		<link rel="stylesheet" type="text/css" href="style/MarkerCluster.css" />
+		<link rel="stylesheet" type="text/css" href="style/leaflet.toolbar.css" />
+		
+		<link rel="stylesheet" type="text/css" href="style/map.css" />
+		
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+		<script src="js/fuse.js" type="text/javascript"></script>
+        <script src="js/leaflet.js" type="text/javascript"></script>
+		<script src="js/leaflet-hash.js" type="text/javascript"></script>
+		<script src="js/Leaflet.GraphicScale.min.js" type="text/javascript"></script>
+		<script src="js/leaflet.markercluster.js" type="text/javascript"></script>
+		<script src="js/leaflet-search.min.js" type="text/javascript"></script>
+		<script src="js/leaflet.toolbar.js" type="text/javascript"></script>
+		
+		<script src="js/jonerys.graphicScale.RoCGraphicScale.js" type="text/javascript"></script>
+		<script src="js/jonerys.diplomacy.data.js" type="text/javascript"></script>
+		<script src="js/jonerys.markers.js" type="text/javascript"></script>
+		<script src="js/jonerys.markers.geodata.js" type="text/javascript"></script>
+		<script src="js/jonerys.button.js" type="text/javascript"></script>
+		<script src="js/leaflet.measure.js" type="text/javascript"></script>
+		<script src="js/leaflet.fullscreen.js" type="text/javascript"></script>
+
+    </head>
+    <body id="mapbody">
+		<div id="menu">
+			<div class="menu-head">
+				<div>
+					<a href="https://doublebrick.ru/forums/viewforum.php?f=63" class="roc-head-link">Возрождение<br>Рыцарства</a>
+				</div>
+				<p class="roc-head-info">Интерактивная карта мира</p>	
+			</div>
+			<div class="menu-body">
+				<div class="menu-body-layers">
+					<label class="menu-layers">
+					<input type="checkbox" value="countryLayer" checked="" autocomplete="off">
+						<span class="menu-layers-indicator"></span>
+						Государства
+						<img class="layers-marker" src="markers/marker_capital.webp" style="float: right;max-height: 20px;">
+					</label>
+					<label class="menu-layers">
+					<input type="checkbox" value="placeLayer" autocomplete="off">
+						<span class="menu-layers-indicator"></span>
+						Наземные объекты
+						<img class="layers-marker" src="markers/marker_place.webp" style="float: right;max-height: 20px;">
+					</label>
+					<label class="menu-layers">
+					<input type="checkbox" value="waterLayer" autocomplete="off">
+						<span class="menu-layers-indicator"></span>
+						Водные объекты
+						<img class="layers-marker" src="markers/marker_water.webp" style="float: right;max-height: 20px;">
+					</label>
+				</div>
+			</div>
+		</div>
+		<div id="diplomacy">
+			<div class="menu-head menu-diplomacy-head">
+				<p class="roc-head-diplomacy">Дипломатические<br>отношения</p>
+			</div>
+			<div class="menu-body menu-diplomacy-body">
+				<div class="menu-body-row">
+					<div class="dropdown-custom" id="dropdown-custom-1">
+						<button	class="dropdown-button" id="dropdown-button-1" value="-1">
+							<label class="dropdown-current-value" id="dropdown-current-value-1"></label>
+							<span class="dropdown-arrow"></span>
+						</button>
+						<ul class="dropdown-option-list" id="dropdown-option-list-1"></ul>
+					</div>
+				</div>
+				<div class="menu-body-row">
+					<div class="diplomacy-record-list">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="map"></div>
+		<script src="js/jonerys.map.js" type="text/javascript"></script>
+		<script src="js/jonerys.map.search.js" type="text/javascript"></script>
+		<script src="js/jonerys.map.diplomacy.js" type="text/javascript"></script>
+		<script src="js/jonerys.map.debug.js" type="text/javascript"></script>
+    </body>
+</html>
