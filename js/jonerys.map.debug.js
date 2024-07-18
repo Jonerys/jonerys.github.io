@@ -1,4 +1,4 @@
-const DEVELOPER_MODE = false;
+const DEVELOPER_MODE = true;
 const HISTORY_ACT_DELETE = 'delete';
 const HISTORY_ACT_CREATE = 'create';
 const buttonRemove = "<button class='remove'>del</button>";
@@ -19,7 +19,6 @@ var boundPointsLayer = L.layerGroup().addTo(map, true);
 var prevcoords;
 var prevcursor;
 var continentLayers = [];
-var continentMarkersLayer = [];
 var continents = [ContinentAnchor, ContinentSunrise];
 
 map.on('click', function(e) {
@@ -196,41 +195,6 @@ function createMarker(point, canbedeleted, draggable) {
     return temp;
 }
 
-function changeActiveLayer(layer) {
-    let prevActiveLayer = activeLayer;
-    if (prevActiveLayer == layer) return;
-    if (layer == userPointsLayer) {
-        activeLayer = userPointsLayer;
-        $.each(activeLayer._layers, function (ml) {
-            activeLayer._layers[ml].dragging.enable();
-        });
-        if (prevActiveLayer) {
-            $.each(prevActiveLayer._layers, function (ml) {
-                prevActiveLayer._layers[ml].dragging.disable();
-            });
-        }
-    } else {
-        for (let obj of continentLayers) {
-            if (obj.boundLayer == layer) {
-                activeLayer = obj.markerLayer;
-                $.each(activeLayer._layers, function (ml) {
-                    activeLayer._layers[ml].dragging.enable();
-                });
-            }
-        }
-        if (prevActiveLayer) {
-            $.each(prevActiveLayer._layers, function (ml) {
-                prevActiveLayer._layers[ml].dragging.disable();
-            });
-        }
-    }
-    
-    /*$.each(continentMarkersLayer[0]._layers, function (ml) {
-       console.log(continentMarkersLayer[0]._layers[ml])
-       continentMarkersLayer[0]._layers[ml].dragging.enable();
-    });*/
-}
-
 function spawnContinentPoints(layer, continent) {
     if (DRAW_POINTS) {
         pointsToCreate.length = 0;
@@ -249,13 +213,6 @@ function spawnContinentPoints(layer, continent) {
     return layer;
 }
 
-function resetAll() {
-    ContinentAnchor.geometry.coordinates = jQuery.extend(true, [], startCoords);
-    continentAnchorLayer = refreshBounds(continentAnchorLayer, ContinentAnchor);
-    continentAnchorLayer.addTo(map);
-    resetPoints();
-}
-
 function spawnArea(continent) {
     let layer = L.geoJSON(continent, {
         style: styleBound,
@@ -271,18 +228,17 @@ function spawnArea(continent) {
 }
 
 function setAreas() {
+    DRAW_POINTS = !DRAW_POINTS;
     for (let continent of continents) {
         continentLayers.push({
             boundLayer: spawnArea(continent),
             markerLayer: spawnContinentPoints(new L.layerGroup(), continent),
             startCoordinates: jQuery.extend(true, [], continent.geometry.coordinates)
         });
-        continentLayers[contNum(continent.properties.continent)].markerLayer.addTo(map);
         continentLayers[contNum(continent.properties.continent)].boundLayer.addTo(map);
     }
-    //console.log(continentLayers)
-    //resetPoints();
-    changeActiveLayer(userPointsLayer);
+    DRAW_POINTS = !DRAW_POINTS;
+    activeLayer = userPointsLayer;
 }
 
 function addMarker(e) {
@@ -296,6 +252,16 @@ function addMarker(e) {
 map.on("click", function(e) {
 	addMarker(e);
 }); 
+
+function resetPoints() {
+    for (let continent of continentLayers) {
+        if (DRAW_POINTS) {
+            continent.markerLayer.addTo(map);
+        } else {
+            map.removeLayer(continent.markerLayer);
+        }
+    }
+}
 
 function printPoints() {
     if (DRAW_POINTS) {
@@ -361,7 +327,7 @@ var showPointsAction = L.Toolbar2.Action.extend({
     },
     addHooks: function () {
         DRAW_POINTS = !DRAW_POINTS;
-        //resetPoints();
+        resetPoints();
     }
 });
 var placePointsAction = L.Toolbar2.Action.extend({
@@ -412,19 +378,19 @@ var returnToUserLayer = L.Toolbar2.Action.extend({
         }
     },
     addHooks: function () {
-        changeActiveLayer(userPointsLayer);
+        //changeActiveLayer(userPointsLayer);
     }
 });
 
 var toolbar = new L.Toolbar2.Control({
     position: 'topleft',
     actions: [
-        resetAction,
+        //resetAction,
         showPointsAction,
         placePointsAction,
         printPointsAction,
-        saveToGroupAction,
-        returnToUserLayer
+        saveToGroupAction//,
+        //returnToUserLayer
     ]
 });
 if (DEVELOPER_MODE) toolbar.addTo(map);
