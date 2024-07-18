@@ -1,4 +1,4 @@
-const DEVELOPER_MODE = true;
+const DEVELOPER_MODE = false;
 const HISTORY_ACT_DELETE = 'delete';
 const HISTORY_ACT_CREATE = 'create';
 const buttonRemove = "<button class='remove'>del</button>";
@@ -247,7 +247,7 @@ function addMarker(e) {
         let temp = createMarker(coords, true, true);
         temp.addTo(activeLayer);
         remHistory.push({
-            type: HISTORY_ACT_DELETE,
+            type: HISTORY_ACT_CREATE,
             object: temp
         });
 	}
@@ -305,7 +305,15 @@ function savePointsToGroup() {
 
 $(document).on("keydown", function(e){
     if (e.keyCode == 90 && e.ctrlKey) {
-        
+        if (remHistory.length > 0) {
+            let temp = remHistory.pop();
+            if (temp.type == HISTORY_ACT_CREATE) {
+                activeLayer.removeLayer(temp.object);
+            }
+            if (temp.type == HISTORY_ACT_DELETE) {
+                temp.object.addTo(activeLayer);
+            }
+        }
     }
 })
 
