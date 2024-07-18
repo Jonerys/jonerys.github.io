@@ -1,4 +1,4 @@
-const DEVELOPER_MODE = true;
+const DEVELOPER_MODE = false;
 const HISTORY_ACT_DELETE = 'delete';
 const HISTORY_ACT_CREATE = 'create';
 const buttonRemove = "<button class='remove'>del</button>";
