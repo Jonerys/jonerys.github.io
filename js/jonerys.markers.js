@@ -22,7 +22,7 @@ const iconBuildingPA = -15;	// координата якоря подсказк�
 var markers = [];
 var icons = [];
 
-var CustomMarker = L.Marker.extend({
+const CustomMarker = L.Marker.extend({
 	options: {
 		iconsSet: {}
 	},
@@ -38,7 +38,30 @@ var CustomMarker = L.Marker.extend({
 	}
 })
 
-var DebugIcon = L.Icon.extend({
+const UserCustomMarker = L.Marker.extend({
+	options: {
+		mID: -1,
+        deletable: false
+	},
+    getCoordinates() {
+        return {
+            lat: this._latlng.lat,
+            lng: this._latlng.lng
+        };
+    },
+    getID() {
+        return this.options.mID;
+    },
+    isDeletable() {
+		if (this.options.deletable ) {
+			return "<button class='remove'>del</button>";
+		} else {
+			return '';
+		}
+    }
+})
+
+const DebugIcon = L.Icon.extend({
 	options: {
 		iconUrl: 'markers/marker_debug.webp',
 		iconSize:     [10, 10],

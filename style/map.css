@@ -549,7 +549,7 @@ html,body {
 }
 .bounds {
 	mix-blend-mode: multiply;
-    filter: blur(4px);
+    filter: blur(3px);
 }
 .activebutton {
 	background-color: yellow !important;

@@ -43,7 +43,22 @@ var waterSearch = new Fuse(waterPlaces.features, {
 	]
 });
 
-var search = L.control.search({
+const CustomSearch = L.Control.Search.extend({
+    showAlert: function(a) {
+        var b = this;
+        $('input.search-input').css("border", "1.6px solid red");
+        this.timerAlert = setTimeout(function() {
+            b.hideAlert();
+        }, 1000);
+        return 0;
+    },
+    hideAlert: function() {
+        $('input.search-input').css("border", "0");
+        return 0;
+    }
+})
+
+var search = new CustomSearch({
 	layer: mapLayers,
 	propertyName: 'name',
 	position: 'topright',

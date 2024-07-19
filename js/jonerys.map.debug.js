@@ -11,15 +11,15 @@ var markerID = 0;
 
 var activeLayer;
 var remHistory = [];
-var continentAnchorLayer;
-var startCoords = [], startPoints = [], pointsToCreate = [], startPointsFilled = false;
+var startCoords = [], startPoints = [], pointsToCreate = [];
 var userMarkerGroups = [];
 var userPointsLayer = L.layerGroup().addTo(map, true);
 var boundPointsLayer = L.layerGroup().addTo(map, true);
-var prevcoords;
-var prevcursor;
+var prevcoords, prevcursor;
 var continentLayers = [];
-var continents = [ContinentAnchor, ContinentSunrise];
+var continents = [ContinentAnchor, ContinentSunrise, ContinentLilly, ContinentRebirth
+    //,ContinentTest1, ContinentTest2, ContinentTest3, ContinentTest4, ContinentTest5
+];
 
 map.on('click', function(e) {
 	//console.log('[' + Math.round(e.latlng.lat) + ', ' + Math.round(e.latlng.lng) + '],');
@@ -31,86 +31,56 @@ map.on('click', function(e) {
 //3. Перезагрузить слой точек
 //4. Перезагрузить слой границ
 
-var UserCustomMarker = L.Marker.extend({
-	options: {
-		mID: -1,
-        deletable: false
-	},
-    getCoordinates() {
-        return {
-            lat: this._latlng.lat,
-            lng: this._latlng.lng
-        };
-    },
-    getID() {
-        return this.options.mID;
-    },
-    isDeletable() {
-        return this.options.deletable;
-    }
-})
-
-function styleBound(feature) {
-    return feature.properties.style;
-}
-
-function highlightFeature(e) {
-    var layer = e.target;
-    layer.setStyle({
-        weight: 4,
-        color: "yellow",
-        fillOpacity: 0.6
-    });
-}
-
-function resetHighlight(e) {
-    var layer = e.target;
-    layer.setStyle(layer.feature.properties.style);
-}
-
 function onEachFeatureBound(feature, layer) {
     layer.on({
-        mouseover: highlightFeature,
-        mouseout: resetHighlight,
+        mouseover: function (e) {
+            var layer = e.target;
+            layer.setStyle({
+                weight: 4,
+                color: "yellow",
+                fillOpacity: 0.8
+            });
+        },
+        mouseout: function (e) {
+            var layer = e.target;
+            layer.setStyle(layer.feature.properties.style);
+        },
     });
     layer.bindTooltip(feature.properties.continent, {
         sticky: "true",
     })
 }
 
-function contNum(continent) {
-    switch (continent) {
-        case CONTINENT_ANCHOR:
-            return 0;
-        case CONTINENT_SUNRISE:
-            return 1;
-        case CONTINENT_LILLY:
-            return 2;
-        case CONTINENT_REBIRTH_NORTH:
-            return 3;
-        case CONTINENT_REBIRTH_EAST:
-            return 4;
-        case CONTINENT_REBIRTH_SOUTH:
-            return 5;
-        case CONTINENT_REBIRTH_WEST:
-            return 6;
-    }
-}
-
-//////////////////////////////////////////////
-
-function findMarkerByID(marker, arr) {
-    for (let elem of arr) {
-        if (elem.getID() == marker.getID()) {
-            return elem;
+function showHideAreas() {
+    for (let continent of continentLayers) {
+        if (map.hasLayer(continent.boundLayer)) {
+            map.removeLayer(continent.boundLayer);
+        } else {
+            continent.boundLayer.addTo(map);
         }
     }
 }
 
-function refreshBounds(layer, data) {
+function loadAreas() {
+    DRAW_POINTS = !DRAW_POINTS;
+    for (let continent of continents) {
+        continentLayers.push({
+            boundLayer: spawnArea(continent),
+            markerLayer: spawnContinentPoints(new L.layerGroup(), continent),
+            startCoordinates: jQuery.extend(true, [], continent.geometry.coordinates)
+        });
+        continentLayers[contNum(continent.properties.continent)].boundLayer.addTo(map);
+    }
+    DRAW_POINTS = !DRAW_POINTS;
+    activeLayer = userPointsLayer;
+}
+
+//////////////////////////////////////////////
+
+/*function refreshBounds(layer, data) {
 	map.removeLayer(layer);
 	return L.geoJSON(data, {
-        style: styleBound,
+        style: data.properties.style,
         onEachFeature: onEachFeatureBound
     });
 }
@@ -132,7 +102,7 @@ function changeCoords(newcoords) {
             }
         }
     }
-}
+}*/
 
 function createMarker(point, canbedeleted, draggable) {
     let temp = new UserCustomMarker(point, {
@@ -165,7 +135,7 @@ function createMarker(point, canbedeleted, draggable) {
             const btn2 = document.querySelector(".log");
             btn2.addEventListener("click", function () {
                 let coords = marker.getCoordinates();
-                console.log('[' + coords.lat.toFixed(4) + ',<br>' + coords.lng.toFixed(4) + '],')
+                console.log('[' + coords.lat + ', ' + coords.lng + '],')
             });
             if (marker.isDeletable()) {
                 btn.addEventListener("click", function () {
@@ -176,22 +146,17 @@ function createMarker(point, canbedeleted, draggable) {
                     if (activeLayer.hasLayer(marker)) {
                         activeLayer.removeLayer(marker);
                     }
-                    /*userPointsLayer.removeLayer(marker);
-                    boundPointsLayer.removeLayer(marker);
-                    for (layer of userMarkerGroups) {
-                        layer.removeLayer(marker);
-                    }*/
                 });
             }
         }
     });
-    if (temp.isDeletable()) {
+    //if (temp.isDeletable()) {
         temp.bindPopup(L.popup({minWidth:100})
-        .setContent('[' + point[0].toFixed(4) + ',<br>' + point[1].toFixed(4) + ']<br>' + buttonRemove + buttonLog));
-    } else {
+        .setContent('[' + point[0].toFixed(4) + ',<br>' + point[1].toFixed(4) + ']<br>' + temp.isDeletable() + buttonLog));
+    /*} else {
         temp.bindPopup(L.popup({minWidth:100})
         .setContent('[' + point[0].toFixed(4) + ',<br>' + point[1].toFixed(4) + ']<br>' + buttonLog));
-    }
+    }*/
     return temp;
 }
 
@@ -215,7 +180,7 @@ function spawnContinentPoints(layer, continent) {
 
 function spawnArea(continent) {
     let layer = L.geoJSON(continent, {
-        style: styleBound,
+        style: continent.properties.style,
         onEachFeature: onEachFeatureBound
     }).on({
         click: function(e) {
@@ -227,19 +192,7 @@ function spawnArea(continent) {
     return layer;
 }
 
-function setAreas() {
-    DRAW_POINTS = !DRAW_POINTS;
-    for (let continent of continents) {
-        continentLayers.push({
-            boundLayer: spawnArea(continent),
-            markerLayer: spawnContinentPoints(new L.layerGroup(), continent),
-            startCoordinates: jQuery.extend(true, [], continent.geometry.coordinates)
-        });
-        continentLayers[contNum(continent.properties.continent)].boundLayer.addTo(map);
-    }
-    DRAW_POINTS = !DRAW_POINTS;
-    activeLayer = userPointsLayer;
-}
+
 
 function addMarker(e) {
 	if (PLACE_POINTS && DEVELOPER_MODE && activeLayer == userPointsLayer) {
@@ -317,7 +270,7 @@ $(document).on("keydown", function(e){
     }
 })
 
-if (DEVELOPER_MODE) setAreas();
+if (DEVELOPER_MODE) loadAreas();
 
 var resetAction = L.Toolbar2.Action.extend({
     options: {
@@ -340,6 +293,18 @@ var showPointsAction = L.Toolbar2.Action.extend({
     addHooks: function () {
         DRAW_POINTS = !DRAW_POINTS;
         resetPoints();
+    }
+});
+var showBoundsAction = L.Toolbar2.Action.extend({
+    options: {
+        toolbarIcon: {
+            html: '👀',
+            tooltip: 'Показать/скрыть границы'
+        }
+    },
+    addHooks: function () {
+        //DRAW_POINTS = !DRAW_POINTS;
+        showHideAreas();
     }
 });
 var placePointsAction = L.Toolbar2.Action.extend({
@@ -399,6 +364,7 @@ var toolbar = new L.Toolbar2.Control({
     actions: [
         //resetAction,
         showPointsAction,
+        showBoundsAction,
         placePointsAction,
         printPointsAction,
         saveToGroupAction//,

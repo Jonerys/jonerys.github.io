@@ -18,6 +18,7 @@ const STATUS_VASSAL = 'Вассал';
 const STATUS_MINOR = 'Независимое государство';
 const STATUS_GREAT = 'Великая держава';
 
+const CONTINENT_REBIRTH = 'Материк Возрождения'
 const CONTINENT_REBIRTH_NORTH = 'Материк Возрождения (север)';
 const CONTINENT_REBIRTH_WEST = 'Материк Возрождения (запад)';
 const CONTINENT_REBIRTH_EAST = 'Материк Возрождения (восток)';
@@ -25,6 +26,38 @@ const CONTINENT_REBIRTH_SOUTH = 'Материк Возрождения (юг)';
 const CONTINENT_LILLY = 'Материк Лилии'; 
 const CONTINENT_SUNRISE = 'Материк Рассвета'; 
 const CONTINENT_ANCHOR = 'Материк Якоря'; 
+
+const CONTINENT_TEST1 = '1'
+const CONTINENT_TEST2 = '2'
+const CONTINENT_TEST3 = '3'
+const CONTINENT_TEST4 = '4'
+const CONTINENT_TEST5 = '5'
+
+function contNum(continent) {
+    switch (continent) {
+        case CONTINENT_ANCHOR:
+            return 0;
+        case CONTINENT_SUNRISE:
+            return 1;
+        case CONTINENT_LILLY:
+            return 2;
+        case CONTINENT_REBIRTH:
+        case CONTINENT_TEST1:
+            return 3;
+        case CONTINENT_REBIRTH_NORTH:
+        case CONTINENT_TEST2:
+            return 4;
+        case CONTINENT_REBIRTH_EAST:
+        case CONTINENT_TEST3:
+            return 5;
+        case CONTINENT_REBIRTH_SOUTH:
+        case CONTINENT_TEST4:
+            return 6;
+        case CONTINENT_REBIRTH_WEST:
+        case CONTINENT_TEST5:
+            return 7;  
+    }
+}
 
 var data = {
 	type: 'FeatureCollection',
