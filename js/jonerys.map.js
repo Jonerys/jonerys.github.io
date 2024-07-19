@@ -39,6 +39,9 @@ map = L.map('map', {
 	minZoom: -4
 }).setView(mapcenter, -2);
 
+const renderer = L.canvas({ padding: 10 });
+map.getRenderer(renderer).options.padding = 10;
+
 //map.getContainer().style.cursor = 'crosshair';
 
 var southWest = map.unproject([0, heightPx], -2);

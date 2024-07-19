@@ -66,7 +66,7 @@ function loadAreas() {
     for (let continent of continents) {
         continentLayers.push({
             boundLayer: spawnArea(continent),
-            markerLayer: spawnContinentPoints(new L.layerGroup(), continent),
+            markerLayer: [],//spawnContinentPoints(new L.layerGroup(), continent),
             startCoordinates: jQuery.extend(true, [], continent.geometry.coordinates)
         });
         continentLayers[contNum(continent.properties.continent)].boundLayer.addTo(map);
@@ -270,7 +270,7 @@ $(document).on("keydown", function(e){
     }
 })
 
-if (DEVELOPER_MODE) loadAreas();
+if (true) loadAreas();
 
 var resetAction = L.Toolbar2.Action.extend({
     options: {
