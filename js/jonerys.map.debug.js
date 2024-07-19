@@ -17,6 +17,7 @@ var userPointsLayer = L.layerGroup().addTo(map, true);
 var boundPointsLayer = L.layerGroup().addTo(map, true);
 var prevcoords, prevcursor;
 var continentLayers = [];
+var continentLayer = L.layerGroup();
 var continents = [ContinentAnchor, ContinentSunrise, ContinentLilly, ContinentRebirth
     //,ContinentTest1, ContinentTest2, ContinentTest3, ContinentTest4, ContinentTest5
 ];
@@ -61,12 +62,22 @@ function showHideAreas() {
     }
 }
 
+function loadContinents() {
+    for (let continent of continents) {
+        continentLayers.push({
+            boundLayer: spawnArea(continent)
+        });
+        continentLayers[contNum(continent.properties.continent)].boundLayer.addTo(continentLayer);
+    }
+    activeLayer = userPointsLayer;
+}
+
 function loadAreas() {
     DRAW_POINTS = !DRAW_POINTS;
     for (let continent of continents) {
         continentLayers.push({
             boundLayer: spawnArea(continent),
-            markerLayer: [],//spawnContinentPoints(new L.layerGroup(), continent),
+            markerLayer: spawnContinentPoints(new L.layerGroup(), continent),
             startCoordinates: jQuery.extend(true, [], continent.geometry.coordinates)
         });
         continentLayers[contNum(continent.properties.continent)].boundLayer.addTo(map);
@@ -270,7 +281,11 @@ $(document).on("keydown", function(e){
     }
 })
 
-if (true) loadAreas();
+if (DEVELOPER_MODE) {
+    loadAreas();
+} else {
+    loadContinents();
+}
 
 var resetAction = L.Toolbar2.Action.extend({
     options: {
