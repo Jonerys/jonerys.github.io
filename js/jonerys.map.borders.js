@@ -1,7 +1,6 @@
 var continents = [ContinentAnchor, ContinentSunrise, ContinentLilly, ContinentRebirth];
 var continentLayer = L.layerGroup();
 
-
 function onEachFeatureBound(feature, layer) {
     layer.on({
         mouseover: function (e) {

@@ -1,4 +1,4 @@
-const DEVELOPER_MODE = false;
+const DEVELOPER_MODE = true;
 const HISTORY_ACT_DELETE = 'delete';
 const HISTORY_ACT_CREATE = 'create';
 const buttonRemove = "<button class='remove'>del</button>";
@@ -17,10 +17,6 @@ var userPointsLayer = L.layerGroup().addTo(map, true);
 var boundPointsLayer = L.layerGroup().addTo(map, true);
 var prevcoords, prevcursor;
 var continentLayers = [];
-var continentLayer = L.layerGroup();
-var continents = [ContinentAnchor, ContinentSunrise, ContinentLilly, ContinentRebirth
-    //,ContinentTest1, ContinentTest2, ContinentTest3, ContinentTest4, ContinentTest5
-];
 
 map.on('click', function(e) {
 	//console.log('[' + Math.round(e.latlng.lat) + ', ' + Math.round(e.latlng.lng) + '],');
@@ -32,7 +28,7 @@ map.on('click', function(e) {
 //3. Перезагрузить слой точек
 //4. Перезагрузить слой границ
 
-function onEachFeatureBound(feature, layer) {
+function onEachFeatureBoundDebug(feature, layer) {
     layer.on({
         mouseover: function (e) {
             var layer = e.target;
@@ -76,7 +72,7 @@ function loadAreas() {
     DRAW_POINTS = !DRAW_POINTS;
     for (let continent of continents) {
         continentLayers.push({
-            boundLayer: spawnArea(continent),
+            boundLayer: spawnAreaDebug(continent),
             markerLayer: spawnContinentPoints(new L.layerGroup(), continent),
             startCoordinates: jQuery.extend(true, [], continent.geometry.coordinates)
         });
@@ -189,10 +185,10 @@ function spawnContinentPoints(layer, continent) {
     return layer;
 }
 
-function spawnArea(continent) {
+function spawnAreaDebug(continent) {
     let layer = L.geoJSON(continent, {
         style: continent.properties.style,
-        onEachFeature: onEachFeatureBound
+        onEachFeature: onEachFeatureBoundDebug
     }).on({
         click: function(e) {
             //changeActiveLayer(e.target);
@@ -281,11 +277,7 @@ $(document).on("keydown", function(e){
     }
 })
 
-if (DEVELOPER_MODE) {
-    loadAreas();
-} else {
-    loadContinents();
-}
+if (DEVELOPER_MODE) loadAreas();
 
 var resetAction = L.Toolbar2.Action.extend({
     options: {
