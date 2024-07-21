@@ -2,7 +2,8 @@ L.Control.RoCGraphicScale = L.Control.GraphicScale.extend({
 	options: {
 		kmPerPx: 4, 
 		scaleUnit: null,
-		numUnits: 2
+		numUnits: 2,
+		unitPx: 50
 	},
 	_update: function () { 
 		default_zoom = -2;
@@ -14,7 +15,8 @@ L.Control.RoCGraphicScale = L.Control.GraphicScale.extend({
 		var numUnits = this.options.numUnits;
 		var numSubunits = 2;
 		var unitDivision = 1;
-		var unitPx = 50;
+		var unitPx = this.options.unitPx;
+
 		var unitMeters = this.options.kmPerPx * unitPx * (1 / zoom);
 		var totalWidthPx = numUnits * unitPx;
 		

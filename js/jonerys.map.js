@@ -7,14 +7,14 @@ const mapcenter = [widthPx / 2, heightPx / 2];
 
 const image_url = './images/RoC_map_4.0.webp';
 
-const MapEvents = () => {
+/*const MapEvents = () => {
 	useMapEvents({
 	  click(e) {
 		console.log(e.latlng.lat + ' ' + e.latlng.lng);
 	  },
 	});
 	return false;
-}
+}*/
 
 var xy = function (x, y) {
 	if (L.Util.isArray(x)) {
@@ -62,14 +62,13 @@ map.attributionControl.addAttribution(
 
 var hash = new L.Hash(map);
 
-var scale_options = {
+new L.Control.RoCGraphicScale({
 	fill: 'fill',
 	kmPerPx: kmPerPx,
 	numUnits: 3,
-	scaleUnit: ' km'
-};
-
-new L.Control.RoCGraphicScale(scale_options).addTo(map);
+	scaleUnit: ' km',
+	unitPx: 50
+}).addTo(map);
 
 //new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 
@@ -98,7 +97,6 @@ new L.Control.Button({
 }).addTo(map);
 
 map.on("popupopen", function(e) {
-	//console.log(e);
 	$(".leaflet-popup-content img:last").one("load", function() {
 		e.popup._updateLayout();
 		e.popup._updatePosition();
