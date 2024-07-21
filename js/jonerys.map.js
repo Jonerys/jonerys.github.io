@@ -37,6 +37,26 @@ map = L.map('map', {
 	noWrap: true,
 	maxZoom: 0,                                                     
 	minZoom: -4
+}).on({
+	popupopen: function(e) {
+		$(".leaflet-popup-content img:last").one("load", function() {
+			e.popup._updateLayout();
+			e.popup._updatePosition();
+		});
+	},
+	drag: function() {
+		map.panInsideBounds(bounds, { animate: false });
+	},
+	zoomend: function(e){
+		var scale = Math.pow(2, e.target.getZoom()) / Math.pow(2, -2);
+		markers.forEach(function (item) {
+			item.setIcon(item.getIcon(scale));
+		});
+		if (e.target._popup ) {
+			e.target._popup._updateLayout();
+			e.target._popup._updatePosition();
+		}
+	}
 }).setView(mapcenter, -2);
 
 const renderer = L.canvas({ padding: 10 });
@@ -95,31 +115,6 @@ new L.Control.Button({
 	},
 	title: 'Меню'
 }).addTo(map);
-
-map.on("popupopen", function(e) {
-	$(".leaflet-popup-content img:last").one("load", function() {
-		e.popup._updateLayout();
-		e.popup._updatePosition();
-	});
-	/*var px = map.project(e.target._popup._latlng);
-	px.y -= e.target._popup._container.clientHeight / 2;
-	map.panTo(map.unproject(px), { animate: true });*/
-});
-
-map.on('drag', function() {
-	map.panInsideBounds(bounds, { animate: false });
-});
-
-map.on('zoomend', function(e){
-	var scale = Math.pow(2, e.target.getZoom()) / Math.pow(2, -2);
-	markers.forEach(function (item) {
-		item.setIcon(item.getIcon(scale));
-	});
-	if (e.target._popup ) {
-		e.target._popup._updateLayout();
-		e.target._popup._updatePosition();
-	}
-});
 
 function pointToLayer(feature) {
 	let marker = new CustomMarker(feature.geometry.coordinates, {
@@ -208,7 +203,8 @@ var countryLayer = L.geoJSON(data.features, {
 var placeLayer = L.geoJSON(places.features, {
 	pointToLayer: (feature) => pointToLayer(feature),
 	onEachFeature: function (feature, layer) {
-		let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" + feature.properties.name + "</div></div>";
+		let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" 
+		+ feature.properties.name + "</div></div>";
 		layer.bindPopup(popup, {
 			autoClose: false
 		});
@@ -218,7 +214,8 @@ var placeLayer = L.geoJSON(places.features, {
 var waterLayer = L.geoJSON(waterPlaces.features, {
 	pointToLayer: (feature) => pointToLayer(feature),
 	onEachFeature: function (feature, layer) {
-		let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" + feature.properties.name + "</div></div>";
+		let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" 
+		+ feature.properties.name + "</div></div>";
 		layer.bindPopup(popup, {
 			autoClose: false
 		});
@@ -228,7 +225,8 @@ var waterLayer = L.geoJSON(waterPlaces.features, {
 var buildingLayer = L.geoJSON(buildingPlaces.features, {
 	pointToLayer: (feature) => pointToLayer(feature),
 	onEachFeature: function (feature, layer) {
-		let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" + feature.properties.name + "</div></div>";
+		let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" 
+		+ feature.properties.name + "</div></div>";
 		layer.bindPopup(popup, {
 			autoClose: false
 		});
