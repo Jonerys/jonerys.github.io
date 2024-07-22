@@ -4,6 +4,7 @@
   /*--measure-difference-color: #C0C0C0;*/ 
   --measure-difference-color: yellow;
   --db-red-color: #d43626;
+  --db-dark-color: #525252;
 }
 
 @font-face {
@@ -45,7 +46,8 @@ html,body {
     top: 2px
 }
 .leaflet-popup-content {
-	width: fit-content;
+	/* width: fit-content; */
+	width: 100% !important;
 	margin: 0px;
 }
 .leaflet-control-measure, .leaflet-control-menu {
@@ -165,7 +167,7 @@ html,body {
 }
 
 .content {
-	width: fit-content;
+	width: 100%;
 }
 
 .content-head, .content-body {
@@ -306,7 +308,7 @@ html,body {
 	border-radius: 50%;
 	border: 2px solid var(--db-red-color);
 	background-color: white;
-	margin-right: 10px;
+	margin-right: 7px;
 }
 
 .menu-layers:hover input ~ .menu-layers-indicator {

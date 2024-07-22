@@ -204,7 +204,7 @@ var placeLayer = L.geoJSON(places.features, {
 	pointToLayer: (feature) => pointToLayer(feature),
 	onEachFeature: function (feature, layer) {
 		let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" 
-		+ feature.properties.name + "</div></div>";
+		+ feature.properties.continent + "</div></div>";
 		layer.bindPopup(popup, {
 			autoClose: false
 		});
@@ -222,7 +222,7 @@ var waterLayer = L.geoJSON(waterPlaces.features, {
 	}
 });
 
-var buildingLayer = L.geoJSON(buildingPlaces.features, {
+var archLayer = L.geoJSON(buildingPlaces.features, {
 	pointToLayer: (feature) => pointToLayer(feature),
 	onEachFeature: function (feature, layer) {
 		let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" 
@@ -237,7 +237,7 @@ var mapLayers = L.layerGroup([
 	countryLayer
 	//, placeLayer
 	//, waterLayer
-	//, buildingLayer
+	//, archLayer
 ]).addTo(map, true);
 
 if (mapLayers.hasLayer(countryLayer)) {
@@ -249,8 +249,8 @@ if (mapLayers.hasLayer(placeLayer)) {
 if (mapLayers.hasLayer(waterPlaces)) {
 	$('#waterPlaces').attr('checked','');
 }
-if (mapLayers.hasLayer(buildingLayer)) {
-	$('#buildingLayer').attr('checked','');
+if (mapLayers.hasLayer(archLayer)) {
+	$('#archLayer').attr('checked','');
 }
 if (mapLayers.hasLayer(continentLayer)) {
 	$('#continentLayer').attr('checked','');
@@ -282,4 +282,10 @@ $(".menu-layers input").click(function( event ) {
 	} catch(e) {
 
 	}
+});
+
+map.on('click', function(e) {
+	console.log('[' + Math.round(e.latlng.lat) + ', ' + Math.round(e.latlng.lng) + '],');
+	console.log(e.latlng)
+	//console.log('[' + Math.round(e.latlng.lng) + ', ' + Math.round(e.latlng.lat) + '],');
 });

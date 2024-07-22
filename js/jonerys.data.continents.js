@@ -31,6 +31,10 @@ var ContinentAnchor = {
 	type: "Feature",
     properties: {
         popupContent: "Атеншьёг",
+		popupPosition: {
+			lat: 3140,
+			lng: 702
+		},
         style: {
             weight: 2,
             color: "white",
@@ -820,6 +824,10 @@ var ContinentSunrise = {
 	type: "Feature",
     properties: {
         popupContent: "Атеншьёг",
+		popupPosition: {
+			lat: 2558,
+			lng: 4347
+		},
 		style: {
 			weight: 2,
             color: "white",
@@ -830,7 +838,8 @@ var ContinentSunrise = {
             fillOpacity: OPACITY,
 			className: "bounds"
 		},
-		continent: CONTINENT_SUNRISE 
+		continent: CONTINENT_SUNRISE,
+		info: 'lol' 
     },
     geometry: {
         type: "MultiPolygon",
@@ -1737,6 +1746,10 @@ var ContinentLilly = {
 	type: "Feature",
     properties: {
         popupContent: "Атеншьёг",
+		popupPosition: {
+			lat: 1016,
+			lng: 3763
+		},
         style: {
             weight: 2,
             color: "white",
@@ -1746,7 +1759,8 @@ var ContinentLilly = {
             fillOpacity: OPACITY,
 			className: "bounds"
         },
-		continent: CONTINENT_LILLY
+		continent: CONTINENT_LILLY,
+		info: 'lol' 
     },
     geometry: {
         type: "MultiPolygon",
@@ -2749,6 +2763,10 @@ var ContinentRebirth = {
 	type: "Feature",
     properties: {
         popupContent: "Атеншьёг",
+		popupPosition: {
+			lat: 1661,
+			lng: 2112
+		},
         style: {
             weight: 2,
             color: "white",
@@ -2758,7 +2776,8 @@ var ContinentRebirth = {
             fillOpacity: OPACITY,
 			className: "bounds"
         },
-		continent: CONTINENT_REBIRTH
+		continent: CONTINENT_REBIRTH,
+		info: 'lolавы выакпукп укпукепукпукпкуп упукпукп' 
     },
     geometry: {
         type: "MultiPolygon",
@@ -6724,7 +6743,8 @@ var ContinentTest1 = {
             fillOpacity: 0.5,
 			className: "bounds"
         },
-		continent: CONTINENT_TEST1
+		continent: CONTINENT_TEST1,
+		info: 'lol' 
     },
     geometry: {
         type: "MultiPolygon",

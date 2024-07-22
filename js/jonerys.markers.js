@@ -165,15 +165,21 @@ icons.push({
 		popupAnchor:  [0, iconBuildingPA]
 	}),
 	icon_x2: new CustomIcon({
+		iconUrl: 'markers/marker_building.webp',
+		iconSize:     [iconBuildingSizeX, iconBuildingSizeY],
+		iconAnchor:   [iconBuildingSizeX - iconBuildingSizeX * SIZE_NORMAL / 2, iconBuildingSizeY],
+		popupAnchor:  [0, iconBuildingPA]
+	}),
+	icon_x4: new CustomIcon({
 		iconUrl: 'markers/marker_building_x2.webp',
 		iconSize:     [iconBuildingSizeX * SIZE_BIG, iconBuildingSizeY * SIZE_BIG],
 		iconAnchor:   [iconBuildingSizeX * SIZE_NORMAL, iconBuildingSizeY * SIZE_BIG],
 		popupAnchor:  [0, iconBuildingPA * SIZE_BIG]
 	}),
-	icon_x4: new CustomIcon({
+	/*icon_x4: new CustomIcon({
 		iconUrl: 'markers/marker_building_x4.webp',
 		iconSize:     [iconBuildingSizeX* SIZE_LARGE, iconBuildingSizeY* SIZE_LARGE],
 		iconAnchor:   [iconBuildingSizeX * SIZE_BIG, iconBuildingSizeY * SIZE_LARGE],
 		popupAnchor:  [0, iconBuildingPA * SIZE_LARGE]
-	}),
+	}),*/
 });
