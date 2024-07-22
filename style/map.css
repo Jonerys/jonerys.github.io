@@ -273,6 +273,12 @@ html,body {
 	gap: 8px;
 }
 
+.menu-layers-row {
+	display: flex;
+    align-items: center;
+	justify-content: space-between;
+}
+
 .menu-layers {
 	display: flex;
     align-items: center;
@@ -303,13 +309,9 @@ html,body {
 	margin-right: 10px;
 }
 
-.layers-marker {
-	margin-left: auto;
-	padding-left: 15px;
-}
-
 .menu-layers:hover input ~ .menu-layers-indicator {
-  background-color: #eaeaea;
+  /* background-color: #eaeaea; */
+  background-color: #f5c97b;
 }
 
 .menu-layers input:checked ~ .menu-layers-indicator {

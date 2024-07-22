@@ -1,10 +1,11 @@
 const widthPx = 4833;
 const heightPx = 4101;
-const kmPerPx = 4;
+const kmPerPxDefault = 4;
+const mapScale = 1;
+const kmPerPx = kmPerPxDefault / mapScale;
 const widthKm = widthPx * kmPerPx;
 const heightKm = heightPx * kmPerPx;
 const mapcenter = [widthPx / 2, heightPx / 2];
-
 const image_url = './images/RoC_map_4.0.webp';
 
 /*const MapEvents = () => {
