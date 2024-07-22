@@ -49,11 +49,11 @@ const CustomSearch = L.Control.Search.extend({
         $('input.search-input').css("border", "1.6px solid red");
         this.timerAlert = setTimeout(function() {
             b.hideAlert();
-        }, 1000);
+        }, 1100);
         return 0;
     },
     hideAlert: function() {
-        $('input.search-input').css("border", "0");
+        $('input.search-input').css("border", "1.6px solid transparent");
         return 0;
     }
 })

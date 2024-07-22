@@ -258,11 +258,11 @@ $(".menu-layers input").click(function( event ) {
 	try {
 		if (map.hasLayer(layerCb)) {
             mapLayers.removeLayer(layerCb);
-			map.removeLayer(layerCb);
+			//map.removeLayer(layerCb);
 		}
 		else{
             mapLayers.addLayer(layerCb);
-			map.addLayer(layerCb);
+			//map.addLayer(layerCb);
 		}
 	} catch(e) {
 
