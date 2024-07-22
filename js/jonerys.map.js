@@ -222,7 +222,7 @@ var waterLayer = L.geoJSON(waterPlaces.features, {
 	}
 });
 
-var archLayer = L.geoJSON(buildingPlaces.features, {
+var archLayer = L.geoJSON(archPlaces.features, {
 	pointToLayer: (feature) => pointToLayer(feature),
 	onEachFeature: function (feature, layer) {
 		let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" 

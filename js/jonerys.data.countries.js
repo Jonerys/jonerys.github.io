@@ -2594,7 +2594,7 @@ var waterPlaces = {
 	]
 }
 
-var buildingPlaces = {
+var archPlaces = {
 	type: 'FeatureCollection',
 	features: [
 		{

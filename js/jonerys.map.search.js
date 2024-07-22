@@ -15,7 +15,7 @@ var countriesSearch = new Fuse(data.features, {
         },
 	]
 });
-var buildingSearch = new Fuse(buildingPlaces.features, {
+var archSearch = new Fuse(archPlaces.features, {
 	threshold: 0.3,
 	minMatchCharLength: 2,
 	keys: [{
@@ -82,17 +82,17 @@ var search = new CustomSearch({
             jsons = jsons.concat(countriesSearch.search('Ku'));
             jsons = jsons.concat(countriesSearch.search('Md'));
         } else {
-            if (map.hasLayer(countryLayer)) {
+            if (mapLayers.hasLayer(countryLayer)) {
                 jsons = jsons.concat(countriesSearch.search(text));
             }
-            if (map.hasLayer(placeLayer)) {
+            if (mapLayers.hasLayer(placeLayer)) {
                 jsons = jsons.concat(placesSearch.search(text));
             }
-            if (map.hasLayer(waterLayer)) {
+            if (mapLayers.hasLayer(waterLayer)) {
                 jsons = jsons.concat(waterSearch.search(text));
             }
-            if (map.hasLayer(buildingLayer)) {
-                jsons = jsons.concat(buildingSearch.search(text));
+            if (mapLayers.hasLayer(archLayer)) {
+                jsons = jsons.concat(archSearch.search(text));
             }
         }
         this.resetLayer(mapLayers);
