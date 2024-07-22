@@ -171,7 +171,7 @@ html,body {
 }
 
 .content-head, .content-body {
-	padding: 7px;
+	padding: 9px;
 }
 
 .content-body {
@@ -533,15 +533,15 @@ html,body {
 	overflow-y: auto;
 	max-height: 40px;
 }
-.diplomacy-record-notes::-webkit-scrollbar, .diplomacy-record-list::-webkit-scrollbar {
-	width: 4px;
+.diplomacy-record-notes::-webkit-scrollbar, .diplomacy-record-list::-webkit-scrollbar, .continent-info::-webkit-scrollbar {
+	width: 5px;
 }
-.diplomacy-record-notes::-webkit-scrollbar-track, .diplomacy-record-list::-webkit-scrollbar-track {
+.diplomacy-record-notes::-webkit-scrollbar-track, .diplomacy-record-list::-webkit-scrollbar-track, .continent-info::-webkit-scrollbar-track {
 	background: #f1f1f1;
 	border-radius: 25px;
 }
 
-.diplomacy-record-notes::-webkit-scrollbar-thumb, .diplomacy-record-list::-webkit-scrollbar-thumb {
+.diplomacy-record-notes::-webkit-scrollbar-thumb, .diplomacy-record-list::-webkit-scrollbar-thumb, .continent-info::-webkit-scrollbar-thumb {
 	background: #ccc;
 	border-radius: 25px;
 }
@@ -560,4 +560,11 @@ html,body {
 }
 .leaflet-toolbar-icon:hover  {
 	background-color: #f5c97b !important;
+}
+.continent-info {
+	font-size: 14px;
+	min-width: 300px;
+	max-height: 170px;
+	overflow-y: auto;
+	padding: 9px;
 }

@@ -25,8 +25,7 @@ function onEachFeatureBound(feature, layer) {
     });
     let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" 
 		+ layer.feature.properties.continent + "</div></div>";
-    popup += "<div class=content-body>";
-    popup += "<div>" + layer.feature.properties.info + "</div>";
+    popup += "<div class=continent-info>" + layer.feature.properties.info;
     popup += "</div>";
     layer.bindPopup(popup, {
         autoClose: false

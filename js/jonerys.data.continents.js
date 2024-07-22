@@ -43,7 +43,10 @@ var ContinentAnchor = {
             fillOpacity: OPACITY,
 			className: "bounds"
         },
-		continent: CONTINENT_ANCHOR
+		continent: CONTINENT_ANCHOR,
+		info: 'Континент с тропическим, а в некоторых регионах засушливым климатом. ' 
+			+ 'Первые люди с Острова Возрождения побывали здесь задолго до того, как на материке побывала тиердальская '
+			+ 'экспедиция, заявившая всему миру об открытии новых земель. Активно колонизируется империями Материка Возрождения.' 
     },
     geometry: {
         type: "MultiPolygon",
@@ -839,7 +842,7 @@ var ContinentSunrise = {
 			className: "bounds"
 		},
 		continent: CONTINENT_SUNRISE,
-		info: 'lol' 
+		info: 'ГОООООООЛ<br>Ты с ума сошел? Мы карту делаем!' 
     },
     geometry: {
         type: "MultiPolygon",
@@ -2777,7 +2780,7 @@ var ContinentRebirth = {
 			className: "bounds"
         },
 		continent: CONTINENT_REBIRTH,
-		info: 'lolавы выакпукп укпукепукпукпкуп упукпукп' 
+		info: 'ГОООООООЛ<br>Ты с ума сошел? Мы карту делаем!' 
     },
     geometry: {
         type: "MultiPolygon",
@@ -6744,7 +6747,7 @@ var ContinentTest1 = {
 			className: "bounds"
         },
 		continent: CONTINENT_TEST1,
-		info: 'lol' 
+		info: 'ГОООООООЛ<br>Ты с ума сошел? Мы карту делаем!' 
     },
     geometry: {
         type: "MultiPolygon",
