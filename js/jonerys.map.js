@@ -104,7 +104,6 @@ new L.Control.Button({
 	position: 'topleft',
 	className: 'leaflet-control-menu',
 	buttonFunction: function() {
-		//$("#mapmenu").toggle("'slide', {direction: 'down' }, 1000");
 		if ($("#menu").is(":hidden")) {
 			$(".leaflet-bottom.leaflet-left").toggle();
 			$("#menu").slideToggle();
@@ -240,6 +239,22 @@ var mapLayers = L.layerGroup([
 	//, waterLayer
 	//, buildingLayer
 ]).addTo(map, true);
+
+if (mapLayers.hasLayer(countryLayer)) {
+	$('#countryLayer').attr('checked','');
+}
+if (mapLayers.hasLayer(placeLayer)) {
+	$('#placeLayer').attr('checked','');
+}
+if (mapLayers.hasLayer(waterPlaces)) {
+	$('#waterPlaces').attr('checked','');
+}
+if (mapLayers.hasLayer(buildingLayer)) {
+	$('#buildingLayer').attr('checked','');
+}
+if (mapLayers.hasLayer(continentLayer)) {
+	$('#continentLayer').attr('checked','');
+}
 
 // кластеризация маркеров работает, но надо доводить до ума
 /*var countries = L.markerClusterGroup();

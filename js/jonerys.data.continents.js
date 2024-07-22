@@ -21,11 +21,11 @@ var testCoords = [
 ];
 */
 
-const OPACITY = 0.4;
-const COLOR_ANCHOR = "#A392FA";
-const COLOR_SUNRISE = "#1CDEAD";
-const COLOR_LILLY = "#9933FF";
-const COLOR_REBIRTH = "#FF3333";
+const OPACITY = 0.3;
+const COLOR_ANCHOR = "#7442C8";
+const COLOR_SUNRISE = "#1CD3AD";
+const COLOR_LILLY = "#F664AF";
+const COLOR_REBIRTH = "#FFE5B4";
 
 var ContinentAnchor = {
 	type: "Feature",
