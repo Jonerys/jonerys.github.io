@@ -42,6 +42,15 @@ var waterSearch = new Fuse(waterPlaces.features, {
 	},
 	]
 });
+var continentSearch = new Fuse(continents.features, {
+	threshold: 0.3,
+	minMatchCharLength: 2,
+	keys: [{
+	  	name: 'properties.name',
+	  	weight: 0.5
+	},
+	]
+});
 
 const CustomSearch = L.Control.Search.extend({
     showAlert: function(a) {
@@ -93,6 +102,9 @@ var search = new CustomSearch({
             }
             if (mapLayers.hasLayer(archLayer)) {
                 jsons = jsons.concat(archSearch.search(text));
+            }
+            if (mapLayers.hasLayer(continentLayer)) {
+                jsons = jsons.concat(continentSearch.search(text));
             }
         }
         this.resetLayer(mapLayers);

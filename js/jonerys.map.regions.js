@@ -1,4 +1,3 @@
-var continents = [ContinentAnchor, ContinentSunrise, ContinentLilly, ContinentRebirth];
 var continentLayer = L.layerGroup();
 
 function onEachFeatureBound(feature, layer) {
@@ -20,11 +19,12 @@ function onEachFeatureBound(feature, layer) {
             e.popup.setLatLng(layer.feature.properties.popupPosition)
         }
     });
-    layer.bindTooltip(feature.properties.continent, {
+    layer.bindTooltip(feature.properties.name, {
         sticky: "true",
     });
-    let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" 
-		+ layer.feature.properties.continent + "</div></div>";
+    let popup = "<div class=content><div class=\"content-head continent-head\"><img style='width: 25px' src='markers/marker_continent.webp'/>"
+        + "<div class=\"black-link country-name\">" 
+		+ layer.feature.properties.name + "</div></div>";
     popup += "<div class=continent-info>" + layer.feature.properties.info;
     popup += "</div>";
     layer.bindPopup(popup, {
@@ -41,7 +41,7 @@ function createContinent(continent) {
 }
 
 function loadContinents() {
-    for (let continent of continents) {
+    for (let continent of continents.features) {
         let layer = createContinent(continent)
         layer.addTo(continentLayer);
     }

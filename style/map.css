@@ -561,6 +561,9 @@ html,body {
 .leaflet-toolbar-icon:hover  {
 	background-color: #f5c97b !important;
 }
+.continent-head {
+	min-height: auto;
+}
 .continent-info {
 	font-size: 14px;
 	min-width: 300px;

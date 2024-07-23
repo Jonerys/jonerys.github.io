@@ -185,6 +185,7 @@
     height: fit-content;
     width: fit-content;
     margin-right: 5px;
+    width: 20px;
 }
 .widened {
     width: 350px !important;
