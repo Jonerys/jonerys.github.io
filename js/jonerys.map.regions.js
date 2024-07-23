@@ -17,11 +17,19 @@ function onEachFeatureBound(feature, layer) {
         popupopen: function(e) {
             let layer = e.target;
             e.popup.setLatLng(layer.feature.properties.popupPosition)
+        },
+        click: function (e) {
+            for (let marker of markers) {
+                if (e.target.feature.properties.name == marker.feature.properties.name) {
+                    marker.openPopup();
+                }
+            }
         }
     });
     layer.bindTooltip(feature.properties.name, {
         sticky: "true",
     });
+
     /*let popup = "<div class=content><div class=\"content-head continent-head\"><img style='width: 25px' src='markers/marker_continent.webp'/>"
         + "<div class=\"black-link country-name\">" 
 		+ layer.feature.properties.name + "</div></div>";
