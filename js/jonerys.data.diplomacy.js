@@ -1,32 +1,3 @@
-const DIPLO_STATUS_WAR = {
-    text: 'ВОЙНА!',
-    emoji: '⚔️'
-};
-const DIPLO_STATUS_NEUTRAL = {
-    text: 'Нейтралитет',
-    emoji: '😐'
-};
-const DIPLO_STATUS_ALLY = {
-    text: 'Союз',
-    emoji: '🤗'
-};
-const DIPLO_STATUS_COLONY = {
-    text: 'Колониальная зависимость',
-    emoji: '🔗'
-};
-const DIPLO_STATUS_METROPOLY = {
-    text: 'Зависимая территория',
-    emoji: '🎩'
-};
-const DIPLO_STATUS_FRIENDSHIP = {
-    text: 'Дружественный нейтралитет',
-    emoji: '😉'
-};
-const DIPLO_STATUS_HOSTILE = {
-    text: 'Враждебный нейтралитет',
-    emoji: '😠'
-};
-
 var diplomacyData = {
     records: [
         {

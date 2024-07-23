@@ -21,12 +21,6 @@ var testCoords = [
 ];
 */
 
-const OPACITY = 0.3;
-const COLOR_ANCHOR = "#7442C8";
-const COLOR_SUNRISE = "#1CD3AD";
-const COLOR_LILLY = "#F664AF";
-const COLOR_REBIRTH = "#FFE5B4";
-
 var continents = {
 	type: 'FeatureCollection',
     features: [ 
@@ -43,8 +37,8 @@ var continents = {
 					weight: 2,
 					color: "white",
 					opacity: 1,
-					fillColor: COLOR_ANCHOR,
-					fillOpacity: OPACITY,
+					fillColor: CONTINENT_COLOR_ANCHOR,
+					fillOpacity: CONTINENT_OPACITY_BASE,
 					className: "bounds"
 				},
 				name: CONTINENT_ANCHOR,
@@ -840,9 +834,9 @@ var continents = {
 					color: "white",
 					opacity: 1,
 					//fillColor: "#009966",
-					fillColor: COLOR_SUNRISE,
+					fillColor: CONTINENT_COLOR_SUNRISE,
 					//fillColor: "#00CED1",
-					fillOpacity: OPACITY,
+					fillOpacity: CONTINENT_OPACITY_BASE,
 					className: "bounds"
 				},
 				name: CONTINENT_SUNRISE,
@@ -1761,9 +1755,9 @@ var continents = {
 					weight: 2,
 					color: "white",
 					opacity: 1,
-					fillColor: COLOR_LILLY,
+					fillColor: CONTINENT_COLOR_LILLY,
 					//fillColor: "#FF3333",
-					fillOpacity: OPACITY,
+					fillOpacity: CONTINENT_OPACITY_BASE,
 					className: "bounds"
 				},
 				name: CONTINENT_LILLY,
@@ -2778,9 +2772,9 @@ var continents = {
 					weight: 2,
 					color: "white",
 					opacity: 1,
-					fillColor: COLOR_REBIRTH,
+					fillColor: CONTINENT_COLOR_REBIRTH,
 					//fillColor: "#FF3333",
-					fillOpacity: OPACITY,
+					fillOpacity: CONTINENT_OPACITY_BASE,
 					className: "bounds"
 				},
 				name: CONTINENT_REBIRTH,

@@ -7,7 +7,7 @@ function onEachFeatureBound(feature, layer) {
             layer.setStyle({
                 weight: 4,
                 color: "yellow",
-                fillOpacity: 0.7
+                fillOpacity: CONTINENT_OPACITY_ACTIVE
             });
         },
         mouseout: function (e) {
