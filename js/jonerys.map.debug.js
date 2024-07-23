@@ -1,4 +1,4 @@
-const DEVELOPER_MODE = true;
+const DEVELOPER_MODE = false;
 const HISTORY_ACT_DELETE = 'delete';
 const HISTORY_ACT_CREATE = 'create';
 const buttonRemove = "<button class='remove'>del</button>";
@@ -16,7 +16,7 @@ var userMarkerGroups = [];
 var userPointsLayer = L.layerGroup().addTo(map, true);
 var boundPointsLayer = L.layerGroup().addTo(map, true);
 var prevcoords, prevcursor;
-var continentLayers = [];
+var continentLayersDebug = [];
 
 map.on('click', function(e) {
 	//console.log('[' + Math.round(e.latlng.lat) + ', ' + Math.round(e.latlng.lng) + '],');
@@ -27,6 +27,8 @@ map.on('click', function(e) {
 //2. Удалить из набора координат
 //3. Перезагрузить слой точек
 //4. Перезагрузить слой границ
+
+var boundLayer = L.layerGroup().addTo(map);
 
 function onEachFeatureBoundDebug(feature, layer) {
     layer.on({
@@ -49,7 +51,7 @@ function onEachFeatureBoundDebug(feature, layer) {
 }
 
 function showHideAreas() {
-    for (let continent of continentLayers) {
+    for (let continent of continentLayersDebug) {
         if (map.hasLayer(continent.boundLayer)) {
             map.removeLayer(continent.boundLayer);
         } else {
@@ -60,23 +62,23 @@ function showHideAreas() {
 
 function loadContinents() {
     for (let continent of continents) {
-        continentLayers.push({
+        continentLayersDebug.push({
             boundLayer: spawnArea(continent)
         });
-        continentLayers[contNum(continent.properties.continent)].boundLayer.addTo(continentLayer);
+        continentLayersDebug[contNum(continent.properties.name)].boundLayer.addTo(continentLayer);
     }
     activeLayer = userPointsLayer;
 }
 
 function loadAreas() {
     DRAW_POINTS = !DRAW_POINTS;
-    for (let continent of continents) {
-        continentLayers.push({
+    for (let continent of continents.features) {
+        continentLayersDebug.push({
             boundLayer: spawnAreaDebug(continent),
             markerLayer: spawnContinentPoints(new L.layerGroup(), continent),
             startCoordinates: jQuery.extend(true, [], continent.geometry.coordinates)
         });
-        continentLayers[contNum(continent.properties.continent)].boundLayer.addTo(map);
+        continentLayersDebug[contNum(continent.properties.name)].boundLayer.addTo(map);
     }
     DRAW_POINTS = !DRAW_POINTS;
     activeLayer = userPointsLayer;
@@ -93,7 +95,7 @@ function loadAreas() {
 }
 
 function refreshBounds() {
-    for (let layer of continentLayers) {
+    for (let layer of continentLayersDebug) {
         console.log(layer)
     }
 }
@@ -218,7 +220,7 @@ map.on("click", function(e) {
 }); 
 
 function resetPoints() {
-    for (let continent of continentLayers) {
+    for (let continent of continentLayersDebug) {
         if (DRAW_POINTS) {
             continent.markerLayer.addTo(map);
         } else {

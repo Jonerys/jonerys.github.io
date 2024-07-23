@@ -7,19 +7,14 @@ function contNum(continent) {
         case CONTINENT_LILLY:
             return 2;
         case CONTINENT_REBIRTH:
-        case CONTINENT_TEST1:
             return 3;
         case CONTINENT_REBIRTH_NORTH:
-        case CONTINENT_TEST2:
             return 4;
         case CONTINENT_REBIRTH_EAST:
-        case CONTINENT_TEST3:
             return 5;
         case CONTINENT_REBIRTH_SOUTH:
-        case CONTINENT_TEST4:
             return 6;
         case CONTINENT_REBIRTH_WEST:
-        case CONTINENT_TEST5:
             return 7;  
     }
 }

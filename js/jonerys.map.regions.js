@@ -22,14 +22,14 @@ function onEachFeatureBound(feature, layer) {
     layer.bindTooltip(feature.properties.name, {
         sticky: "true",
     });
-    let popup = "<div class=content><div class=\"content-head continent-head\"><img style='width: 25px' src='markers/marker_continent.webp'/>"
+    /*let popup = "<div class=content><div class=\"content-head continent-head\"><img style='width: 25px' src='markers/marker_continent.webp'/>"
         + "<div class=\"black-link country-name\">" 
 		+ layer.feature.properties.name + "</div></div>";
     popup += "<div class=continent-info>" + layer.feature.properties.info;
     popup += "</div>";
     layer.bindPopup(popup, {
         autoClose: false
-    })
+    })*/
 }
 
 function createContinent(continent) {

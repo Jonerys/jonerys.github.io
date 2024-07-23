@@ -73,6 +73,7 @@ var search = new CustomSearch({
 	position: 'topright',
 	zoom: -2,
 	autoType: false,
+    marker: false,
 	collapsed: false,
 	minLength: 2,
 	tooltipLimit: 10,
