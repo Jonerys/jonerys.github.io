@@ -136,16 +136,16 @@ html,body {
 }
 
 .popup-label {
-	font-size: 14px;
+	font-size: 12pt;
 	font-weight: bold;
 }
 
 .popup-data	{
-	font-size: 14px;
+	font-size: 12pt;
 }
 
 .country-name {
-	font-size: 14px;
+	font-size: 12pt;
 	font-weight: bold;
 }
 
@@ -187,7 +187,7 @@ html,body {
 
 .content-body div p {
 	margin: 0px;
-	font-size: 14px;
+	font-size: 12pt;
 	font-weight: bold;
 	text-decoration: underline;
 	white-space: nowrap;
@@ -223,8 +223,8 @@ html,body {
 }
 
 #diplomacy {
-	width: 435px;
-	max-width: 700px;
+	/* width: 435px; */
+	max-width: 460px;
 	background-color: white;
 	height: 100%;
 	z-index: 502;
@@ -247,7 +247,7 @@ html,body {
 	color: white;
 	font-family: PlayfairDisplaySC-Bold;
 	display: inline;
-	font-size: 22pt;
+	font-size: 24pt;
 	line-height: 1.1;
 }
 
@@ -261,7 +261,7 @@ html,body {
 	margin-bottom: 0px;
 	color: white;
 	font-family: PlayfairDisplaySC-Regular;
-	font-size: 12pt;
+	font-size: 14pt;
 }
 
 .menu-body {
@@ -532,6 +532,7 @@ html,body {
 	padding: 4px;
 	overflow-y: auto;
 	max-height: 40px;
+	word-break: normal;
 }
 .diplomacy-record-notes::-webkit-scrollbar, .diplomacy-record-list::-webkit-scrollbar, .continent-info::-webkit-scrollbar {
 	width: 6px;
@@ -553,7 +554,7 @@ html,body {
 }
 .bounds {
 	mix-blend-mode: multiply;
-    filter: blur(3px);
+    filter: blur(4px);
 }
 .activebutton {
 	background-color: yellow !important;
@@ -565,7 +566,7 @@ html,body {
 	min-height: auto;
 }
 .continent-info {
-	font-size: 14px;
+	font-size: 12pt;
 	min-width: 300px;
 	max-height: 170px;
 	overflow-y: auto;
@@ -573,6 +574,5 @@ html,body {
 }
 .continent-body {
 	padding: 0;
-
 	gap: 0px;
 }

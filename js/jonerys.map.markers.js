@@ -124,7 +124,7 @@ var continentMarkerLayer = L.geoJSON(continentMarkers.features, {
 		+ feature.properties.name + "</div></div>";
         popup += "<div class='content-body continent-body'>"
         popup += "<div class='continent-info'>" + feature.properties.info;
-        popup += "</div><div style='height: 9px'></div></div>";
+        popup += "</div><div style='height: 9px; background-color: white;'></div></div>";
         layer.bindPopup(popup, {
             autoClose: false
         })
