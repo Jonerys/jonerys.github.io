@@ -132,7 +132,7 @@
     margin: 0px;
 }
 .search-tooltip {
-    width: 100%;
+    width: calc(100% - 3.6px);
 }
 
 .leaflet-control-search .search-tip {

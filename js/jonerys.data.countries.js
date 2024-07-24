@@ -19,7 +19,7 @@ function contNum(continent) {
     }
 }
 
-var data = {
+var countries = {
 	type: 'FeatureCollection',
     features: [
 	{

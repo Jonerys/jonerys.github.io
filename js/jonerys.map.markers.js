@@ -7,7 +7,7 @@ function pointToLayer(feature) {
 	return markers[markers.length - 1];
 };
 
-var countryLayer = L.geoJSON(data.features, {
+var countryLayer = L.geoJSON(countries.features, {
 	pointToLayer: (feature) => pointToLayer(feature),
 	onEachFeature: function (feature, layer) {
 		let player, countryName;
@@ -115,14 +115,16 @@ var archLayer = L.geoJSON(archPlaces.features, {
 	}
 });
 
-var continentIconLayer = L.geoJSON(continentIcons.features, {
+var continentMarkerLayer = L.geoJSON(continentMarkers.features, {
 	pointToLayer: (feature) => pointToLayer(feature),
 	onEachFeature: function (feature, layer) {
-		let popup = "<div class=content><div class=\"content-head continent-head\"><img style='width: 25px' src='markers/marker_continent.webp'/>"
-        + "<div class=\"black-link country-name\">" 
-		+ layer.feature.properties.name + "</div></div>";
-        popup += "<div class=continent-info>" + layer.feature.properties.info;
-        popup += "</div>";
+		let popup = "<div class=content><div class=\"content-head continent-head\"><img style='width: 25px' src='"
+        + icons.find(a => a.type == feature.icontype).icon_x1.options.iconUrl
+        + "'/><div class=\"black-link country-name\">" 
+		+ feature.properties.name + "</div></div>";
+        popup += "<div class='content-body continent-body'>"
+        popup += "<div class='continent-info'>" + feature.properties.info;
+        popup += "</div><div style='height: 9px'></div></div>";
         layer.bindPopup(popup, {
             autoClose: false
         })
@@ -160,7 +162,7 @@ function openCountryDiplomacy(elem) {
 	chooseCountry(elem);
 }
 
-continentIconLayer.addTo(continentLayer);
+continentMarkerLayer.addTo(continentLayer);
 
 $(".menu-layers input").click(function( event ) {
 	let layerCb = window[event.target.value];

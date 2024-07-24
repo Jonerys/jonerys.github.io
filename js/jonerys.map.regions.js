@@ -1,4 +1,6 @@
-var continentLayer = L.layerGroup();
+var continentLayer = L.layerGroup({
+    interactive: false
+});
 
 function onEachFeatureBound(feature, layer) {
     layer.on({
@@ -19,11 +21,11 @@ function onEachFeatureBound(feature, layer) {
             e.popup.setLatLng(layer.feature.properties.popupPosition)
         },
         click: function (e) {
-            for (let marker of markers) {
+            /*for (let marker of markers) {
                 if (e.target.feature.properties.name == marker.feature.properties.name) {
                     marker.openPopup();
                 }
-            }
+            }*/
         }
     });
     layer.bindTooltip(feature.properties.name, {

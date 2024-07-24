@@ -43,7 +43,7 @@ function resetInfo() {
     }
     for (let rec of relationshipRecords) {
         if ((rec.id2 == id1) && rec.duplex) {
-            let curCountry = data.features.find(r => r.properties.id == rec.id1);
+            let curCountry = countries.features.find(r => r.properties.id == rec.id1);
             //if (curCountry.properties.continent == ddFilter.val())
             filteredData.push({
                 country: {
@@ -60,7 +60,7 @@ function resetInfo() {
             });
         }
         else if (rec.id1 == id1) {
-            let curCountry = data.features.find(r => r.properties.id == rec.id2);
+            let curCountry = countries.features.find(r => r.properties.id == rec.id2);
             //if (curCountry.properties.continent == ddFilter.val())
             filteredData.push({
                 country: {
@@ -170,7 +170,7 @@ dd1Default.html("<input type='radio' value='-1'/><label><img>Выберите с
 ddCurrentValue1.html(dd1Default.children(0).text());
 ddButton1.val('default1');
 
-for (let feature of data.features) {
+for (let feature of countries.features) {
 	let li = $('<li/>');
 	li.html("<input type='radio' value='" + feature.properties.id + "'/>" 
 		+ "<label class='gap'>" 

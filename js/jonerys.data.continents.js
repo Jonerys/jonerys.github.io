@@ -6751,7 +6751,7 @@ var continents = {
 	]
 }
 
-var continentIcons = {
+var continentMarkers = {
 	type: 'FeatureCollection',
     features: [
 		{
@@ -6766,6 +6766,42 @@ var continentIcons = {
 				info: 'Континент с тропическим, а в некоторых регионах засушливым климатом. ' 
 					+ 'Первые люди с Острова Возрождения побывали здесь задолго до того, как на материке побывала тиердальская '
 					+ 'экспедиция, заявившая всему миру об открытии новых земель. Активно колонизируется империями Материка Возрождения.'
+			}
+		},
+		{
+			type: 'Feature',
+			icontype: ICON_CONTINENT,
+			geometry: {
+				type: 'Point',
+				coordinates: [2558, 4347]
+			},
+			properties: {
+				name: CONTINENT_SUNRISE,
+				info: 'ГОООООООЛ<br>Ты с ума сошел? Мы карту делаем!'
+			}
+		},		
+		{
+			type: 'Feature',
+			icontype: ICON_CONTINENT,
+			geometry: {
+				type: 'Point',
+				coordinates: [1016, 3763]
+			},
+			properties: {
+				name: CONTINENT_LILLY,
+				info: 'ГОООООООЛ<br>Ты с ума сошел? Мы карту делаем!'
+			}
+		},		
+		{
+			type: 'Feature',
+			icontype: ICON_CONTINENT,
+			geometry: {
+				type: 'Point',
+				coordinates: [1661, 2112]
+			},
+			properties: {
+				name: CONTINENT_REBIRTH,
+				info: 'ГОООООООЛ<br>Ты с ума сошел? Мы карту делаем!'
 			}
 		},
 	]

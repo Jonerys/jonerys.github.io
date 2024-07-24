@@ -24,6 +24,12 @@ const iconContinentSizeX = 20;	// размер иконки по умолчан�
 const iconContinentSizeY = 20;	// размер иконки по умолчанию
 const iconContinentPA = -11;	// координата якоря подсказки по умолчанию
 
+const ICON_CONTINENT_Y = 'continent_yellow';
+const iconContinentYSizeX = 20;	// размер иконки по умолчанию
+const iconContinentYSizeY = 20;	// размер иконки по умолчанию
+const iconContinentYPA = -11;	// координата якоря подсказки по умолчанию
+
+
 var icons = [];
 
 const CustomMarker = L.Marker.extend({
@@ -187,24 +193,45 @@ icons.push({
 		popupAnchor:  [0, iconBuildingPA * SIZE_LARGE]
 	}),*/
 });
-icons.push({
+/*icons.push({
 	type: ICON_CONTINENT,
 	icon_x1: new CustomIcon({
 		iconUrl: 'markers/marker_continent.webp',
-		iconSize:     [iconContinentSizeX, iconContinentSizeY],
-		iconAnchor:   [iconContinentSizeX - iconContinentSizeX * SIZE_NORMAL / 2, iconContinentSizeY],
-		popupAnchor:  [0, iconContinentPA]
+		iconSize:     [iconContinentSizeX * SIZE_BIG, iconContinentSizeY * SIZE_BIG],
+		iconAnchor:   [iconContinentSizeX * SIZE_NORMAL, iconContinentSizeY * SIZE_BIG],
+		popupAnchor:  [0, iconContinentPA * SIZE_BIG]
 	}),
 	icon_x2: new CustomIcon({
 		iconUrl: 'markers/marker_continent.webp',
 		iconSize:     [iconContinentSizeX * SIZE_BIG, iconContinentSizeY * SIZE_BIG],
 		iconAnchor:   [iconContinentSizeX * SIZE_NORMAL, iconContinentSizeY * SIZE_BIG],
-		popupAnchor:  [0, iconBuildingPA * SIZE_BIG]
+		popupAnchor:  [0, iconContinentPA * SIZE_BIG]
 	}),
 	icon_x4: new CustomIcon({
 		iconUrl: 'markers/marker_continent.webp',
 		iconSize:     [iconContinentSizeX * SIZE_LARGE, iconContinentSizeY * SIZE_LARGE],
 		iconAnchor:   [iconContinentSizeX * SIZE_BIG, iconContinentSizeY * SIZE_LARGE],
 		popupAnchor:  [0, iconContinentPA * SIZE_LARGE]
+	}),
+});*/
+icons.push({
+	type: ICON_CONTINENT,
+	icon_x1: new CustomIcon({
+		iconUrl: 'markers/marker_continent_y.webp',
+		iconSize:     [iconContinentYSizeX * 1.5, iconContinentYSizeY * 1.5],
+		iconAnchor:   [iconContinentYSizeX * 1.5 / 2, iconContinentYSizeY * 1.5],
+		popupAnchor:  [0, iconContinentYPA * 1.5]
+	}),
+	icon_x2: new CustomIcon({
+		iconUrl: 'markers/marker_continent_y.webp',
+		iconSize:     [iconContinentYSizeX * SIZE_BIG, iconContinentYSizeY * SIZE_BIG],
+		iconAnchor:   [iconContinentYSizeX * SIZE_NORMAL, iconContinentYSizeY * SIZE_BIG],
+		popupAnchor:  [0, iconContinentYPA * SIZE_BIG]
+	}),
+	icon_x4: new CustomIcon({
+		iconUrl: 'markers/marker_continent_y.webp',
+		iconSize:     [iconContinentYSizeX * SIZE_LARGE, iconContinentYSizeY * SIZE_LARGE],
+		iconAnchor:   [iconContinentYSizeX * SIZE_BIG, iconContinentYSizeY * SIZE_LARGE],
+		popupAnchor:  [0, iconContinentYPA * SIZE_LARGE]
 	}),
 });

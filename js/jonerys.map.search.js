@@ -1,4 +1,4 @@
-var countriesSearch = new Fuse(data.features, {
+var countriesSearch = new Fuse(countries.features, {
 	threshold: 0.3,
 	minMatchCharLength: 2,
 	keys: [{
