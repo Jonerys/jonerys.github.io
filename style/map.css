@@ -34,6 +34,9 @@ html,body {
     height: 100%;
 	background-color: white !important;
 	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	/*background-image: url(../images/green-table2.webp);
 	background-size: 80%;
 	background-repeat: repeat;*/
@@ -45,6 +48,9 @@ html,body {
 .leaflet-marker-icon:hover {
     transition: top 125ms;
     top: 2px
+}
+.leaflet-tooltip{
+	font-size: 11pt;
 }
 .leaflet-popup-content {
 	/* width: fit-content; */

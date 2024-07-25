@@ -1,7 +1,7 @@
 var places = {
 	type: 'FeatureCollection',
     features: [
-		{
+		/*{
 			type: 'Feature',
 			icontype: ICON_PLACE,
 			geometry: {
@@ -11,14 +11,14 @@ var places = {
 			properties: {
 				name: 'Манты-Хансийск'
 			}
-		},
+		},*/
 	]
 }
 
 var waterPlaces = {
 	type: 'FeatureCollection',
     features: [
-		{
+		/*{
 			type: 'Feature',
 			icontype: ICON_WATER,
 			geometry: {
@@ -28,14 +28,14 @@ var waterPlaces = {
 			properties: {
 				name: 'Гремландское море'
 			}
-		},
+		},*/
 	]
 }
 
 var archPlaces = {
 	type: 'FeatureCollection',
 	features: [
-		{
+		/*{
 			type: 'Feature',
 			icontype: ICON_BUILDING,
 			geometry: {
@@ -45,6 +45,6 @@ var archPlaces = {
 			properties: {
 				name: 'Здание'
 			}
-		},
+		},*/
 	]
 }
