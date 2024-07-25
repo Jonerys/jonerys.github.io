@@ -5,7 +5,8 @@ const mapScale = 1;
 const kmPerPx = kmPerPxDefault / mapScale;
 const widthKm = widthPx * kmPerPx;
 const heightKm = heightPx * kmPerPx;
-const mapcenter = [widthPx / 2, heightPx / 2];
+const adjustMapView = 500
+const mapcenter = [widthPx + adjustMapView / 2, heightPx + adjustMapView / 2];
 const image_url = './images/RoC_map_4.0.webp';
 
 var mapLayers = L.layerGroup();
@@ -75,8 +76,8 @@ var image = L.imageOverlay(image_url, bounds).addTo(map);
 map.fitBounds(bounds);
 
 // для расширения видимого пространства
-southWest = map.unproject([-500, heightPx + 500], -2);
-northEast = map.unproject([widthPx + 500, -500], -2);
+southWest = map.unproject([-adjustMapView, heightPx + adjustMapView], -2);
+northEast = map.unproject([widthPx + adjustMapView, -adjustMapView], -2);
 bounds = L.latLngBounds(southWest, northEast);
 
 map.setMaxBounds(bounds);

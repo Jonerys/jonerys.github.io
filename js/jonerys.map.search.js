@@ -116,6 +116,17 @@ var search = new CustomSearch({
             ret[key] = records[key];
         }
         return ret;
+    },
+    moveToLocation: function(a, b, c) {
+        if (b == CONTINENT_ANCHOR || b == CONTINENT_LILLY || b == CONTINENT_REBIRTH || b == CONTINENT_SUNRISE) {
+            for (let continent of continents.features) {
+                if (b == continent.properties.name) {
+                    a.lat = continent.properties.popupPosition.lat;
+                    a.lng = continent.properties.popupPosition.lng;
+                }
+            }
+        }
+        this.options.zoom ? this._map.setView(a, this.options.zoom) : this._map.panTo(a)
     }
 }).on('search:locationfound', function(e) {
     map.closePopup();

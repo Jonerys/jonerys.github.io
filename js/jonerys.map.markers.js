@@ -115,7 +115,7 @@ var archLayer = L.geoJSON(archPlaces.features, {
 	}
 });
 
-var continentMarkerLayer = L.geoJSON(continentMarkers.features, {
+/*var continentMarkerLayer = L.geoJSON(continentMarkers.features, {
 	pointToLayer: (feature) => pointToLayer(feature),
 	onEachFeature: function (feature, layer) {
 		let popup = "<div class=content><div class=\"content-head continent-head\"><img style='width: 25px' src='"
@@ -131,6 +131,7 @@ var continentMarkerLayer = L.geoJSON(continentMarkers.features, {
 	}
 });
 
+continentMarkerLayer.addTo(continentLayer);*/
 
 countryLayer.addTo(mapLayers);
 
@@ -161,8 +162,6 @@ function openCountryDiplomacy(elem) {
 	}	
 	chooseCountry(elem);
 }
-
-continentMarkerLayer.addTo(continentLayer);
 
 $(".menu-layers input").click(function( event ) {
 	let layerCb = window[event.target.value];

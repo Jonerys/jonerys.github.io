@@ -193,7 +193,7 @@ icons.push({
 		popupAnchor:  [0, iconBuildingPA * SIZE_LARGE]
 	}),*/
 });
-/*icons.push({
+icons.push({
 	type: ICON_CONTINENT,
 	icon_x1: new CustomIcon({
 		iconUrl: 'markers/marker_continent.webp',
@@ -213,8 +213,8 @@ icons.push({
 		iconAnchor:   [iconContinentSizeX * SIZE_BIG, iconContinentSizeY * SIZE_LARGE],
 		popupAnchor:  [0, iconContinentPA * SIZE_LARGE]
 	}),
-});*/
-icons.push({
+});
+/*icons.push({
 	type: ICON_CONTINENT,
 	icon_x1: new CustomIcon({
 		iconUrl: 'markers/marker_continent_y.webp',
@@ -234,4 +234,4 @@ icons.push({
 		iconAnchor:   [iconContinentYSizeX * SIZE_BIG, iconContinentYSizeY * SIZE_LARGE],
 		popupAnchor:  [0, iconContinentYPA * SIZE_LARGE]
 	}),
-});
+});*/
