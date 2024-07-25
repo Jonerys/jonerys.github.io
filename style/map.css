@@ -5,6 +5,7 @@
   --measure-difference-color: yellow;
   --db-red-color: #d43626;
   --db-dark-color: #525252;
+  --scrollbar-width: 6px;
 }
 
 @font-face {
@@ -349,7 +350,7 @@ html,body {
 }
 
 .menu-diplomacy-head{
-	width: fit-content;
+	/* width: fit-content; */
 	min-width: 315px;
 }
 
@@ -414,12 +415,12 @@ html,body {
 .dropdown-option-list {
 	position: absolute;
 	list-style: none;
-	width: 393.4px;
+	width: 100%;
 	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 	background-color: #fff;
 	border: 1px solid #caced1;
 	border-radius: 4px;
-	padding: 5px;
+	padding: 0px;
 	margin: 0px;
 	max-height: 400px;
 	overflow-y: auto;
@@ -442,18 +443,6 @@ html,body {
 	cursor: pointer;
 	display: flex;
 	align-items: center;
-}
-.dropdown-option-list::-webkit-scrollbar, .diplomacy-record-list::-webkit-scrollbar {
-	width: 7px;
-}
-.dropdown-option-list::-webkit-scrollbar-track, .diplomacy-record-list::-webkit-scrollbar-track {
-	background: #f1f1f1;
-	border-radius: 25px;
-}
-
-.dropdown-option-list::-webkit-scrollbar-thumb, .diplomacy-record-list::-webkit-scrollbar-thumb {
-	background: #ccc;
-	border-radius: 25px;
 }
 
 .dropdown-option-list li:hover, .dropdown-selected {
@@ -534,17 +523,26 @@ html,body {
 	max-height: 40px;
 	word-break: normal;
 }
-.diplomacy-record-notes::-webkit-scrollbar, .diplomacy-record-list::-webkit-scrollbar, .continent-info::-webkit-scrollbar {
-	width: 6px;
+.diplomacy-record-notes::-webkit-scrollbar, .diplomacy-record-list::-webkit-scrollbar, .continent-info::-webkit-scrollbar,
+.dropdown-option-list::-webkit-scrollbar, .diplomacy-record-list::-webkit-scrollbar {
+	width: var(--scrollbar-width);
 }
-.diplomacy-record-notes::-webkit-scrollbar-track, .diplomacy-record-list::-webkit-scrollbar-track, .continent-info::-webkit-scrollbar-track {
+.diplomacy-record-notes::-webkit-scrollbar-track, .diplomacy-record-list::-webkit-scrollbar-track, .continent-info::-webkit-scrollbar-track,
+.dropdown-option-list::-webkit-scrollbar-track, .diplomacy-record-list::-webkit-scrollbar-track
+ {
 	background: #f1f1f1;
 	border-radius: 25px;
 }
 
-.diplomacy-record-notes::-webkit-scrollbar-thumb, .diplomacy-record-list::-webkit-scrollbar-thumb, .continent-info::-webkit-scrollbar-thumb {
+.diplomacy-record-notes::-webkit-scrollbar-thumb, .diplomacy-record-list::-webkit-scrollbar-thumb, .continent-info::-webkit-scrollbar-thumb,
+.dropdown-option-list::-webkit-scrollbar-thumb, .diplomacy-record-list::-webkit-scrollbar-thumb {
 	background: #ccc;
 	border-radius: 25px;
+}
+/* moz */
+.dropdown-option-list {
+	scrollbar-width: thin;
+	scrollbar-color: #ccc #f1f1f1;
 }
 .emoji {
 	font-size: 1.4rem;

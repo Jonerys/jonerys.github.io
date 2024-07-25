@@ -180,6 +180,10 @@
 	background: #ccc;
 	border-radius: 25px;
 }
+.search-tooltip {
+	scrollbar-width: thin;
+	scrollbar-color: #ccc #f1f1f1;
+}
 .search-tip-icon {
     float: left;
     height: fit-content;
