@@ -571,7 +571,7 @@ html,body {
 }
 .continent-info {
 	font-size: 12pt;
-	min-width: 300px;
+	min-width: 270px;
 	max-height: 170px;
 	overflow-y: auto;
 	padding: 9px 9px 0px 9px;
