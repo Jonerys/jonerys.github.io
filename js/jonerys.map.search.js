@@ -87,7 +87,7 @@ var search = new CustomSearch({
             jsons = jsons.concat(countriesSearch.search('Ro'));
         } else if ((text.toLowerCase().replaceAll(' ', '') == 'вкраю') || (text.toLowerCase().replaceAll(' ', '') == 'вкраювеликого')) {
             jsons = jsons.concat(countriesSearch.search('We'));
-        } else if ((text.toLowerCase().replaceAll(' ', '') == 'сосиска')) {
+        } else if ((text.toLowerCase().replaceAll(' ', '') == 'сосиска') || (text.toLowerCase().replaceAll(' ', '') == 'сосиски')) {
             jsons = jsons.concat(countriesSearch.search('Rm'));
             jsons = jsons.concat(countriesSearch.search('Ku'));
             jsons = jsons.concat(countriesSearch.search('Md'));
