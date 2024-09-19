@@ -2352,7 +2352,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1788, 2436]
+            coordinates: [1787, 2436]
         },
         properties: {
 			id: 94,
