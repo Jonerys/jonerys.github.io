@@ -969,7 +969,7 @@ var countries = {
 			playerName: NO_PLAYER,
 			playerUrl: NO_PLAYER,
 			flag: {
-				image: NO_FLAG
+				image: 'Flag_of_Dragland.webp'
 			}
         }
     },
