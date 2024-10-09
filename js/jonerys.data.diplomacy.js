@@ -5,7 +5,7 @@ var diplomacyData = {
             id2: 74,
             duplex: true,
             status: DIPLO_STATUS_WAR,
-            notes: ['Внезапно объявлена война!', 'Какой же кринж!']
+            notes: []
         },
         {
             id1: 47,
