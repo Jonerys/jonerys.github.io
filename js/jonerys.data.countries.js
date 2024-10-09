@@ -2263,7 +2263,7 @@ var countries = {
 			url: '61535',
 			capital: 'Стридо-Ново',
 			leader: UNKNOWN,
-			government: GOV_REPUBLIC,
+			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
 			playerName: 'Ник Токарев',
 			playerUrl: '28378',
