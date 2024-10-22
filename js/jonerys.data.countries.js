@@ -702,7 +702,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1718, 4192]
+            coordinates: [1731, 4188]
         },
         properties: {
 			id: 27,
