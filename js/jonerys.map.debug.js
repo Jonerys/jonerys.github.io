@@ -170,7 +170,7 @@ function createMarker(point, canbedeleted, draggable) {
 }
 
 function spawnContinentPoints(layer, continent) {
-    if (DRAW_POINTS) {
+    if (DRAW_POINTS && continent.properties.name == CONTINENT_LILLY) {
         pointsToCreate.length = 0;
         for (let coordsl1 of continent.geometry.coordinates) {
             for (let coordsl2 of coordsl1) {

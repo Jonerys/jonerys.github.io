@@ -1,4 +1,4 @@
-function contNum(continent) {
+﻿function contNum(continent) {
     switch (continent) {
         case CONTINENT_ANCHOR:
             return 0;
@@ -27,10 +27,10 @@ var countries = {
 		icontype: ICON_CAPITAL,
 		geometry: {
 			type: 'Point',
-			coordinates: [1568, 1727]
+            coordinates: [1386, 1665]
 		},
 		properties: {
-			id: 1,
+			id: 0,
 			name: 'Королевство Авемор',
 			shortname: 'Авемор',
 			tag: 'Av',
@@ -52,10 +52,10 @@ var countries = {
 		icontype: ICON_CAPITAL,
 		geometry: {
 			type: 'Point',
-			coordinates: [1695, 2420]
+            coordinates: [1513, 2358]
 		},
 		properties: {
-			id: 2,
+			id: 1,
 			name: 'Королевство Аглардор',
 			shortname: 'Аглардор',
 			tag: 'Ag',
@@ -77,10 +77,10 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2047, 2355]
+            coordinates: [1865, 2293]
         },
         properties: {
-			id: 3,
+			id: 2,
             name: 'Королевство Айзэн',
             shortname: 'Айзэн',
 			tag: 'Az',
@@ -102,10 +102,10 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2016, 1299]
+            coordinates: [1834, 1237]
         },
         properties: {
-			id: 4,
+			id: 3,
             name: 'Каганат Ай-Суру',
             shortname: 'Ай-Суру',
 			tag: 'Sr',
@@ -127,10 +127,10 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1913, 1990]
+            coordinates: [1731, 1928]
         },
         properties: {
-			id: 5,
+			id: 4,
             name: 'Халифат Ай\'Шераф',
             shortname: 'Ай\'Шераф',
 			tag: 'Is',
@@ -152,10 +152,10 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1160, 3531]
+            coordinates: [1185, 3352]
         },
         properties: {
-			id: 6,
+			id: 5,
             name: 'Герцогство Акрония',
             shortname: 'Акрония',
 			tag: 'Ak',
@@ -177,10 +177,10 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1569, 2439]
+            coordinates: [1387, 2377]
         },
         properties: {
-			id: 7,
+			id: 6,
             name: 'Халифат Алеман',
             shortname: 'Алеман',
 			tag: 'Al',
@@ -202,10 +202,10 @@ var countries = {
 		icontype: ICON_CAPITAL,
 		geometry: {
 			type: 'Point',
-			coordinates: [1149, 564]
+            coordinates: [967, 502]
 		},
 		properties: {
-			id: 8,
+			id: 7,
 			name: 'Королевство Аракад',
 			shortname: 'Аракад',
 			tag: 'Aa',
@@ -227,10 +227,10 @@ var countries = {
 		icontype: ICON_CAPITAL,
 		geometry: {
 			type: 'Point',
-			coordinates: [1388, 1676]
+            coordinates: [1206, 1614]
 		},
 		properties: {
-			id: 9,
+			id: 8,
 			name: 'Аспийская империя',
 			shortname: 'Аспия',
 			tag: 'As',
@@ -252,10 +252,10 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2025, 1873]
+            coordinates: [1843, 1811]
         },
         properties: {
-			id: 10,
+			id: 9,
             name: 'Эльфийское королевство Атель Лорен',
             shortname: 'Атель Лорен',
 			tag: 'Ao',
@@ -277,10 +277,10 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2202, 2405]
+            coordinates: [2020, 2343]
         },
         properties: {
-			id: 11,
+			id: 10,
             name: 'Королевство Атеншьёг',
             shortname: 'Атеншьёг',
 			tag: 'At',
@@ -302,10 +302,10 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2711, 2963]
+            coordinates: [2529, 2901]
         },
         properties: {
-			id: 12,
+			id: 11,
             name: 'Атлантия',
             shortname: 'Атлантия',
 			tag: 'Ca',
@@ -327,10 +327,10 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2028, 2413]
+            coordinates: [1846, 2351]
         },
         properties: {
-			id: 13,
+			id: 12,
             name: 'Великое Герцогство Аугебург-Хоэнхоф',
             shortname: 'Аугебург-Хоэнхоф',
 			tag: 'Au',
@@ -352,10 +352,10 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2239, 1646]
+            coordinates: [2057, 1584]
         },
         properties: {
-			id: 14,
+			id: 13,
             name: 'Герцогство Аэт\'Дайне',
             shortname: 'Аэт\'Дайне',
 			tag: 'An',
@@ -377,10 +377,10 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1288, 2469]
+            coordinates: [1106, 2407]
         },
         properties: {
-			id: 15,
+			id: 14,
             name: 'Имамат Бахчистан',
             shortname: 'Бахчистан',
 			tag: 'Bx',
@@ -402,7 +402,32 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1987, 1805]
+            coordinates: [966, 3472]
+        },
+        properties: {
+			id: 15,
+            name: 'Белозерия',
+            shortname: 'Белозерия',
+			tag: 'Bz',
+			continent: CONTINENT_LILLY,
+			url: NONE,
+			capital: 'Вечеград',
+			leader: 'Совет Господ',
+			government: 'Олигархическая республика',
+			status: STATUS_MINOR,
+			playerName: 'Имперский командор',
+			playerUrl: '10808',
+			flag: {
+				image: NO_FLAG
+			}
+        }
+    },
+	{
+        type: 'Feature',
+		icontype: ICON_CAPITAL,
+        geometry: {
+            type: 'Point',
+            coordinates: [1805, 1743]
         },
         properties: {
 			id: 16,
@@ -427,7 +452,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1173, 2631]
+            coordinates: [991, 2569]
         },
         properties: {
 			id: 17,
@@ -452,7 +477,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1730, 1608]
+            coordinates: [1548, 1546]
         },
         properties: {
 			id: 18,
@@ -477,7 +502,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1895, 2434]
+            coordinates: [1713, 2372]
         },
         properties: {
 			id: 19,
@@ -502,7 +527,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1262, 2420]
+            coordinates: [1080, 2358]
         },
         properties: {
 			id: 20,
@@ -527,7 +552,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1594, 1165]
+            coordinates: [1412, 1103]
         },
         properties: {
 			id: 21,
@@ -552,7 +577,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1495, 1832]
+            coordinates: [1313, 1770]
         },
         properties: {
 			id: 22,
@@ -577,7 +602,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [866, 3316]
+            coordinates: [684, 3254]
         },
         properties: {
 			id: 23,
@@ -602,7 +627,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1286, 3834]
+            coordinates: [1104, 3772]
         },
         properties: {
 			id: 24,
@@ -627,7 +652,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2434, 2129]
+            coordinates: [2252, 2067]
         },
         properties: {
 			id: 25,
@@ -652,7 +677,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2513, 2552]
+            coordinates: [2331, 2490]
         },
         properties: {
 			id: 26,
@@ -677,7 +702,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1900, 4254]
+            coordinates: [1718, 4192]
         },
         properties: {
 			id: 27,
@@ -702,7 +727,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2429, 1952]
+            coordinates: [2247, 1890]
         },
         properties: {
 			id: 28,
@@ -728,7 +753,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2475, 2259]
+            coordinates: [2293, 2197]
         },
         properties: {
 			id: 29,
@@ -753,7 +778,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [906, 3165]
+            coordinates: [724, 3103]
         },
         properties: {
 			id: 30,
@@ -778,7 +803,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1894, 2096]
+            coordinates: [1712, 2034]
         },
         properties: {
 			id: 31,
@@ -803,7 +828,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1930, 2197]
+            coordinates: [1748, 2135]
         },
         properties: {
 			id: 32,
@@ -828,7 +853,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2582, 2270]
+            coordinates: [2400, 2208]
         },
         properties: {
 			id: 33,
@@ -853,7 +878,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1929, 1911]
+            coordinates: [1747, 1849]
         },
         properties: {
 			id: 34,
@@ -878,7 +903,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2068, 2386]
+            coordinates: [1886, 2324]
         },
         properties: {
 			id: 35,
@@ -903,7 +928,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [539, 997]
+            coordinates: [357, 935]
         },
         properties: {
 			id: 36,
@@ -928,7 +953,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2622, 3040]
+            coordinates: [2440, 2978]
         },
         properties: {
 			id: 37,
@@ -953,7 +978,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1850, 1691]
+            coordinates: [1668, 1629]
         },
         properties: {
 			id: 38,
@@ -978,7 +1003,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1354, 1545]
+            coordinates: [1172, 1483]
         },
         properties: {
 			id: 39,
@@ -1003,7 +1028,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1673, 1692]
+            coordinates: [1491, 1630]
         },
         properties: {
 			id: 40,
@@ -1028,7 +1053,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2037, 2698]
+            coordinates: [1855, 2636]
         },
         properties: {
 			id: 41,
@@ -1053,7 +1078,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1117, 1795]
+            coordinates: [935, 1733]
         },
         properties: {
 			id: 42,
@@ -1078,7 +1103,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [556, 3826]
+            coordinates: [374, 3764]
         },
         properties: {
 			id: 43,
@@ -1103,7 +1128,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1203, 2206]
+            coordinates: [1021, 2144]
         },
         properties: {
 			id: 44,
@@ -1128,7 +1153,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1290, 2376]
+            coordinates: [1108, 2314]
         },
         properties: {
 			id: 45,
@@ -1153,7 +1178,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2421, 2541]
+            coordinates: [2239, 2479]
         },
         properties: {
 			id: 46,
@@ -1178,7 +1203,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2201, 2286]
+            coordinates: [2019, 2224]
         },
         properties: {
 			id: 47,
@@ -1203,7 +1228,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [573, 3267]
+            coordinates: [391, 3205]
         },
         properties: {
 			id: 48,
@@ -1228,7 +1253,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2142, 2334]
+            coordinates: [1960, 2272]
         },
         properties: {
 			id: 49,
@@ -1253,7 +1278,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1703, 2114]
+            coordinates: [1521, 2052]
         },
         properties: {
 			id: 50,
@@ -1278,7 +1303,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1221, 3308]
+            coordinates: [1039, 3246]
         },
         properties: {
 			id: 51,
@@ -1303,7 +1328,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1682, 1453]
+            coordinates: [1500, 1391]
         },
         properties: {
 			id: 52,
@@ -1328,7 +1353,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1940, 1714]
+            coordinates: [1758, 1652]
         },
         properties: {
 			id: 53,
@@ -1353,7 +1378,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1312, 1485]
+            coordinates: [1130, 1423]
         },
         properties: {
 			id: 54,
@@ -1378,7 +1403,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1448, 2373]
+            coordinates: [1266, 2311]
         },
         properties: {
 			id: 55,
@@ -1403,7 +1428,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1310, 2674]
+            coordinates: [1128, 2612]
         },
         properties: {
 			id: 56,
@@ -1428,7 +1453,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [954, 2373]
+            coordinates: [772, 2311]
         },
         properties: {
 			id: 57,
@@ -1453,7 +1478,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2225, 2564]
+            coordinates: [2043, 2502]
         },
         properties: {
 			id: 58,
@@ -1478,7 +1503,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1754, 1904]
+            coordinates: [1572, 1842]
         },
         properties: {
 			id: 59,
@@ -1502,7 +1527,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2613, 2366]
+            coordinates: [2431, 2304]
         },
         properties: {
 			id: 60,
@@ -1527,7 +1552,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [920, 2139]
+            coordinates: [738, 2077]
         },
         properties: {
 			id: 61,
@@ -1552,7 +1577,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1662, 1598]
+            coordinates: [1480, 1536]
         },
         properties: {
 			id: 62,
@@ -1577,7 +1602,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1268, 1921]
+            coordinates: [1086, 1859]
         },
         properties: {
 			id: 63,
@@ -1602,7 +1627,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1620, 1969]
+            coordinates: [1438, 1907]
         },
         properties: {
 			id: 64,
@@ -1627,7 +1652,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1259, 1644]
+            coordinates: [1077, 1582]
         },
         properties: {
 			id: 65,
@@ -1652,7 +1677,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1368, 3865]
+            coordinates: [1186, 3803]
         },
         properties: {
 			id: 66,
@@ -1677,7 +1702,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2094, 1518]
+            coordinates: [1912, 1456]
         },
         properties: {
 			id: 67,
@@ -1702,7 +1727,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2271, 2609]
+            coordinates: [2089, 2547]
         },
         properties: {
 			id: 68,
@@ -1727,7 +1752,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1497, 2069]
+            coordinates: [1315, 2007]
         },
         properties: {
 			id: 69,
@@ -1752,7 +1777,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2503, 2398]
+            coordinates: [2321, 2336]
         },
         properties: {
 			id: 70,
@@ -1777,7 +1802,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2195, 2688]
+            coordinates: [2013, 2626]
         },
         properties: {
 			id: 71,
@@ -1802,7 +1827,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2493, 617]
+            coordinates: [2311, 555]
         },
         properties: {
 			id: 72,
@@ -1827,7 +1852,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1620, 3754]
+            coordinates: [1438, 3692]
         },
         properties: {
 			id: 73,
@@ -1852,7 +1877,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2362, 2303]
+            coordinates: [2180, 2241]
         },
         properties: {
 			id: 74,
@@ -1877,7 +1902,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2597, 2873]
+            coordinates: [2415, 2811]
         },
         properties: {
 			id: 75,
@@ -1902,7 +1927,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [3069, 1355]
+            coordinates: [2887, 1293]
         },
         properties: {
 			id: 76,
@@ -1927,7 +1952,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1039, 3085]
+            coordinates: [857, 3023]
         },
         properties: {
 			id: 77,
@@ -1952,7 +1977,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2070, 1723]
+            coordinates: [1888, 1661]
         },
         properties: {
 			id: 78,
@@ -1977,7 +2002,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2384, 2483]
+            coordinates: [2202, 2421]
         },
         properties: {
 			id: 79,
@@ -2002,7 +2027,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [3044, 1149]
+            coordinates: [2862, 1087]
         },
         properties: {
 			id: 80,
@@ -2027,7 +2052,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [492, 1539]
+            coordinates: [310, 1477]
         },
         properties: {
 			id: 81,
@@ -2052,7 +2077,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1513, 1957]
+            coordinates: [1331, 1895]
         },
         properties: {
 			id: 82,
@@ -2077,7 +2102,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2317, 2480]
+            coordinates: [2135, 2418]
         },
         properties: {
 			id: 83,
@@ -2102,7 +2127,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [559, 2774]
+            coordinates: [377, 2712]
         },
         properties: {
 			id: 84,
@@ -2127,7 +2152,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2148, 1928]
+            coordinates: [1966, 1866]
         },
         properties: {
 			id: 85,
@@ -2152,7 +2177,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1568, 2054]
+            coordinates: [1386, 1992]
         },
         properties: {
 			id: 86,
@@ -2177,7 +2202,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1853, 1524]
+            coordinates: [1671, 1462]
         },
         properties: {
 			id: 87,
@@ -2202,7 +2227,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2276, 2752]
+            coordinates: [2094, 2690]
         },
         properties: {
 			id: 88,
@@ -2227,7 +2252,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1170, 3673]
+            coordinates: [1195, 3494]
         },
         properties: {
 			id: 89,
@@ -2252,7 +2277,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1126, 2112]
+            coordinates: [944, 2050]
         },
         properties: {
 			id: 90,
@@ -2277,7 +2302,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [935, 3393]
+            coordinates: [753, 3331]
         },
         properties: {
 			id: 91,
@@ -2302,7 +2327,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2062, 2927]
+            coordinates: [1880, 2865]
         },
         properties: {
 			id: 92,
@@ -2327,7 +2352,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1375, 1791]
+            coordinates: [1193, 1729]
         },
         properties: {
 			id: 93,
@@ -2352,7 +2377,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1787, 2436]
+            coordinates: [1605, 2374]
         },
         properties: {
 			id: 94,
@@ -2377,7 +2402,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [817, 3468]
+            coordinates: [1299, 3511]
         },
         properties: {
 			id: 95,
@@ -2402,7 +2427,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1346, 1880]
+            coordinates: [1164, 1818]
         },
         properties: {
 			id: 96,
@@ -2427,7 +2452,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1187, 2258]
+            coordinates: [1005, 2196]
         },
         properties: {
 			id: 97,
@@ -2452,7 +2477,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1193, 959]
+            coordinates: [1011, 897]
         },
         properties: {
 			id: 98,

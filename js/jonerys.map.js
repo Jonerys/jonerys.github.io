@@ -1,5 +1,7 @@
-const widthPx = 4833;
-const heightPx = 4101;
+//const widthPx = 4833;
+//const heightPx = 4101;
+const widthPx = 4760;
+const heightPx = 4120;
 const kmPerPxDefault = 4;
 const mapScale = 1;
 const kmPerPx = kmPerPxDefault / mapScale;
@@ -7,7 +9,7 @@ const widthKm = widthPx * kmPerPx;
 const heightKm = heightPx * kmPerPx;
 const adjustMapView = 500
 const mapcenter = [widthPx + adjustMapView / 2, heightPx + adjustMapView / 2];
-const image_url = './images/RoC_map_4.0.webp';
+const image_url = './images/RoC_map_4.1.1.webp';
 
 var mapLayers = L.layerGroup();
 var markers = [];
