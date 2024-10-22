@@ -53,9 +53,10 @@ html,body {
 	font-size: 11pt;
 }
 .leaflet-popup-content {
-	/* width: fit-content; 
-	width: 100% !important;*/
+	width: fit-content !important; 
+	/* width: 100% !important;*/
 	margin: 0px;
+	min-width: 310px;
 }
 .leaflet-control-measure, .leaflet-control-menu {
     background-position: 50% !important;
