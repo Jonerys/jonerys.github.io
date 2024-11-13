@@ -277,7 +277,7 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2020, 2343]
+            coordinates: [2013, 2339]
         },
         properties: {
 			id: 10,
@@ -1737,7 +1737,7 @@ var countries = {
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '40975',
 			capital: 'Ронас',
-			leader: 'Эллем I Ньоринтелл',
+			leader: 'Эллем I Ньориэль',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_PROTECTORATE + ' (Цивилия)',
 			playerName: 'Раван',

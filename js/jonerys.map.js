@@ -23,12 +23,12 @@ var markers = [];
 	return false;
 }*/
 
-var xy = function (x, y) {
+/*var xy = function (x, y) {
 	if (L.Util.isArray(x)) {
 		return L.latLng(x[1], x[0]);
 	}
 	return L.latLng(y, x);
-}
+}*/
 
 L.CRS.RoCCRS = L.extend({}, L.CRS.Simple, {
 	transformation: new L.Transformation(4, 0, 4, 0),
