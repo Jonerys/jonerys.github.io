@@ -256,8 +256,8 @@ var countries = {
         },
         properties: {
 			id: 9,
-            name: 'Эльфийское королевство Атель Лорен',
-            shortname: 'Атель Лорен',
+            name: 'Эльфийское королевство Линдорея',
+            shortname: 'Линдорея',
 			tag: 'Ao',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '58430',
@@ -266,7 +266,7 @@ var countries = {
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
 			playerName: 'Ork',
-			playerUrl: '11517',
+			playerUrl: '23528',
 			flag: {
 				image: NO_FLAG
 			}
