@@ -260,13 +260,13 @@ var countries = {
             shortname: 'Линдорея',
 			tag: 'Ao',
 			continent: CONTINENT_REBIRTH_WEST,
-			url: '58430',
+			url: '23528',
 			capital: 'Альтштедт',
 			leader: 'Аэнарион',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
 			playerName: 'Ork',
-			playerUrl: '23528',
+			playerUrl: '11517',
 			flag: {
 				image: NO_FLAG
 			}
