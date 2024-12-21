@@ -1,9 +1,9 @@
 var places = {
 	type: 'FeatureCollection',
     features: [
-		/*{
+		{
 			type: 'Feature',
-			icontype: ICON_PLACE,
+			icontype: ICON_PLACE2,
 			geometry: {
 				type: 'Point',
 				coordinates: [2029, 2466]
@@ -11,7 +11,7 @@ var places = {
 			properties: {
 				name: 'Манты-Хансийск'
 			}
-		},*/
+		},
 	]
 }
 

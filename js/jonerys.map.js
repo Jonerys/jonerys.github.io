@@ -126,5 +126,4 @@ mapLayers.addTo(map);
 
 map.on('click', function(e) {
 	console.log('[' + Math.round(e.latlng.lat) + ', ' + Math.round(e.latlng.lng) + '],');
-	//console.log('[' + Math.round(e.latlng.lng) + ', ' + Math.round(e.latlng.lat) + '],');
 });

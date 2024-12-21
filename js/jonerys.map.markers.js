@@ -86,7 +86,7 @@ var placeLayer = L.geoJSON(places.features, {
 	pointToLayer: (feature) => pointToLayer(feature),
 	onEachFeature: function (feature, layer) {
 		let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" 
-		+ feature.properties.continent + "</div></div>";
+		+ feature.properties.name + "</div></div>";
 		layer.bindPopup(popup, {
 			autoClose: false
 		});

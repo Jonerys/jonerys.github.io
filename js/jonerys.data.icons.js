@@ -7,6 +7,7 @@ const iconCapitalSize = 20;	// размер иконки по умолчанию
 const iconCapitalPA = -11;	// координата якоря подсказки по умолчанию
 
 const ICON_PLACE = 'place';
+const ICON_PLACE2 = 'place2';
 const iconPlaceSize = 20;	// размер иконки по умолчанию
 const iconPlacePA = -11;	// координата якоря подсказки по умолчанию
 
@@ -164,6 +165,27 @@ icons.push({
 		iconSize:	[iconWaterSize * SIZE_LARGE, iconWaterSize * SIZE_LARGE],
 		iconAnchor:	[iconWaterSize * SIZE_BIG, iconWaterSize * SIZE_LARGE],
 		popupAnchor:[0, iconWaterPA * SIZE_LARGE]
+	})
+});
+icons.push({
+	type: ICON_PLACE2,
+	icon_x1: new CustomIcon({
+		iconUrl: 'markers/marker_place2.webp',
+		iconSize:     [iconPlaceSize, iconPlaceSize],
+		iconAnchor:   [iconPlaceSize - iconPlaceSize * SIZE_NORMAL / 2 , iconPlaceSize],
+		popupAnchor:  [0, iconPlacePA]
+	}),
+	icon_x2: new CustomIcon({
+		iconUrl: 'markers/marker_place2_x2.webp',
+		iconSize:	[iconPlaceSize * SIZE_BIG, iconPlaceSize * SIZE_BIG],
+		iconAnchor:	[iconPlaceSize * SIZE_NORMAL, iconPlaceSize * SIZE_BIG],
+		popupAnchor:[0, iconPlacePA * SIZE_BIG]
+	}),
+	icon_x4: new CustomIcon({
+		iconUrl: 'markers/marker_place2_x4.webp',
+		iconSize:	[iconPlaceSize * SIZE_LARGE, iconPlaceSize * SIZE_LARGE],
+		iconAnchor:	[iconPlaceSize * SIZE_BIG, iconPlaceSize * SIZE_LARGE],
+		popupAnchor:[0, iconPlacePA * SIZE_LARGE]
 	})
 });
 icons.push({
