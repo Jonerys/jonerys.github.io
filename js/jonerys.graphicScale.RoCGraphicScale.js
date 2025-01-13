@@ -17,7 +17,6 @@ L.Control.RoCGraphicScale = L.Control.GraphicScale.extend({
 		var unitDivision = 1;
 		var unitPx = this.options.unitPx;
 		var unitMeters = this.options.kmPerPx * unitPx * (1 / zoom);
-        console.log(zoom)
 		var totalWidthPx = numUnits * unitPx;
 		var unitFactor = 1;
 		var subunitFactor = 1;
