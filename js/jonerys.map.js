@@ -1,15 +1,28 @@
 //const widthPx = 4833;
 //const heightPx = 4101;
+
 const widthPx = 4760;
 const heightPx = 4120;
-const kmPerPxDefault = 4;
 const mapScale = 1;
+const unitPx = 50;
+const maxZoom = 0;
+const minZoom = -4;
+const image_url = './images/RoC_map_4.1.1.webp';
+
+/*const widthPx = 3840 * 2;
+const heightPx = 2160 * 2;
+const mapScale = 56;
+const unitPx = 56;
+const maxZoom = 1;
+const minZoom = -4;
+const image_url = './images/test.webp';*/
+
+const kmPerPxDefault = 4;
 const kmPerPx = kmPerPxDefault / mapScale;
 const widthKm = widthPx * kmPerPx;
 const heightKm = heightPx * kmPerPx;
 const adjustMapView = 500
 const mapcenter = [widthPx + adjustMapView / 2, heightPx + adjustMapView / 2];
-const image_url = './images/RoC_map_4.1.1.webp';
 
 var mapLayers = L.layerGroup();
 var markers = [];
@@ -42,8 +55,8 @@ map = L.map('map', {
 	attributionControl: true, 
 	autoPan : true,
 	noWrap: true,
-	maxZoom: 0,                                                     
-	minZoom: -4
+	maxZoom: maxZoom,                                                     
+	minZoom: minZoom
 }).on({
 	popupopen: function(e) {
 		$(".leaflet-popup-content img:last").one("load", function() {
@@ -94,7 +107,7 @@ new L.Control.RoCGraphicScale({
 	kmPerPx: kmPerPx,
 	numUnits: 3,
 	scaleUnit: ' km',
-	unitPx: 50
+	unitPx: unitPx
 }).addTo(map);
 
 //new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);

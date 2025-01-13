@@ -16,10 +16,9 @@ L.Control.RoCGraphicScale = L.Control.GraphicScale.extend({
 		var numSubunits = 2;
 		var unitDivision = 1;
 		var unitPx = this.options.unitPx;
-
 		var unitMeters = this.options.kmPerPx * unitPx * (1 / zoom);
+        console.log(zoom)
 		var totalWidthPx = numUnits * unitPx;
-		
 		var unitFactor = 1;
 		var subunitFactor = 1;
 		var subunitDivision = 0.5;
@@ -94,6 +93,35 @@ L.Control.RoCGraphicScale = L.Control.GraphicScale.extend({
         this._subunitsLbl.innerHTML = "?";
         this._subunits[4].appendChild(this._subunitsLbl);
         return root
+    },
+    _renderPart:function(px,meters,factor,num,divisions,divisionsLbls){
+        var displayUnit=this._getDisplayUnit(meters,factor);
+        for(var i=0;i<this._units.length;i++){
+            var division=divisions[i];
+            if(i<num){
+                division.style.width=px+"px";division.className="division"
+            }else{
+                division.style.width=0;division.className="division hidden"
+            }
+            if(!divisionsLbls)continue;
+            var lbl=divisionsLbls[i];
+            var lblClassNames=["label","divisionLabel"];
+            if(i<num){
+				if (displayUnit.amount)
+                //var lblText=Math.round((i+1)*displayUnit.amount);
+				var lblText = (i+1)*displayUnit.amount;
+                if(i===num-1){
+                    if(this.options.unitPlacement==="label"){
+                        lblText+=displayUnit.unit
+                    }
+                    lblClassNames.push("labelLast")
+                }else{
+                    lblClassNames.push("labelSub")
+                }
+                lbl.innerHTML=lblText
+            }
+            lbl.className=lblClassNames.join(" ")
+        }
     },
 	_buildDivision: function(fill) {
         var item = L.DomUtil.create("div", "division");
