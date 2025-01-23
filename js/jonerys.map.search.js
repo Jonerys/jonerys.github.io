@@ -78,6 +78,15 @@ function memesearch(str) {
                     .concat(countriesSearch.search('Sw'))
                     .concat(countriesSearch.search('Ar'));
         return jsons;
+    } else if (str.match(/бархуда(р)*/)) {
+        jsons = jsons.concat(countriesSearch.search('Bx'))
+                    .concat(countriesSearch.search('We'))
+                    .concat(countriesSearch.search('Gz'))
+                    .concat(countriesSearch.search('Ku'))
+                    .concat(countriesSearch.search('Cs'))
+                    .concat(countriesSearch.search('Hm'))
+                    .concat(countriesSearch.search('Es'));
+        return jsons;
     } else {
         return null;
     }
