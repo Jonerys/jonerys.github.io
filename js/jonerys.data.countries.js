@@ -1,25 +1,4 @@
-﻿function contNum(continent) {
-    switch (continent) {
-        case CONTINENT_ANCHOR:
-            return 0;
-        case CONTINENT_SUNRISE:
-            return 1;
-        case CONTINENT_LILLY:
-            return 2;
-        case CONTINENT_REBIRTH:
-            return 3;
-        case CONTINENT_REBIRTH_NORTH:
-            return 4;
-        case CONTINENT_REBIRTH_EAST:
-            return 5;
-        case CONTINENT_REBIRTH_SOUTH:
-            return 6;
-        case CONTINENT_REBIRTH_WEST:
-            return 7;  
-    }
-}
-
-var users = [
+﻿var users = [
 	{
 		username: 'Грешник',
 		url: '22262'
