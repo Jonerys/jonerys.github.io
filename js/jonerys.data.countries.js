@@ -1279,8 +1279,8 @@ var countries = {
 			leader: 'Иоганн I ван Тейнес-Роттебург',
 			government: GOV_REPUBLIC,
 			status: STATUS_MINOR,
-			playerName: users[11].username,
-			playerUrl: users[11].url,
+			playerName: users[10].username,
+			playerUrl: users[10].url,
 			flag: {
 				image: 'Flag_of_Kulinburg.webp'
 			}
@@ -1329,8 +1329,8 @@ var countries = {
 			leader: 'Андрус Веберс',
 			government: GOV_REPUBLIC,
 			status: STATUS_MINOR,
-			playerName: users[11].username,
-			playerUrl: users[11].url,
+			playerName: users[10].username,
+			playerUrl: users[10].url,
 			flag: {
 				image: 'Flag_of_Laton_Union.webp'
 			}
@@ -1404,8 +1404,8 @@ var countries = {
 			leader: 'Рауль IV Дюбуа',
 			government: GOV_DUAL_MONARCHY,
 			status: STATUS_GREAT,
-			playerName: users[12].username,
-			playerUrl: users[12].url,
+			playerName: users[11].username,
+			playerUrl: users[11].url,
 			flag: {
 				image: 'Flag_of_Loktaria.webp'
 			}
@@ -1454,8 +1454,8 @@ var countries = {
 			leader: 'Эжен Д\'Арно',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: users[13].username,
-			playerUrl: users[13].url,
+			playerName: users[12].username,
+			playerUrl: users[12].url,
 			flag: {
 				image: 'Flag_of_Malizon.webp'
 			}
@@ -1628,8 +1628,8 @@ var countries = {
 			leader: 'Йозеф Железнов',
 			government: GOV_SOCIALIST,
 			status: STATUS_MINOR,
-			playerName: users[15].username,
-			playerUrl: users[15].url,
+			playerName: users[14].username,
+			playerUrl: users[14].url,
 			flag: {
 				image: 'Flag_of_Modravia.webp'
 			}
@@ -1928,8 +1928,8 @@ var countries = {
 			leader: 'Квинт Юлий Август',
 			government: GOV_DUAL_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: users[13].username,
-			playerUrl: users[13].url,
+			playerName: users[12].username,
+			playerUrl: users[12].url,
 			flag: {
 				image: 'Flag_of_Rome.webp'
 			}
@@ -2128,8 +2128,8 @@ var countries = {
 			leader: 'Ричард I Браун',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: users[12].username,
-			playerUrl: users[12].url,
+			playerName: users[11].username,
+			playerUrl: users[11].url,
 			flag: {
 				image: 'Flag_of_Tharra.webp'
 			}
@@ -2228,8 +2228,8 @@ var countries = {
 			leader: 'Уильям II Кроментори',
 			government: GOV_DUAL_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: users[14].username,
-			playerUrl: users[14].url,
+			playerName: users[13].username,
+			playerUrl: users[13].url,
 			flag: {
 				image: 'Flag_of_Fiorra.webp'
 			}
