@@ -33,56 +33,6 @@ const iconContinentYPA = -11;	// координата якоря подсказ�
 
 var icons = [];
 
-const CustomMarker = L.Marker.extend({
-	options: {
-		iconsSet: {}
-	},
-	getIcon(scale) {
-		switch(scale) {
-			case 2:
-				return this.options.iconsSet.icon_x2;
-			case 4:
-				return this.options.iconsSet.icon_x4;
-			default:
-				return this.options.iconsSet.icon_x1;
-		}
-	}
-})
-
-const UserCustomMarker = L.Marker.extend({
-	options: {
-		mID: -1,
-        deletable: false
-	},
-    getCoordinates() {
-        return {
-            lat: this._latlng.lat,
-            lng: this._latlng.lng
-        };
-    },
-    getID() {
-        return this.options.mID;
-    },
-    isDeletable() {
-		if (this.options.deletable ) {
-			return "<button class='remove'>del</button>";
-		} else {
-			return '';
-		}
-    }
-})
-
-const DebugIcon = L.Icon.extend({
-	options: {
-		iconUrl: 'markers/marker_debug.webp',
-		iconSize:     [10, 10],
-		iconAnchor:   [5, 5],
-		popupAnchor:  [0, -5]
-	}
-});
-
-var debi = new DebugIcon();
-
 var CustomIcon = L.Icon.extend({
 	options: {
 		iconUrl: 'markers/marker_capital.webp',
