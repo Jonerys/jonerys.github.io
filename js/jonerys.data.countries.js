@@ -2165,8 +2165,8 @@ var countries = {
 			leader: 'Уильям II Кроментори',
 			government: GOV_DUAL_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: NO_PLAYER,
-			playerUrl: NO_PLAYER,
+			playerName: 'Паук-Скакун',
+			playerUrl: '33915',
 			flag: {
 				image: 'Flag_of_Fiorra.webp'
 			}
