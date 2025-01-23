@@ -19,8 +19,8 @@ var archSearch = new Fuse(archPlaces.features, {
 	threshold: 0.3,
 	minMatchCharLength: 2,
 	keys: [{
-	  	name: 'properties.name',
-	  	weight: 0.5
+        name: 'properties.name',
+        weight: 0.5
 	},
 	]
 }); 
@@ -28,8 +28,8 @@ var placesSearch = new Fuse(places.features, {
 	threshold: 0.3,
 	minMatchCharLength: 2,
 	keys: [{
-	  	name: 'properties.name',
-	  	weight: 0.5
+        name: 'properties.name',
+        weight: 0.5
 	},
 	]
 }); 
@@ -37,8 +37,8 @@ var waterSearch = new Fuse(waterPlaces.features, {
 	threshold: 0.3,
 	minMatchCharLength: 2,
 	keys: [{
-	  	name: 'properties.name',
-	  	weight: 0.5
+        name: 'properties.name',
+        weight: 0.5
 	},
 	]
 });
@@ -46,8 +46,8 @@ var continentSearch = new Fuse(continents.features, {
 	threshold: 0.3,
 	minMatchCharLength: 2,
 	keys: [{
-	  	name: 'properties.name',
-	  	weight: 0.5
+        name: 'properties.name',
+        weight: 0.5
 	},
 	]
 });
