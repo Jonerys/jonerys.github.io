@@ -52,6 +52,37 @@ var continentSearch = new Fuse(continents.features, {
 	]
 });
 
+function memesearch(str) {
+    let jsons = [];
+    if (str.match(/сам(ая|ый)мощн(ая|ый)империя/)) {
+        jsons = jsons.concat(countriesSearch.search('Ro'));
+        return jsons;
+    } else if (str.match(/^(вкраю(великого)?(вельденвальда)?)$/)) {
+        jsons = jsons.concat(countriesSearch.search('We'));
+        return jsons;
+    } else if (str.match(/сосиск[аи]/)) {
+        jsons = jsons.concat(countriesSearch.search('Rm'))
+                    .concat(countriesSearch.search('Ku'))
+                    .concat(countriesSearch.search('Md'));
+        return jsons;
+    } else if (str.match(/б[оа]*льшо*й/) || str.match(/мамка/))  {
+        jsons = jsons.concat(countriesSearch.search('Mm'));
+        return jsons;
+    } else if (str.match(/кайзерр[ае]йх/)) {
+        jsons = jsons.concat(countriesSearch.search('As'))
+                    .concat(countriesSearch.search('Wr'))
+                    .concat(countriesSearch.search('Ws'))
+                    .concat(countriesSearch.search('Kf'))
+                    .concat(countriesSearch.search('Mt'))
+                    .concat(countriesSearch.search('Mn'))
+                    .concat(countriesSearch.search('Sw'))
+                    .concat(countriesSearch.search('Ar'));
+        return jsons;
+    } else {
+        return null;
+    }
+}
+
 const CustomSearch = L.Control.Search.extend({
     showAlert: function(a) {
         var b = this;
@@ -83,14 +114,10 @@ var search = new CustomSearch({
 	textPlaceholder: 'Поиск…      ',	
 	filterData: function (text, records) {
         let jsons = [];
-        if ((text.toLowerCase().replaceAll(' ', '') == 'самыймощныйимперия') || (text.toLowerCase().replaceAll(' ', '') == 'самаямощнаяимперия')) {
-            jsons = jsons.concat(countriesSearch.search('Ro'));
-        } else if ((text.toLowerCase().replaceAll(' ', '') == 'вкраю') || (text.toLowerCase().replaceAll(' ', '') == 'вкраювеликого')) {
-            jsons = jsons.concat(countriesSearch.search('We'));
-        } else if ((text.toLowerCase().replaceAll(' ', '') == 'сосиска') || (text.toLowerCase().replaceAll(' ', '') == 'сосиски')) {
-            jsons = jsons.concat(countriesSearch.search('Rm'));
-            jsons = jsons.concat(countriesSearch.search('Ku'));
-            jsons = jsons.concat(countriesSearch.search('Md'));
+        let str = text.toLowerCase().replaceAll(' ', '');
+        let memes = memesearch(str);
+        if (memes) {
+            jsons = jsons.concat(memes);
         } else {
             if (mapLayers.hasLayer(countryLayer)) {
                 jsons = jsons.concat(countriesSearch.search(text));
