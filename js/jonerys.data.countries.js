@@ -19,6 +19,69 @@
     }
 }
 
+var users = [
+	{
+		username: 'Грешник',
+		url: '22262'
+	},
+	{
+		username: 'MAYAK57',
+		url: '21169'
+	},
+	{
+		username: 'Имперский командор',
+		url: '10808'
+	},
+	{
+		username: 'Enkeltea',
+		url: '33778'
+	},
+	{
+		username: 'Ник Токарев',
+		url: '28378'
+	},
+	{
+		username: 'Ork',
+		url: '11517'
+	},
+	{
+		username: 'KaiseR',
+		url: '4131'
+	},
+	{
+		username: 'Corporal',
+		url: '29631'
+	},
+	{
+		username: 'Тинувель Секунда',
+		url: '30987'
+	},
+	{
+		username: 'Раван',
+		url: '9999'
+	},
+	{
+		username: 'Le capitaine Avare',
+		url: '23533'
+	},
+	{
+		username: 'Black King',
+		url: '11231'
+	},
+	{
+		username: 'Armageddon Of Rome',
+		url: '33636'
+	},
+	{
+		username: 'Паук-Скакун',
+		url: '33915'
+	},
+	{
+		username: 'Yugo',
+		url: '29549'
+	}
+];
+
 var countries = {
 	type: 'FeatureCollection',
     features: [
@@ -115,8 +178,8 @@ var countries = {
 			leader: 'Оспаривается',
 			government: 'Каганат',
 			status: STATUS_MINOR,
-			playerName: 'Имперский командор',
-			playerUrl: '10808',
+			playerName: users[2].username,
+			playerUrl: users[2].url,
 			flag: {
 				image: 'Flag_of_AiSuru.webp'
 			}
@@ -240,8 +303,8 @@ var countries = {
 			leader: 'Фридрих Вильгельм I Адлербург',
 			government: GOV_DUAL_MONARCHY,
 			status: STATUS_GREAT,
-			playerName: 'KaiseR',
-			playerUrl: '4131',
+			playerName: users[6].username,
+			playerUrl: users[6].url,
 			flag: {
 				image: 'Flag_of_Aspia.webp'
 			}
@@ -265,8 +328,8 @@ var countries = {
 			leader: 'Аэнарион',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'Ork',
-			playerUrl: '11517',
+			playerName: users[5].username,
+			playerUrl: users[5].url,
 			flag: {
 				image: NO_FLAG
 			}
@@ -290,8 +353,8 @@ var countries = {
 			leader: 'Ференц VI Итертин',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'Enkeltea',
-			playerUrl: '33778',
+			playerName: users[3].username,
+			playerUrl: users[3].url,
 			flag: {
 				image: 'Flag_of_Atensjoeg.webp'
 			}
@@ -340,8 +403,8 @@ var countries = {
 			leader: 'Карл III Маттиас Лейденфельдт-Хоэнхоф',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'Corporal',
-			playerUrl: '29631',
+			playerName: users[7].username,
+			playerUrl: users[7].url,
 			flag: {
 				image: 'Flag_of_Augeburg.webp'
 			}
@@ -365,8 +428,8 @@ var countries = {
 			leader: 'Джейко IV Тера-Палед',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'Тинувель Секунда',
-			playerUrl: '30987',
+			playerName: users[8].username,
+			playerUrl: users[8].url,
 			flag: {
 				image: 'Flag_of_AetDayne.webp'
 			}
@@ -390,8 +453,8 @@ var countries = {
 			leader: 'Фарис Изетбег-Заде',
 			government: GOV_THEOCRACY,
 			status: STATUS_MINOR,
-			playerName: 'Ник Токарев',
-			playerUrl: '28378',
+			playerName: users[4].username,
+			playerUrl: users[4].url,
 			flag: {
 				image: 'Flag_of_Bahchistan.webp'
 			}
@@ -415,8 +478,8 @@ var countries = {
 			leader: 'Совет Господ',
 			government: 'Олигархическая республика',
 			status: STATUS_MINOR,
-			playerName: 'Имперский командор',
-			playerUrl: '10808',
+			playerName: users[2].username,
+			playerUrl: users[2].url,
 			flag: {
 				image: NO_FLAG
 			}
@@ -515,8 +578,8 @@ var countries = {
 			leader: 'Фредерик I Дюбуа-Кремвельский',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'KaiseR',
-			playerUrl: '4131',
+			playerName: users[6].username,
+			playerUrl: users[6].url,
 			flag: {
 				image: 'Flag_of_Wargren.webp'
 			}
@@ -540,8 +603,8 @@ var countries = {
 			leader: 'Мартин-Эрик Эстен-Винтерфельд',
 			government: GOV_REPUBLIC,
 			status: STATUS_MINOR,
-			playerName: 'Ник Токарев',
-			playerUrl: '28378',
+			playerName: users[4].username,
+			playerUrl: users[4].url,
 			flag: {
 				image: 'Flag_of_Weldenwald.webp'
 			}
@@ -590,8 +653,8 @@ var countries = {
 			leader: 'Вильгельм I Диссель-Контабергин',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'KaiseR',
-			playerUrl: '4131',
+			playerName: users[6].username,
+			playerUrl: users[6].url,
 			flag: {
 				image: 'Flag_of_Westland.webp'
 			}
@@ -665,8 +728,8 @@ var countries = {
 			leader: 'Штефан Дрекслер-Завала',
 			government: GOV_REPUBLIC,
 			status: STATUS_MINOR,
-			playerName: 'Ник Токарев',
-			playerUrl: '28378',
+			playerName: users[4].username,
+			playerUrl: users[4].url,
 			flag: {
 				image: 'Flag_of_Gazotsko-Meran.webp'
 			}
@@ -690,8 +753,8 @@ var countries = {
 			leader: UNKNOWN,
 			government: UNKNOWN,
 			status: STATUS_MINOR,
-			playerName: 'Раван',
-			playerUrl: '9999',
+			playerName: users[9].username,
+			playerUrl: users[9].url,
 			flag: {
 				image: NO_FLAG
 			}
@@ -715,8 +778,8 @@ var countries = {
 			leaderLabel: 'Губернатор',
 			leader: 'Уильям Керрингтон',
 			status: STATUS_COLONY + ' (Тиердаль)',
-			playerName: 'MAYAK57',
-			playerUrl: '21169',
+			playerName: users[1].username,
+			playerUrl: users[1].url,
 			flag: {
 				image: 'Flag_of_Hachivang.webp'
 			}
@@ -741,8 +804,8 @@ var countries = {
 			leader: 'Джеймс Ливингем',
 			government: GOV_DUAL_MONARCHY,
 			status: STATUS_PROTECTORATE + ' (Тиердаль)',
-			playerName: 'Enkeltea',
-			playerUrl: '33778',
+			playerName: users[3].username,
+			playerUrl: users[3].url,
 			flag: {
 				image: 'Flag_of_Gelenia.webp'
 			}
@@ -891,8 +954,8 @@ var countries = {
 			leader: 'Хосе VI де Нарриа',
 			government: GOV_DUAL_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'Раван',
-			playerUrl: '9999',
+			playerName: users[9].username,
+			playerUrl: users[9].url,
 			flag: {
 				image: 'Flag_of_Deselia.webp'
 			}
@@ -1066,8 +1129,8 @@ var countries = {
 			leader: 'Оливер I Аслетим',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'Раван',
-			playerUrl: '9999',
+			playerName: users[9].username,
+			playerUrl: users[9].url,
 			flag: {
 				image: 'Flag_of_Kongor.webp'
 			}
@@ -1091,8 +1154,8 @@ var countries = {
 			leader: 'Карл I и Мария I Авершер-Адлербург',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_GREAT,
-			playerName: 'KaiseR',
-			playerUrl: '4131',
+			playerName: users[6].username,
+			playerUrl: users[6].url,
 			flag: {
 				image: 'Flag_of_Koferd.webp'
 			}
@@ -1141,8 +1204,8 @@ var countries = {
 			leader: 'Тадеуш Серпинский',
 			government: GOV_SOCIALIST,
 			status: STATUS_MINOR,
-			playerName: 'Ник Токарев',
-			playerUrl: '28378',
+			playerName: users[4].username,
+			playerUrl: users[4].url,
 			flag: {
 				image: 'Flag_of_Krunoviya.webp'
 			}
@@ -1166,8 +1229,8 @@ var countries = {
 			leader: 'Альфред Фиорелли',
 			government: GOV_REPUBLIC,
 			status: STATUS_MINOR,
-			playerName: 'Ник Токарев',
-			playerUrl: '28378',
+			playerName: users[4].username,
+			playerUrl: users[4].url,
 			flag: {
 				image: 'Flag_of_Chiesanotto.webp'
 			}
@@ -1216,8 +1279,8 @@ var countries = {
 			leader: 'Иоганн I ван Тейнес-Роттебург',
 			government: GOV_REPUBLIC,
 			status: STATUS_MINOR,
-			playerName: 'Le capitaine Avare',
-			playerUrl: '23533',
+			playerName: users[11].username,
+			playerUrl: users[11].url,
 			flag: {
 				image: 'Flag_of_Kulinburg.webp'
 			}
@@ -1266,8 +1329,8 @@ var countries = {
 			leader: 'Андрус Веберс',
 			government: GOV_REPUBLIC,
 			status: STATUS_MINOR,
-			playerName: 'Le capitaine Avare',
-			playerUrl: '23533',
+			playerName: users[11].username,
+			playerUrl: users[11].url,
 			flag: {
 				image: 'Flag_of_Laton_Union.webp'
 			}
@@ -1316,8 +1379,8 @@ var countries = {
 			leader: 'Витовт I Барда',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'Имперский командор',
-			playerUrl: '10808',
+			playerName: users[2].username,
+			playerUrl: users[2].url,
 			flag: {
 				image: NO_FLAG
 			}
@@ -1341,8 +1404,8 @@ var countries = {
 			leader: 'Рауль IV Дюбуа',
 			government: GOV_DUAL_MONARCHY,
 			status: STATUS_GREAT,
-			playerName: 'Black King',
-			playerUrl: '11231',
+			playerName: users[12].username,
+			playerUrl: users[12].url,
 			flag: {
 				image: 'Flag_of_Loktaria.webp'
 			}
@@ -1391,8 +1454,8 @@ var countries = {
 			leader: 'Эжен Д\'Арно',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'Armageddon Of Rome',
-			playerUrl: '33636',
+			playerName: users[13].username,
+			playerUrl: users[13].url,
 			flag: {
 				image: 'Flag_of_Malizon.webp'
 			}
@@ -1491,8 +1554,8 @@ var countries = {
 			leader: UNKNOWN,
 			government: UNKNOWN,
 			status: STATUS_MINOR,
-			playerName: 'Раван',
-			playerUrl: '9999',
+			playerName: users[9].username,
+			playerUrl: users[9].url,
 			flag: {
 				image: NO_FLAG
 			}
@@ -1565,8 +1628,8 @@ var countries = {
 			leader: 'Йозеф Железнов',
 			government: GOV_SOCIALIST,
 			status: STATUS_MINOR,
-			playerName: 'Yugo',
-			playerUrl: '29549',
+			playerName: users[15].username,
+			playerUrl: users[15].url,
 			flag: {
 				image: 'Flag_of_Modravia.webp'
 			}
@@ -1615,8 +1678,8 @@ var countries = {
 			leader: 'Алоиз II Губертонет',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'KaiseR',
-			playerUrl: '4131',
+			playerName: users[6].username,
+			playerUrl: users[6].url,
 			flag: {
 				image: 'Flag_of_Montania.webp'
 			}
@@ -1665,8 +1728,8 @@ var countries = {
 			leader: 'Вильгельм I Адлербург-Нойердорф',
 			government: GOV_DUAL_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'KaiseR',
-			playerUrl: '4131',
+			playerName: users[6].username,
+			playerUrl: users[6].url,
 			flag: {
 				image: 'Flag_of_Moenia.webp'
 			}
@@ -1715,8 +1778,8 @@ var countries = {
 			leader: 'Фанкториас III Дрененмак',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'Имперский командор',
-			playerUrl: '10808',
+			playerName: users[2].username,
+			playerUrl: users[2].url,
 			flag: {
 				image: 'Flag_of_Nigolfajd.webp'
 			}
@@ -1740,8 +1803,8 @@ var countries = {
 			leader: 'Эллем I Ньориэль',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_PROTECTORATE + ' (Цивилия)',
-			playerName: 'Раван',
-			playerUrl: '9999',
+			playerName: users[9].username,
+			playerUrl: users[9].url,
 			flag: {
 				image: 'Flag_of_Niria.webp'
 			}
@@ -1815,8 +1878,8 @@ var countries = {
 			leader: UNKNOWN,
 			government: UNKNOWN,
 			status: STATUS_MINOR,
-			playerName: 'Раван',
-			playerUrl: '9999',
+			playerName: users[9].username,
+			playerUrl: users[9].url,
 			flag: {
 				image: NO_FLAG
 			}
@@ -1865,8 +1928,8 @@ var countries = {
 			leader: 'Квинт Юлий Август',
 			government: GOV_DUAL_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'Armageddon Of Rome',
-			playerUrl: '33636',
+			playerName: users[13].username,
+			playerUrl: users[13].url,
 			flag: {
 				image: 'Flag_of_Rome.webp'
 			}
@@ -1890,8 +1953,8 @@ var countries = {
 			leader: 'Ангел Лучков',
 			government: GOV_SOCIALIST,
 			status: STATUS_MINOR,
-			playerName: 'MAYAK57',
-			playerUrl: '21169',
+			playerName: users[1].username,
+			playerUrl: users[1].url,
 			flag: {
 				image: 'Flag_of_RSFPR.webp'
 			}
@@ -1940,8 +2003,8 @@ var countries = {
 			leader: 'Ксенобира Кобольдская',
 			government: GOV_THEOCRACY,
 			status: STATUS_MINOR,
-			playerName: 'Тинувель Секунда',
-			playerUrl: '30987',
+			playerName: users[8].username,
+			playerUrl: users[8].url,
 			flag: {
 				image: 'Flag_of_Sekira.webp'
 			}
@@ -1990,8 +2053,8 @@ var countries = {
 			leader: 'Карл I Тиерд',
 			government: GOV_DUAL_MONARCHY,
 			status: STATUS_GREAT,
-			playerName: 'Имперский командор',
-			playerUrl: '10808',
+			playerName: users[2].username,
+			playerUrl: users[2].url,
 			flag: {
 				image: 'Flag_of_Thierdal.webp'
 			}
@@ -2065,8 +2128,8 @@ var countries = {
 			leader: 'Ричард I Браун',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'Black King',
-			playerUrl: '11231',
+			playerName: users[12].username,
+			playerUrl: users[12].url,
 			flag: {
 				image: 'Flag_of_Tharra.webp'
 			}
@@ -2140,8 +2203,8 @@ var countries = {
 			leader: 'Марк Северий',
 			government: GOV_REPUBLIC,
 			status: STATUS_MINOR,
-			playerName: 'Грешник',
-			playerUrl: '22262',
+			playerName: users[0].username,
+			playerUrl: users[0].url,
 			flag: {
 				image: 'Flag_of_Fermung.webp'
 			}
@@ -2165,8 +2228,8 @@ var countries = {
 			leader: 'Уильям II Кроментори',
 			government: GOV_DUAL_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'Паук-Скакун',
-			playerUrl: '33915',
+			playerName: users[14].username,
+			playerUrl: users[14].url,
 			flag: {
 				image: 'Flag_of_Fiorra.webp'
 			}
@@ -2240,8 +2303,8 @@ var countries = {
 			leader: UNKNOWN,
 			government: UNKNOWN,
 			status: STATUS_MINOR,
-			playerName: 'Раван',
-			playerUrl: '9999',
+			playerName: users[9].username,
+			playerUrl: users[9].url,
 			flag: {
 				image: NO_FLAG
 			}
@@ -2290,8 +2353,8 @@ var countries = {
 			leader: UNKNOWN,
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'Ник Токарев',
-			playerUrl: '28378',
+			playerName: users[4].username,
+			playerUrl: users[4].url,
 			flag: {
 				image: 'Flag_of_Homrul.webp'
 			}
@@ -2340,8 +2403,8 @@ var countries = {
 			leader: 'Рио ван Реццо, Странник XIII',
 			government: GOV_DUAL_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'Раван',
-			playerUrl: '9999',
+			playerName: users[9].username,
+			playerUrl: users[9].url,
 			flag: {
 				image: 'Flag_of_Civilia.webp'
 			}
@@ -2365,8 +2428,8 @@ var countries = {
 			leader: 'Христофор I Лихтенцоллерн',
 			government: GOV_DUAL_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'KaiseR',
-			playerUrl: '4131',
+			playerName: users[6].username,
+			playerUrl: users[6].url,
 			flag: {
 				image: 'Flag_of_Schwarzland.webp'
 			}
@@ -2390,8 +2453,8 @@ var countries = {
 			leader: 'Фердинанд I Эйзенбах',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'MAYAK57',
-			playerUrl: '21169',
+			playerName: users[1].username,
+			playerUrl: users[1].url,
 			flag: {
 				image: 'Flag_of_Shtalfeld.webp'
 			}
@@ -2440,8 +2503,8 @@ var countries = {
 			leader: 'Георг I Лан',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'KaiseR',
-			playerUrl: '4131',
+			playerName: users[6].username,
+			playerUrl: users[6].url,
 			flag: {
 				image: 'Flag_of_Erkelia.webp'
 			}
@@ -2465,8 +2528,8 @@ var countries = {
 			leader: 'Моуд I Лангсваард',
 			government: GOV_PARL_MONARCHY,
 			status: STATUS_MINOR,
-			playerName: 'Ник Токарев',
-			playerUrl: '28378',
+			playerName: users[4].username,
+			playerUrl: users[4].url,
 			flag: {
 				image: 'Flag_of_Esterwald.webp'
 			}
