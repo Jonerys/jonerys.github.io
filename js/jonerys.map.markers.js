@@ -14,29 +14,6 @@ const CustomMarker = L.Marker.extend({
 	}
 })
 
-const UserCustomMarker = L.Marker.extend({
-	options: {
-		mID: -1,
-        deletable: false
-	},
-    getCoordinates() {
-        return {
-            lat: this._latlng.lat,
-            lng: this._latlng.lng
-        };
-    },
-    getID() {
-        return this.options.mID;
-    },
-    isDeletable() {
-		if (this.options.deletable ) {
-			return "<button class='remove'>del</button>";
-		} else {
-			return '';
-		}
-    }
-})
-
 function pointToLayer(feature) {
 	let marker = new CustomMarker(feature.geometry.coordinates, {
 		icon: icons.find(a => a.type == feature.icontype).icon_x1, 
@@ -174,6 +151,13 @@ continentMarkerLayer.addTo(continentLayer);*/
 
 var needtoopen = null;
 
+let animend = function(e){
+	if (needtoopen) {
+		needtoopen.layer.openPopup();
+		needtoopen = null;
+	}
+}
+
 //кластеризация маркеров работает, но надо доводить до ума
 var countryLayerGroup = L.markerClusterGroup({
 	showCoverageOnHover: false,
@@ -182,27 +166,50 @@ var countryLayerGroup = L.markerClusterGroup({
 	spiderfyOnMaxZoom: false,
 	iconCreateFunction: function(cluster) {
 		return new L.DivIcon({html: '<div><span>' + cluster.getChildCount() 
-								+ '</span></div>', className: 'marker-cluster marker-cluster-medium', iconSize: new L.Point(40, 40)});
+								+ '</span></div>', className: 'marker-cluster marker-cluster-capital', iconSize: new L.Point(40, 40)});
 	},
 }).on({
-	animationend: function(e){
-		if (needtoopen) {
-			needtoopen.layer.openPopup();
-			needtoopen = null;
-		}
-	}
+	animationend: animend
+});
+
+var placeLayerGroup = L.markerClusterGroup({
+	showCoverageOnHover: false,
+	maxClusterRadius: 80,
+	disableClusteringAtZoom: -2,
+	spiderfyOnMaxZoom: false,
+	iconCreateFunction: function(cluster) {
+		return new L.DivIcon({html: '<div><span>' + cluster.getChildCount() 
+								+ '</span></div>', className: 'marker-cluster marker-cluster-place', iconSize: new L.Point(40, 40)});
+	},
+}).on({
+	animationend: animend
+});
+
+var waterLayerGroup = L.markerClusterGroup({
+	showCoverageOnHover: false,
+	maxClusterRadius: 80,
+	disableClusteringAtZoom: -2,
+	spiderfyOnMaxZoom: false,
+	iconCreateFunction: function(cluster) {
+		return new L.DivIcon({html: '<div><span>' + cluster.getChildCount() 
+								+ '</span></div>', className: 'marker-cluster marker-cluster-water', iconSize: new L.Point(40, 40)});
+	},
+}).on({
+	animationend: animend
 });
 
 mapLayers.addLayer(countryLayerGroup.addLayer(countryLayer));
+mapLayers.addLayer(placeLayerGroup.addLayer(placeLayer));
+mapLayers.addLayer(waterLayerGroup.addLayer(waterLayer));
 
 if (mapLayers.hasLayer(countryLayerGroup)) {
-	$('#countryLayerGroup').attr('checked','');
+	$('#countryLayer').attr('checked','');
 }
-if (mapLayers.hasLayer(placeLayer)) {
+if (mapLayers.hasLayer(placeLayerGroup)) {
 	$('#placeLayer').attr('checked','');
 }
-if (mapLayers.hasLayer(waterPlaces)) {
-	$('#waterPlaces').attr('checked','');
+if (mapLayers.hasLayer(waterLayerGroup)) {
+	$('#waterLayer').attr('checked','');
 }
 if (mapLayers.hasLayer(archLayer)) {
 	$('#archLayer').attr('checked','');

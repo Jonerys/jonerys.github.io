@@ -128,16 +128,13 @@ var search = new CustomSearch({
         if (memes) {
             jsons = jsons.concat(memes);
         } else {
-            // if (mapLayers.hasLayer(countryLayer)) {
-            //     jsons = jsons.concat(countriesSearch.search(text));
-            // }
             if (mapLayers.hasLayer(countryLayerGroup)) {
                 jsons = jsons.concat(countriesSearch.search(text));
             }
-            if (mapLayers.hasLayer(placeLayer)) {
+            if (mapLayers.hasLayer(placeLayerGroup)) {
                 jsons = jsons.concat(placesSearch.search(text));
             }
-            if (mapLayers.hasLayer(waterLayer)) {
+            if (mapLayers.hasLayer(waterLayerGroup)) {
                 jsons = jsons.concat(waterSearch.search(text));
             }
             if (mapLayers.hasLayer(archLayer)) {
