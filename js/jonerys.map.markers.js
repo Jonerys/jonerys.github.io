@@ -183,14 +183,52 @@ var archLayer = L.geoJSON(archPlaces.features, {
 
 continentMarkerLayer.addTo(continentLayer);*/
 
-countryLayer.addTo(mapLayers);
-
-var countryGroupLayerOnMap = true;
+//countryLayer.addTo(mapLayers);
 
 //if (mapLayers.hasLayer(countryLayer)) {
 //	$('#countryLayer').attr('checked','');
-if (mapLayers.hasLayer(countryLayer)) {
-	$('#countryLayer').attr('checked','');
+
+var needtoopen = null;
+
+//кластеризация маркеров работает, но надо доводить до ума
+var countriesGroupLayer = L.markerClusterGroup({
+	showCoverageOnHover: false,
+	maxClusterRadius: 80,
+	disableClusteringAtZoom: -2,
+	iconCreateFunction: function(cluster) {
+		//return L.divIcon({ html: '<b>' + cluster.getChildCount() + '</b>' });
+		//return icons[0].icon_x1;
+		return new L.DivIcon({ html: '<div><span>' + cluster.getChildCount() + '</span></div>', className: 'marker-cluster marker-cluster-medium', iconSize: new L.Point(40, 40) })
+	},
+	// spiderfyShapePositions: function(count, centerPt) {
+	// 	var distanceFromCenter = 35,
+	// 		markerDistance = 45,
+	// 		lineLength = markerDistance * (count - 1),
+	// 		lineStart = centerPt.y - lineLength / 2,
+	// 		res = [],
+	// 		i;
+
+	// 	res.length = count;
+
+	// 	for (i = count - 1; i >= 0; i--) {
+	// 		res[i] = new Point(centerPt.x + distanceFromCenter, lineStart + markerDistance * i);
+	// 	}
+
+	// 	return res;
+	// }
+}).on({
+	animationend: function(e){
+		if (needtoopen) {
+			needtoopen.layer.openPopup();
+			needtoopen = null;
+		}
+	}
+});
+countriesGroupLayer.addLayer(countryLayer);
+mapLayers.addLayer(countriesGroupLayer);
+
+if (mapLayers.hasLayer(countriesGroupLayer)) {
+	$('#countriesGroupLayer').attr('checked','');
 }
 if (mapLayers.hasLayer(placeLayer)) {
 	$('#placeLayer').attr('checked','');
@@ -204,37 +242,6 @@ if (mapLayers.hasLayer(archLayer)) {
 if (mapLayers.hasLayer(continentLayer)) {
 	$('#continentLayer').attr('checked','');
 }
-
-
-// кластеризация маркеров работает, но надо доводить до ума
-// var countriesGroupLayer = L.markerClusterGroup({
-// 	showCoverageOnHover: false,
-// 	maxClusterRadius: 80,
-// 	disableClusteringAtZoom: -2,
-// 	iconCreateFunction: function(cluster) {
-// 		//return L.divIcon({ html: '<b>' + cluster.getChildCount() + '</b>' });
-// 		//return icons[0].icon_x1;
-// 		return new L.DivIcon({ html: '<div><span>' + cluster.getChildCount() + '</span></div>', className: 'marker-cluster marker-cluster-medium', iconSize: new L.Point(40, 40) })
-// 	},
-// 	// spiderfyShapePositions: function(count, centerPt) {
-// 	// 	var distanceFromCenter = 35,
-// 	// 		markerDistance = 45,
-// 	// 		lineLength = markerDistance * (count - 1),
-// 	// 		lineStart = centerPt.y - lineLength / 2,
-// 	// 		res = [],
-// 	// 		i;
-
-// 	// 	res.length = count;
-
-// 	// 	for (i = count - 1; i >= 0; i--) {
-// 	// 		res[i] = new Point(centerPt.x + distanceFromCenter, lineStart + markerDistance * i);
-// 	// 	}
-
-// 	// 	return res;
-// 	// }
-// });
-// countriesGroupLayer.addLayer(countryLayer);
-// mapLayers.addLayer(countriesGroupLayer);
 
 function openCountryDiplomacy(elem) {
 	if (!$("#diplomacy").is(":visible")) {

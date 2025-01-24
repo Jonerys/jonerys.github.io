@@ -128,12 +128,12 @@ var search = new CustomSearch({
         if (memes) {
             jsons = jsons.concat(memes);
         } else {
-            if (mapLayers.hasLayer(countryLayer)) {
+            // if (mapLayers.hasLayer(countryLayer)) {
+            //     jsons = jsons.concat(countriesSearch.search(text));
+            // }
+            if (mapLayers.hasLayer(countriesGroupLayer)) {
                 jsons = jsons.concat(countriesSearch.search(text));
             }
-            /*if (countryGroupLayerOnMap) {
-                jsons = jsons.concat(countriesSearch.search(text));
-            }*/
             if (mapLayers.hasLayer(placeLayer)) {
                 jsons = jsons.concat(placesSearch.search(text));
             }
@@ -170,6 +170,7 @@ var search = new CustomSearch({
 }).on('search:locationfound', function(e) {
     map.closePopup();
     e.layer.openPopup();
+    needtoopen = e;
 }).on('search:cancel', function(){
     $('.search-input').blur();
 }).addTo(map);

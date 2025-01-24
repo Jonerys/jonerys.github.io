@@ -6,10 +6,12 @@
 	}
 
 .marker-cluster-medium {
-	background-color: rgba(241, 211, 87, 0.6);
+	/*background-color: rgba(241, 211, 87, 0.6); */
+	background-color: rgba(255, 255, 0, 0.6);
 	}
 .marker-cluster-medium div {
-	background-color: rgba(240, 194, 12, 0.6);
+	/* background-color: rgba(240, 194, 12, 0.8); */
+	background-color: rgba(255, 255, 0, 0.8);
 	}
 
 .marker-cluster-large {
