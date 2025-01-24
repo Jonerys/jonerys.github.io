@@ -201,22 +201,6 @@ var countriesGroupLayer = L.markerClusterGroup({
 		//return icons[0].icon_x1;
 		return new L.DivIcon({ html: '<div><span>' + cluster.getChildCount() + '</span></div>', className: 'marker-cluster marker-cluster-medium', iconSize: new L.Point(40, 40) })
 	},
-	// spiderfyShapePositions: function(count, centerPt) {
-	// 	var distanceFromCenter = 35,
-	// 		markerDistance = 45,
-	// 		lineLength = markerDistance * (count - 1),
-	// 		lineStart = centerPt.y - lineLength / 2,
-	// 		res = [],
-	// 		i;
-
-	// 	res.length = count;
-
-	// 	for (i = count - 1; i >= 0; i--) {
-	// 		res[i] = new Point(centerPt.x + distanceFromCenter, lineStart + markerDistance * i);
-	// 	}
-
-	// 	return res;
-	// }
 }).on({
 	animationend: function(e){
 		if (needtoopen) {
