@@ -108,7 +108,8 @@ L.Control.RoCGraphicScale = L.Control.GraphicScale.extend({
             if(i<num){
 				if (displayUnit.amount)
                 //var lblText=Math.round((i+1)*displayUnit.amount);
-				var lblText = ((i+1)*displayUnit.amount).toFixed(1);
+				//var lblText = ((i+1)*displayUnit.amount);
+				var lblText = +(Math.round(((i+1)*displayUnit.amount) + "e+1")  + "e-1");
                 if(i===num-1){
                     if(this.options.unitPlacement==="label"){
                         lblText+=displayUnit.unit
