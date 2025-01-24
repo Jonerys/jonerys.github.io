@@ -29,9 +29,9 @@ var markers = [];
 
 /*const MapEvents = () => {
 	useMapEvents({
-	  click(e) {
+		click(e) {
 		console.log(e.latlng.lat + ' ' + e.latlng.lng);
-	  },
+		},
 	});
 	return false;
 }*/

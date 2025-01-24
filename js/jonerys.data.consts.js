@@ -2,8 +2,6 @@ const NO_TOPIC = '54209'; //ссылка на тему географии, ес�
 const NO_FLAG = 'Flag_of_Unknown.webp';
 const UNKNOWN = 'Неизвестно';
 const NONE = 'Отсутствует';
-const NO_PLAYER = 'Банк ВР';
-const PLAYER_ZOG = 'Совет ВР';
 
 const GOV_ABS_MONARCHY = 'Абс. монархия';
 const GOV_DUAL_MONARCHY = 'Дуал. монархия';
@@ -62,3 +60,92 @@ const DIPLO_STATUS_HOSTILE = {
     text: 'Враждебный нейтралитет',
     emoji: '😠'
 };
+
+const NO_PLAYER = 0;
+const PLAYER_ZOG = 1;
+const GRESHNIK = 2;
+const MAYAK57 = 3;
+const IMPCOM = 4;
+const ENKELTEA = 5;
+const NIKTOK = 6;
+const ORK = 7;
+const KAISER = 8;
+const CORPORAL = 9;
+const TINUSEC = 10;
+const RAVAN = 11;
+const LECAPAV = 12;
+const BLACKKING = 13;
+const ARMOFROME = 14;
+const PAUKSKA = 15;
+const YUGO = 16;
+
+const USERS = [
+    {
+        username: 'Банк ВР',
+        url: null
+    },
+    {
+        username: 'Совет ВР',
+        url: null
+    },
+	{
+		username: 'Грешник',
+		url: '22262'
+	},
+	{
+		username: 'MAYAK57',
+		url: '21169'
+	},
+	{
+		username: 'Имперский командор',
+		url: '10808'
+	},
+	{
+		username: 'Enkeltea',
+		url: '33778'
+	},
+	{
+		username: 'Ник Токарев',
+		url: '28378'
+	},
+	{
+		username: 'Ork',
+		url: '11517'
+	},
+	{
+		username: 'KaiseR',
+		url: '4131'
+	},
+	{
+		username: 'Corporal',
+		url: '29631'
+	},
+	{
+		username: 'Тинувель Секунда',
+		url: '30987'
+	},
+	{
+		username: 'Раван',
+		url: '9999'
+	},
+	{
+		username: 'Le capitaine Avare',
+		url: '23533'
+	},
+	{
+		username: 'Black King',
+		url: '11231'
+	},
+	{
+		username: 'Armageddon Of Rome',
+		url: '33636'
+	},
+	{
+		username: 'Паук-Скакун',
+		url: '33915'
+	},
+	{
+		username: 'Yugo',
+		url: '29549'
+	}
+];

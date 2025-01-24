@@ -80,16 +80,18 @@ var countryLayer = L.geoJSON(countries.features, {
 				+"Дип. статус:</div><div class=popup-data>" 
 				+ feature.properties.status + "</div></div>";
 				
-		if ((feature.properties.playerName != NO_PLAYER) && (feature.properties.playerName != PLAYER_ZOG)) {
+		console.log(feature.properties.player.username)
+				
+		if (feature.properties.player.url) {
 			player = "<div><div class=popup-label>" 
 					+ "Владелец:</div><div class=popup-data><div class=\"black-link player\">"
 					+ "<a href=https://doublebrick.ru/forums/memberlist.php?mode=viewprofile&u=" 
-					+ feature.properties.playerUrl + ">  " 
-					+ feature.properties.playerName + "</a></div></div></div>";
+					+ feature.properties.player.url + ">  " 
+					+ feature.properties.player.username + "</a></div></div></div>";
 		} else {
 			player = "<div><div class=popup-label>"
 					+ "Владелец:</div><div class=\"popup-data player npc-player\">" 
-					+ feature.properties.playerName + "</div></div>";
+					+ feature.properties.player.username + "</div></div>";
 		}
 		
 		if (feature.properties.url != NO_TOPIC) {
@@ -118,7 +120,7 @@ var countryLayer = L.geoJSON(countries.features, {
 		if (feature.properties.status) {
 			popup += dipStatus;
 		} 
-		if (feature.properties.playerName) {
+		if (feature.properties.player.username) {
 			popup += player;
 		} 
 		popup += '<div><p onclick="openCountryDiplomacy(this.children[0].value)">' 
