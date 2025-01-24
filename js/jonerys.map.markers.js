@@ -37,17 +37,6 @@ const UserCustomMarker = L.Marker.extend({
     }
 })
 
-const DebugIcon = L.Icon.extend({
-	options: {
-		iconUrl: 'markers/marker_debug.webp',
-		iconSize:     [10, 10],
-		iconAnchor:   [5, 5],
-		popupAnchor:  [0, -5]
-	}
-});
-
-var debi = new DebugIcon();
-
 function pointToLayer(feature) {
 	let marker = new CustomMarker(feature.geometry.coordinates, {
 		icon: icons.find(a => a.type == feature.icontype).icon_x1, 
@@ -183,11 +172,6 @@ var archLayer = L.geoJSON(archPlaces.features, {
 
 continentMarkerLayer.addTo(continentLayer);*/
 
-//countryLayer.addTo(mapLayers);
-
-//if (mapLayers.hasLayer(countryLayer)) {
-//	$('#countryLayer').attr('checked','');
-
 var needtoopen = null;
 
 //кластеризация маркеров работает, но надо доводить до ума
@@ -197,9 +181,8 @@ var countryLayerGroup = L.markerClusterGroup({
 	disableClusteringAtZoom: -2,
 	spiderfyOnMaxZoom: false,
 	iconCreateFunction: function(cluster) {
-		//return L.divIcon({ html: '<b>' + cluster.getChildCount() + '</b>' });
-		//return icons[0].icon_x1;
-		return new L.DivIcon({ html: '<div><span>' + cluster.getChildCount() + '</span></div>', className: 'marker-cluster marker-cluster-medium', iconSize: new L.Point(40, 40) })
+		return new L.DivIcon({html: '<div><span>' + cluster.getChildCount() 
+								+ '</span></div>', className: 'marker-cluster marker-cluster-medium', iconSize: new L.Point(40, 40)});
 	},
 }).on({
 	animationend: function(e){
@@ -209,8 +192,8 @@ var countryLayerGroup = L.markerClusterGroup({
 		}
 	}
 });
-countryLayerGroup.addLayer(countryLayer);
-mapLayers.addLayer(countryLayerGroup);
+
+mapLayers.addLayer(countryLayerGroup.addLayer(countryLayer));
 
 if (mapLayers.hasLayer(countryLayerGroup)) {
 	$('#countryLayerGroup').attr('checked','');

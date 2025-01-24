@@ -3,7 +3,7 @@ var places = {
     features: [
 		{
 			type: 'Feature',
-			icontype: ICON_PLACE2,
+			icontype: ICON_PLACE,
 			geometry: {
 				type: 'Point',
 				coordinates: [2029, 2466]
@@ -18,17 +18,28 @@ var places = {
 var waterPlaces = {
 	type: 'FeatureCollection',
     features: [
-		/*{
+		{
 			type: 'Feature',
-			icontype: ICON_WATER,
+			icontype: ICON_SALTWATER,
 			geometry: {
 				type: 'Point',
-				coordinates: [2126, 2420]
+				coordinates: [1936, 2352]
 			},
 			properties: {
 				name: 'Гремландское море'
 			}
-		},*/
+		},
+		{
+			type: 'Feature',
+			icontype: ICON_FRESHWATER,
+			geometry: {
+				type: 'Point',
+				coordinates: [1575, 2139]
+			},
+			properties: {
+				name: 'Озеро Роль-Гу'
+			}
+		},
 	]
 }
 
