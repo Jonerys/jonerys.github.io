@@ -131,7 +131,7 @@ var search = new CustomSearch({
             // if (mapLayers.hasLayer(countryLayer)) {
             //     jsons = jsons.concat(countriesSearch.search(text));
             // }
-            if (mapLayers.hasLayer(countriesGroupLayer)) {
+            if (mapLayers.hasLayer(countryLayerGroup)) {
                 jsons = jsons.concat(countriesSearch.search(text));
             }
             if (mapLayers.hasLayer(placeLayer)) {

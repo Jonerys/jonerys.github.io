@@ -191,7 +191,7 @@ continentMarkerLayer.addTo(continentLayer);*/
 var needtoopen = null;
 
 //кластеризация маркеров работает, но надо доводить до ума
-var countriesGroupLayer = L.markerClusterGroup({
+var countryLayerGroup = L.markerClusterGroup({
 	showCoverageOnHover: false,
 	maxClusterRadius: 80,
 	disableClusteringAtZoom: -2,
@@ -209,11 +209,11 @@ var countriesGroupLayer = L.markerClusterGroup({
 		}
 	}
 });
-countriesGroupLayer.addLayer(countryLayer);
-mapLayers.addLayer(countriesGroupLayer);
+countryLayerGroup.addLayer(countryLayer);
+mapLayers.addLayer(countryLayerGroup);
 
-if (mapLayers.hasLayer(countriesGroupLayer)) {
-	$('#countriesGroupLayer').attr('checked','');
+if (mapLayers.hasLayer(countryLayerGroup)) {
+	$('#countryLayerGroup').attr('checked','');
 }
 if (mapLayers.hasLayer(placeLayer)) {
 	$('#placeLayer').attr('checked','');
@@ -240,7 +240,6 @@ $(".menu-layers input").click(function(event) {
 	try {
 		if (mapLayers.hasLayer(layerCb)) {
             mapLayers.removeLayer(layerCb);
-			
 			//map.removeLayer(layerCb);
 		}
 		else{
