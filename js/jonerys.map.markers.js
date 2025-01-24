@@ -195,6 +195,7 @@ var countriesGroupLayer = L.markerClusterGroup({
 	showCoverageOnHover: false,
 	maxClusterRadius: 80,
 	disableClusteringAtZoom: -2,
+	spiderfyOnMaxZoom: false,
 	iconCreateFunction: function(cluster) {
 		//return L.divIcon({ html: '<b>' + cluster.getChildCount() + '</b>' });
 		//return icons[0].icon_x1;
