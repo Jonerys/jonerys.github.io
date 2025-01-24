@@ -1,6 +1,8 @@
 //const widthPx = 4833;
 //const heightPx = 4101;
 
+var needToOpen = null;
+
 const widthPx = 4760;
 const heightPx = 4120;
 const mapScale = 1;
@@ -76,6 +78,16 @@ map = L.map('map', {
 			e.target._popup._updateLayout();
 			e.target._popup._updatePosition();
 		}
+		// if (needToOpen) {
+		// 	needToOpen.layer.openPopup();
+		// 	needToOpen = null;
+		// }
+	},
+	moveend: function(e) {
+		// if (needToOpen) {
+		// 	needToOpen.layer.openPopup();
+		// 	needToOpen = null;
+		// }
 	}
 }).setView(mapcenter, -2);
 

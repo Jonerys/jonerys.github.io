@@ -131,6 +131,9 @@ var search = new CustomSearch({
             if (mapLayers.hasLayer(countryLayer)) {
                 jsons = jsons.concat(countriesSearch.search(text));
             }
+            /*if (countryGroupLayerOnMap) {
+                jsons = jsons.concat(countriesSearch.search(text));
+            }*/
             if (mapLayers.hasLayer(placeLayer)) {
                 jsons = jsons.concat(placesSearch.search(text));
             }
@@ -166,7 +169,7 @@ var search = new CustomSearch({
     }
 }).on('search:locationfound', function(e) {
     map.closePopup();
-	e.layer.openPopup();
+    e.layer.openPopup();
 }).on('search:cancel', function(){
     $('.search-input').blur();
 }).addTo(map);

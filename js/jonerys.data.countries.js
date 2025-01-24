@@ -2381,17 +2381,31 @@ var countries = {
 			}
         }
     }
-	]
-};
-
-function getCountryTagById(pid) {
-	for(feature of data.features) {
-		if (pid == feature.properties.id) {
-			return feature.properties.tag;
+	],
+	get: function(param) {
+		getCountryById = function(pid, data) {
+			for(feature of data.features) {
+				if (pid == feature.properties.id) {
+					return feature;
+				}
+			}
+			return null;
+		}
+		getCountryByTag = function(tag, data) {
+			for(feature of data.features) {
+				if (tag == feature.properties.tag) {
+					return feature;
+				}
+			}
+			return null;
+		}
+		switch (typeof param) {
+			case 'string': return getCountryByTag(param, this);
+			case 'number': return getCountryById(param, this);
+			default: return null;
 		}
 	}
-	return 'NaN';
-}
+};
 
 function cleanName(name) {
     return name

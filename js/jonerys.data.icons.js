@@ -4,16 +4,16 @@ const SIZE_LARGE = 4;		// множитель на зуме x4
 
 const ICON_CAPITAL = 'capital';
 const iconCapitalSize = 20;	// размер иконки по умолчанию
-const iconCapitalPA = -11;	// координата якоря подсказки по умолчанию
+const iconCapitalPA = -(iconCapitalSize / 2 + 1);	// координата якоря подсказки по умолчанию
 
 const ICON_PLACE = 'place';
 const ICON_PLACE2 = 'place2';
-const iconPlaceSize = 20;	// размер иконки по умолчанию
-const iconPlacePA = -11;	// координата якоря подсказки по умолчанию
+const iconPlaceSize = 24;	// размер иконки по умолчанию
+const iconPlacePA = -((iconPlaceSize % 2 == 0) ? iconPlaceSize / 2 + 1 : (Math.ceil(iconPlaceSize / 2)));	// координата якоря подсказки по умолчанию
 
 const ICON_WATER = 'water';
 const iconWaterSize = 20;	// размер иконки по умолчанию
-const iconWaterPA = -11;	// координата якоря подсказки по умолчанию
+const iconWaterPA = -((iconWaterSize % 2 == 0) ? iconWaterSize / 2 + 1: Math.ceil(iconWaterSize / 2));	// координата якоря подсказки по умолчанию
 
 const ICON_BUILDING = 'building';
 const iconBuildingSizeX = 19;	// размер иконки по умолчанию
@@ -23,12 +23,12 @@ const iconBuildingPA = -15;	// координата якоря подсказк�
 const ICON_CONTINENT = 'continent';
 const iconContinentSizeX = 20;	// размер иконки по умолчанию
 const iconContinentSizeY = 20;	// размер иконки по умолчанию
-const iconContinentPA = -11;	// координата якоря подсказки по умолчанию
+const iconContinentPA = -((iconContinentSizeX % 2 == 0) ? iconContinentSizeX / 2 + 1: Math.ceil(iconContinentSizeX / 2));	// координата якоря подсказки по умолчанию
 
 const ICON_CONTINENT_Y = 'continent_yellow';
 const iconContinentYSizeX = 20;	// размер иконки по умолчанию
 const iconContinentYSizeY = 20;	// размер иконки по умолчанию
-const iconContinentYPA = -11;	// координата якоря подсказки по умолчанию
+const iconContinentYPA = -((iconContinentYSizeX % 2 == 0) ? iconContinentYSizeX / 2 + 1: Math.ceil(iconContinentYSizeX / 2));	// координата якоря подсказки по умолчанию
 
 
 var icons = [];
