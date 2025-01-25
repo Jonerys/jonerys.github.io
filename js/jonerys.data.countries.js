@@ -2058,7 +2058,7 @@ var countries = {
 			tag: 'Fi',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '26779',
-			capital: 'Митра',
+			capital: 'Бронтен',
 			leader: 'Уильям II Кроментори',
 			government: GOV_DUAL_MONARCHY,
 			status: STATUS_MINOR,
