@@ -165,7 +165,8 @@ var countryLayerGroup = L.markerClusterGroup({
 	disableClusteringAtZoom: -2,
 	spiderfyOnMaxZoom: false,
 	iconCreateFunction: function(cluster) {
-		return new L.DivIcon({html: '<div><span>' + cluster.getChildCount() 
+		return new L.DivIcon({html: '<div class="marker-cluster-capital-animated"></div><div class="marker-cluster-capital-face"><span>' 
+								+ cluster.getChildCount() 
 								+ '</span></div>', className: 'marker-cluster marker-cluster-capital', iconSize: new L.Point(40, 40)});
 	},
 }).on({
