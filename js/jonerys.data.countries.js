@@ -2404,41 +2404,41 @@ var countries = {
 			case 'number': return getCountryById(param, this);
 			default: return null;
 		}
+	},
+	cleanName: function (name) {
+		return name
+			.replace(/Племенной союз орков/, '')
+			.replace(/Племенной союз/, '')
+			.replace(/[кК]оролевство/, '')
+			.replace(/[кК]онфедерация/, '')
+			.replace(/[кК]аганат/, '')
+			.replace(/[иИ]мперия/, '')
+			.replace(/[иИ]мамат/, '')
+			.replace(/[хХ]алифат/, '')
+			.replace(/[рР]еспублика/, '')
+			.replace(/[рР]еволюционная/, '')
+			.replace(/[сС]оветская/, '')
+			.replace(/[сС]ултанат/, '')
+			.replace(/[фФ]едеративная/, '')
+			.replace(/[нН]ародная/, '')
+			.replace(/Орден святых/, '')
+			.replace(/[оО]рден /, '')
+			.replace(/ [оО]рден/, '')
+			.replace(/[вВ]ольн.. город/, '')
+			.replace(/[гГ]ерцогство/, '')
+			.replace(/[гГ]рафство/, '')
+			.replace(/[вВ]севеликое/, '')
+			.replace(/[вВ]елик../, '')
+			.replace(/[кК]няжество/, '')
+			.replace(/[кК]няжеский/, '')
+			.replace(/[сС]султанат/, '')
+			.replace(/[сС]оюз/, '')
+			.replace(/[цЦ]арствие/, '')
+			.replace(/Эльфийское/, '')
+			.replace(/^ */, '')
+			.replace(/ /, '')
+			.replace(/'/, '')
+			.replace(/\-/, '');
 	}
 };
 
-function cleanName(name) {
-    return name
-        .replace(/Племенной союз орков/, '')
-        .replace(/Племенной союз/, '')
-        .replace(/[кК]оролевство/, '')
-        .replace(/[кК]онфедерация/, '')
-        .replace(/[кК]аганат/, '')
-        .replace(/[иИ]мперия/, '')
-        .replace(/[иИ]мамат/, '')
-        .replace(/[хХ]алифат/, '')
-        .replace(/[рР]еспублика/, '')
-        .replace(/[рР]еволюционная/, '')
-        .replace(/[сС]оветская/, '')
-        .replace(/[сС]ултанат/, '')
-        .replace(/[фФ]едеративная/, '')
-        .replace(/[нН]ародная/, '')
-        .replace(/Орден святых/, '')
-        .replace(/[оО]рден /, '')
-        .replace(/ [оО]рден/, '')
-        .replace(/[вВ]ольн.. город/, '')
-        .replace(/[гГ]ерцогство/, '')
-        .replace(/[гГ]рафство/, '')
-        .replace(/[вВ]севеликое/, '')
-        .replace(/[вВ]елик../, '')
-        .replace(/[кК]няжество/, '')
-        .replace(/[кК]няжеский/, '')
-        .replace(/[сС]султанат/, '')
-        .replace(/[сС]оюз/, '')
-        .replace(/[цЦ]арствие/, '')
-        .replace(/Эльфийское/, '')
-        .replace(/^ */, '')
-        .replace(/ /, '')
-        .replace(/'/, '')
-        .replace(/\-/, '');
-}

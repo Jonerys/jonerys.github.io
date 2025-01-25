@@ -78,8 +78,8 @@ function resetInfo() {
         }
     }
     
-    filteredData.sort((a,b) => (cleanName(a.country.name) > cleanName(b.country.name)) ? 1 
-                : (cleanName(a.country.name) < cleanName(b.country.name) ? -1 : 0));
+    filteredData.sort((a,b) => (countries.cleanName(a.country.name) > countries.cleanName(b.country.name)) ? 1 
+                : (countries.cleanName(a.country.name) < countries.cleanName(b.country.name) ? -1 : 0));
     for (let rec of filteredData) {
         let notesAsHTML = '';
         let record = $("<div/>");
