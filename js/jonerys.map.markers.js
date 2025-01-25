@@ -1,3 +1,5 @@
+const FLAG_IMAGES_PATH = 'images/country_flags/';
+
 const CustomMarker = L.Marker.extend({
 	options: {
 		iconsSet: {}
@@ -66,7 +68,7 @@ var countryLayer = L.geoJSON(countries.features, {
 		}
 		
 		let popup = "<div class=content><div class=content-head><img class=flag-popup alt=\"" 
-				+ feature.properties.tag + "\"  src=images/country_flags/" 
+				+ feature.properties.tag + "\"  src=" + FLAG_IMAGES_PATH 
 				+ feature.properties.flag.image 
 				+ " /><div class=\"black-link country-name\">" + countryName + "</div></div>";
 				
