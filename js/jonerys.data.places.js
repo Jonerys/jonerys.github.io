@@ -6,10 +6,10 @@ var places = {
 			icontype: ICON_PLACE,
 			geometry: {
 				type: 'Point',
-				coordinates: [2029, 2466]
+				coordinates: [748, 1779]
 			},
 			properties: {
-				name: 'Манты-Хансийск'
+				name: 'Остров Принца Карла'
 			}
 		},
 	]
