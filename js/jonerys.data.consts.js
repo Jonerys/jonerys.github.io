@@ -3,6 +3,9 @@ const NO_FLAG = 'Flag_of_Unknown.webp';
 const UNKNOWN = 'Неизвестно';
 const NONE = 'Отсутствует';
 
+const FLAG_IMAGES_PATH = 'images/country_flags/';
+const MARKER_ICONS_PATH = 'images/icons/';
+
 const GOV_ABS_MONARCHY = 'Абс. монархия';
 const GOV_DUAL_MONARCHY = 'Дуал. монархия';
 const GOV_PARL_MONARCHY = 'Парл. монархия';

@@ -1,5 +1,3 @@
-const MARKER_ICONS_PATH = 'images/icons/';
-
 const SIZE_NORMAL = 1; 		// множитель по умолчанию
 const SIZE_BIG = 2;		// множитель на зуме x2
 const SIZE_LARGE = 4;		// множитель на зуме x4

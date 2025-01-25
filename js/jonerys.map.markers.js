@@ -1,5 +1,3 @@
-const FLAG_IMAGES_PATH = 'images/country_flags/';
-
 const CustomMarker = L.Marker.extend({
 	options: {
 		iconsSet: {}

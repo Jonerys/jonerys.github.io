@@ -98,7 +98,7 @@ bounds = L.latLngBounds(southWest, northEast);
 map.setMaxBounds(bounds);
 
 map.attributionControl.addAttribution(
-	'<img class=attribution-flag src="images/country_flags/Flag_of_Shtalfeld.webp"/> Königreich Stahlfeld, 1903');
+	'<img class=attribution-flag src="' + FLAG_IMAGES_PATH + 'Flag_of_Shtalfeld.webp"/> Königreich Stahlfeld, 1903');
 
 var hash = new L.Hash(map);
 
@@ -140,3 +140,9 @@ mapLayers.addTo(map);
 map.on('click', function(e) {
 	console.log('[' + Math.round(e.latlng.lat) + ', ' + Math.round(e.latlng.lng) + '],');
 });
+
+$('#marker-country-toggle').attr('src', MARKER_ICONS_PATH + 'marker_capital.webp');
+$('#marker-place-toggle').attr('src', MARKER_ICONS_PATH + 'marker_place.webp');
+$('#marker-water-toggle').attr('src', MARKER_ICONS_PATH + 'marker_saltwater.webp');
+$('#marker-building-toggle').attr('src', MARKER_ICONS_PATH + 'marker_building.webp');
+//$('#marker-continent-toggle').attr('src', MARKER_ICONS_PATH + 'marker_continent.webp');

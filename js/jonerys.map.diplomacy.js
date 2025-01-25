@@ -85,7 +85,7 @@ function resetInfo() {
         let record = $("<div/>");
         record.addClass("diplomacy-record");
         record.html("<div class='diplomacy-record-head'><div class='diplomacy-record-left'><img class='flag-popup' alt='" 
-            + rec.country.tag + "' src='images/country_flags/" 
+            + rec.country.tag + "' src='" + FLAG_IMAGES_PATH 
             + rec.country.flag + "'>" 
             + rec.country.shortname + "</div>"
             + "<div class='diplomacy-record-right'><div class='emoji'>" + rec.relationship.status.emoji + "</div>"
@@ -174,7 +174,7 @@ for (let feature of countries.features) {
 	let li = $('<li/>');
 	li.html("<input type='radio' value='" + feature.properties.id + "'/>" 
 		+ "<label class='gap'>" 
-		+ "<img class='flag-popup' alt='" + feature.properties.tag + "' src='images/country_flags/" + feature.properties.flag.image + "'>" 
+		+ "<img class='flag-popup' alt='" + feature.properties.tag + "' src='" + FLAG_IMAGES_PATH + feature.properties.flag.image + "'>" 
 		+ feature.properties.shortname +"</label>");
 	$("#dropdown-option-list-1").append(li);
 }
