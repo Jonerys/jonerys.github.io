@@ -54,7 +54,6 @@ html,body {
 }
 .leaflet-popup-content {
 	width: fit-content !important; 
-	/* width: 100% !important;*/
 	margin: 0px;
 	min-width: 310px;
 }
@@ -117,7 +116,6 @@ html,body {
 
 /* Оригинальные стили */
 .flag-popup {
-	/* height: 20px; */
 	width: 35px;
 	border: 1px solid black;
 	float: left;
@@ -231,7 +229,6 @@ html,body {
 }
 
 #diplomacy {
-	/* width: 435px; */
 	max-width: 460px;
 	background-color: white;
 	height: 100%;
@@ -320,22 +317,21 @@ html,body {
 }
 
 .menu-layers:hover input ~ .menu-layers-indicator {
-  /* background-color: #eaeaea; */
-  background-color: #f5c97b;
+	background-color: #f5c97b;
 }
 
 .menu-layers input:checked ~ .menu-layers-indicator {
-  background-color: white;
+	background-color: white;
 }
 
 .menu-layers-indicator:after {
-  content: "";
-  position: absolute;
-  display: none;
+	content: "";
+	position: absolute;
+	display: none;
 }
 
 .menu-layers input:checked ~ .menu-layers-indicator:after {
-  display: block;
+	display: block;
 }
 
 .menu-layers .menu-layers-indicator:after {
@@ -382,8 +378,6 @@ html,body {
 
 .dropdown-custom {
 	position: relative;
-	/*width: fit-content;
-	max-width: 100%;*/
 	width: 100%;
 	height: fit-content;
 	font-size: 1.15rem;
@@ -391,7 +385,6 @@ html,body {
 	margin-top: 0;
 }
 .dropdown-button {
-	/* width: 405px; */
 	width: 100%;
 	height: 50px;
 	font-size: 1.15rem;
@@ -479,7 +472,6 @@ html,body {
 .diplomacy-record-list {
 	display: flex;
 	flex-direction: column;
-	/* width: 383.4px; */
 	width: 100%;
 	border: 1px solid #caced1;
 	border-radius: 4px;
@@ -535,8 +527,7 @@ html,body {
 	width: var(--scrollbar-width);
 }
 .diplomacy-record-notes::-webkit-scrollbar-track, .diplomacy-record-list::-webkit-scrollbar-track, .continent-info::-webkit-scrollbar-track,
-.dropdown-option-list::-webkit-scrollbar-track, .diplomacy-record-list::-webkit-scrollbar-track
- {
+.dropdown-option-list::-webkit-scrollbar-track, .diplomacy-record-list::-webkit-scrollbar-track {
 	background: #f1f1f1;
 	border-radius: 25px;
 }
@@ -582,44 +573,36 @@ html,body {
 	gap: 0px;
 }
 
+/* Кластеризация иконок столиц */
 .marker-cluster-capital {
-	/*background-color: rgba(241, 211, 87, 0.6); */
 	background-color: rgba(0, 0, 0, 0.5);
 }
 .marker-cluster-capital div {
-	/* background-color: rgba(240, 194, 12, 0.8); */
 	background-color: rgba(255, 216, 0, 1);
 }
 .marker-cluster-capital div span {
-	/* background-color: rgba(240, 194, 12, 0.8); */
 	font-weight: bold;
 	font-size: 11pt;
 }
-
+/* Кластеризация иконок наземных объектов */
 .marker-cluster-place {
-	/*background-color: rgba(241, 211, 87, 0.6); */
 	background-color: rgba(0, 0, 0, 0.5);
 }
 .marker-cluster-place div {
-	/* background-color: rgba(240, 194, 12, 0.8); */
 	background-color: rgba(35, 172, 25, 1);
 }
 .marker-cluster-place div span {
-	/* background-color: rgba(240, 194, 12, 0.8); */
 	font-weight: bold;
 	font-size: 11pt;
 }
-
+/* Кластеризация иконок водных объектов */
 .marker-cluster-water {
-	/*background-color: rgba(241, 211, 87, 0.6); */
 	background-color: rgba(0, 0, 0, 0.5);
 }
 .marker-cluster-water div {
-	/* background-color: rgba(240, 194, 12, 0.8); */
 	background-color: rgba(21, 55, 208, 1);
 }
 .marker-cluster-water div span {
-	/* background-color: rgba(240, 194, 12, 0.8); */
 	font-weight: bold;
 	font-size: 11pt;
 	color: #fff;
