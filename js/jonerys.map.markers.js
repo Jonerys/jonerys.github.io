@@ -199,12 +199,8 @@ var waterLayerGroup = L.markerClusterGroup({
 });
 
 mapLayers.addLayer(countryLayerGroup.addLayer(countryLayer));
-//mapLayers.addLayer(
-	placeLayerGroup.addLayer(placeLayer)
-//);
-//mapLayers.addLayer(
-	waterLayerGroup.addLayer(waterLayer)
-//);
+placeLayerGroup.addLayer(placeLayer);
+waterLayerGroup.addLayer(waterLayer);
 
 if (mapLayers.hasLayer(countryLayerGroup)) {
 	$('#countryLayer').attr('checked','');

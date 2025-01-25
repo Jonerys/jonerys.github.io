@@ -1,18 +1,18 @@
-const dd1 = $("#dropdown-custom-1");
-const ddButton1 = $("#dropdown-button-1");
-const ddOptionList1 = $("#dropdown-option-list-1");
-const ddCurrentValue1 = $("#dropdown-current-value-1");
+const dd = $("#dropdown-custom-1");
+const ddButton = $("#dropdown-button-1");
+const ddOptionList = $("#dropdown-option-list-1");
+const ddCurrentValue = $("#dropdown-current-value-1");
 
 const statusDiv = $('.status-info');
 const noteDiv = $('.note');
 
-var currentValue1 = undefined;
+var currentValue = undefined;
 
 function resetDropDown(pndropdown) {
-    ddCurrentValue1.html(dd1Default.children[1].textContent);
-    ddButton1.val('default1');
-    currentValue1.removeClass("dropdown-selected");
-    ddOptionList1.scrollTop(0);
+    ddCurrentValue.html(ddDefault.children[1].textContent);
+    ddButton.val('default1');
+    currentValue.removeClass("dropdown-selected");
+    ddOptionList.scrollTop(0);
     removeAllIconClasses();
 }
 
@@ -30,7 +30,7 @@ function scrollToSelected(dropDownButton, dropDownOptionList) {
 }
 
 function resetInfo() {
-    let id1 = ddButton1.val();
+    let id1 = ddButton.val();
     let relationshipRecords = [];
     let filteredData = [];
     $(".diplomacy-record-list").html('');
@@ -42,40 +42,26 @@ function resetInfo() {
         }
     }
     for (let rec of relationshipRecords) {
+        let curCountry;
         if ((rec.id2 == id1) && rec.duplex) {
-            let curCountry = countries.features.find(r => r.properties.id == rec.id1);
-            //if (curCountry.properties.continent == ddFilter.val())
-            filteredData.push({
-                country: {
-                    id: curCountry.properties.id,
-                    tag: curCountry.properties.tag,
-                    name: curCountry.properties.name,
-                    shortname: curCountry.properties.shortname,
-                    flag: curCountry.properties.flag.image
-                },
-                relationship: {
-                    status: rec.status,
-                    notes: rec.notes
-                }
-            });
+            curCountry = countries.features.find(r => r.properties.id == rec.id1);
         }
         else if (rec.id1 == id1) {
-            let curCountry = countries.features.find(r => r.properties.id == rec.id2);
-            //if (curCountry.properties.continent == ddFilter.val())
-            filteredData.push({
-                country: {
-                    id: curCountry.properties.id,
-                    tag: curCountry.properties.tag,
-                    name: curCountry.properties.name,
-                    shortname: curCountry.properties.shortname,
-                    flag: curCountry.properties.flag.image
-                },
-                relationship: {
-                    status: rec.status,
-                    notes: rec.notes
-                }
-            });
+            curCountry = countries.features.find(r => r.properties.id == rec.id2);
         }
+        filteredData.push({
+            country: {
+                id: curCountry.properties.id,
+                tag: curCountry.properties.tag,
+                name: curCountry.properties.name,
+                shortname: curCountry.properties.shortname,
+                flag: curCountry.properties.flag.image
+            },
+            relationship: {
+                status: rec.status,
+                notes: rec.notes
+            }
+        });
     }
     
     filteredData.sort((a,b) => (countries.cleanName(a.country.name) > countries.cleanName(b.country.name)) ? 1 
@@ -103,11 +89,10 @@ function resetInfo() {
         if (notesAsHTML == '') {
             notesAsHTML = 'Нет';
         }
-        let recordNotes = ($('<div/>'));
-        recordNotes.append($('<div/>').addClass('diplomacy-record-notes-head').text('Заметки:'));
-        recordNotes.append($('<div/>').addClass('diplomacy-record-notes').html(notesAsHTML));
-        recordBody.append(recordStatus);
-        recordBody.append(recordNotes);
+        let recordNotes = ($('<div/>'))
+            .append($('<div/>').addClass('diplomacy-record-notes-head').text('Заметки:'))
+            .append($('<div/>').addClass('diplomacy-record-notes').html(notesAsHTML));
+        recordBody.append(recordStatus).append(recordNotes);
         record.append(recordBody);
         $(".diplomacy-record-list").append(record);
     }
@@ -129,26 +114,26 @@ function openDiplomacy() {
     } else {
         $("#diplomacy").slideToggle(400, toggleButtons);
     }
-    if (dd1.hasClass("active")) {
-        dd1.toggleClass("active");
+    if (dd.hasClass("active")) {
+        dd.toggleClass("active");
     }
     //resetDropDown(0);
 }
 
 function setCountry(element) {
-    if (currentValue1) currentValue1.removeClass("dropdown-selected");
+    if (currentValue) currentValue.removeClass("dropdown-selected");
     $(element).addClass("dropdown-selected");
-    currentValue1 = $(element);
-    ddCurrentValue1.html($(element).children().eq(1).html());
-    dd1.removeClass("active");
-    ddButton1.val($(element).children().eq(0).val());
+    currentValue = $(element);
+    ddCurrentValue.html($(element).children().eq(1).html());
+    dd.removeClass("active");
+    ddButton.val($(element).children().eq(0).val());
     resetInfo();
 }
 
 function chooseCountry(countryid) {
     $('#dropdown-option-list-1').children().each(function() {
         if ($(this).children().eq(0).val() == countryid) {
-            if (ddButton1.val() != countryid) {
+            if (ddButton.val() != countryid) {
                 setCountry(this);
             }
             return false;
@@ -163,12 +148,12 @@ var diploButton = new L.Control.Button({
 	title: 'Дипломатия'
 }).addTo(map);
 
-let dd1Default = $('<li/>');
-dd1Default.attr('role', 'option');
-dd1Default.html("<input type='radio' value='-1'/><label><img>Выберите страну...</label>");
+let ddDefault = $('<li/>');
+ddDefault.attr('role', 'option');
+ddDefault.html("<input type='radio' value='-1'/><label><img>Выберите страну...</label>");
 //$("#dropdown-select-1").append(li1_first);
-ddCurrentValue1.html(dd1Default.children(0).text());
-ddButton1.val('default1');
+ddCurrentValue.html(ddDefault.children(0).text());
+ddButton.val('default1');
 
 for (let feature of countries.features) {
 	let li = $('<li/>');
@@ -185,18 +170,18 @@ $("#dropdown-option-list-1 li").on("click", function(e){
 
 function toggleCountryList(e) {
     e.stopImmediatePropagation();
-    dd1.toggleClass("active");
+    dd.toggleClass("active");
     // прокрутка до выбранного элемента
-    scrollToSelected(ddButton1, ddOptionList1);
+    scrollToSelected(ddButton, ddOptionList);
 }
 
-ddButton1.click(function(e) {
+ddButton.click(function(e) {
     toggleCountryList(e);
 });
 
 $(document).click(function(e) 
 {
-    if ((!ddOptionList1.is(e.target) && ddOptionList1.has(e.target).length === 0 && dd1.hasClass("active")) && (!ddButton1.is($(e.target)))) 
+    if ((!ddOptionList.is(e.target) && ddOptionList.has(e.target).length === 0 && dd.hasClass("active")) && (!ddButton.is($(e.target)))) 
     {
         toggleCountryList(e);
     }
