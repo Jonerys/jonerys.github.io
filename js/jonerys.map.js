@@ -123,14 +123,7 @@ new L.Control.Button({
 	position: 'topleft',
 	className: 'leaflet-control-menu',
 	buttonFunction: function() {
-		if ($("#menu").is(":hidden")) {
-			$(".leaflet-bottom.leaflet-left").toggle();
-			$("#menu").slideToggle();
-		} else {
-			$("#menu").slideToggle(400, function() {
-				$(".leaflet-bottom.leaflet-left").toggle();
-			});
-		}
+		$("#menu").slideToggle();
 	},
 	title: 'Меню'
 }).addTo(map);

@@ -43,7 +43,7 @@ html,body {
 #map {
     width: 100%;
     height: 100%;
-	background-color: white !important;
+	background-color: white;
 	user-select: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -69,22 +69,23 @@ html,body {
 	min-width: 310px;
 }
 .leaflet-control-measure, .leaflet-control-menu {
-    background-position: 50% !important;
+    background-position: 50%;
     background-repeat: no-repeat;
 	overflow: hidden;
 }
 .leaflet-control-measure {
 	background-size: 80%;
 	transform: rotate(90deg);
-	background-image: url(svg/measure.svg) !important;
+	background-image: url(svg/measure.svg);
 }
 .leaflet-control-menu {
 	background-size: 70%;
-	background-image: url(svg/menu.svg) !important;
+	background-image: url(svg/menu.svg);
 }
 .leaflet-control-diplomacy {
 	background-size: 80%;
-	background-image: url(svg/diplomacy.svg) !important;
+	background-image: url(svg/diplomacy.svg);
+
 }
 .leaflet-bar a, .leaflet-bar a:hover, .leaflet-touch .leaflet-bar a {
 	width: 35px;
@@ -122,10 +123,14 @@ html,body {
 				-1px 1px 0 #000 !important;
 }
 .leaflet-measure-tooltip-difference {
-	color: var(--measure-difference-color) !important;
+	color: var(--measure-difference-color);
 }
-.leaflet-left {
-	z-index: 1002 !important;
+
+.leaflet-top.leaflet-right {
+	z-index: 1002;
+}
+.leaflet-top.leaflet-left {
+	z-index: 1004;
 }
 
 /* Оригинальные стили */
@@ -235,7 +240,7 @@ html,body {
 	width: fit-content;
 	background-color: white;
 	height: 100vh;
-	z-index: 1001;
+	z-index: 1003;
 	position: fixed;
 	display: none;
 	border-right: 1px solid black;
@@ -246,7 +251,7 @@ html,body {
 	max-width: 460px;
 	background-color: white;
 	height: 100%;
-	z-index: 502;
+	z-index: 1001;
 	position: absolute;
 	display: none;
 	right: 0;
@@ -627,24 +632,24 @@ html,body {
 
 @media screen and (max-width: 600px) {
     .widened {
-        transition: width 400ms !important;
+        transition: width 400ms;
     }
     .leaflet-control-search .search-input, .widened {
-        max-width: calc(100vw - 180px) !important;
+        max-width: calc(100vw - 180px);
     }
     #diplomacy {
-        max-width: 100vw !important;
+        max-width: 100vw;
     }
     .menu-diplomacy-head{
-        min-width: unset !important;
+        min-width: unset;
     }
     .roc-head-link {
-        font-size: 20pt !important;
+        font-size: 20pt;
     }
 	.roc-head-diplomacy {
-		font-size: 16pt !important;
+		font-size: 16pt;
 	}
 	#menu {
-		min-width: 100vw !important;
+		min-width: 100vw;
 	}
 }
