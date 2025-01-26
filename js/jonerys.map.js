@@ -128,6 +128,12 @@ new L.Control.Button({
 	title: 'Меню'
 }).addTo(map);
 
+$('.menu-main-head').on('click', function(e){
+	if (window.innerWidth <= 600) {
+		$("#menu").slideToggle();
+	}
+});
+
 mapLayers.addTo(map);
 
 map.on('click', function(e) {
@@ -138,6 +144,7 @@ $('#marker-country-toggle').attr('src', MARKER_ICONS_PATH + 'marker_capital.webp
 $('#marker-place-toggle').attr('src', MARKER_ICONS_PATH + 'marker_place.webp');
 $('#marker-water-toggle').attr('src', MARKER_ICONS_PATH + 'marker_saltwater.webp');
 $('#marker-building-toggle').attr('src', MARKER_ICONS_PATH + 'marker_building.webp');
+
 //$('#marker-continent-toggle').attr('src', MARKER_ICONS_PATH + 'marker_continent.webp');
 
 /* Адаптивность */

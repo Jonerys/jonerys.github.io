@@ -119,6 +119,12 @@ function openDiplomacy() {
     //resetDropDown(0);
 }
 
+$('.menu-diplomacy-head').on('click', function(e){
+	if (window.innerWidth <= 600) {
+		openDiplomacy();
+	}
+});
+
 function setCountry(element) {
     if (currentValue) currentValue.removeClass("dropdown-selected");
     $(element).addClass("dropdown-selected");
