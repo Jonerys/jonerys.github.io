@@ -103,7 +103,11 @@ function resetInfo() {
 }
 
 function toggleButtons() {
-    $(".leaflet-bottom.leaflet-right").toggle();
+    if (window.innerWidth <= 600) {
+        $(".leaflet-bottom").toggle();
+    } else {
+        $(".leaflet-bottom.leaflet-right").toggle();
+    }
     $(".leaflet-control-search").toggle();
 }
 

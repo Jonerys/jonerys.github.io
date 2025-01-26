@@ -124,6 +124,9 @@ html,body {
 .leaflet-measure-tooltip-difference {
 	color: var(--measure-difference-color) !important;
 }
+.leaflet-left {
+	z-index: 1002 !important;
+}
 
 /* Оригинальные стили */
 .flag-popup {
@@ -232,7 +235,7 @@ html,body {
 	width: fit-content;
 	background-color: white;
 	height: 100vh;
-	z-index: 501;
+	z-index: 1001;
 	position: fixed;
 	display: none;
 	border-right: 1px solid black;
@@ -278,6 +281,7 @@ html,body {
 	color: white;
 	font-family: PlayfairDisplaySC-Regular;
 	font-size: 14pt;
+	text-align: center;
 }
 
 .menu-body {
@@ -619,4 +623,28 @@ html,body {
 	font-weight: bold;
 	font-size: 11pt;
 	color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+    .widened {
+        transition: width 400ms !important;
+    }
+    .leaflet-control-search .search-input, .widened {
+        max-width: calc(100vw - 180px) !important;
+    }
+    #diplomacy {
+        max-width: 100vw !important;
+    }
+    .menu-diplomacy-head{
+        min-width: unset !important;
+    }
+    .roc-head-link {
+        font-size: 20pt !important;
+    }
+	.roc-head-diplomacy {
+		font-size: 16pt !important;
+	}
+	#menu {
+		min-width: 100vw !important;
+	}
 }
