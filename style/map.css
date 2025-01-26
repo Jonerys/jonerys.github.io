@@ -1,11 +1,11 @@
 /* Константы */
 :root {
-  --popup-bg-color: #E8E8E8;
-  /*--measure-difference-color: #C0C0C0;*/ 
-  --measure-difference-color: yellow;
-  --db-red-color: #d43626;
-  --db-dark-color: #525252;
-  --scrollbar-width: 6px;
+	--popup-bg-color: #E8E8E8;
+	/*--measure-difference-color: #C0C0C0;*/ 
+	--measure-difference-color: yellow;
+	--db-red-color: #d43626;
+	--db-dark-color: #525252;
+	--scrollbar-width: 6px;
 }
 
 @font-face {
@@ -23,7 +23,7 @@
 		opacity: 1;
 	}
 	to {
-		transform: scale(2.5, 2.5);
+		transform: scale(2, 2);
 		opacity: 0;		
 	}
 }
@@ -584,10 +584,14 @@ html,body {
 	gap: 0px;
 }
 
-/* Кластеризация иконок столиц */
-.marker-cluster-capital, .marker-cluster-capital-animated {
+.marker-cluster-capital, .marker-cluster-place, .marker-cluster-water, .marker-cluster-capital-animated {
 	background-color: rgba(0, 0, 0, 0.5);
 }
+.marker-cluster-capital-animated, .marker-cluster-capital-face {
+	position: absolute;
+}
+
+/* Кластеризация иконок столиц */
 .marker-cluster-capital-face {
 	background-color: rgba(255, 216, 0, 1);
 }
@@ -598,14 +602,8 @@ html,body {
 .marker-cluster-capital-animated {
 	animation: markerClusterAnim 4s infinite cubic-bezier(.36, .11, .89, .32);	
 }
-.marker-cluster-capital-animated, .marker-cluster-capital-face {
-	position: absolute;
-}
 
 /* Кластеризация иконок наземных объектов */
-.marker-cluster-place {
-	background-color: rgba(0, 0, 0, 0.5);
-}
 .marker-cluster-place div {
 	background-color: rgba(35, 172, 25, 1);
 }
@@ -614,9 +612,6 @@ html,body {
 	font-size: 11pt;
 }
 /* Кластеризация иконок водных объектов */
-.marker-cluster-water {
-	background-color: rgba(0, 0, 0, 0.5);
-}
 .marker-cluster-water div {
 	background-color: rgba(21, 55, 208, 1);
 }
