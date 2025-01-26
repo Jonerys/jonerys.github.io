@@ -146,16 +146,3 @@ $('#marker-water-toggle').attr('src', MARKER_ICONS_PATH + 'marker_saltwater.webp
 $('#marker-building-toggle').attr('src', MARKER_ICONS_PATH + 'marker_building.webp');
 
 //$('#marker-continent-toggle').attr('src', MARKER_ICONS_PATH + 'marker_continent.webp');
-
-/* Адаптивность */
-// window.addEventListener('resize', () => {
-// 	if (window.screen.width >= 600) {
-// 		fullScreenButton.addTo(map);
-// 		menuButton.addTo(map);
-// 		diploButton.addTo(map);
-// 	} else {
-// 		map.removeControl(fullScreenButton);
-// 		map.removeControl(menuButton);
-// 		map.removeControl(diploButton);
-// 	}
-// });
