@@ -637,19 +637,14 @@ html,body {
     .leaflet-control-search .search-input, .widened {
         max-width: calc(100vw - 180px) !important;
     }
-    #diplomacy {
-        max-width: 100vw;
-    }
     .menu-diplomacy-head{
         min-width: unset;
+		min-height: 80px;
     }
-    .roc-head-link {
+    .roc-head-link, .roc-head-diplomacy {
         font-size: 20pt;
     }
-	.roc-head-diplomacy {
-		font-size: 16pt;
-	}
-	#menu {
+	#menu, #diplomacy {
 		min-width: 100vw;
 	}
 }
