@@ -635,7 +635,7 @@ html,body {
         transition: width 400ms;
     }
     .leaflet-control-search .search-input, .widened {
-        max-width: calc(100vw - 180px);
+        max-width: calc(100vw - 180px) !important;
     }
     #diplomacy {
         max-width: 100vw;
