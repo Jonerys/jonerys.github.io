@@ -27,22 +27,6 @@ const mapcenter = [widthPx + adjustMapView / 2, heightPx + adjustMapView / 2];
 var mapLayers = L.layerGroup();
 var markers = [];
 
-/*const MapEvents = () => {
-	useMapEvents({
-		click(e) {
-		console.log(e.latlng.lat + ' ' + e.latlng.lng);
-		},
-	});
-	return false;
-}*/
-
-/*var xy = function (x, y) {
-	if (L.Util.isArray(x)) {
-		return L.latLng(x[1], x[0]);
-	}
-	return L.latLng(y, x);
-}*/
-
 L.CRS.RoCCRS = L.extend({}, L.CRS.Simple, {
 	transformation: new L.Transformation(4, 0, 4, 0),
 });
@@ -110,12 +94,12 @@ new L.Control.RoCGraphicScale({
 	unitPx: unitPx
 }).addTo(map);
 
-//new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
-
 var measureControl = new L.Control.Measure({ 
 	position: 'bottomright',
 	formatDistance: (val) => Math.round(val * kmPerPx)
 }).addTo(map);
+
+new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 
 new L.Control.Fullscreen({ position: 'topleft' }).addTo(map);
 
