@@ -132,6 +132,11 @@ html,body {
 .leaflet-top.leaflet-left {
 	z-index: 1004;
 }
+.leaflet-control-zoom-in, .leaflet-control-zoom-in span, .leaflet-control-zoom-out, .leaflet-control-zoom-out span{
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center;
+}
 
 /* Оригинальные стили */
 .flag-popup {
