@@ -1315,7 +1315,7 @@ var countries = {
 			continent: CONTINENT_REBIRTH_NORTH,
 			url: '61291',
 			capital: 'Мальзтирр',
-			leader: 'Эжен Д\'Арно',
+			leader: 'Жан де Куле "Бесстрашный"',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
 			player: USERS[ARMOFROME],
