@@ -8,6 +8,13 @@ var diplomacyData = {
             notes: []
         },
         {
+            id1: 85,
+            id2: 74,
+            duplex: true,
+            status: DIPLO_STATUS_WAR,
+            notes: []
+        },
+        {
             id1: 47,
             id2: 74,
             duplex: true,
