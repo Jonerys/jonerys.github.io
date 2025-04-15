@@ -1553,13 +1553,13 @@ var countries = {
 			tag: 'Mo',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: NO_TOPIC,
-			capital: UNKNOWN,
-			leader: UNKNOWN,
-			government: UNKNOWN,
+			capital: 'Ясновель',
+			leader: 'Великий князь Михаил III Воронов',
+			government: 'Выборная монархия',
 			status: STATUS_MINOR,
-			player: USERS[NO_PLAYER],
+			player: USERS[RAVAN],
 			flag: {
-				image: NO_FLAG
+				image: 'Flag_of_Mornia.webp'
 			}
         }
     },
