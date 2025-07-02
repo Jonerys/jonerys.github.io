@@ -148,7 +148,8 @@ L.Control.Measure = L.Control.extend({
 			this._lastMarker = this._createCircle(e.latlng).addTo(this._layerPaint)
 			this._startMarker = L.marker(e.latlng, {
 				icon: startPathIcon,
-				clickable:Boolean(this._lastMarker)
+				interactive: false,
+				clickable: false//Boolean(this._lastMarker)
 				}).addTo(this._layerPaint)
 		}
 		this._lastMarker.on('click',this._finishPath,this)
