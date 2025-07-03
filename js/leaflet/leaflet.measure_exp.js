@@ -147,7 +147,7 @@ L.Control.Measure = L.Control.extend({
 			this._layerPaint.removeLayer(this._markers[this._markers.length - 1][0].marker)
 			this._markers[this._markers.length - 1][0].marker.addTo(this._layerPaint)
 		} else {
-			if (e.originalEvent.ctrlKey) {
+			if (!e.originalEvent.ctrlKey) {
 				this._finished = false;
 				this._lastMarker = this._createCircle(e.latlng).addTo(this._layerPaint)
 				this._startMarker = L.marker(e.latlng, {
