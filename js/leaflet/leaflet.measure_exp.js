@@ -64,7 +64,6 @@ L.Control.Measure = L.Control.extend({
 		if (!this._points) {
 			this._points=[]
 		}
-		//this._markers = []
 		this._markers = []
 		this._markers.push([])
 	},
@@ -186,23 +185,17 @@ L.Control.Measure = L.Control.extend({
 				if (curTooltip !== undefined) 
 					curTooltip.setLatLng(e.latlng);
 
-				let str = ''
 				let lstm = root._markers[pathID][0].marker;
 				let total = 0;
 				let diff = 0;
 
 				root._markers[pathID].forEach((point) => {
-					//console.log(point.tooltip);
-					//if (point.tooltip !== undefined)
-					//str += root._formatDistance(root._map.distance(point.marker.getLatLng(), lstm.getLatLng())) + ' ';
 					diff = root._map.distance(point.marker.getLatLng(), lstm.getLatLng());
 					if (point.tooltip !== undefined)
 						root._updateTooltipDistance(total + diff, diff, point.tooltip);
 					total += diff;
 					lstm = point.marker;
 				});
-
-				//console.log(str)
 
 				if (pointID == 0 || pointID == root._markers[pathID].length - 1)
 					root._markers[pathID][pointID].flag.setLatLng(e.latlng)

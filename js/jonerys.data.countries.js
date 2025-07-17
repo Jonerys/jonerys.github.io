@@ -10,7 +10,7 @@ var countries = {
             coordinates: [1386, 1665]
 		},
 		properties: {
-			id: 0,
+			//id: 0,
 			name: 'Королевство Авемор',
 			shortname: 'Авемор',
 			tag: 'Av',
@@ -34,7 +34,7 @@ var countries = {
             coordinates: [1513, 2358]
 		},
 		properties: {
-			id: 1,
+			//id: 1,
 			name: 'Королевство Аглардор',
 			shortname: 'Аглардор',
 			tag: 'Ag',
@@ -58,7 +58,7 @@ var countries = {
             coordinates: [1865, 2293]
         },
         properties: {
-			id: 2,
+			//id: 2,
             name: 'Королевство Айзэн',
             shortname: 'Айзэн',
 			tag: 'Az',
@@ -82,7 +82,7 @@ var countries = {
             coordinates: [1834, 1237]
         },
         properties: {
-			id: 3,
+			//id: 3,
             name: 'Каганат Ай-Суру',
             shortname: 'Ай-Суру',
 			tag: 'Sr',
@@ -106,7 +106,7 @@ var countries = {
             coordinates: [1731, 1928]
         },
         properties: {
-			id: 4,
+			//id: 4,
             name: 'Халифат Ай\'Шераф',
             shortname: 'Ай\'Шераф',
 			tag: 'Is',
@@ -130,7 +130,7 @@ var countries = {
             coordinates: [1185, 3352]
         },
         properties: {
-			id: 5,
+			//id: 5,
             name: 'Герцогство Акрония',
             shortname: 'Акрония',
 			tag: 'Ak',
@@ -154,7 +154,7 @@ var countries = {
             coordinates: [1387, 2377]
         },
         properties: {
-			id: 6,
+			//id: 6,
             name: 'Халифат Алеман',
             shortname: 'Алеман',
 			tag: 'Al',
@@ -178,7 +178,7 @@ var countries = {
             coordinates: [967, 502]
 		},
 		properties: {
-			id: 7,
+			//id: 7,
 			name: 'Королевство Аракад',
 			shortname: 'Аракад',
 			tag: 'Aa',
@@ -202,7 +202,7 @@ var countries = {
             coordinates: [1206, 1614]
 		},
 		properties: {
-			id: 8,
+			//id: 8,
 			name: 'Аспийская империя',
 			shortname: 'Аспия',
 			tag: 'As',
@@ -226,7 +226,7 @@ var countries = {
             coordinates: [1843, 1811]
         },
         properties: {
-			id: 9,
+			//id: 9,
             name: 'Эльфийское королевство Линдорея',
             shortname: 'Линдорея',
 			tag: 'Ao',
@@ -250,7 +250,7 @@ var countries = {
             coordinates: [2013, 2339]
         },
         properties: {
-			id: 10,
+			//id: 10,
             name: 'Королевство Атеншьёг',
             shortname: 'Атеншьёг',
 			tag: 'At',
@@ -274,7 +274,7 @@ var countries = {
             coordinates: [2529, 2901]
         },
         properties: {
-			id: 11,
+			//id: 11,
             name: 'Атлантия',
             shortname: 'Атлантия',
 			tag: 'Ca',
@@ -298,7 +298,7 @@ var countries = {
             coordinates: [1846, 2351]
         },
         properties: {
-			id: 12,
+			//id: 12,
             name: 'Великое Герцогство Аугебург-Хоэнхоф',
             shortname: 'Аугебург-Хоэнхоф',
 			tag: 'Au',
@@ -322,7 +322,7 @@ var countries = {
             coordinates: [2057, 1584]
         },
         properties: {
-			id: 13,
+			//id: 13,
             name: 'Герцогство Аэт\'Дайне',
             shortname: 'Аэт\'Дайне',
 			tag: 'An',
@@ -346,7 +346,7 @@ var countries = {
             coordinates: [1106, 2407]
         },
         properties: {
-			id: 14,
+			//id: 14,
             name: 'Имамат Бахчистан',
             shortname: 'Бахчистан',
 			tag: 'Bx',
@@ -370,7 +370,7 @@ var countries = {
             coordinates: [966, 3472]
         },
         properties: {
-			id: 15,
+			//id: 15,
             name: 'Белозерия',
             shortname: 'Белозерия',
 			tag: 'Bz',
@@ -394,7 +394,7 @@ var countries = {
             coordinates: [1805, 1743]
         },
         properties: {
-			id: 16,
+			//id: 16,
             name: 'Королевство Берглэнд',
             shortname: 'Берглэнд',
 			tag: 'Bg',
@@ -418,7 +418,7 @@ var countries = {
             coordinates: [991, 2569]
         },
         properties: {
-			id: 17,
+			//id: 17,
             name: 'Королевство Болнисия',
             shortname: 'Болнисия',
 			tag: 'Bn',
@@ -442,7 +442,7 @@ var countries = {
             coordinates: [1548, 1546]
         },
         properties: {
-			id: 18,
+			//id: 18,
             name: 'Герцогство Бриар',
             shortname: 'Бриар',
 			tag: 'Br',
@@ -466,7 +466,7 @@ var countries = {
             coordinates: [1713, 2372]
         },
         properties: {
-			id: 19,
+			//id: 19,
             name: 'Варгренское Королевство',
             shortname: 'Варгрен',
 			tag: 'Wr',
@@ -490,7 +490,7 @@ var countries = {
             coordinates: [1080, 2358]
         },
         properties: {
-			id: 20,
+			//id: 20,
             name: 'Республика Вельденвальд',
             shortname: 'Вельденвальд',
 			tag: 'We',
@@ -514,7 +514,7 @@ var countries = {
             coordinates: [1412, 1103]
         },
         properties: {
-			id: 21,
+			//id: 21,
             name: 'Королевство Верисс',
             shortname: 'Верисс',
 			tag: 'Vs',
@@ -538,7 +538,7 @@ var countries = {
             coordinates: [1313, 1770]
         },
         properties: {
-			id: 22,
+			//id: 22,
             name: 'Королевство Вестландия',
             shortname: 'Вестландия',
 			tag: 'Ws',
@@ -562,7 +562,7 @@ var countries = {
             coordinates: [684, 3254]
         },
         properties: {
-			id: 23,
+			//id: 23,
             name: 'Вивольдовское королевство',
             shortname: 'Вивольд',
 			tag: 'Vv',
@@ -586,7 +586,7 @@ var countries = {
             coordinates: [1104, 3772]
         },
         properties: {
-			id: 24,
+			//id: 24,
             name: 'Всевеликое Царствие Вятическое',
             shortname: 'Ц. Вятическое',
 			tag: 'Vt',
@@ -610,7 +610,7 @@ var countries = {
             coordinates: [2252, 2067]
         },
         properties: {
-			id: 25,
+			//id: 25,
             name: 'Газоцко-Меран',
             shortname: 'Газоцко-Меран',
 			tag: 'Gz',
@@ -634,7 +634,7 @@ var countries = {
             coordinates: [2331, 2490]
         },
         properties: {
-			id: 26,
+			//id: 26,
             name: 'Гатулат Унур',
             shortname: 'Гатулат Унур',
 			tag: 'Un',
@@ -658,7 +658,7 @@ var countries = {
             coordinates: [1731, 4188]
         },
         properties: {
-			id: 27,
+			//id: 27,
             name: 'Гачиванг',
             shortname: 'Гачиванг',
 			tag: 'Hv',
@@ -683,7 +683,7 @@ var countries = {
             coordinates: [2247, 1890]
         },
         properties: {
-			id: 28,
+			//id: 28,
             name: 'Геленийская конфедерация',
             shortname: 'Геления',
 			tag: 'Ge',
@@ -708,7 +708,7 @@ var countries = {
             coordinates: [2293, 2197]
         },
         properties: {
-			id: 29,
+			//id: 29,
             name: 'Графство Гринвуд',
             shortname: 'Гринвуд',
 			tag: 'Gw',
@@ -732,7 +732,7 @@ var countries = {
             coordinates: [724, 3103]
         },
         properties: {
-			id: 30,
+			//id: 30,
             name: 'Королевство Гросское',
             shortname: 'Гроссия',
 			tag: 'Gs',
@@ -756,7 +756,7 @@ var countries = {
             coordinates: [1712, 2034]
         },
         properties: {
-			id: 31,
+			//id: 31,
             name: 'Дария (север)',
             shortname: 'Дария (север)',
 			tag: 'Da',
@@ -780,7 +780,7 @@ var countries = {
             coordinates: [1748, 2135]
         },
         properties: {
-			id: 32,
+			//id: 32,
             name: 'Дария (юг)',
             shortname: 'Дария (юг)',
 			tag: 'Da',
@@ -804,7 +804,7 @@ var countries = {
             coordinates: [2400, 2208]
         },
         properties: {
-			id: 33,
+			//id: 33,
             name: 'Графство Даркния',
             shortname: 'Даркния',
 			tag: 'Dk',
@@ -828,7 +828,7 @@ var countries = {
             coordinates: [1747, 1849]
         },
         properties: {
-			id: 34,
+			//id: 34,
             name: 'Деселийское королевство',
             shortname: 'Деселия',
 			tag: 'Ds',
@@ -852,7 +852,7 @@ var countries = {
             coordinates: [1886, 2324]
         },
         properties: {
-			id: 35,
+			//id: 35,
             name: 'Графство Деслания',
             shortname: 'Деслания',
 			tag: 'Dl',
@@ -876,7 +876,7 @@ var countries = {
             coordinates: [357, 935]
         },
         properties: {
-			id: 36,
+			//id: 36,
             name: 'Королевство Драгон Айленд',
             shortname: 'Драгон Айленд',
 			tag: 'Di',
@@ -900,7 +900,7 @@ var countries = {
             coordinates: [2440, 2978]
         },
         properties: {
-			id: 37,
+			//id: 37,
             name: 'Королевство Драмор',
             shortname: 'Драмор',
 			tag: 'Dm',
@@ -924,7 +924,7 @@ var countries = {
             coordinates: [1668, 1629]
         },
         properties: {
-			id: 38,
+			//id: 38,
             name: 'Дрэгленд',
             shortname: 'Дрэгленд',
 			tag: 'Dr',
@@ -948,7 +948,7 @@ var countries = {
             coordinates: [1172, 1483]
         },
         properties: {
-			id: 39,
+			//id: 39,
             name: 'Королевство Каэрн',
             shortname: 'Каэрн',
 			tag: 'Ka',
@@ -972,7 +972,7 @@ var countries = {
             coordinates: [1491, 1630]
         },
         properties: {
-			id: 40,
+			//id: 40,
             name: 'Корденийская Империя',
             shortname: 'Кордения',
 			tag: 'Kr',
@@ -996,7 +996,7 @@ var countries = {
             coordinates: [1855, 2636]
         },
         properties: {
-			id: 41,
+			//id: 41,
             name: 'Конгорская империя',
             shortname: 'Конгор',
 			tag: 'Kg',
@@ -1020,7 +1020,7 @@ var countries = {
             coordinates: [935, 1733]
         },
         properties: {
-			id: 42,
+			//id: 42,
             name: 'Кофердская империя',
             shortname: 'Коферд',
 			tag: 'Kf',
@@ -1044,7 +1044,7 @@ var countries = {
             coordinates: [374, 3764]
         },
         properties: {
-			id: 43,
+			//id: 43,
             name: 'Кратер',
             shortname: 'Кратер',
 			tag: 'Cr',
@@ -1068,7 +1068,7 @@ var countries = {
             coordinates: [1021, 2144]
         },
         properties: {
-			id: 44,
+			//id: 44,
             name: 'Революционная Республика Круновия',
 			shortname: 'Круновия',
 			tag: 'Ku',
@@ -1092,7 +1092,7 @@ var countries = {
             coordinates: [1108, 2314]
         },
         properties: {
-			id: 45,
+			//id: 45,
             name: 'Республика Кьезанотто',
             shortname: 'Кьезанотто',
 			tag: 'Cs',
@@ -1116,7 +1116,7 @@ var countries = {
             coordinates: [2239, 2479]
         },
         properties: {
-			id: 46,
+			//id: 46,
             name: 'Кэтроэлн',
             shortname: 'Кэтроэлн',
 			tag: 'Ke',
@@ -1140,7 +1140,7 @@ var countries = {
             coordinates: [2019, 2224]
         },
         properties: {
-			id: 47,
+			//id: 47,
             name: 'Кюлинбургская конфедерация',
 			shortname: 'Кюлинбург',
 			tag: 'Kl',
@@ -1164,7 +1164,7 @@ var countries = {
             coordinates: [391, 3205]
         },
         properties: {
-			id: 48,
+			//id: 48,
             name: 'Королевство Лайтхайзен',
             shortname: 'Лайтхайзен',
 			tag: 'Lz',
@@ -1188,7 +1188,7 @@ var countries = {
             coordinates: [1960, 2272]
         },
         properties: {
-			id: 49,
+			//id: 49,
             name: 'Латонский Союз',
 			shortname: 'Латония',
 			tag: 'La',
@@ -1212,7 +1212,7 @@ var countries = {
             coordinates: [1521, 2052]
         },
         properties: {
-			id: 50,
+			//id: 50,
             name: 'Литланд',
             shortname: 'Литланд',
 			tag: 'Lt',
@@ -1236,7 +1236,7 @@ var countries = {
             coordinates: [1039, 3246]
         },
         properties: {
-			id: 51,
+			//id: 51,
             name: 'Литавия',
             shortname: 'Литавия',
 			tag: 'Li',
@@ -1260,7 +1260,7 @@ var countries = {
             coordinates: [1500, 1391]
         },
         properties: {
-			id: 52,
+			//id: 52,
             name: 'Локтарская Империя',
 			shortname: 'Локтария',
 			tag: 'Lk',
@@ -1284,7 +1284,7 @@ var countries = {
             coordinates: [1758, 1652]
         },
         properties: {
-			id: 53,
+			//id: 53,
             name: 'Королевство Лытань',
 			shortname: 'Лытань',
 			tag: 'Ly',
@@ -1308,7 +1308,7 @@ var countries = {
             coordinates: [1130, 1423]
         },
         properties: {
-			id: 54,
+			//id: 54,
             name: 'Королевство Мализон',
 			shortname: 'Мализон',
 			tag: 'Mz',
@@ -1332,7 +1332,7 @@ var countries = {
             coordinates: [1266, 2311]
         },
         properties: {
-			id: 55,
+			//id: 55,
             name: 'Султанат Мамлакат',
 			shortname: 'Мамлакат',
 			tag: 'Mm',
@@ -1356,7 +1356,7 @@ var countries = {
             coordinates: [1128, 2612]
         },
         properties: {
-			id: 56,
+			//id: 56,
             name: 'Султанат Мариам',
 			shortname: 'Мариам',
 			tag: 'Ma',
@@ -1380,7 +1380,7 @@ var countries = {
             coordinates: [772, 2311]
         },
         properties: {
-			id: 57,
+			//id: 57,
             name: 'Великое Мариенское Королевство',
 			shortname: 'Мариен',
 			continent: CONTINENT_REBIRTH_EAST,
@@ -1404,7 +1404,7 @@ var countries = {
             coordinates: [2043, 2502]
         },
         properties: {
-			id: 58,
+			//id: 58,
             name: 'Вольный город Мершент',
 			shortname: 'Мершент',
 			tag: 'Me',
@@ -1428,7 +1428,7 @@ var countries = {
             coordinates: [1572, 1842]
         },
         properties: {
-			id: 59,
+			//id: 59,
             name: 'Великое Герцогство Миленское',
 			shortname: 'Милен',
 			tag: 'Ml',
@@ -1451,7 +1451,7 @@ var countries = {
             coordinates: [2431, 2304]
         },
         properties: {
-			id: 60,
+			//id: 60,
             name: 'Королевство Михельт',
 			shortname: 'Михельт',
 			tag: 'Mh',
@@ -1475,7 +1475,7 @@ var countries = {
             coordinates: [738, 2077]
         },
         properties: {
-			id: 61,
+			//id: 61,
             name: 'Модравcкая Республика',
 			shortname: 'Модравия',
 			tag: 'Md',
@@ -1499,7 +1499,7 @@ var countries = {
             coordinates: [1480, 1536]
         },
         properties: {
-			id: 62,
+			//id: 62,
             name: 'Королевство Монсеран',
 			shortname: 'Монсеран',
 			tag: 'Ms',
@@ -1523,7 +1523,7 @@ var countries = {
             coordinates: [1086, 1859]
         },
         properties: {
-			id: 63,
+			//id: 63,
             name: 'Королевство Монтания',
 			shortname: 'Монтания',
 			tag: 'Mt',
@@ -1547,7 +1547,7 @@ var countries = {
             coordinates: [1438, 1907]
         },
         properties: {
-			id: 64,
+			//id: 64,
             name: 'Княжеский союз Морния',
 			shortname: 'Морния',
 			tag: 'Mo',
@@ -1571,7 +1571,7 @@ var countries = {
             coordinates: [1077, 1582]
         },
         properties: {
-			id: 65,
+			//id: 65,
             name: 'Королевство Моэния',
 			shortname: 'Моэния',
 			tag: 'Mn',
@@ -1595,7 +1595,7 @@ var countries = {
             coordinates: [1186, 3803]
         },
         properties: {
-			id: 66,
+			//id: 66,
             name: 'Племенной союз Мрацкгора',
 			shortname: 'Мрацкгор',
 			tag: 'Mg',
@@ -1619,7 +1619,7 @@ var countries = {
             coordinates: [1912, 1456]
         },
         properties: {
-			id: 67,
+			//id: 67,
             name: 'Нигольфайд',
 			shortname: 'Нигольфайд',
 			tag: 'Nf',
@@ -1643,7 +1643,7 @@ var countries = {
             coordinates: [2089, 2547]
         },
         properties: {
-			id: 68,
+			//id: 68,
             name: 'Нирийское королевство',
 			shortname: 'Нирия',
 			tag: 'Nr',
@@ -1667,7 +1667,7 @@ var countries = {
             coordinates: [1315, 2007]
         },
         properties: {
-			id: 69,
+			//id: 69,
             name: 'Орден святых паладинов',
 			shortname: 'Орден св. паладинов',
 			tag: 'Po',
@@ -1691,7 +1691,7 @@ var countries = {
             coordinates: [2321, 2336]
         },
         properties: {
-			id: 70,
+			//id: 70,
             name: 'Королевство Пилиталь',
 			shortname: 'Пилиталь',
 			tag: 'Pt',
@@ -1715,7 +1715,7 @@ var countries = {
             coordinates: [2013, 2626]
         },
         properties: {
-			id: 71,
+			//id: 71,
             name: 'Племенной город',
 			shortname: 'Племенной город',
 			tag: 'Tc',
@@ -1739,7 +1739,7 @@ var countries = {
             coordinates: [2311, 555]
         },
         properties: {
-			id: 72,
+			//id: 72,
             name: 'Племенной союз Поухатан',
 			shortname: 'Поухатан',
 			tag: 'Ph',
@@ -1763,7 +1763,7 @@ var countries = {
             coordinates: [1438, 3692]
         },
         properties: {
-			id: 73,
+			//id: 73,
             name: 'Ромейская Империя',
 			shortname: 'Ромей',
 			tag: 'Ro',
@@ -1787,7 +1787,7 @@ var countries = {
             coordinates: [2180, 2241]
         },
         properties: {
-			id: 74,
+			//id: 74,
             name: 'Руманская Советская Федеративная Народная Республика',
 			shortname: 'РСФНР',
 			tag: 'Rm',
@@ -1812,7 +1812,7 @@ var countries = {
             coordinates: [2415, 2811]
         },
         properties: {
-			id: 75,
+			//id: 75,
             name: 'Сагрития',
 			shortname: 'Сагрития',
 			tag: 'Sg',
@@ -1836,7 +1836,7 @@ var countries = {
             coordinates: [2887, 1293]
         },
         properties: {
-			id: 76,
+			//id: 76,
             name: 'Орден Слепой Секиры',
 			shortname: 'Орден Слепой Секиры',
 			tag: 'So',
@@ -1860,7 +1860,7 @@ var countries = {
             coordinates: [857, 3023]
         },
         properties: {
-			id: 77,
+			//id: 77,
             name: 'Тандрийская империя',
 			shortname: 'Тандрия',
 			tag: 'Td',
@@ -1884,7 +1884,7 @@ var countries = {
             coordinates: [1888, 1661]
         },
         properties: {
-			id: 78,
+			//id: 78,
             name: 'Тиердальская империя',
 			shortname: 'Тиердаль',
 			tag: 'Tr',
@@ -1908,7 +1908,7 @@ var countries = {
             coordinates: [2202, 2421]
         },
         properties: {
-			id: 79,
+			//id: 79,
             name: 'Племенной союз орков Тирольф',
 			shortname: 'Тирольф',
 			tag: 'Tf',
@@ -1932,7 +1932,7 @@ var countries = {
             coordinates: [2862, 1087]
         },
         properties: {
-			id: 80,
+			//id: 80,
             name: 'Троллгар',
 			shortname: 'Троллгар',
 			tag: 'Tg',
@@ -1956,7 +1956,7 @@ var countries = {
             coordinates: [310, 1477]
         },
         properties: {
-			id: 81,
+			//id: 81,
             name: 'Королевство Т\'харра',
 			shortname: 'Т\'харра',
 			tag: 'Th',
@@ -1980,7 +1980,7 @@ var countries = {
             coordinates: [1331, 1895]
         },
         properties: {
-			id: 82,
+			//id: 82,
             name: 'Ультаренский Орден',
 			shortname: 'Ультарен',
 			tag: 'Ae',
@@ -2004,7 +2004,7 @@ var countries = {
             coordinates: [2135, 2418]
         },
         properties: {
-			id: 83,
+			//id: 83,
             name: 'Королевство Фаминория',
 			shortname: 'Фаминория',
 			tag: 'Fn',
@@ -2028,7 +2028,7 @@ var countries = {
             coordinates: [377, 2712]
         },
         properties: {
-			id: 84,
+			//id: 84,
             name: 'Фермунг',
 			shortname: 'Фермунг',
 			tag: 'Fm',
@@ -2052,7 +2052,7 @@ var countries = {
             coordinates: [1966, 1866]
         },
         properties: {
-			id: 85,
+			//id: 85,
             name: 'Королевство Фиеррен',
 			shortname: 'Фиеррен',
 			tag: 'Fi',
@@ -2076,7 +2076,7 @@ var countries = {
             coordinates: [1386, 1992]
         },
         properties: {
-			id: 86,
+			//id: 86,
             name: 'Фламасский орден',
             shortname: 'Фламасский орден',
 			tag: 'Fo',
@@ -2100,7 +2100,7 @@ var countries = {
             coordinates: [1671, 1462]
         },
         properties: {
-			id: 87,
+			//id: 87,
             name: 'Королевство Фрониард',
 			shortname: 'Фрониард',
 			tag: 'Fr',
@@ -2124,7 +2124,7 @@ var countries = {
             coordinates: [2094, 2690]
         },
         properties: {
-			id: 88,
+			//id: 88,
             name: 'Вольный город Хаарватерн',
 			shortname: 'Хаарватерн',
 			tag: 'Ha',
@@ -2148,7 +2148,7 @@ var countries = {
             coordinates: [1195, 3494]
         },
         properties: {
-			id: 89,
+			//id: 89,
             name: 'Графство Хаугланд',
 			shortname: 'Хаугланд',
 			tag: 'Ho',
@@ -2172,7 +2172,7 @@ var countries = {
             coordinates: [944, 2050]
         },
         properties: {
-			id: 90,
+			//id: 90,
             name: 'Королевство Хомрул',
 			shortname: 'Хомрул',
 			tag: 'Hm',
@@ -2196,7 +2196,7 @@ var countries = {
             coordinates: [753, 3331]
         },
         properties: {
-			id: 91,
+			//id: 91,
             name: 'Хортенское королевство',
 			shortname: 'Хортен',
 			tag: 'Ht',
@@ -2220,7 +2220,7 @@ var countries = {
             coordinates: [1880, 2865]
         },
         properties: {
-			id: 92,
+			//id: 92,
             name: 'Цивилийская империя',
 			shortname: 'Цивилия',
 			tag: 'Cv',
@@ -2244,7 +2244,7 @@ var countries = {
             coordinates: [1193, 1729]
         },
         properties: {
-			id: 93,
+			//id: 93,
             name: 'Королевство Шварцланд',
 			shortname: 'Шварцланд',
 			tag: 'Sw',
@@ -2268,7 +2268,7 @@ var countries = {
             coordinates: [1605, 2374]
         },
         properties: {
-			id: 94,
+			//id: 94,
             name: 'Королевство Штальфельд',
 			shortname: 'Штальфельд',
 			tag: 'Sf',
@@ -2293,7 +2293,7 @@ var countries = {
             coordinates: [1299, 3511]
         },
         properties: {
-			id: 95,
+			//id: 95,
             name: 'Штреймарское королевство',
 			shortname: 'Штреймар',
 			tag: 'Sm',
@@ -2317,7 +2317,7 @@ var countries = {
             coordinates: [1164, 1818]
         },
         properties: {
-			id: 96,
+			//id: 96,
             name: 'Великое княжество Эркелия',
 			shortname: 'Эркелия',
 			tag: 'Ar',
@@ -2341,7 +2341,7 @@ var countries = {
             coordinates: [1005, 2196]
         },
         properties: {
-			id: 97,
+			//id: 97,
             name: 'Королевство Эстервальд',
 			shortname: 'Эстервальд',
 			tag: 'Es',
@@ -2365,7 +2365,7 @@ var countries = {
             coordinates: [1011, 897]
         },
         properties: {
-			id: 98,
+			//id: 98,
             name: 'Великое Эшенвальское Герцогство',
 			shortname: 'Эшенвальд',
 			tag: 'Ev',
@@ -2439,6 +2439,13 @@ var countries = {
 			.replace(/ /, '')
 			.replace(/'/, '')
 			.replace(/\-/, '');
+	},
+	setID: function() {
+		let id = 0;
+		countries.features.forEach((country) => {
+			country.properties.id = id++;
+		})
 	}
 };
 
+countries.setID();
