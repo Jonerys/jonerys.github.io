@@ -1,7 +1,7 @@
 var places = {
 	type: 'FeatureCollection',
     features: [
-		{
+		/*{
 			type: 'Feature',
 			icontype: ICON_PLACE,
 			geometry: {
@@ -11,14 +11,14 @@ var places = {
 			properties: {
 				name: 'Остров Принца Карла'
 			}
-		},
+		},*/
 	]
 }
 
 var waterPlaces = {
 	type: 'FeatureCollection',
     features: [
-		{
+		/*{
 			type: 'Feature',
 			icontype: ICON_SALTWATER,
 			geometry: {
@@ -39,7 +39,7 @@ var waterPlaces = {
 			properties: {
 				name: 'Озеро Роль-Гу'
 			}
-		},
+		},*/
 	]
 }
 

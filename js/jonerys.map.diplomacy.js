@@ -52,7 +52,7 @@ function resetInfo() {
         filteredData.push({
             country: {
                 id: curCountry.properties.id,
-                tag: curCountry.properties.tag,
+                ISO_3166_1_a2: curCountry.properties.ISO_3166_1_a2,
                 name: curCountry.properties.name,
                 shortname: curCountry.properties.shortname,
                 flag: curCountry.properties.flag.image
@@ -71,7 +71,7 @@ function resetInfo() {
         let record = $("<div/>");
         record.addClass("diplomacy-record");
         record.html("<div class='diplomacy-record-head'><div class='diplomacy-record-left'><img class='flag-popup' alt='" 
-            + rec.country.tag + "' src='" + FLAG_IMAGES_PATH 
+            + rec.country.ISO_3166_1_a2 + "' src='" + FLAG_IMAGES_PATH 
             + rec.country.flag + "'>" 
             + rec.country.shortname + "</div>"
             + "<div class='diplomacy-record-right'><div class='emoji'>" + rec.relationship.status.emoji + "</div>"
@@ -164,7 +164,7 @@ for (let feature of countries.features) {
 	let li = $('<li/>');
 	li.html("<input type='radio' value='" + feature.properties.id + "'/>" 
 		+ "<label class='gap'>" 
-		+ "<img class='flag-popup' alt='" + feature.properties.tag + "' src='" + FLAG_IMAGES_PATH + feature.properties.flag.image + "'>" 
+		+ "<img class='flag-popup' alt='" + feature.properties.ISO_3166_1_a2 + "' src='" + FLAG_IMAGES_PATH + feature.properties.flag.image + "'>" 
 		+ feature.properties.shortname +"</label>");
 	$("#dropdown-option-list-1").append(li);
 }

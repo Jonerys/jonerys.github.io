@@ -10,7 +10,7 @@ var countriesSearch = new Fuse(countries.features, {
             weight: 0.3
         },
         {
-            name: 'properties.tag',
+            name: 'properties.ISO_3166_1_a2',
             weight: 0.1
         },
 	]

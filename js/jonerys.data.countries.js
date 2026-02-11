@@ -7,13 +7,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
 		geometry: {
 			type: 'Point',
-            coordinates: [1386, 1665]
+            coordinates: [1568, 1927]
 		},
 		properties: {
 			//id: 0,
 			name: 'Королевство Авемор',
 			shortname: 'Авемор',
-			tag: 'Av',
+			ISO_3166_1_a2: 'Av',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '21530',
 			capital: UNKNOWN,
@@ -31,13 +31,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
 		geometry: {
 			type: 'Point',
-            coordinates: [1513, 2358]
+            coordinates: [1695, 2620]
 		},
 		properties: {
 			//id: 1,
 			name: 'Королевство Аглардор',
 			shortname: 'Аглардор',
-			tag: 'Ag',
+			ISO_3166_1_a2: 'Ag',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '27385',
 			capital: 'Аглар',
@@ -55,13 +55,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1865, 2293]
+            coordinates: [2047, 2555]
         },
         properties: {
 			//id: 2,
             name: 'Королевство Айзэн',
             shortname: 'Айзэн',
-			tag: 'Az',
+			ISO_3166_1_a2: 'Az',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '31402',
 			capital: 'Хельтис',
@@ -79,13 +79,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1834, 1237]
+            coordinates: [2017, 1552]
         },
         properties: {
 			//id: 3,
             name: 'Каганат Ай-Суру',
             shortname: 'Ай-Суру',
-			tag: 'Sr',
+			ISO_3166_1_a2: 'Sr',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '37224',
 			capital: 'Айтернак',
@@ -103,13 +103,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1731, 1928]
+            coordinates: [1913, 2190]
         },
         properties: {
 			//id: 4,
             name: 'Халифат Ай\'Шераф',
             shortname: 'Ай\'Шераф',
-			tag: 'Is',
+			ISO_3166_1_a2: 'Is',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '47282',
 			capital: 'Кердишахаль',
@@ -127,13 +127,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1185, 3352]
+            coordinates: [1367, 3614]
         },
         properties: {
 			//id: 5,
             name: 'Герцогство Акрония',
             shortname: 'Акрония',
-			tag: 'Ak',
+			ISO_3166_1_a2: 'Ak',
 			continent: CONTINENT_LILLY,
 			url: '49527',
 			capital: 'Лиденбург',
@@ -151,13 +151,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1387, 2377]
+            coordinates: [1569, 2639]
         },
         properties: {
 			//id: 6,
             name: 'Халифат Алеман',
             shortname: 'Алеман',
-			tag: 'Al',
+			ISO_3166_1_a2: 'Al',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '30263',
 			capital: 'Аррани',
@@ -175,13 +175,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
 		geometry: {
 			type: 'Point',
-            coordinates: [967, 502]
+            coordinates: [1149, 764]
 		},
 		properties: {
 			//id: 7,
 			name: 'Королевство Аракад',
 			shortname: 'Аракад',
-			tag: 'Aa',
+			ISO_3166_1_a2: 'Aa',
 			continent: CONTINENT_REBIRTH_NORTH,
 			url: '21175',
 			capital: 'Фариа',
@@ -199,13 +199,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
 		geometry: {
 			type: 'Point',
-            coordinates: [1206, 1614]
+            coordinates: [1388, 1876]
 		},
 		properties: {
 			//id: 8,
 			name: 'Аспийская империя',
 			shortname: 'Аспия',
-			tag: 'As',
+			ISO_3166_1_a2: 'As',
 			continent: CONTINENT_REBIRTH_NORTH,
 			url: '17818',
 			capital: 'Кёнигштадт',
@@ -223,13 +223,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1843, 1811]
+            coordinates: [2025, 2073]
         },
         properties: {
 			//id: 9,
             name: 'Эльфийское королевство Линдорея',
             shortname: 'Линдорея',
-			tag: 'Ao',
+			ISO_3166_1_a2: 'Ao',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '23528',
 			capital: NONE,
@@ -247,13 +247,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2013, 2339]
+            coordinates: [2195, 2601]
         },
         properties: {
 			//id: 10,
             name: 'Королевство Атеншьёг',
             shortname: 'Атеншьёг',
-			tag: 'At',
+			ISO_3166_1_a2: 'At',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '61459',
 			capital: 'Драц',
@@ -271,13 +271,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2529, 2901]
+            coordinates: [2711, 3163]
         },
         properties: {
 			//id: 11,
             name: 'Атлантия',
             shortname: 'Атлантия',
-			tag: 'Ca',
+			ISO_3166_1_a2: 'Ca',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '50728',
 			capital: 'Атлантия',
@@ -295,13 +295,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1846, 2351]
+            coordinates: [2028, 2613]
         },
         properties: {
 			//id: 12,
             name: 'Великое Герцогство Аугебург-Хоэнхоф',
             shortname: 'Аугебург-Хоэнхоф',
-			tag: 'Au',
+			ISO_3166_1_a2: 'Au',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '58430',
 			capital: 'Альтштедт',
@@ -319,13 +319,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2057, 1584]
+            coordinates: [2235, 1826]
         },
         properties: {
 			//id: 13,
             name: 'Герцогство Аэт\'Дайне',
             shortname: 'Аэт\'Дайне',
-			tag: 'An',
+			ISO_3166_1_a2: 'An',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '61137',
 			capital: 'Аэталь',
@@ -343,13 +343,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1106, 2407]
+            coordinates: [1288, 2669]
         },
         properties: {
 			//id: 14,
             name: 'Имамат Бахчистан',
             shortname: 'Бахчистан',
-			tag: 'Bx',
+			ISO_3166_1_a2: 'Bx',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '59173',
 			capital: 'Бахчин-Абад',
@@ -367,13 +367,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [966, 3472]
+            coordinates: [1148, 3734]
         },
         properties: {
 			//id: 15,
             name: 'Белозерия',
             shortname: 'Белозерия',
-			tag: 'Bz',
+			ISO_3166_1_a2: 'Bz',
 			continent: CONTINENT_LILLY,
 			url: NONE,
 			capital: 'Вечеград',
@@ -391,13 +391,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1805, 1743]
+            coordinates: [1987, 2005]
         },
         properties: {
 			//id: 16,
             name: 'Королевство Берглэнд',
             shortname: 'Берглэнд',
-			tag: 'Bg',
+			ISO_3166_1_a2: 'Bg',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '39754',
 			capital: 'Беринбург',
@@ -415,13 +415,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [991, 2569]
+            coordinates: [1173, 2831]
         },
         properties: {
 			//id: 17,
             name: 'Королевство Болнисия',
             shortname: 'Болнисия',
-			tag: 'Bn',
+			ISO_3166_1_a2: 'Bn',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '19266',
 			capital: 'Руджелл',
@@ -439,13 +439,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1548, 1546]
+            coordinates: [1730, 1808]
         },
         properties: {
 			//id: 18,
             name: 'Герцогство Бриар',
             shortname: 'Бриар',
-			tag: 'Br',
+			ISO_3166_1_a2: 'Br',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '41142',
 			capital: 'Бриар',
@@ -463,13 +463,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1713, 2372]
+            coordinates: [1895, 2634]
         },
         properties: {
 			//id: 19,
             name: 'Варгренское Королевство',
             shortname: 'Варгрен',
-			tag: 'Wr',
+			ISO_3166_1_a2: 'Wr',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '49371',
 			capital: 'Кернсгольм',
@@ -487,13 +487,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1080, 2358]
+            coordinates: [1262, 2620]
         },
         properties: {
 			//id: 20,
             name: 'Республика Вельденвальд',
             shortname: 'Вельденвальд',
-			tag: 'We',
+			ISO_3166_1_a2: 'We',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '58777',
 			capital: 'Вальденборг',
@@ -511,13 +511,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1412, 1103]
+            coordinates: [1594, 1365]
         },
         properties: {
 			//id: 21,
             name: 'Королевство Верисс',
             shortname: 'Верисс',
-			tag: 'Vs',
+			ISO_3166_1_a2: 'Vs',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '23836',
 			capital: 'Правен',
@@ -535,13 +535,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1313, 1770]
+            coordinates: [1495, 2032]
         },
         properties: {
 			//id: 22,
             name: 'Королевство Вестландия',
             shortname: 'Вестландия',
-			tag: 'Ws',
+			ISO_3166_1_a2: 'Ws',
 			continent: CONTINENT_REBIRTH_NORTH,
 			url: '23904',
 			capital: 'Концгельм',
@@ -559,13 +559,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [684, 3254]
+            coordinates: [866, 3516]
         },
         properties: {
 			//id: 23,
             name: 'Вивольдовское королевство',
             shortname: 'Вивольд',
-			tag: 'Vv',
+			ISO_3166_1_a2: 'Vv',
 			continent: CONTINENT_LILLY,
 			url: '57199',
 			capital: 'Генхцберг',
@@ -583,13 +583,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1104, 3772]
+            coordinates: [1286, 4034]
         },
         properties: {
 			//id: 24,
             name: 'Всевеликое Царствие Вятическое',
             shortname: 'Ц. Вятическое',
-			tag: 'Vt',
+			ISO_3166_1_a2: 'Vt',
 			continent: CONTINENT_LILLY,
 			url: '53229',
 			capital: 'Которин',
@@ -607,13 +607,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2252, 2067]
+            coordinates: [2434, 2329]
         },
         properties: {
 			//id: 25,
             name: 'Газоцко-Меран',
             shortname: 'Газоцко-Меран',
-			tag: 'Gz',
+			ISO_3166_1_a2: 'Gz',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: NO_TOPIC,
 			capital: 'Велика Мостава',
@@ -631,22 +631,22 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2331, 2490]
+            coordinates: [1759, 1687]
         },
         properties: {
 			//id: 26,
             name: 'Гатулат Унур',
             shortname: 'Гатулат Унур',
-			tag: 'Un',
+			ISO_3166_1_a2: 'Un',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '50317',
-			capital: UNKNOWN,
-			leader: UNKNOWN,
-			government: UNKNOWN,
+			capital: 'Брауд',
+			leader: 'Гуннар Высокий',
+			government: GOV_REPUBLIC,
 			status: STATUS_MINOR,
 			player: USERS[RAVAN],
 			flag: {
-				image: NO_FLAG
+				image: 'Flag_of_Unur.webp'
 			}
         }
     },
@@ -655,13 +655,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1731, 4188]
+            coordinates: [1913, 4451]
         },
         properties: {
 			//id: 27,
             name: 'Гачиванг',
             shortname: 'Гачиванг',
-			tag: 'Hv',
+			ISO_3166_1_a2: 'Hv',
 			continent: CONTINENT_SUNRISE,
 			url: NO_TOPIC,
 			capital: 'Гачиванг',
@@ -680,13 +680,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2247, 1890]
+            coordinates: [2429, 2152]
         },
         properties: {
 			//id: 28,
             name: 'Геленийская конфедерация',
             shortname: 'Геления',
-			tag: 'Ge',
+			ISO_3166_1_a2: 'Ge',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '61499',
 			capital: 'Дилдойл',
@@ -705,13 +705,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2293, 2197]
+            coordinates: [2475, 2459]
         },
         properties: {
 			//id: 29,
             name: 'Графство Гринвуд',
             shortname: 'Гринвуд',
-			tag: 'Gw',
+			ISO_3166_1_a2: 'Gw',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '31440',
 			capital: 'Гринвэй',
@@ -729,13 +729,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [724, 3103]
+            coordinates: [906, 3365]
         },
         properties: {
 			//id: 30,
             name: 'Королевство Гросское',
             shortname: 'Гроссия',
-			tag: 'Gs',
+			ISO_3166_1_a2: 'Gs',
 			continent: CONTINENT_LILLY,
 			url: '32894',
 			capital: UNKNOWN,
@@ -753,13 +753,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1712, 2034]
+            coordinates: [1894, 2296]
         },
         properties: {
 			//id: 31,
             name: 'Дария (север)',
             shortname: 'Дария (север)',
-			tag: 'Da',
+			ISO_3166_1_a2: 'Da',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '37908',
 			capital: UNKNOWN,
@@ -777,13 +777,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1748, 2135]
+            coordinates: [1930, 2397]
         },
         properties: {
 			//id: 32,
             name: 'Дария (юг)',
             shortname: 'Дария (юг)',
-			tag: 'Da',
+			ISO_3166_1_a2: 'Da',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '37908',
 			capital: UNKNOWN,
@@ -801,13 +801,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2400, 2208]
+            coordinates: [2582, 2470]
         },
         properties: {
 			//id: 33,
             name: 'Графство Даркния',
             shortname: 'Даркния',
-			tag: 'Dk',
+			ISO_3166_1_a2: 'Dk',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '49330',
 			capital: 'Штэрнхолм',
@@ -825,13 +825,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1747, 1849]
+            coordinates: [1929, 2111]
         },
         properties: {
 			//id: 34,
             name: 'Деселийское королевство',
             shortname: 'Деселия',
-			tag: 'Ds',
+			ISO_3166_1_a2: 'Ds',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '59009',
 			capital: 'Сан-Гелиано',
@@ -849,13 +849,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1886, 2324]
+            coordinates: [2068, 2586]
         },
         properties: {
 			//id: 35,
             name: 'Графство Деслания',
             shortname: 'Деслания',
-			tag: 'Dl',
+			ISO_3166_1_a2: 'Dl',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '24154',
 			capital: UNKNOWN,
@@ -873,13 +873,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [357, 935]
+            coordinates: [539, 1197]
         },
         properties: {
 			//id: 36,
             name: 'Королевство Драгон Айленд',
             shortname: 'Драгон Айленд',
-			tag: 'Di',
+			ISO_3166_1_a2: 'Di',
 			continent: CONTINENT_REBIRTH_NORTH,
 			url: NO_TOPIC,
 			capital: 'Гримнир',
@@ -897,13 +897,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2440, 2978]
+            coordinates: [2622, 3240]
         },
         properties: {
 			//id: 37,
             name: 'Королевство Драмор',
             shortname: 'Драмор',
-			tag: 'Dm',
+			ISO_3166_1_a2: 'Dm',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '40564',
 			capital: 'Тайтонус',
@@ -921,13 +921,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1668, 1629]
+            coordinates: [1850, 1891]
         },
         properties: {
 			//id: 38,
             name: 'Дрэгленд',
             shortname: 'Дрэгленд',
-			tag: 'Dr',
+			ISO_3166_1_a2: 'Dr',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '22289',
 			capital: UNKNOWN,
@@ -945,13 +945,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1172, 1483]
+            coordinates: [1354, 1745]
         },
         properties: {
 			//id: 39,
             name: 'Королевство Каэрн',
             shortname: 'Каэрн',
-			tag: 'Ka',
+			ISO_3166_1_a2: 'Ka',
 			continent: CONTINENT_REBIRTH_NORTH,
 			url: '16181',
 			capital: 'Кан',
@@ -969,13 +969,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1491, 1630]
+            coordinates: [1673, 1892]
         },
         properties: {
 			//id: 40,
             name: 'Корденийская Империя',
             shortname: 'Кордения',
-			tag: 'Kr',
+			ISO_3166_1_a2: 'Kr',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '37235',
 			capital: 'Марос',
@@ -993,13 +993,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1855, 2636]
+            coordinates: [2037, 2898]
         },
         properties: {
 			//id: 41,
             name: 'Конгорская империя',
             shortname: 'Конгор',
-			tag: 'Kg',
+			ISO_3166_1_a2: 'Kg',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '58680',
 			capital: 'Катралия',
@@ -1017,13 +1017,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [935, 1733]
+            coordinates: [1117, 1995]
         },
         properties: {
 			//id: 42,
             name: 'Кофердская империя',
             shortname: 'Коферд',
-			tag: 'Kf',
+			ISO_3166_1_a2: 'Kf',
 			continent: CONTINENT_REBIRTH_NORTH,
 			url: '61226',
 			capital: 'Лангерра',
@@ -1041,13 +1041,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [374, 3764]
+            coordinates: [556, 4026]
         },
         properties: {
 			//id: 43,
             name: 'Кратер',
             shortname: 'Кратер',
-			tag: 'Cr',
+			ISO_3166_1_a2: 'Cr',
 			continent: CONTINENT_LILLY,
 			url: '55983',
 			capital: NONE,
@@ -1065,13 +1065,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1021, 2144]
+            coordinates: [1203, 2406]
         },
         properties: {
 			//id: 44,
             name: 'Революционная Республика Круновия',
 			shortname: 'Круновия',
-			tag: 'Ku',
+			ISO_3166_1_a2: 'Ku',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '58777',
 			capital: 'Червони Крунов',
@@ -1089,13 +1089,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1108, 2314]
+            coordinates: [1290, 2576]
         },
         properties: {
 			//id: 45,
             name: 'Республика Кьезанотто',
             shortname: 'Кьезанотто',
-			tag: 'Cs',
+			ISO_3166_1_a2: 'Cs',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: NO_TOPIC,
 			capital: 'Сторрьён',
@@ -1113,13 +1113,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2239, 2479]
+            coordinates: [2421, 2741]
         },
         properties: {
 			//id: 46,
             name: 'Кэтроэлн',
             shortname: 'Кэтроэлн',
-			tag: 'Ke',
+			ISO_3166_1_a2: 'Ke',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '58781',
 			capital: 'Кэтнон',
@@ -1137,13 +1137,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2019, 2224]
+            coordinates: [2201, 2486]
         },
         properties: {
 			//id: 47,
             name: 'Кюлинбургская конфедерация',
 			shortname: 'Кюлинбург',
-			tag: 'Kl',
+			ISO_3166_1_a2: 'Kl',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '38291',
 			capital: 'Кюлинбург',
@@ -1161,13 +1161,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [391, 3205]
+            coordinates: [573, 3467]
         },
         properties: {
 			//id: 48,
             name: 'Королевство Лайтхайзен',
             shortname: 'Лайтхайзен',
-			tag: 'Lz',
+			ISO_3166_1_a2: 'Lz',
 			continent: CONTINENT_LILLY,
 			url: '56409',
 			capital: 'Тиалдари-дур',
@@ -1185,13 +1185,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1960, 2272]
+            coordinates: [2142, 2534]
         },
         properties: {
 			//id: 49,
             name: 'Латонский Союз',
 			shortname: 'Латония',
-			tag: 'La',
+			ISO_3166_1_a2: 'La',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '61236',
 			capital: 'Терт',
@@ -1209,13 +1209,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1521, 2052]
+            coordinates: [2395, 4483]
         },
         properties: {
 			//id: 50,
             name: 'Литланд',
             shortname: 'Литланд',
-			tag: 'Lt',
+			ISO_3166_1_a2: 'Lt',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '21275',
 			capital: 'Азар',
@@ -1233,13 +1233,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1039, 3246]
+            coordinates: [1221, 3508]
         },
         properties: {
 			//id: 51,
             name: 'Литавия',
             shortname: 'Литавия',
-			tag: 'Li',
+			ISO_3166_1_a2: 'Li',
 			continent: CONTINENT_LILLY,
 			url: NO_TOPIC,
 			capital: 'Старобряжен',
@@ -1257,13 +1257,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1500, 1391]
+            coordinates: [1682, 1653]
         },
         properties: {
 			//id: 52,
             name: 'Локтарская Империя',
 			shortname: 'Локтария',
-			tag: 'Lk',
+			ISO_3166_1_a2: 'Lk',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '23879',
 			capital: 'Вельдерон',
@@ -1281,13 +1281,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1758, 1652]
+            coordinates: [1940, 1914]
         },
         properties: {
 			//id: 53,
             name: 'Королевство Лытань',
 			shortname: 'Лытань',
-			tag: 'Ly',
+			ISO_3166_1_a2: 'Ly',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '34163',
 			capital: 'Ньюбург',
@@ -1305,13 +1305,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1130, 1423]
+            coordinates: [1312, 1685]
         },
         properties: {
 			//id: 54,
             name: 'Королевство Мализон',
 			shortname: 'Мализон',
-			tag: 'Mz',
+			ISO_3166_1_a2: 'Mz',
 			continent: CONTINENT_REBIRTH_NORTH,
 			url: '61291',
 			capital: 'Мальзтирр',
@@ -1329,13 +1329,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1266, 2311]
+            coordinates: [1448, 2573]
         },
         properties: {
 			//id: 55,
             name: 'Султанат Мамлакат',
 			shortname: 'Мамлакат',
-			tag: 'Mm',
+			ISO_3166_1_a2: 'Mm',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '19649',
 			capital: 'Акбар',
@@ -1353,13 +1353,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1128, 2612]
+            coordinates: [1310, 2874]
         },
         properties: {
 			//id: 56,
             name: 'Султанат Мариам',
 			shortname: 'Мариам',
-			tag: 'Ma',
+			ISO_3166_1_a2: 'Ma',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '26949',
 			capital: 'Бадрийя',
@@ -1377,14 +1377,14 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [772, 2311]
+            coordinates: [954, 2573]
         },
         properties: {
 			//id: 57,
             name: 'Великое Мариенское Королевство',
 			shortname: 'Мариен',
 			continent: CONTINENT_REBIRTH_EAST,
-			tag: 'Mr',
+			ISO_3166_1_a2: 'Mr',
 			url: '57210',
 			capital: 'Мариенбург',
 			leader: 'Вебранд II',
@@ -1401,13 +1401,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2043, 2502]
+            coordinates: [2225, 2764]
         },
         properties: {
 			//id: 58,
             name: 'Вольный город Мершент',
 			shortname: 'Мершент',
-			tag: 'Me',
+			ISO_3166_1_a2: 'Me',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '50317',
 			capital: 'Мершент',
@@ -1425,13 +1425,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1572, 1842]
+            coordinates: [1754, 2104]
         },
         properties: {
 			//id: 59,
             name: 'Великое Герцогство Миленское',
 			shortname: 'Милен',
-			tag: 'Ml',
+			ISO_3166_1_a2: 'Ml',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '38880',
 			capital: 'Милен',
@@ -1448,13 +1448,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2431, 2304]
+            coordinates: [2613, 2566]
         },
         properties: {
 			//id: 60,
             name: 'Королевство Михельт',
 			shortname: 'Михельт',
-			tag: 'Mh',
+			ISO_3166_1_a2: 'Mh',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '22886',
 			capital: 'Рэйхальд',
@@ -1472,13 +1472,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [738, 2077]
+            coordinates: [920, 2339]
         },
         properties: {
 			//id: 61,
             name: 'Модравcкая Республика',
 			shortname: 'Модравия',
-			tag: 'Md',
+			ISO_3166_1_a2: 'Md',
 			continent: CONTINENT_REBIRTH_NORTH,
 			url: '57951',
 			capital: 'Миломиеста',
@@ -1496,13 +1496,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1480, 1536]
+            coordinates: [1662, 1798]
         },
         properties: {
 			//id: 62,
             name: 'Королевство Монсеран',
 			shortname: 'Монсеран',
-			tag: 'Ms',
+			ISO_3166_1_a2: 'Ms',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '38784',
 			capital: 'Телль',
@@ -1520,13 +1520,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1086, 1859]
+            coordinates: [1268, 2121]
         },
         properties: {
 			//id: 63,
             name: 'Королевство Монтания',
 			shortname: 'Монтания',
-			tag: 'Mt',
+			ISO_3166_1_a2: 'Mt',
 			continent: CONTINENT_REBIRTH_NORTH,
 			url: '57958',
 			capital: 'Краффштуфф',
@@ -1544,13 +1544,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1438, 1907]
+            coordinates: [1620, 2169]
         },
         properties: {
 			//id: 64,
             name: 'Княжеский союз Морния',
 			shortname: 'Морния',
-			tag: 'Mo',
+			ISO_3166_1_a2: 'Mo',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: NO_TOPIC,
 			capital: 'Ясновель',
@@ -1568,13 +1568,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1077, 1582]
+            coordinates: [1259, 1844]
         },
         properties: {
 			//id: 65,
             name: 'Королевство Моэния',
 			shortname: 'Моэния',
-			tag: 'Mn',
+			ISO_3166_1_a2: 'Mn',
 			continent: CONTINENT_REBIRTH_NORTH,
 			url: '61287',
 			capital: 'Кёнигсбург',
@@ -1592,13 +1592,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1186, 3803]
+            coordinates: [1368, 4065]
         },
         properties: {
 			//id: 66,
             name: 'Племенной союз Мрацкгора',
 			shortname: 'Мрацкгор',
-			tag: 'Mg',
+			ISO_3166_1_a2: 'Mg',
 			continent: CONTINENT_LILLY,
 			url: '56108',
 			capital: 'Нет',
@@ -1616,13 +1616,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1912, 1456]
+            coordinates: [2094, 1691]
         },
         properties: {
 			//id: 67,
             name: 'Нигольфайд',
 			shortname: 'Нигольфайд',
-			tag: 'Nf',
+			ISO_3166_1_a2: 'Nf',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: NO_TOPIC,
 			capital: 'Терра',
@@ -1640,13 +1640,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2089, 2547]
+            coordinates: [2271, 2809]
         },
         properties: {
 			//id: 68,
             name: 'Нирийское королевство',
 			shortname: 'Нирия',
-			tag: 'Nr',
+			ISO_3166_1_a2: 'Nr',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '40975',
 			capital: 'Ронас',
@@ -1664,13 +1664,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1315, 2007]
+            coordinates: [1651, 2382]
         },
         properties: {
 			//id: 69,
             name: 'Орден святых паладинов',
 			shortname: 'Орден св. паладинов',
-			tag: 'Po',
+			ISO_3166_1_a2: 'Po',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '18281',
 			capital: 'Грифонхил',
@@ -1688,13 +1688,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2321, 2336]
+            coordinates: [2503, 2598]
         },
         properties: {
 			//id: 70,
             name: 'Королевство Пилиталь',
 			shortname: 'Пилиталь',
-			tag: 'Pt',
+			ISO_3166_1_a2: 'Pt',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '25730',
 			capital: 'Соннек',
@@ -1712,13 +1712,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2013, 2626]
+            coordinates: [2195, 2888]
         },
         properties: {
 			//id: 71,
             name: 'Племенной город',
 			shortname: 'Племенной город',
-			tag: 'Tc',
+			ISO_3166_1_a2: 'Tc',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '50317',
 			capital: 'Племенной город',
@@ -1736,13 +1736,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2311, 555]
+            coordinates: [2597, 637]
         },
         properties: {
 			//id: 72,
             name: 'Племенной союз Поухатан',
 			shortname: 'Поухатан',
-			tag: 'Ph',
+			ISO_3166_1_a2: 'Ph',
 			continent: CONTINENT_ANCHOR,
 			url: '50728',
 			capital: 'Тлачемилько',
@@ -1760,13 +1760,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1438, 3692]
+            coordinates: [1620, 3954]
         },
         properties: {
 			//id: 73,
             name: 'Ромейская Империя',
 			shortname: 'Ромей',
-			tag: 'Ro',
+			ISO_3166_1_a2: 'Ro',
 			continent: CONTINENT_LILLY,
 			url: '61213',
 			capital: 'Ромей',
@@ -1784,13 +1784,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2180, 2241]
+            coordinates: [2362, 2503]
         },
         properties: {
 			//id: 74,
             name: 'Руманская Советская Федеративная Народная Республика',
 			shortname: 'РСФНР',
-			tag: 'Rm',
+			ISO_3166_1_a2: 'Rm',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '59132',
 			capital: 'Белушоара',
@@ -1809,13 +1809,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2415, 2811]
+            coordinates: [2597, 3073]
         },
         properties: {
 			//id: 75,
             name: 'Сагрития',
 			shortname: 'Сагрития',
-			tag: 'Sg',
+			ISO_3166_1_a2: 'Sg',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '40350',
 			capital: 'Авер',
@@ -1833,13 +1833,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2887, 1293]
+            coordinates: [3173, 1375]
         },
         properties: {
 			//id: 76,
             name: 'Орден Слепой Секиры',
 			shortname: 'Орден Слепой Секиры',
-			tag: 'So',
+			ISO_3166_1_a2: 'So',
 			continent: CONTINENT_ANCHOR,
 			url: '60354',
 			capital: 'Гексакрон',
@@ -1857,13 +1857,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [857, 3023]
+            coordinates: [1039, 3285]
         },
         properties: {
 			//id: 77,
             name: 'Тандрийская империя',
 			shortname: 'Тандрия',
-			tag: 'Td',
+			ISO_3166_1_a2: 'Td',
 			continent: CONTINENT_LILLY,
 			url: '30688',
 			capital: 'Контр-штадт',
@@ -1881,13 +1881,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1888, 1661]
+            coordinates: [2070, 1923]
         },
         properties: {
 			//id: 78,
             name: 'Тиердальская империя',
 			shortname: 'Тиердаль',
-			tag: 'Tr',
+			ISO_3166_1_a2: 'Tr',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '19850',
 			capital: 'Тиерданд',
@@ -1905,13 +1905,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2202, 2421]
+            coordinates: [2384, 2683]
         },
         properties: {
 			//id: 79,
             name: 'Племенной союз орков Тирольф',
 			shortname: 'Тирольф',
-			tag: 'Tf',
+			ISO_3166_1_a2: 'Tf',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '22341',
 			capital: NONE,
@@ -1929,13 +1929,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2862, 1087]
+            coordinates: [3148, 1169]
         },
         properties: {
 			//id: 80,
             name: 'Троллгар',
 			shortname: 'Троллгар',
-			tag: 'Tg',
+			ISO_3166_1_a2: 'Tg',
 			continent: CONTINENT_ANCHOR,
 			url: '61208',
 			capital: 'Гул-Гар',
@@ -1953,13 +1953,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [310, 1477]
+            coordinates: [492, 1739]
         },
         properties: {
 			//id: 81,
             name: 'Королевство Т\'харра',
 			shortname: 'Т\'харра',
-			tag: 'Th',
+			ISO_3166_1_a2: 'Th',
 			continent: CONTINENT_REBIRTH_NORTH,
 			url: '39011',
 			capital: 'Солдвейн',
@@ -1977,13 +1977,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1331, 1895]
+            coordinates: [1513, 2157]
         },
         properties: {
 			//id: 82,
             name: 'Ультаренский Орден',
 			shortname: 'Ультарен',
-			tag: 'Ae',
+			ISO_3166_1_a2: 'Ae',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '14767',
 			capital: 'Ришаль',
@@ -2001,13 +2001,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2135, 2418]
+            coordinates: [2317, 2680]
         },
         properties: {
 			//id: 83,
             name: 'Королевство Фаминория',
 			shortname: 'Фаминория',
-			tag: 'Fn',
+			ISO_3166_1_a2: 'Fn',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '38952',
 			capital: UNKNOWN,
@@ -2025,13 +2025,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [377, 2712]
+            coordinates: [559, 2974]
         },
         properties: {
 			//id: 84,
             name: 'Фермунг',
 			shortname: 'Фермунг',
-			tag: 'Fm',
+			ISO_3166_1_a2: 'Fm',
 			continent: CONTINENT_REBIRTH_NORTH,
 			url: '46883',
 			capital: 'Фермунгард',
@@ -2049,13 +2049,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1966, 1866]
+            coordinates: [2148, 2128]
         },
         properties: {
 			//id: 85,
             name: 'Королевство Фиеррен',
 			shortname: 'Фиеррен',
-			tag: 'Fi',
+			ISO_3166_1_a2: 'Fi',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '26779',
 			capital: 'Бронтен',
@@ -2073,13 +2073,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1386, 1992]
+            coordinates: [1568, 2254]
         },
         properties: {
 			//id: 86,
             name: 'Фламасский орден',
             shortname: 'Фламасский орден',
-			tag: 'Fo',
+			ISO_3166_1_a2: 'Fo',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '16883',
 			capital: 'Мальборк',
@@ -2097,13 +2097,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1671, 1462]
+            coordinates: [1853, 1724]
         },
         properties: {
 			//id: 87,
             name: 'Королевство Фрониард',
 			shortname: 'Фрониард',
-			tag: 'Fr',
+			ISO_3166_1_a2: 'Fr',
 			continent: CONTINENT_REBIRTH_WEST,
 			url: '40190',
 			capital: 'Нервингтон',
@@ -2121,13 +2121,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [2094, 2690]
+            coordinates: [2276, 2952]
         },
         properties: {
 			//id: 88,
             name: 'Вольный город Хаарватерн',
 			shortname: 'Хаарватерн',
-			tag: 'Ha',
+			ISO_3166_1_a2: 'Ha',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '50317',
 			capital: 'Хаарватерн',
@@ -2145,13 +2145,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1195, 3494]
+            coordinates: [1377, 3756]
         },
         properties: {
 			//id: 89,
             name: 'Графство Хаугланд',
 			shortname: 'Хаугланд',
-			tag: 'Ho',
+			ISO_3166_1_a2: 'Ho',
 			continent: CONTINENT_LILLY,
 			url: '40494',
 			capital: 'Мукачеф',
@@ -2169,17 +2169,17 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [944, 2050]
+            coordinates: [1126, 2312]
         },
         properties: {
 			//id: 90,
             name: 'Королевство Хомрул',
 			shortname: 'Хомрул',
-			tag: 'Hm',
+			ISO_3166_1_a2: 'Hm',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '61535',
 			capital: 'Стридо-Ново',
-			leader: UNKNOWN,
+			leader: 'Арнольфо II Маттеи',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
 			player: USERS[NIKTOK],
@@ -2193,13 +2193,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [753, 3331]
+            coordinates: [935, 3593]
         },
         properties: {
 			//id: 91,
             name: 'Хортенское королевство',
 			shortname: 'Хортен',
-			tag: 'Ht',
+			ISO_3166_1_a2: 'Ht',
 			continent: CONTINENT_LILLY,
 			url: '57201',
 			capital: 'Виндшторм',
@@ -2217,13 +2217,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1880, 2865]
+            coordinates: [2062, 3127]
         },
         properties: {
 			//id: 92,
             name: 'Цивилийская империя',
 			shortname: 'Цивилия',
-			tag: 'Cv',
+			ISO_3166_1_a2: 'Cv',
 			continent: CONTINENT_REBIRTH_SOUTH,
 			url: '36450',
 			capital: 'Цельмий',
@@ -2241,13 +2241,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1193, 1729]
+            coordinates: [1375, 1991]
         },
         properties: {
 			//id: 93,
             name: 'Королевство Шварцланд',
 			shortname: 'Шварцланд',
-			tag: 'Sw',
+			ISO_3166_1_a2: 'Sw',
 			continent: CONTINENT_REBIRTH_NORTH,
 			url: '24710',
 			capital: 'Фридгард',
@@ -2265,13 +2265,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1605, 2374]
+            coordinates: [1787, 2636]
         },
         properties: {
 			//id: 94,
             name: 'Королевство Штальфельд',
 			shortname: 'Штальфельд',
-			tag: 'Sf',
+			ISO_3166_1_a2: 'Sf',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '57698',
 			capital: 'Заальберг',
@@ -2290,13 +2290,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1299, 3511]
+            coordinates: [1446, 3958]
         },
         properties: {
 			//id: 95,
             name: 'Штреймарское королевство',
 			shortname: 'Штреймар',
-			tag: 'Sm',
+			ISO_3166_1_a2: 'Sm',
 			continent: CONTINENT_LILLY,
 			url: '56958',
 			capital: 'Лиденбург',
@@ -2314,13 +2314,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1164, 1818]
+            coordinates: [1346, 2080]
         },
         properties: {
 			//id: 96,
             name: 'Великое княжество Эркелия',
 			shortname: 'Эркелия',
-			tag: 'Ar',
+			ISO_3166_1_a2: 'Ar',
 			continent: CONTINENT_REBIRTH_NORTH,
 			url: '31108',
 			capital: 'Шванбург',
@@ -2338,13 +2338,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1005, 2196]
+            coordinates: [1187, 2458]
         },
         properties: {
 			//id: 97,
             name: 'Королевство Эстервальд',
 			shortname: 'Эстервальд',
-			tag: 'Es',
+			ISO_3166_1_a2: 'Es',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '58777',
 			capital: 'Кристианборг',
@@ -2362,13 +2362,13 @@ var countries = {
 		icontype: ICON_CAPITAL,
         geometry: {
             type: 'Point',
-            coordinates: [1011, 897]
+            coordinates: [1193, 1159]
         },
         properties: {
 			//id: 98,
             name: 'Великое Эшенвальское Герцогство',
 			shortname: 'Эшенвальд',
-			tag: 'Ev',
+			ISO_3166_1_a2: 'Ev',
 			continent: CONTINENT_REBIRTH_NORTH,
 			url: '35406',
 			capital: 'Штайнбург',
@@ -2391,16 +2391,16 @@ var countries = {
 			}
 			return null;
 		}
-		getCountryByTag = function(tag, data) {
+		getCountryByCode = function(code, data) {
 			for(feature of data.features) {
-				if (tag == feature.properties.tag) {
+				if (code == feature.properties.ISO_3166_1_a2) {
 					return feature;
 				}
 			}
 			return null;
 		}
 		switch (typeof param) {
-			case 'string': return getCountryByTag(param, this);
+			case 'string': return getCountryByCode(param, this);
 			case 'number': return getCountryById(param, this);
 			default: return null;
 		}

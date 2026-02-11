@@ -1,13 +1,15 @@
 //const widthPx = 4833;
 //const heightPx = 4101;
 
-const widthPx = 4760;
-const heightPx = 4120;
+//const widthPx = 4760;
+//const heightPx = 4120;
+const widthPx = 5200;
+const heightPx = 4400;
 const mapScale = 1;
 const unitPx = 50;
 const maxZoom = 0;
 const minZoom = -4;
-const image_url = './images/RoC_map_4.1.1.webp';
+const image_url = './images/RoC_map_4.2.webp';
 
 /*const widthPx = 3840 * 2;
 const heightPx = 2160 * 2;

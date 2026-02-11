@@ -66,7 +66,7 @@ var countryLayer = L.geoJSON(countries.features, {
 		}
 		
 		let popup = "<div class=content><div class=content-head><img class=flag-popup alt=\"" 
-				+ feature.properties.tag + "\"  src=" + FLAG_IMAGES_PATH 
+				+ feature.properties.ISO_3166_1_a2 + "\"  src=" + FLAG_IMAGES_PATH 
 				+ feature.properties.flag.image 
 				+ " /><div class=\"black-link country-name\">" + countryName + "</div></div>";
 				
