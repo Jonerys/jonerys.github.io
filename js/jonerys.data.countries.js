@@ -1771,7 +1771,7 @@ var countries = {
 			url: '61213',
 			capital: 'Ромей',
 			leader: 'Квинт Юлий Август',
-			government: GOV_DUAL_MONARCHY,
+			government: 'Принципат',
 			status: STATUS_MINOR,
 			player: USERS[ARMOFROME],
 			flag: {

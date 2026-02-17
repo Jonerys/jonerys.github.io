@@ -48,9 +48,32 @@ var finishPathIcon = new L.Icon({
 	iconAnchor: [0.5,20]
 });
 
+function createIconSet(fileName, baseSize, popupAnchor) {
+	let baseSizeX, baseSizeY;
+	if (Array.isArray(baseSize)) {
+		baseSizeX = baseSize[0];
+		baseSizeY = baseSize[1];
+	} else {
+		baseSizeX = baseSize;
+		baseSizeY = baseSize;
+	}
+    const createIcon = (mult, scaleName) => new L.Icon({
+        iconUrl: `${MARKER_ICONS_PATH}${'marker_' + fileName}${scaleName}.webp`,
+        iconSize: [baseSizeX * mult, baseSizeY * mult],
+        iconAnchor: [baseSizeX * mult / 2, baseSizeY * mult],
+        popupAnchor: [0, popupAnchor * mult]
+    });
+
+    return {
+        icon_x1: createIcon(SIZE_NORMAL, ''),
+        icon_x2: createIcon(SIZE_BIG, '_x2'),
+        icon_x4: createIcon(SIZE_LARGE, '_x4')
+    };
+}
+
 icons.push({
 	type: ICON_CAPITAL,
-	icon_x1: new L.Icon({
+	/* icon_x1: new L.Icon({
 		iconUrl: MARKER_ICONS_PATH + 'marker_capital.webp',
 		iconSize:     [iconCapitalSize, iconCapitalSize],
 		iconAnchor:   [iconCapitalSize - iconCapitalSize * SIZE_NORMAL / 2, iconCapitalSize],
@@ -67,11 +90,13 @@ icons.push({
 		iconSize:	[iconCapitalSize * SIZE_LARGE, iconCapitalSize * SIZE_LARGE],
 		iconAnchor:	[iconCapitalSize * SIZE_BIG, iconCapitalSize * SIZE_LARGE],
 		popupAnchor:[0, iconCapitalPA * SIZE_LARGE]
-	})
+	}) */
+	...createIconSet(ICON_CAPITAL, iconCapitalSize, iconCapitalPA)
 });
+
 icons.push({
 	type: ICON_PLACE,
-	icon_x1: new L.Icon({
+	/* icon_x1: new L.Icon({
 		iconUrl: MARKER_ICONS_PATH + 'marker_place.webp',
 		iconSize:     [iconPlaceSize, iconPlaceSize],
 		iconAnchor:   [iconPlaceSize - iconPlaceSize * SIZE_NORMAL / 2 , iconPlaceSize],
@@ -88,11 +113,12 @@ icons.push({
 		iconSize:	[iconPlaceSize * SIZE_LARGE, iconPlaceSize * SIZE_LARGE],
 		iconAnchor:	[iconPlaceSize * SIZE_BIG, iconPlaceSize * SIZE_LARGE],
 		popupAnchor:[0, iconPlacePA * SIZE_LARGE]
-	})
+	}) */
+	...createIconSet(ICON_PLACE, iconPlaceSize, iconPlacePA)
 });
 icons.push({
 	type: ICON_SALTWATER,
-	icon_x1: new L.Icon({
+	/* icon_x1: new L.Icon({
 		iconUrl: MARKER_ICONS_PATH + 'marker_saltwater.webp',
 		iconSize:     [iconSaltWaterSize, iconSaltWaterSize],
 		iconAnchor:   [iconSaltWaterSize - iconSaltWaterSize * SIZE_NORMAL / 2, iconSaltWaterSize],
@@ -109,11 +135,12 @@ icons.push({
 		iconSize:	[iconSaltWaterSize * SIZE_LARGE, iconSaltWaterSize * SIZE_LARGE],
 		iconAnchor:	[iconSaltWaterSize * SIZE_BIG, iconSaltWaterSize * SIZE_LARGE],
 		popupAnchor:[0, iconSaltWaterPA * SIZE_LARGE]
-	})
+	}) */
+	...createIconSet(ICON_SALTWATER, iconSaltWaterSize, iconSaltWaterPA)
 });
 icons.push({
 	type: ICON_FRESHWATER,
-	icon_x1: new L.Icon({
+	/* icon_x1: new L.Icon({
 		iconUrl: MARKER_ICONS_PATH + 'marker_freshwater.webp',
 		iconSize:     [iconFreshWaterSize, iconFreshWaterSize],
 		iconAnchor:   [iconFreshWaterSize - iconFreshWaterSize * SIZE_NORMAL / 2, iconFreshWaterSize],
@@ -130,11 +157,12 @@ icons.push({
 		iconSize:	[iconFreshWaterSize * SIZE_LARGE, iconFreshWaterSize * SIZE_LARGE],
 		iconAnchor:	[iconFreshWaterSize * SIZE_BIG, iconFreshWaterSize * SIZE_LARGE],
 		popupAnchor:[0, iconFreshWaterPA * SIZE_LARGE]
-	})
+	}) */
+	...createIconSet(ICON_FRESHWATER, iconFreshWaterSize, iconFreshWaterPA)
 });
 icons.push({
 	type: ICON_BUILDING,
-	icon_x1: new L.Icon({
+	/* icon_x1: new L.Icon({
 		iconUrl: MARKER_ICONS_PATH + 'marker_building.webp',
 		iconSize:     [iconBuildingSizeX, iconBuildingSizeY],
 		iconAnchor:   [iconBuildingSizeX - iconBuildingSizeX * SIZE_NORMAL / 2, iconBuildingSizeY],
@@ -151,17 +179,12 @@ icons.push({
 		iconSize:     [iconBuildingSizeX * SIZE_BIG, iconBuildingSizeY * SIZE_BIG],
 		iconAnchor:   [iconBuildingSizeX * SIZE_NORMAL, iconBuildingSizeY * SIZE_BIG],
 		popupAnchor:  [0, iconBuildingPA * SIZE_BIG]
-	}),
-	/*icon_x4: new L.Icon({
-		iconUrl: MARKER_ICONS_PATH + 'marker_building_x4.webp',
-		iconSize:     [iconBuildingSizeX* SIZE_LARGE, iconBuildingSizeY* SIZE_LARGE],
-		iconAnchor:   [iconBuildingSizeX * SIZE_BIG, iconBuildingSizeY * SIZE_LARGE],
-		popupAnchor:  [0, iconBuildingPA * SIZE_LARGE]
-	}),*/
+	}), */
+	...createIconSet(ICON_BUILDING, [iconBuildingSizeX, iconBuildingSizeY], iconBuildingPA)
 });
 icons.push({
 	type: ICON_CONTINENT,
-	icon_x1: new L.Icon({
+	/* icon_x1: new L.Icon({
 		iconUrl: MARKER_ICONS_PATH + 'marker_continent.webp',
 		iconSize:     [iconContinentSizeX * SIZE_BIG, iconContinentSizeY * SIZE_BIG],
 		iconAnchor:   [iconContinentSizeX * SIZE_NORMAL, iconContinentSizeY * SIZE_BIG],
@@ -178,26 +201,6 @@ icons.push({
 		iconSize:     [iconContinentSizeX * SIZE_LARGE, iconContinentSizeY * SIZE_LARGE],
 		iconAnchor:   [iconContinentSizeX * SIZE_BIG, iconContinentSizeY * SIZE_LARGE],
 		popupAnchor:  [0, iconContinentPA * SIZE_LARGE]
-	}),
+	}), */
+	...createIconSet(ICON_CONTINENT, [iconContinentSizeX, iconContinentSizeY], iconContinentPA)
 });
-/*icons.push({
-	type: ICON_CONTINENT,
-	icon_x1: new L.Icon({
-		iconUrl: MARKER_ICONS_PATH + 'marker_continent_y.webp',
-		iconSize:     [iconContinentYSizeX * 1.5, iconContinentYSizeY * 1.5],
-		iconAnchor:   [iconContinentYSizeX * 1.5 / 2, iconContinentYSizeY * 1.5],
-		popupAnchor:  [0, iconContinentYPA * 1.5]
-	}),
-	icon_x2: new L.Icon({
-		iconUrl: MARKER_ICONS_PATH + 'marker_continent_y.webp',
-		iconSize:     [iconContinentYSizeX * SIZE_BIG, iconContinentYSizeY * SIZE_BIG],
-		iconAnchor:   [iconContinentYSizeX * SIZE_NORMAL, iconContinentYSizeY * SIZE_BIG],
-		popupAnchor:  [0, iconContinentYPA * SIZE_BIG]
-	}),
-	icon_x4: new L.Icon({
-		iconUrl: MARKER_ICONS_PATH + 'marker_continent_y.webp',
-		iconSize:     [iconContinentYSizeX * SIZE_LARGE, iconContinentYSizeY * SIZE_LARGE],
-		iconAnchor:   [iconContinentYSizeX * SIZE_BIG, iconContinentYSizeY * SIZE_LARGE],
-		popupAnchor:  [0, iconContinentYPA * SIZE_LARGE]
-	}),
-});*/

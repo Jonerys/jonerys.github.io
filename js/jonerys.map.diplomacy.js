@@ -96,11 +96,12 @@ function resetInfo() {
         record.append(recordBody);
         $(".diplomacy-record-list").append(record);
     }
-    $(".diplomacy-record").click(function(e) {
-        e.stopImmediatePropagation();
-        $(this).toggleClass("active");
-    });
 }
+
+$(".diplomacy-record-list").on("click", ".diplomacy-record", function(e) {
+    e.stopImmediatePropagation();
+    $(this).toggleClass("active");
+});
 
 function toggleButtons() {
     $(".leaflet-control-search").toggle();
