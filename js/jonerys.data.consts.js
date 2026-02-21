@@ -1,4 +1,5 @@
 const NO_TOPIC = '54209'; //ссылка на тему географии, если нет темы
+const USER_URL_CONST = 'https://doublebrick.ru/forums/memberlist.php?mode=viewprofile&u='
 const NO_FLAG = 'Flag_of_Unknown.webp';
 const UNKNOWN = 'Неизвестно';
 const NONE = 'Отсутствует';

@@ -23,10 +23,82 @@ function pointToLayer(feature) {
 	return markers[markers.length - 1];
 };
 
+function getPopupRow(label, value) {
+	if (!value) return '';
+	return `
+        <div>
+            <div class="popup-label">${label}:</div>
+            <div class="popup-data">${value}</div>
+        </div>
+    `;
+}
+
+function getCountryName(feature) {
+	if (feature.properties.url != NO_TOPIC) {
+		return `<a href=https://doublebrick.ru/forums/viewtopic.php?t=${feature.properties.url}>
+			${feature.properties.name}
+		</a>`;
+	} else {
+		return `${feature.properties.name}`;
+	}
+}
+
+function getPopupPlayerRow(feature) {
+	if (feature.properties.player.url) {
+		return `<div>
+					<div class=popup-label>Владелец:</div>
+					<div class=popup-data>
+						<div class="black-link player">
+							<a href=${USER_URL_CONST}${feature.properties.player.url}> 
+								${feature.properties.player.username}
+							</a>
+						</div>
+					</div>
+				</div>`;
+	} else {
+		return `<div>
+					<div class=popup-label>Владелец:</div>
+					<div class="popup-data player npc-player">
+						${feature.properties.player.username}
+					</div>
+				</div>`;
+	}
+}
+
+function getLayerPopup(value) {
+	return `<div class=content>
+				<div class=content-head>
+					<div class="black-link country-name"> 
+						${value}
+					</div>
+				</div>
+			</div>`;
+}
+
 var countryLayer = L.geoJSON(countries.features, {
 	pointToLayer: (feature) => pointToLayer(feature),
 	onEachFeature: function (feature, layer) {
-		let player, countryName;
+		let popup = `
+			<div class="content">
+				<div class="content-head">
+					<img class="flag-popup" src="${FLAG_IMAGES_PATH}${feature.properties.flag.image}">
+					<div class="black-link country-name">${getCountryName(feature)}</div>
+				</div>
+				<div class="content-body">
+					${getPopupRow('Столица', feature.properties.capital)}
+					${getPopupRow('Глава', feature.properties.leader)}
+					${getPopupRow('Форма правления', feature.properties.government)}
+					${getPopupRow('Дип. статус', feature.properties.status)}
+					${getPopupPlayerRow(feature)}
+					<div>
+						<p onclick="openCountryDiplomacy(this.children[0].value)">
+							<input type=radio style="display:none" value=${feature.properties.id}> Дипломатические отношения >>
+						</p> 
+					</div>
+				</div>
+			</div>
+		`;
+/* 		let player, countryName;
 		let capital = "<div><div class=popup-label>"
 				+ "Столица:</div><div class=popup-data>" 
 				+ feature.properties.capital + "</div></div>";
@@ -90,7 +162,7 @@ var countryLayer = L.geoJSON(countries.features, {
 		popup += '<div><p onclick="openCountryDiplomacy(this.children[0].value)">' 
 				+ '<input type=radio style="display:none" value=' + feature.properties.id + '>Дипломатические отношения >></p> </div>'
 		
-		popup += "</div></div>";
+		popup += "</div></div>"; */
 		
 		layer.bindPopup(popup, {
 			autoClose: false
@@ -101,9 +173,9 @@ var countryLayer = L.geoJSON(countries.features, {
 var placeLayer = L.geoJSON(places.features, {
 	pointToLayer: (feature) => pointToLayer(feature),
 	onEachFeature: function (feature, layer) {
-		let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" 
-		+ feature.properties.name + "</div></div>";
-		layer.bindPopup(popup, {
+		/* let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" 
+		+ feature.properties.name + "</div></div>"; */
+		layer.bindPopup(getLayerPopup(feature.properties.name), {
 			autoClose: false
 		});
 	}
@@ -112,9 +184,9 @@ var placeLayer = L.geoJSON(places.features, {
 var waterLayer = L.geoJSON(waterPlaces.features, {
 	pointToLayer: (feature) => pointToLayer(feature),
 	onEachFeature: function (feature, layer) {
-		let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" 
-		+ feature.properties.name + "</div></div>";
-		layer.bindPopup(popup, {
+		/* let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" 
+		+ feature.properties.name + "</div></div>"; */
+		layer.bindPopup(getLayerPopup(feature.properties.name), {
 			autoClose: false
 		});
 	}
@@ -123,9 +195,9 @@ var waterLayer = L.geoJSON(waterPlaces.features, {
 var archLayer = L.geoJSON(archPlaces.features, {
 	pointToLayer: (feature) => pointToLayer(feature),
 	onEachFeature: function (feature, layer) {
-		let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" 
-		+ feature.properties.name + "</div></div>";
-		layer.bindPopup(popup, {
+		/* let popup = "<div class=content><div class=content-head></><div class=\"black-link country-name\">" 
+		+ feature.properties.name + "</div></div>"; */
+		layer.bindPopup(getLayerPopup(feature.properties.name), {
 			autoClose: false
 		});
 	}

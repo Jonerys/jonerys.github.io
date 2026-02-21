@@ -84,7 +84,7 @@ bounds = L.latLngBounds(southWest, northEast);
 map.setMaxBounds(bounds);
 
 map.attributionControl.addAttribution(
-	'<img class=attribution-flag src="' + FLAG_IMAGES_PATH + 'Flag_of_Shtalfeld.webp"/> Königreich Stahlfeld, 1903');
+	`<img class=attribution-flag src="${FLAG_IMAGES_PATH}Flag_of_Shtalfeld.webp"/> Königreich Stahlfeld, 1903`);
 
 var hash = new L.Hash(map);
 

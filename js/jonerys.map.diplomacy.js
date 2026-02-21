@@ -68,8 +68,7 @@ function resetInfo() {
                 : (countries.cleanName(a.country.name) < countries.cleanName(b.country.name) ? -1 : 0));
     for (let rec of filteredData) {
         let notesAsHTML = '';
-        let record = $("<div/>");
-        record.addClass("diplomacy-record");
+        let record = $("<div/>").addClass("diplomacy-record");
         record.html("<div class='diplomacy-record-head'><div class='diplomacy-record-left'><img class='flag-popup' alt='" 
             + rec.country.ISO_3166_1_a2 + "' src='" + FLAG_IMAGES_PATH 
             + rec.country.flag + "'>" 
@@ -79,8 +78,8 @@ function resetInfo() {
         );
         let recordBody = $('<div/>').addClass('diplomacy-record-body');
         let recordStatus = $('<div/>').addClass('diplomacy-record-status')
-        recordStatus.append($('<div/>').addClass('diplomacy-record-status-caption').text('Статус: '));
-        recordStatus.append($('<div/>').addClass('diplomacy-record-status-info').text(rec.relationship.status.text));
+        recordStatus.append($('<div/>').addClass('diplomacy-record-status-caption').text('Статус: '))
+                    .append($('<div/>').addClass('diplomacy-record-status-info').text(rec.relationship.status.text));
         for (let note of rec.relationship.notes) {
             if (note) {
                 notesAsHTML += note + '<br>';
@@ -163,10 +162,12 @@ ddButton.val('default1');
 
 for (let feature of countries.features) {
 	let li = $('<li/>');
-	li.html("<input type='radio' value='" + feature.properties.id + "'/>" 
-		+ "<label class='gap'>" 
-		+ "<img class='flag-popup' alt='" + feature.properties.ISO_3166_1_a2 + "' src='" + FLAG_IMAGES_PATH + feature.properties.flag.image + "'>" 
-		+ feature.properties.shortname +"</label>");
+	li.html(`<input type=radio value="${feature.properties.id}"/> 
+                <label class=gap>
+                    <img class=flag-popup alt="${feature.properties.ISO_3166_1_a2}" 
+                        src="${FLAG_IMAGES_PATH + feature.properties.flag.image}"/>
+                        ${feature.properties.shortname}
+                </label>`);
 	$("#dropdown-option-list-1").append(li);
 }
 
