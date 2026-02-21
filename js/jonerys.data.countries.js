@@ -136,7 +136,7 @@ var countries = {
 			ISO_3166_1_a2: 'Ak',
 			continent: CONTINENT_LILLY,
 			url: '49527',
-			capital: 'Лиденбург',
+			capital: 'Олрен',
 			leader: 'Фредерик Акронский (Хогландский)',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
