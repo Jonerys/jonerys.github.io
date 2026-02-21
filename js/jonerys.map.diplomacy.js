@@ -66,35 +66,37 @@ function resetInfo() {
     
     filteredData.sort((a,b) => (countries.cleanName(a.country.name) > countries.cleanName(b.country.name)) ? 1 
                 : (countries.cleanName(a.country.name) < countries.cleanName(b.country.name) ? -1 : 0));
-    for (let rec of filteredData) {
-        let notesAsHTML = '';
-        let record = $("<div/>").addClass("diplomacy-record");
-        record.html("<div class='diplomacy-record-head'><div class='diplomacy-record-left'><img class='flag-popup' alt='" 
-            + rec.country.ISO_3166_1_a2 + "' src='" + FLAG_IMAGES_PATH 
-            + rec.country.flag + "'>" 
-            + rec.country.shortname + "</div>"
-            + "<div class='diplomacy-record-right'><div class='emoji'>" + rec.relationship.status.emoji + "</div>"
-            + "<span class='dropdown-arrow'></span></div></div>" 
-        );
-        let recordBody = $('<div/>').addClass('diplomacy-record-body');
-        let recordStatus = $('<div/>').addClass('diplomacy-record-status')
-        recordStatus.append($('<div/>').addClass('diplomacy-record-status-caption').text('Статус: '))
-                    .append($('<div/>').addClass('diplomacy-record-status-info').text(rec.relationship.status.text));
-        for (let note of rec.relationship.notes) {
-            if (note) {
-                notesAsHTML += note + '<br>';
-            }
-        }
-        if (notesAsHTML == '') {
-            notesAsHTML = 'Нет';
-        }
-        let recordNotes = ($('<div/>'))
-            .append($('<div/>').addClass('diplomacy-record-notes-head').text('Заметки:'))
-            .append($('<div/>').addClass('diplomacy-record-notes').html(notesAsHTML));
-        recordBody.append(recordStatus).append(recordNotes);
-        record.append(recordBody);
-        $(".diplomacy-record-list").append(record);
-    }
+    let htmlContent = filteredData.map(rec => {
+        let notesHtml = rec.relationship.notes.filter(n => n).join('<br>') || 'Нет';
+        return `
+            <div class="diplomacy-record">
+                <div class="diplomacy-record-head">
+                    <div class="diplomacy-record-left">
+                        <img class="flag-popup" 
+                            alt="${rec.country.ISO_3166_1_a2}" 
+                            src="${FLAG_IMAGES_PATH}${rec.country.flag}">
+                        ${rec.country.shortname}
+                    </div>
+                    <div class="diplomacy-record-right">
+                        <div class="emoji">${rec.relationship.status.emoji}</div>
+                        <span class="dropdown-arrow"></span>
+                    </div>
+                </div>
+                <div class="diplomacy-record-body">
+                    <div class="diplomacy-record-status">
+                        <div class="diplomacy-record-status-caption">Статус: </div>
+                        <div class="diplomacy-record-status-info">${rec.relationship.status.text}</div>
+                    </div>
+                    <div>
+                        <div class="diplomacy-record-notes-head">Заметки:</div>
+                        <div class="diplomacy-record-notes">${notesHtml}</div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    $(".diplomacy-record-list").append(htmlContent);
 }
 
 $(".diplomacy-record-list").on("click", ".diplomacy-record", function(e) {
@@ -153,16 +155,16 @@ var diploButton = new L.Control.Button({
 	title: 'Дипломатия'
 }).addTo(map);
 
-let ddDefault = $('<li/>');
-ddDefault.attr('role', 'option');
-ddDefault.html("<input type='radio' value='-1'/><label><img>Выберите страну...</label>");
+let ddDefault = $('<li/>')
+    .attr('role', 'option')
+    .html(`<input type=radio value="-1"/><label><img>Выберите страну...</label>`);
 //$("#dropdown-select-1").append(li1_first);
 ddCurrentValue.html(ddDefault.children(0).text());
 ddButton.val('default1');
 
 for (let feature of countries.features) {
-	let li = $('<li/>');
-	li.html(`<input type=radio value="${feature.properties.id}"/> 
+	let li = $('<li/>')
+        .html(`<input type=radio value="${feature.properties.id}"/> 
                 <label class=gap>
                     <img class=flag-popup alt="${feature.properties.ISO_3166_1_a2}" 
                         src="${FLAG_IMAGES_PATH + feature.properties.flag.image}"/>
@@ -182,9 +184,7 @@ function toggleCountryList(e) {
     scrollToSelected(ddButton, ddOptionList);
 }
 
-ddButton.click(function(e) {
-    toggleCountryList(e);
-});
+ddButton.click(e => toggleCountryList(e));
 
 $(document).click(function(e) 
 {
