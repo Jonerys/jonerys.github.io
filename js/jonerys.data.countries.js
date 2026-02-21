@@ -279,7 +279,7 @@ var countries = {
             shortname: 'Атлантия',
 			ISO_3166_1_a2: 'Ca',
 			continent: CONTINENT_REBIRTH_SOUTH,
-			url: '50728',
+			url: '56318',
 			capital: 'Атлантия',
 			leader: 'Окторус I Великий',
 			government: 'Представительская монархия',
