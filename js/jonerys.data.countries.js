@@ -883,7 +883,7 @@ var countries = {
 			continent: CONTINENT_REBIRTH_NORTH,
 			url: NO_TOPIC,
 			capital: 'Гримнир',
-			leader: UNKNOWN,
+			leader: 'Дракон Скагеррак',
 			government: GOV_ABS_MONARCHY,
 			status: STATUS_MINOR,
 			player: USERS[NO_PLAYER],
