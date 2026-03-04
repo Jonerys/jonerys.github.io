@@ -1463,7 +1463,7 @@ var countries = {
 			status: STATUS_MINOR,
 			player: USERS[NO_PLAYER],
 			flag: {
-				image: NO_FLAG
+				image: 'Flag_of_Mihelt.webp'
 			}
         }
     },
@@ -2057,12 +2057,12 @@ var countries = {
 			shortname: 'Фиеррен',
 			ISO_3166_1_a2: 'Fi',
 			continent: CONTINENT_REBIRTH_WEST,
-			url: '26779',
+			url: '61650',
 			capital: 'Бронтен',
 			leader: 'Уильям II Кроментори',
 			government: GOV_DUAL_MONARCHY,
 			status: STATUS_MINOR,
-			player: USERS[PAUKSKA],
+			player: USERS[SHMELE],
 			flag: {
 				image: 'Flag_of_Fiorra.webp'
 			}

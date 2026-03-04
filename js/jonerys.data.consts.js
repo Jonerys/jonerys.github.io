@@ -80,7 +80,7 @@ const RAVAN = 11;
 const LECAPAV = 12;
 const BLACKKING = 13;
 const ARMOFROME = 14;
-const PAUKSKA = 15;
+const SHMELE = 15;
 const YUGO = 16;
 
 const USERS = [
@@ -145,7 +145,7 @@ const USERS = [
 		url: '33636'
 	},
 	{
-		username: 'Паук-Скакун',
+		username: 'Великий Шмель',
 		url: '33915'
 	},
 	{
