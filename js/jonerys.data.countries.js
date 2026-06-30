@@ -1101,7 +1101,7 @@ var countries = {
 			shortname: 'Круновия',
 			ISO_3166_1_a2: 'Ku',
 			continent: CONTINENT_REBIRTH_EAST,
-			url: '58777',
+			url: '61910',
 			capital: 'Червони Крунов',
 			leader: 'Тадеуш Серпинский',
 			government: GOV_SOCIALIST,
