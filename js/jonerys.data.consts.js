@@ -141,7 +141,7 @@ const USERS = [
 		url: '11231'
 	},
 	{
-		username: 'Armageddon Of Rome',
+		username: 'Armageddon',
 		url: '33636'
 	},
 	{
@@ -149,7 +149,7 @@ const USERS = [
 		url: '33915'
 	},
 	{
-		username: 'Yugo',
+		username: 'kiren_sun',
 		url: '29549'
 	}
 ];

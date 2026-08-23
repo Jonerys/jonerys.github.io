@@ -2413,7 +2413,7 @@ var countries = {
 	get: function(param) {
 		getCountryById = function(pid, data) {
 			for(feature of data.features) {
-				if (pid == feature.properties.id) {
+				if (pid === feature.properties.id) {
 					return feature;
 				}
 			}
@@ -2421,7 +2421,7 @@ var countries = {
 		}
 		getCountryByCode = function(code, data) {
 			for(feature of data.features) {
-				if (code == feature.properties.ISO_3166_1_a2) {
+				if (code.toUpperCase() === feature.properties.ISO_3166_1_a2.toUpperCase()) {
 					return feature;
 				}
 			}
