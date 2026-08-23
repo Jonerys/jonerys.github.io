@@ -78,7 +78,7 @@ function resetInfo() {
                         ${rec.country.shortname}
                     </div>
                     <div class="diplomacy-record-right">
-                        <div class="emoji">${rec.relationship.status.emoji}</div>
+                        <div class="emoji" title="${rec.relationship.status.text}">${rec.relationship.status.emoji}</div>
                         <span class="dropdown-arrow"></span>
                     </div>
                 </div>
