@@ -451,7 +451,7 @@ var countries = {
             shortname: 'Болнисия',
 			ISO_3166_1_a2: 'Bn',
 			continent: CONTINENT_REBIRTH_EAST,
-			url: '512018',
+			url: '61968',
 			capital: 'Вентолла',
 			leader: 'Лоренцо III Бертоджио',
 			government: GOV_DUAL_MONARCHY,
