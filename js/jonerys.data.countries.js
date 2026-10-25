@@ -452,11 +452,11 @@ var countries = {
 			ISO_3166_1_a2: 'Bn',
 			continent: CONTINENT_REBIRTH_EAST,
 			url: '19266',
-			capital: 'Руджелл',
-			leader: 'Валерий Максимин',
+			capital: 'Вентолла',
+			leader: 'Лоренцо III Бертоджио',
 			government: GOV_DUAL_MONARCHY,
 			status: STATUS_MINOR,
-			player: USERS[NO_PLAYER],
+			player: USERS[ENKELTEA],
 			flag: {
 				image: 'Flag_of_Bolnisia.webp'
 			}
